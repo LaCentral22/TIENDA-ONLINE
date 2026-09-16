@@ -1,0 +1,61 @@
+<header class="header">
+    <h1>Mi Tienda</h1>
+    <button id="cart-button">
+        🛒 Carrito (<span id="cart-count">0</span>)
+    </button>
+</header>
+
+<main>
+    <section class="hero">
+        <h2>Bienvenido a nuestra tienda</h2>
+        <p>Productos seleccionados para ti.</p>
+    </section>
+
+    <section>
+        <h2>Productos</h2>
+
+        <div id="products" class="products">
+
+            <article class="product">
+                <div class="product-image">Producto 1</div>
+                <h3>Producto 1</h3>
+                <p>Descripción del producto.</p>
+                <strong>19,99 €</strong>
+                <button onclick="addToCart('Producto 1', 19.99)">
+                    Añadir al carrito
+                </button>
+            </article>
+
+            <article class="product">
+                <div class="product-image">Producto 2</div>
+                <h3>Producto 2</h3>
+                <p>Descripción del producto.</p>
+                <strong>29,99 €</strong>
+                <button onclick="addToCart('Producto 2', 29.99)">
+                    Añadir al carrito
+                </button>
+            </article>
+
+        </div>
+    </section>
+
+    <section id="cart" class="cart">
+        <h2>Carrito</h2>
+
+        <div id="cart-items">
+            <p>Tu carrito está vacío.</p>
+        </div>
+
+        <h3>Total: <span id="cart-total">0,00 €</span></h3>
+
+        <button id="checkout-button" onclick="checkout()">
+            Continuar al pago
+        </button>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 Mi Tienda</p>
+</footer>
+
+<script src="app.js"></script>
