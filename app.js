@@ -23,7 +23,9 @@ cart.forEach((item, index) => {
 
     div.innerHTML = `
         <span>${item.name} - ${item.price.toFixed(2)} €</span>
-        <button onclick="removeFromCart(${index})">Eliminar</button>
+        <button onclick="removeFromCart(${index})">
+            Eliminar
+        </button>
     `;
 
     cartItems.appendChild(div);
@@ -33,5 +35,7 @@ cartTotal.textContent = total.toFixed(2) + " €";
 }
 function removeFromCart(index) { cart.splice(index, 1); updateCart(); }
 function checkout() { if (cart.length === 0) { alert("Tu carrito está vacío."); return; }
-alert("El sistema de pago se conectará en el siguiente paso.");
+// Aquí conectaremos AZUL posteriormente.
+alert("Pago con tarjeta: próximamente.");
 }
+updateCart();
