@@ -1,187 +1,275 @@
-<title>Lacentral Moda | Ropa y Calzado</title>
+<title>Lacentral Moda | Moda Masculina</title>
 
-<meta name="description" content="Lacentral Moda - Ropa y calzado para todos los estilos.">
+<meta name="description" content="Lacentral Moda. Moda masculina elegante y exclusiva.">
 
 <link rel="stylesheet" href="style.css">
+<div class="logo">
+    LACENTRAL
+    <span>MODA</span>
+</div>
+
 <button id="cart-button">
-    🛒 Carrito (<span id="cart-count">0</span>)
+    🛒 <span id="cart-count">0</span>
 </button>
-<section id="inicio" class="hero">
-    <div>
-        <p class="hero-small">NUEVA COLECCIÓN</p>
+<a href="#inicio">Inicio</a>
+<a href="#ropa">Ropa</a>
+<a href="#calzado">Calzado</a>
+<a href="#carrito">Carrito</a>
+<div class="portada-contenido">
 
-        <h1>Tu estilo.<br>Tu forma.</h1>
+    <p class="etiqueta">
+        LACENTRAL MODA
+    </p>
 
-        <p>
-            Descubre nuestra selección de ropa y calzado.
-        </p>
+    <h1>
+        Elegancia<br>
+        masculina.
+    </h1>
 
-        <a href="#productos" class="hero-button">
-            Ver productos
-        </a>
-    </div>
-</section>
+    <p class="subtitulo">
+        Estilo, calidad y carácter.
+    </p>
 
-<section id="productos" class="catalogo">
+    <a href="#productos" class="boton-principal">
+        DESCUBRIR COLECCIÓN
+    </a>
 
-    <div class="titulo-seccion">
-        <p>DESCUBRE</p>
-        <h2>Productos destacados</h2>
-    </div>
+</div>
+<div class="titulo">
 
-    <div class="products">
+    <p>COLECCIÓN MASCULINA</p>
 
-        <article class="product">
-
-            <div class="product-image">
-                👕
-            </div>
-
-            <div class="product-info">
-                <span class="categoria">ROPA</span>
-
-                <h3>Camiseta básica</h3>
-
-                <p>
-                    Camiseta cómoda para cualquier ocasión.
-                </p>
-
-                <strong>19,99 €</strong>
-
-                <button onclick="addToCart('Camiseta básica', 19.99)">
-                    Añadir al carrito
-                </button>
-            </div>
-
-        </article>
-
-
-        <article class="product">
-
-            <div class="product-image">
-                👟
-            </div>
-
-            <div class="product-info">
-                <span class="categoria">CALZADO</span>
-
-                <h3>Zapatillas urbanas</h3>
-
-                <p>
-                    Zapatillas cómodas con diseño moderno.
-                </p>
-
-                <strong>49,99 €</strong>
-
-                <button onclick="addToCart('Zapatillas urbanas', 49.99)">
-                    Añadir al carrito
-                </button>
-            </div>
-
-        </article>
-
-
-        <article class="product">
-
-            <div class="product-image">
-                👚
-            </div>
-
-            <div class="product-info">
-                <span class="categoria">ROPA</span>
-
-                <h3>Sudadera Lacentral</h3>
-
-                <p>
-                    Sudadera cómoda y moderna.
-                </p>
-
-                <strong>39,99 €</strong>
-
-                <button onclick="addToCart('Sudadera Lacentral', 39.99)">
-                    Añadir al carrito
-                </button>
-            </div>
-
-        </article>
-
-
-        <article class="product">
-
-            <div class="product-image">
-                👞
-            </div>
-
-            <div class="product-info">
-                <span class="categoria">CALZADO</span>
-
-                <h3>Zapato clásico</h3>
-
-                <p>
-                    Diseño elegante para cualquier ocasión.
-                </p>
-
-                <strong>59,99 €</strong>
-
-                <button onclick="addToCart('Zapato clásico', 59.99)">
-                    Añadir al carrito
-                </button>
-            </div>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<section id="ropa" class="categoria-seccion">
     <h2>Ropa</h2>
 
-    <p>
-        Camisetas, sudaderas y mucho más.
-    </p>
-</section>
+</div>
 
 
-<section id="calzado" class="categoria-seccion">
+<div id="productos" class="productos">
+
+
+    <article class="producto">
+
+        <div class="foto-producto camisa">
+            CAMISA
+        </div>
+
+        <div class="informacion-producto">
+
+            <span>CAMISAS</span>
+
+            <h3>Camisa Premium Negra</h3>
+
+            <p>
+                Diseño elegante y corte moderno.
+            </p>
+
+            <strong>49,99 €</strong>
+
+            <button onclick="addToCart('Camisa Premium Negra', 49.99)">
+                AÑADIR AL CARRITO
+            </button>
+
+        </div>
+
+    </article>
+
+
+    <article class="producto">
+
+        <div class="foto-producto polo">
+            POLO
+        </div>
+
+        <div class="informacion-producto">
+
+            <span>POLOS</span>
+
+            <h3>Polo Premium</h3>
+
+            <p>
+                Algodón de alta calidad y acabado elegante.
+            </p>
+
+            <strong>44,99 €</strong>
+
+            <button onclick="addToCart('Polo Premium', 44.99)">
+                AÑADIR AL CARRITO
+            </button>
+
+        </div>
+
+    </article>
+
+
+    <article class="producto">
+
+        <div class="foto-producto sudadera">
+            SUDADERA
+        </div>
+
+        <div class="informacion-producto">
+
+            <span>SUDADERAS</span>
+
+            <h3>Sudadera Lacentral</h3>
+
+            <p>
+                Diseño minimalista y tejido confortable.
+            </p>
+
+            <strong>59,99 €</strong>
+
+            <button onclick="addToCart('Sudadera Lacentral', 59.99)">
+                AÑADIR AL CARRITO
+            </button>
+
+        </div>
+
+    </article>
+
+
+    <article class="producto">
+
+        <div class="foto-producto pantalon">
+            PANTALÓN
+        </div>
+
+        <div class="informacion-producto">
+
+            <span>PANTALONES</span>
+
+            <h3>Pantalón Elegante</h3>
+
+            <p>
+                Corte sofisticado para cualquier ocasión.
+            </p>
+
+            <strong>69,99 €</strong>
+
+            <button onclick="addToCart('Pantalón Elegante', 69.99)">
+                AÑADIR AL CARRITO
+            </button>
+
+        </div>
+
+    </article>
+
+
+</div>
+<div class="titulo titulo-blanco">
+
+    <p>COLECCIÓN EXCLUSIVA</p>
+
     <h2>Calzado</h2>
 
+</div>
+
+
+<div class="productos">
+
+
+    <article class="producto producto-oscuro">
+
+        <div class="foto-producto zapatillas">
+            ZAPATILLAS
+        </div>
+
+        <div class="informacion-producto">
+
+            <span>CALZADO</span>
+
+            <h3>Zapatillas Urban Premium</h3>
+
+            <p>
+                Diseño contemporáneo para tu día a día.
+            </p>
+
+            <strong>89,99 €</strong>
+
+            <button onclick="addToCart('Zapatillas Urban Premium', 89.99)">
+                AÑADIR AL CARRITO
+            </button>
+
+        </div>
+
+    </article>
+
+
+    <article class="producto producto-oscuro">
+
+        <div class="foto-producto zapatos">
+            ZAPATOS
+        </div>
+
+        <div class="informacion-producto">
+
+            <span>CALZADO</span>
+
+            <h3>Zapato Clásico</h3>
+
+            <p>
+                Elegancia atemporal con acabado premium.
+            </p>
+
+            <strong>99,99 €</strong>
+
+            <button onclick="addToCart('Zapato Clásico', 99.99)">
+                AÑADIR AL CARRITO
+                </button>
+
+        </div>
+
+    </article>
+
+
+</div>
+<div class="titulo">
+
+    <p>TU COMPRA</p>
+
+    <h2>Carrito</h2>
+
+</div>
+
+
+<div id="cart-items">
+
     <p>
-        Zapatillas y zapatos para todos los estilos.
+        Tu carrito está vacío.
     </p>
-</section>
+
+</div>
 
 
-<section id="cart" class="cart">
+<div class="total">
 
-    <div class="titulo-seccion">
-        <p>TU COMPRA</p>
-        <h2>Carrito</h2>
-    </div>
+    Total:
+    <strong id="cart-total">
+        0,00 €
+    </strong>
 
-    <div id="cart-items">
-        <p>Tu carrito está vacío.</p>
-    </div>
+</div>
 
-    <div class="cart-total">
-        <strong>
-            Total:
-            <span id="cart-total">0,00 €</span>
-        </strong>
-    </div>
 
-    <button
-        id="checkout-button"
-        onclick="checkout()">
-        Continuar al pago
-    </button>
+<button
+    id="checkout-button"
+    onclick="checkout()">
 
-</section>
-<div class="logo">
+    CONTINUAR AL PAGO
+
+</button>
+<p>
     LACENTRAL MODA
+</p>
+
+<h2>
+    El estilo no necesita presentación.
+</h2>
+<div class="logo">
+    LACENTRAL
+    <span>MODA</span>
 </div>
 
 <p>
-    © 2026 Lacentral Moda. Todos los derechos reservados.
+    © 2026 Lacentral Moda
 </p>
