@@ -1,275 +1,423 @@
-<title>Lacentral Moda | Moda Masculina</title>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Lacentral Moda. Moda masculina elegante y exclusiva.">
+    <title>LACENTRAL — Moda masculina</title>
 
-<link rel="stylesheet" href="style.css">
-<div class="logo">
-    LACENTRAL
-    <span>MODA</span>
-</div>
+    <meta name="description"
+          content="LACENTRAL — Colección masculina contemporánea.">
 
-<button id="cart-button">
-    🛒 <span id="cart-count">0</span>
-</button>
-<a href="#inicio">Inicio</a>
-<a href="#ropa">Ropa</a>
-<a href="#calzado">Calzado</a>
-<a href="#carrito">Carrito</a>
-<div class="portada-contenido">
+    <link rel="stylesheet" href="style.css">
+</head>
 
-    <p class="etiqueta">
-        LACENTRAL MODA
-    </p>
+<body>
 
-    <h1>
-        Elegancia<br>
-        masculina.
-    </h1>
+<header class="header">
 
-    <p class="subtitulo">
-        Estilo, calidad y carácter.
-    </p>
-
-    <a href="#productos" class="boton-principal">
-        DESCUBRIR COLECCIÓN
+    <a href="#inicio" class="logo">
+        LACENTRAL
     </a>
 
-</div>
-<div class="titulo">
+    <nav class="nav">
 
-    <p>COLECCIÓN MASCULINA</p>
+        <a href="#novedades">Novedades</a>
+        <a href="#ropa">Ropa</a>
+        <a href="#calzado">Calzado</a>
 
-    <h2>Ropa</h2>
+    </nav>
 
-</div>
+    <button id="cart-button" class="carrito-boton">
+        Carrito
+        <span id="cart-count">0</span>
+    </button>
+
+</header>
 
 
-<div id="productos" class="productos">
+<main id="inicio">
 
 
-    <article class="producto">
+<!-- HERO -->
 
-        <div class="foto-producto camisa">
-            CAMISA
+<section class="hero">
+
+    <div class="hero-imagen">
+
+        <div class="hero-texto">
+
+            <p>COLECCIÓN 2026</p>
+
+            <h1>
+                NUEVA<br>
+                COLECCIÓN
+            </h1>
+
+            <a href="#novedades">
+                DESCUBRIR
+            </a>
+
         </div>
 
-        <div class="informacion-producto">
+    </div>
 
-            <span>CAMISAS</span>
+</section>
 
-            <h3>Camisa Premium Negra</h3>
 
-            <p>
-                Diseño elegante y corte moderno.
-            </p>
+<!-- NOVEDADES -->
 
-            <strong>49,99 €</strong>
+<section id="novedades" class="seccion">
 
-            <button onclick="addToCart('Camisa Premium Negra', 49.99)">
-                AÑADIR AL CARRITO
+    <div class="encabezado-seccion">
+
+        <span>01</span>
+
+        <h2>Novedades</h2>
+
+        <p>
+            Selección masculina contemporánea.
+        </p>
+
+    </div>
+
+
+    <div class="productos">
+
+
+        <article class="producto">
+
+            <div class="producto-imagen imagen-1">
+                <span>NUEVO</span>
+            </div>
+
+            <div class="producto-datos">
+
+                <div>
+                    <h3>Camisa Oxford</h3>
+                    <p>Blanco</p>
+                </div>
+
+                <strong>49,99 €</strong>
+
+            </div>
+
+            <button
+                onclick="addToCart('Camisa Oxford', 49.99)">
+                AÑADIR
             </button>
 
-        </div>
-
-    </article>
+        </article>
 
 
-    <article class="producto">
+        <article class="producto">
 
-        <div class="foto-producto polo">
-            POLO
-        </div>
+            <div class="producto-imagen imagen-2">
+                <span>NUEVO</span>
+            </div>
 
-        <div class="informacion-producto">
+            <div class="producto-datos">
 
-            <span>POLOS</span>
+                <div>
+                    <h3>Polo Premium</h3>
+                    <p>Negro</p>
+                </div>
 
-            <h3>Polo Premium</h3>
+                <strong>44,99 €</strong>
 
-            <p>
-                Algodón de alta calidad y acabado elegante.
-            </p>
+            </div>
 
-            <strong>44,99 €</strong>
-
-            <button onclick="addToCart('Polo Premium', 44.99)">
-                AÑADIR AL CARRITO
+            <button
+                onclick="addToCart('Polo Premium', 44.99)">
+                AÑADIR
             </button>
 
-        </div>
-
-    </article>
+        </article>
 
 
-    <article class="producto">
+        <article class="producto">
 
-        <div class="foto-producto sudadera">
-            SUDADERA
-        </div>
+            <div class="producto-imagen imagen-3">
+                <span>DESTACADO</span>
+            </div>
 
-        <div class="informacion-producto">
+            <div class="producto-datos">
 
-            <span>SUDADERAS</span>
+                <div>
+                    <h3>Pantalón Recto</h3>
+                    <p>Negro</p>
+                </div>
 
-            <h3>Sudadera Lacentral</h3>
+                <strong>69,99 €</strong>
 
-            <p>
-                Diseño minimalista y tejido confortable.
-            </p>
+            </div>
 
-            <strong>59,99 €</strong>
-
-            <button onclick="addToCart('Sudadera Lacentral', 59.99)">
-                AÑADIR AL CARRITO
+            <button
+                onclick="addToCart('Pantalón Recto', 69.99)">
+                AÑADIR
             </button>
 
-        </div>
-
-    </article>
+        </article>
 
 
-    <article class="producto">
+        <article class="producto">
 
-        <div class="foto-producto pantalon">
-            PANTALÓN
-        </div>
+            <div class="producto-imagen imagen-4">
+                <span>NUEVO</span>
+            </div>
 
-        <div class="informacion-producto">
+            <div class="producto-datos">
 
-            <span>PANTALONES</span>
+                <div>
+                    <h3>Sudadera Essential</h3>
+                    <p>Gris</p>
+                </div>
 
-            <h3>Pantalón Elegante</h3>
+                <strong>59,99 €</strong>
 
-            <p>
-                Corte sofisticado para cualquier ocasión.
-            </p>
+            </div>
 
-            <strong>69,99 €</strong>
-
-            <button onclick="addToCart('Pantalón Elegante', 69.99)">
-                AÑADIR AL CARRITO
+            <button
+                onclick="addToCart('Sudadera Essential', 59.99)">
+                AÑADIR
             </button>
 
-        </div>
+        </article>
 
-    </article>
+    </div>
 
-
-</div>
-<div class="titulo titulo-blanco">
-
-    <p>COLECCIÓN EXCLUSIVA</p>
-
-    <h2>Calzado</h2>
-
-</div>
+</section>
 
 
-<div class="productos">
+<!-- BANNER -->
+
+<section class="banner">
+
+    <div>
+
+        <p>ESTILO CONTEMPORÁNEO</p>
+
+        <h2>
+            MENOS RUIDO.<br>
+            MÁS ESTILO.
+        </h2>
+
+        <a href="#ropa">
+            VER COLECCIÓN
+        </a>
+
+    </div>
+
+</section>
 
 
-    <article class="producto producto-oscuro">
+<!-- ROPA -->
 
-        <div class="foto-producto zapatillas">
-            ZAPATILLAS
-        </div>
+<section id="ropa" class="seccion">
 
-        <div class="informacion-producto">
+    <div class="encabezado-seccion">
 
-            <span>CALZADO</span>
+        <span>02</span>
 
-            <h3>Zapatillas Urban Premium</h3>
+        <h2>Ropa</h2>
 
-            <p>
-                Diseño contemporáneo para tu día a día.
-            </p>
+        <p>
+            Prendas esenciales para todos los días.
+        </p>
 
-            <strong>89,99 €</strong>
+    </div>
 
-            <button onclick="addToCart('Zapatillas Urban Premium', 89.99)">
-                AÑADIR AL CARRITO
+
+    <div class="productos">
+
+
+        <article class="producto">
+
+            <div class="producto-imagen imagen-5"></div>
+
+         <div class="producto-datos">
+
+                <div>
+                    <h3>Camisa Oversize</h3>
+                    <p>Beige</p>
+                </div>
+
+                <strong>54,99 €</strong>
+
+            </div>
+
+            <button
+                onclick="addToCart('Camisa Oversize', 54.99)">
+                AÑADIR
             </button>
 
-        </div>
-
-    </article>
+        </article>
 
 
-    <article class="producto producto-oscuro">
+        <article class="producto">
 
-        <div class="foto-producto zapatos">
-            ZAPATOS
-        </div>
+            <div class="producto-imagen imagen-6"></div>
 
-        <div class="informacion-producto">
+            <div class="producto-datos">
 
-            <span>CALZADO</span>
+                <div>
+                    <h3>Chaqueta Minimal</h3>
+                    <p>Negro</p>
+                </div>
 
-            <h3>Zapato Clásico</h3>
+                <strong>89,99 €</strong>
 
-            <p>
-                Elegancia atemporal con acabado premium.
-            </p>
+            </div>
 
-            <strong>99,99 €</strong>
+            <button
+                onclick="addToCart('Chaqueta Minimal', 89.99)">
+                AÑADIR
+            </button>
 
-            <button onclick="addToCart('Zapato Clásico', 99.99)">
-                AÑADIR AL CARRITO
-                </button>
+        </article>
 
-        </div>
+    </div>
 
-    </article>
-
-
-</div>
-<div class="titulo">
-
-    <p>TU COMPRA</p>
-
-    <h2>Carrito</h2>
-
-</div>
+</section>
 
 
-<div id="cart-items">
+<!-- CALZADO -->
+
+<section id="calzado" class="seccion seccion-gris">
+
+    <div class="encabezado-seccion">
+
+        <span>03</span>
+
+        <h2>Calzado</h2>
+
+        <p>
+            Diseños seleccionados para completar tu estilo.
+        </p>
+
+    </div>
+
+
+    <div class="productos">
+
+
+        <article class="producto">
+
+            <div class="producto-imagen imagen-7"></div>
+
+            <div class="producto-datos">
+
+                <div>
+                    <h3>Sneaker Essential</h3>
+                    <p>Blanco</p>
+                </div>
+
+                <strong>89,99 €</strong>
+
+            </div>
+
+            <button
+                onclick="addToCart('Sneaker Essential', 89.99)">
+                AÑADIR
+            </button>
+
+        </article>
+
+
+        <article class="producto">
+
+            <div class="producto-imagen imagen-8"></div>
+
+            <div class="producto-datos">
+
+                <div>
+                    <h3>Derby Leather</h3>
+                    <p>Negro</p>
+                </div>
+
+                <strong>109,99 €</strong>
+
+            </div>
+
+            <button
+                onclick="addToCart('Derby Leather', 109.99)">
+                AÑADIR
+            </button>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- CARRITO -->
+
+<section id="carrito" class="carrito">
+
+    <div class="encabezado-seccion">
+
+        <span>04</span>
+
+        <h2>Tu carrito</h2>
+
+    </div>
+
+
+    <div id="cart-items">
+
+        <p>Tu carrito está vacío.</p>
+
+    </div>
+
+
+    <div class="total">
+
+        <span>Total</span>
+
+        <strong id="cart-total">
+            0,00 €
+        </strong>
+
+    </div>
+
+
+    <button
+        id="checkout-button"
+        onclick="checkout()">
+
+        CONTINUAR AL PAGO
+
+    </button>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+    <div class="footer-logo">
+        LACENTRAL
+    </div>
+
+    <div class="footer-links">
+
+        <a href="#inicio">Inicio</a>
+        <a href="#ropa">Ropa</a>
+        <a href="#calzado">Calzado</a>
+
+    </div>
 
     <p>
-        Tu carrito está vacío.
+        © 2026 LACENTRAL MODA
     </p>
 
-</div>
+</footer>
 
 
-<div class="total">
+<script src="app.js"></script>
 
-    Total:
-    <strong id="cart-total">
-        0,00 €
-    </strong>
-
-</div>
-
-
-<button
-    id="checkout-button"
-    onclick="checkout()">
-
-    CONTINUAR AL PAGO
-
-</button>
-<p>
-    LACENTRAL MODA
-</p>
-
-<h2>
-    El estilo no necesita presentación.
-</h2>
-<div class="logo">
-    LACENTRAL
-    <span>MODA</span>
-</div>
-
-<p>
-    © 2026 Lacentral Moda
-</p>
+</body>
+</html>   
