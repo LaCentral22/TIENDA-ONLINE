@@ -1,4 +1,419 @@
-products {
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #f5f3ef;
+    color: #111;
+}
+
+/* CABECERA */
+
+.cabecera {
+    height: 90px;
+    background: #0b0b0b;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 7%;
+}
+
+.logo {
+    font-family: Arial, sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+.logo span {
+    display: block;
+    color: #c7a86b;
+    font-size: 11px;
+    letter-spacing: 7px;
+    margin-top: 5px;
+}
+
+#cart-button {
+    background: transparent;
+    color: white;
+    border: 1px solid #c7a86b;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+}
+
+#cart-button:hover {
+    background: #c7a86b;
+    color: #111;
+}
+
+/* MENÚ */
+
+.menu {
+    height: 60px;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+    border-top: 1px solid #333;
+}
+
+.menu a {
+    color: #ddd;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.menu a:hover {
+    color: #c7a86b;
+}
+
+/* PORTADA */
+
+.portada {
+    min-height: 650px;
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.65)
+        ),
+        linear-gradient(
+            120deg,
+            #171717,
+            #3a3329,
+            #111
+        );
+
+    display: flex;
+    align-items: center;
+    padding: 80px 10%;
+    color: white;
+}
+
+.portada-contenido {
+    max-width: 650px;
+}
+
+.etiqueta {
+    color: #c7a86b;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 5px;
+    margin-bottom: 25px;
+}
+
+.portada h1 {
+    font-size: clamp(60px, 9vw, 115px);
+    line-height: 0.9;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+.subtitulo {
+    font-family: Arial, sans-serif;
+    color: #ddd;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.boton-principal {
+    display: inline-block;
+    background: #c7a86b;
+    color: #111;
+    text-decoration: none;
+    padding: 17px 30px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.boton-principal:hover {
+    background: #fff;
+}
+
+/* SECCIONES */
+
+.seccion {
+    padding: 100px 7%;
+}
+
+.titulo {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.titulo p {
+    color: #a48752;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+}
+
+.titulo h2 {
+    font-size: 52px;
+    font-weight: normal;
+}
+
+/* PRODUCTOS */
+
+.productos {
+    max-width: 1250px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.producto {
+    background: #fff;
+    border: 1px solid #e2ded6;
+}
+
+.foto-producto {
+    height: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    letter-spacing: 5px;
+    color: #777;
+    background: #e4e0d8;
+}
+
+.camisa {
+    background: linear-gradient(135deg, #151515, #555);
+    color: #ddd;
+}
+
+.polo {
+    background: linear-gradient(135deg, #d7d1c5, #8e8779);
+    color: #333;
+}
+
+.sudadera {
+    background: linear-gradient(135deg, #242424, #777);
+    color: #ddd;
+}
+
+.pantalon {
+    background: linear-gradient(135deg, #16191b, #444);
+    color: #ddd;
+}
+
+.zapatillas {
+    background: linear-gradient(135deg, #292929, #777);
+    color: #eee;
+}
+
+.zapatos {
+    background: linear-gradient(135deg, #100d0b, #4b382c);
+    color: #ddd;
+}
+
+.informacion-producto {
+    padding: 25px;
+}
+
+.informacion-producto span {
+    color: #a48752;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.informacion-producto h3 {
+    font-size: 21px;
+    font-weight: normal;
+    margin: 10px 0;
+}
+
+.informacion-producto p {
+    color: #777;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    min-height: 40px;
+        margin-bottom: 18px;
+}
+
+.informacion-producto strong {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 19px;
+    margin-bottom: 18px;
+}
+
+.informacion-producto button {
+    width: 100%;
+    background: #111;
+    color: white;
+    border: none;
+    padding: 14px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.informacion-producto button:hover {
+    background: #c7a86b;
+    color: #111;
+}
+
+/* SECCIÓN OSCURA */
+
+.seccion-oscura {
+    background: #0b0b0b;
+    color: white;
+}
+
+.titulo-blanco p {
+    color: #c7a86b;
+}
+
+.titulo-blanco h2 {
+    color: white;
+}
+
+.producto-oscuro {
+    background: #151515;
+    border-color: #333;
+}
+
+.producto-oscuro .informacion-producto h3 {
+    color: white;
+}
+
+.producto-oscuro .informacion-producto p {
+    color: #aaa;
+}
+
+.producto-oscuro .informacion-producto button {
+    background: #c7a86b;
+    color: #111;
+}
+
+.producto-oscuro .informacion-producto button:hover {
+    background: white;
+}
+
+/* CARRITO */
+
+.carrito {
+    max-width: 900px;
+    margin: 100px auto;
+    padding: 50px 35px;
+    background: white;
+}
+
+.carrito .titulo {
+    margin-bottom: 35px;
+}
+
+#cart-items {
+    font-family: Arial, sans-serif;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-item button {
+    border: 1px solid #ddd;
+    background: white;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.total {
+    text-align: right;
+    font-family: Arial, sans-serif;
+    font-size: 22px;
+    padding: 25px 0;
+}
+
+#checkout-button {
+    width: 100%;
+    background: #111;
+    color: white;
+    border: none;
+    padding: 17px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#checkout-button:hover {
+    background: #c7a86b;
+    color: #111;
+}
+
+/* FRASE DE MARCA */
+
+.marca {
+    background: #c7a86b;
+    color: #111;
+    text-align: center;
+    padding: 100px 25px;
+}
+
+.marca p {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+.marca h2 {
+    font-size: 42px;
+    font-weight: normal;
+}
+
+/* PIE */
+
+footer {
+    background: #080808;
+    color: white;
+    text-align: center;
+    padding: 55px 20px;
+}
+
+footer .logo {
+    margin-bottom: 25px;
+}
+
+footer p {
+    color: #777;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+}
+
+/* MÓVIL */
+
+@media (max-width: 1000px) {
+
+    .productos {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -6,37 +421,57 @@ products {
 
 @media (max-width: 600px) {
 
-    .header {
-        padding: 18px;
+    .cabecera {
+        height: 80px;
+        padding: 0 20px;
     }
 
     .logo {
         font-size: 17px;
+        letter-spacing: 3px;
     }
 
     .menu {
-        gap: 20px;
-        font-size: 14px;
+        gap: 18px;
     }
 
-    .hero {
-        min-height: 450px;
-        padding: 40px 25px;
+    .menu a {
+        font-size: 9px;
+        letter-spacing: 1px;
     }
 
-    .hero h1 {
-        font-size: 55px;
+    .portada {
+        min-height: 550px;
+        padding: 50px 25px;
     }
 
-    .products {
+    .portada h1 {
+        font-size: 62px;
+    }
+
+    .seccion {
+        padding: 70px 18px;
+    }
+
+    .titulo h2 {
+        font-size: 40px;
+    }
+
+    .productos {
         grid-template-columns: 1fr;
     }
 
-    .product-image {
-        height: 260px;
+    .foto-producto {
+        height: 330px;
     }
 
-    .cart {
-        margin: 40px 15px;
+    .carrito {
+        margin: 60px 15px;
+        padding: 35px 20px;
     }
+
+    .marca h2 {
+        font-size: 30px;
+    }
+
 }
