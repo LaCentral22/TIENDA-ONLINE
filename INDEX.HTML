@@ -1,61 +1,187 @@
-<header class="header">
-    <h1>Mi Tienda</h1>
-    <button id="cart-button">
-        🛒 Carrito (<span id="cart-count">0</span>)
-    </button>
-</header>
+<title>Lacentral Moda | Ropa y Calzado</title>
 
-<main>
-    <section class="hero">
-        <h2>Bienvenido a nuestra tienda</h2>
-        <p>Productos seleccionados para ti.</p>
-    </section>
+<meta name="description" content="Lacentral Moda - Ropa y calzado para todos los estilos.">
 
-    <section>
-        <h2>Productos</h2>
+<link rel="stylesheet" href="style.css">
+<button id="cart-button">
+    🛒 Carrito (<span id="cart-count">0</span>)
+</button>
+<section id="inicio" class="hero">
+    <div>
+        <p class="hero-small">NUEVA COLECCIÓN</p>
 
-        <div id="products" class="products">
+        <h1>Tu estilo.<br>Tu forma.</h1>
 
-            <article class="product">
-                <div class="product-image">Producto 1</div>
-                <h3>Producto 1</h3>
-                <p>Descripción del producto.</p>
+        <p>
+            Descubre nuestra selección de ropa y calzado.
+        </p>
+
+        <a href="#productos" class="hero-button">
+            Ver productos
+        </a>
+    </div>
+</section>
+
+<section id="productos" class="catalogo">
+
+    <div class="titulo-seccion">
+        <p>DESCUBRE</p>
+        <h2>Productos destacados</h2>
+    </div>
+
+    <div class="products">
+
+        <article class="product">
+
+            <div class="product-image">
+                👕
+            </div>
+
+            <div class="product-info">
+                <span class="categoria">ROPA</span>
+
+                <h3>Camiseta básica</h3>
+
+                <p>
+                    Camiseta cómoda para cualquier ocasión.
+                </p>
+
                 <strong>19,99 €</strong>
-                <button onclick="addToCart('Producto 1', 19.99)">
+
+                <button onclick="addToCart('Camiseta básica', 19.99)">
                     Añadir al carrito
                 </button>
-            </article>
+            </div>
 
-            <article class="product">
-                <div class="product-image">Producto 2</div>
-                <h3>Producto 2</h3>
-                <p>Descripción del producto.</p>
-                <strong>29,99 €</strong>
-                <button onclick="addToCart('Producto 2', 29.99)">
+        </article>
+
+
+        <article class="product">
+
+            <div class="product-image">
+                👟
+            </div>
+
+            <div class="product-info">
+                <span class="categoria">CALZADO</span>
+
+                <h3>Zapatillas urbanas</h3>
+
+                <p>
+                    Zapatillas cómodas con diseño moderno.
+                </p>
+
+                <strong>49,99 €</strong>
+
+                <button onclick="addToCart('Zapatillas urbanas', 49.99)">
                     Añadir al carrito
                 </button>
-            </article>
+            </div>
 
-        </div>
-    </section>
+        </article>
 
-    <section id="cart" class="cart">
+
+        <article class="product">
+
+            <div class="product-image">
+                👚
+            </div>
+
+            <div class="product-info">
+                <span class="categoria">ROPA</span>
+
+                <h3>Sudadera Lacentral</h3>
+
+                <p>
+                    Sudadera cómoda y moderna.
+                </p>
+
+                <strong>39,99 €</strong>
+
+                <button onclick="addToCart('Sudadera Lacentral', 39.99)">
+                    Añadir al carrito
+                </button>
+            </div>
+
+        </article>
+
+
+        <article class="product">
+
+            <div class="product-image">
+                👞
+            </div>
+
+            <div class="product-info">
+                <span class="categoria">CALZADO</span>
+
+                <h3>Zapato clásico</h3>
+
+                <p>
+                    Diseño elegante para cualquier ocasión.
+                </p>
+
+                <strong>59,99 €</strong>
+
+                <button onclick="addToCart('Zapato clásico', 59.99)">
+                    Añadir al carrito
+                </button>
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<section id="ropa" class="categoria-seccion">
+    <h2>Ropa</h2>
+
+    <p>
+        Camisetas, sudaderas y mucho más.
+    </p>
+</section>
+
+
+<section id="calzado" class="categoria-seccion">
+    <h2>Calzado</h2>
+
+    <p>
+        Zapatillas y zapatos para todos los estilos.
+    </p>
+</section>
+
+
+<section id="cart" class="cart">
+
+    <div class="titulo-seccion">
+        <p>TU COMPRA</p>
         <h2>Carrito</h2>
+    </div>
 
-        <div id="cart-items">
-            <p>Tu carrito está vacío.</p>
-        </div>
+    <div id="cart-items">
+        <p>Tu carrito está vacío.</p>
+    </div>
 
-        <h3>Total: <span id="cart-total">0,00 €</span></h3>
+    <div class="cart-total">
+        <strong>
+            Total:
+            <span id="cart-total">0,00 €</span>
+        </strong>
+    </div>
 
-        <button id="checkout-button" onclick="checkout()">
-            Continuar al pago
-        </button>
-    </section>
-</main>
+    <button
+        id="checkout-button"
+        onclick="checkout()">
+        Continuar al pago
+    </button>
 
-<footer>
-    <p>© 2026 Mi Tienda</p>
-</footer>
+</section>
+<div class="logo">
+    LACENTRAL MODA
+</div>
 
-<script src="app.js"></script>
+<p>
+    © 2026 Lacentral Moda. Todos los derechos reservados.
+</p>
