@@ -7,89 +7,335 @@
   <p id="newsletterMessage" class="payment-note" role="status"></p>
 </section>
 <section class="categories-grid" aria-label="Categorías destacadas">
-  <button class="category-card" type="button" data-category="Abrigos" aria-label="Ver abrigos">
-    <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=600&q=80" alt="" loading="lazy">
-    <span class="cat-label">Abrigos</span>
-  </button>
-  <button class="category-card" type="button" data-category="Punto" aria-label="Ver prendas de punto">
-    <img src="https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=600&q=80" alt="" loading="lazy">
-    <span class="cat-label">Punto &amp; Jerséis</span>
-  </button>
-  <button class="category-card" type="button" data-category="Denim" aria-label="Ver denim">
-    <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=600&q=80" alt="" loading="lazy">
-    <span class="cat-label">Denim</span>
-  </button>
-  <button class="category-card" type="button" data-category="Camisas" aria-label="Ver camisas">
-    <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=600&q=80" alt="" loading="lazy">
-    <span class="cat-label">Camisas</span>
-  </button>
+  <button class="category-card" type="button" data-category="Abrigos" aria-label="Ver abrigos"><img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=600&q=80" alt="" loading="lazy"><span class="cat-label">Abrigos</span></button>
+  <button class="category-card" type="button" data-category="Punto" aria-label="Ver prendas de punto"><img src="https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=600&q=80" alt="" loading="lazy"><span class="cat-label">Punto &amp; Jerséis</span></button>
+  <button class="category-card" type="button" data-category="Denim" aria-label="Ver denim"><img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=600&q=80" alt="" loading="lazy"><span class="cat-label">Denim</span></button>
+  <button class="category-card" type="button" data-category="Camisas" aria-label="Ver camisas"><img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=600&q=80" alt="" loading="lazy"><span class="cat-label">Camisas</span></button>
 </section>
-
-
-
 
 <section id="catalogo" class="catalog-section">
   <div class="catalog-header">
-    <div>
-      <p class="section-tag">Selección <span class="brand-tag">La Central Moda</span></p>
-      <h2 class="section-title">Piezas destacadas</h2>
-    </div>
+    <div><p class="section-tag">Selección <span class="brand-tag">La Central Moda</span></p><h2 class="section-title">Piezas destacadas</h2></div>
     <div class="filters-row">
-      <label class="hidden" for="categorySelect">Categoría</label>
-      <select id="categorySelect" class="form-select">
+      <select id="categorySelect" class="form-select" aria-label="Filtrar por categoría">
         <option value="Todo">Todas las categorías</option>
         <option value="Abrigos">Abrigos</option>
         <option value="Punto">Punto</option>
         <option value="Denim">Denim</option>
         <option value="Camisas">Camisas</option>
+        <option value="Zapatos">Zapatos</option>
+        <option value="Camisetas">Camisetas</option>
       </select>
-      <label class="hidden" for="sizeSelect">Talla</label>
-      <select id="sizeSelect" class="form-select">
-        <option value="S">Talla S</option>
-        <option value="M" selected>Talla M</option>
-        <option value="L">Talla L</option>
-        <option value="XL">Talla XL</option>
-      </select>
-      <label class="hidden" for="sortSelect">Ordenar productos</label>
-      <select id="sortSelect" class="form-select">
-        <option value="default">Destacados</option>
-        <option value="asc">Precio: menor a mayor</option>
-        <option value="desc">Precio: mayor a menor</option>
+      <select id="sortSelect" class="form-select" aria-label="Ordenar productos">
+        <option value="featured">Destacados</option>
+        <option value="price-asc">Precio: menor a mayor</option>
+        <option value="price-desc">Precio: mayor a menor</option>
+        <option value="name">Nombre</option>
       </select>
     </div>
   </div>
-  <div id="productGrid" class="products-grid" aria-live="polite"></div>
+  <div id="productsGrid" class="products-grid"></div>
 </section>
-
 <section id="lookbook" class="lookbook-banner">
-  <img class="lookbook-bg" src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1600&q=80" alt="" loading="lazy">
+  <img class="lookbook-bg" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1400&q=80" alt="Inspiración de moda masculina" loading="lazy">
   <div class="lookbook-overlay"></div>
   <div class="lookbook-content">
-    <p class="brand-logo lookbook-brand">La Central Moda</p>
-    <h2 class="lookbook-title">La ciudad después de las seis.</h2>
-    <p class="lookbook-desc">Una selección de prendas contemporáneas, con cortes versátiles para el día a día.</p>
-    <a href="#catalogo" class="link-arrow">Comprar el look →</a>
+    <p class="lookbook-brand brand-logo">La Central Moda</p>
+    <h2 class="lookbook-title">Tu estilo habla por ti.</h2>
+    <p class="lookbook-desc">Descubre prendas, zapatos y combinaciones para crear tu propio estilo.</p>
+    <a href="#catalogo" class="link-arrow">Explorar colección →</a>
   </div>
 </section>
 
-<section class="features-grid" aria-label="Información de la tienda">
+<section class="features-grid" aria-label="Ventajas de la tienda">
   <article class="feature-card">
-    <span class="feature-num">01</span>
-    <h3>Selección cuidada</h3>
-    <p>Consulta las descripciones de cada prenda y comprueba sus características antes de comprar.</p>
+    <span class="feature-num">01 / CALIDAD</span>
+    <h3>Estilo seleccionado</h3>
+    <p>Prendas y calzado para completar tu armario con personalidad.</p>
   </article>
   <article class="feature-card">
-    <span class="feature-num">02</span>
-    <h3>Envíos</h3>
-    <p>Envíos a Estados Unidos y España. Plazo estimado indicado: 48–72 horas.</p>
+    <span class="feature-num">02 / ATENCIÓN</span>
+    <h3>Estamos para ayudarte</h3>
+    <p>Consulta disponibilidad, tallas y detalles antes de realizar tu pedido.</p>
   </article>
   <article class="feature-card">
-    <span class="feature-num">03</span>
-    <h3>Devoluciones</h3>
-    <p>Consulta nuestra política de devoluciones y contacta con atención al cliente si necesitas ayuda.</p>
+    <span class="feature-num">03 / COMPRA</span>
+    <h3>Información clara</h3>
+    <p>Consulta nuestras condiciones de compra, envío y devolución.</p>
   </article>
 </section>
 
 <section class="newsletter-section">
-  <p class="section-tag">Novedades</p>
-  <h2 class="newsletter-title">Descubre las próximas piezas.</h2>
+  <p class="section-tag">Mantente al día</p>
+  <h2 class="newsletter-title">¿Buscas algo especial?</h2>
+  <p class="hero-desc" style="margin:0 auto 20px">Escríbenos por WhatsApp para consultar nuevas colecciones, precios y disponibilidad.</p>
+  <a class="btn btn-primary" href="https://wa.me/12014093304?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20La%20Central%20Moda." target="_blank" rel="noopener noreferrer">Contactar por WhatsApp</a>
+</section>
+{id:16,name:'Camiseta básica negra',price:1700,category:'Camisetas',detail:'Negro · Básico esencial',image:'https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=600&q=80',tag:null,sizes:['S','M','L','XL']},
+{id:17,name:'Camiseta beige minimalista',price:1850,category:'Camisetas',detail:'Beige · Estilo minimalista',image:'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=600&q=80',tag:null,sizes:['S','M','L','XL']},
+{id:18,name:'Camiseta con gráfico',price:2200,category:'Camisetas',detail:'Estampado gráfico · Urbana',image:'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=600&q=80',tag:'Nuevo',sizes:['S','M','L','XL']},
+{id:19,name:'Camiseta premium minimal',price:2600,category:'Camisetas',detail:'Diseño limpio · Tejido suave',image:'https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=600&q=80',tag:null,sizes:['S','M','L','XL']},
+{id:20,name:'Camiseta deportiva',price:3000,category:'Camisetas',detail:'Deportiva · Ligera',image:'https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=600&q=80',tag:null,sizes:['S','M','L','XL']},
+{id:21,name:'Camiseta oversize urbana',price:3500,category:'Camisetas',detail:'Corte amplio · Streetwear',image:'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80',tag:'Oversize',sizes:['S','M','L','XL']},
+{id:22,name:'Camiseta estampado artístico',price:4100,category:'Camisetas',detail:'Estampado artístico · Casual',image:'https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=600&q=80',tag:null,sizes:['S','M','L','XL']},
+{id:23,name:'Polo casual para hombre',price:4800,category:'Camisetas',detail:'Polo · Estilo clásico',image:'https://images.unsplash.com/photo-1625910513413-5fc45e6d5b2b?auto=format&fit=crop&w=600&q=80',tag:null,sizes:['S','M','L','XL']},
+{id:24,name:'Camiseta premium exclusiva',price:6000,category:'Camisetas',detail:'Diseño premium · Acabado cuidado',image:'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=600&q=80',tag:'Premium',sizes:['S','M','L','XL']}
+];
+let cart = []; let currentSort = 'featured'; let currentCategory = 'Todo';
+function renderProducts() { const grid = $('#productsGrid'); if (!grid) return;
+let list = products.filter(product =>
+  currentCategory === 'Todo' || product.category === currentCategory
+);
+
+if (currentSort === 'price-asc') list.sort((a,b) => a.price - b.price);
+if (currentSort === 'price-desc') list.sort((a,b) => b.price - a.price);
+if (currentSort === 'name') list.sort((a,b) => a.name.localeCompare(b.name,'es'));
+
+grid.innerHTML = list.map(product => `
+  <article class="product-card">
+    <div class="product-thumb">
+      <img src="￼{product.name}" loading="lazy">
+      ￼{product.tag}</span>` : ''}
+    </div>
+    <div class="product-info">
+      <span class="product-cat">${product.category}</span>
+      <h3 class="product-name">${product.name}</h3>
+      <p class="product-desc">${product.detail}</p>
+      <label class="product-size-label" for="size-${product.id}">Selecciona tu talla</label>
+      <select class="product-size" id="size-${product.id}" aria-label="Talla de ${product.name}">
+        ￼{size}">${size}</option>`).join('')}
+      </select>
+      <div class="product-bottom">
+        <span class="product-price">${money.format(product.price)}</span>
+        <button type="button" class="btn btn-sm" data-add="${product.id}">Añadir al carrito</button>
+      </div>
+    </div>
+  </article>
+`).join('');
+}
+function saveCart() { try { localStorage.setItem('lcm-cart', JSON.stringify(cart)); } catch (error) {} }
+function loadCart() { try { const saved = JSON.parse(localStorage.getItem('lcm-cart') || '[]'); if (Array.isArray(saved)) cart = saved; } catch (error) { cart = []; } }
+function cartQuantity() { return cart.reduce((sum, item) => sum + item.quantity, 0); }
+function renderCart() { const count = $('#cartCount'); const items = $('#cartItems'); const total = $('#cartTotal'); if (count) count.
+(() => { 'use strict';
+const CURRENCY = 'DOP'; const WHATSAPP_NUMBER = '12014093304'; const $ = (selector) => document.querySelector(selector);
+const money = new Intl.NumberFormat('es-DO', { style: 'currency', currency: CURRENCY, maximumFractionDigits: 0 });
+const products = [ {id:1,name:'Abrigo Lana Merino',price:8890,category:'Abrigos',detail:'Elegante · Tejido cálido',image:'https://images.unsplash.com/photo-1544923246-77307dd654cb?auto=format&fit=crop&w=600&q=80',tag:'Destacado',sizes:['S','M','L','XL']}, {id:2,name:'Jersey Punto Cuello Redondo',price:9990,category:'Punto',detail:'Punto suave · Corte clásico',image:'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=600&q=80',tag:'Popular',sizes:['S','M','L','XL']}, {id:3,name:'Jean Recto Selvedge',price:4990,category:'Denim',detail:'Denim azul · Corte recto',image:'https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=600&q=80',tag:null,sizes:['S','M','L','XL']}, {id:4,name:'Camisa Oxford Regular',price:7850,category:'Camisas',detail:'Oxford clásico · Uso diario',image:'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=600&q=80',tag:null,sizes:['S','M','L','XL']},
+{id:5,name:'Zapatillas deportivas blancas',price:2700,category:'Zapatos',detail:'Blanco · Estilo deportivo',image:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80',tag:'Nuevo',sizes:['40','41','42','43','44','45']},
+{id:6,name:'Zapatillas negras urbanas',price:3200,category:'Zapatos',detail:'Negro · Diseño urbano',image:'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=600&q=80',tag:null,sizes:['40','41','42','43','44','45']},
+{id:7,name:'Sneakers retro multicolor',price:3650,category:'Zapatos',detail:'Combinación de colores · Retro',image:'https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=600&q=80',tag:null,sizes:['40','41','42','43','44','45']},
+{id:8,name:'Zapatos casuales de piel',price:4100,category:'Zapatos',detail:'Marrón · Estilo casual',image:'https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=600&q=80',tag:null,sizes:['40','41','42','43','44','45']},
+{id:9,name:'Mocasines clásicos',price:4550,category:'Zapatos',detail:'Clásicos · Para vestir',image:'https://images.unsplash.com/photo-1531310197839-ccf54634509e?auto=format&fit=crop&w=600&q=80',tag:null,sizes:['40','41','42','43','44','45']},
+{id:10,name:'Botines de hombre',price:5200,category:'Zapatos',detail:'Negro · Caña media',image:'https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&w=600&q=80',tag:null,sizes:['40','41','42','43','44','45']},
+{id:11,name:'Zapatos Oxford elegantes',price:5850,category:'Zapatos',detail:'Negro · Formal',image:'https://images.unsplash.com/photo-1614252369475-531ccb941bb6?auto=format&fit=crop&w=600&q=80',tag:'Elegante',sizes:['40','41','42','43','44','45']},
+{id:12,name:'Zapatillas deportivas premium',price:6400,category:'Zapatos',detail:'Diseño técnico · Uso diario',image:'https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=600&q=80',tag:'Premium',sizes:['40','41','42','43','44','45']},
+{id:13,name:'Botas estilo urbano',price:7250,category:'Zapatos',detail:'Robustas · Estilo urbano',image:'https://images.unsplash.com/photo-1520639888713-7851133b1ed0?auto=format&fit=crop&w=600&q=80',tag:null,sizes:['40','41','42','43','44','45']},
+{id:14,name:'Sneakers premium exclusivos',price:8150,category:'Zapatos',detail:'Silueta contemporánea · Premium',image:'https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=600&q=80',tag:'Exclusivo',sizes:['40','41','42','43','44','45']},
+
+{id:15,name:'Camiseta básica blanca',price:1500,category:'Camisetas',detail:'Blanco · Corte regular',image:'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80',tag:null,sizes:['S','M','L','XL']},
+textContent = cartQuantity();
+if (!items || !total) return;
+
+if (!cart.length) {
+  items.innerHTML = '<p class="empty-cart-text">Tu carrito está vacío.</p>';
+  total.textContent = money.format(0);
+  return;
+}
+
+items.innerHTML = cart.map(item => `
+  <div class="cart-item">
+    <img src="${item.image}" alt="" loading="lazy">
+    <div class="cart-item-details">
+      <p class="cart-item-title">${item.name}</p>
+      <p class="cart-item-sub">Talla: ${item.size} · ${money.format(item.price)}</p>
+      <div class="cart-item-ctrl">
+        <button type="button" data-qty="${item.key}" data-change="-1" aria-label="Restar una unidad">−</button>
+        <span>${item.quantity}</span>
+        <button type="button" data-qty="${item.key}" data-change="1" aria-label="Añadir una unidad">+</button>
+      </div>
+    </div>
+    <button type="button" class="btn-icon" data-remove="${item.key}" aria-label="Eliminar ${item.name}">✕</button>
+  </div>
+`).join('');
+
+total.textContent = money.format(
+  cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
+);
+}
+function addToCart(productId) { const product = products.find(item => item.id === productId); if (!product) return;
+const sizeSelect = ￼{productId}`);
+if (!sizeSelect) return;
+
+const size = sizeSelect.value;
+const key = `${product.id}-${size}`;
+const existing = cart.find(item => item.key === key);
+
+if (existing) {
+  existing.quantity += 1;
+} else {
+  cart.push({
+    key,
+    id: product.id,
+    name: product.name,
+    price: product.price,
+    image: product.image,
+    size,
+    quantity: 1
+  });
+}
+
+saveCart();
+renderCart();
+openCart();
+}
+function changeQuantity(key, change) { const item = cart.find(entry => entry.key === key); if (!item) return;
+item.quantity += change;
+if (item.quantity <= 0) {
+  cart = cart.filter(entry => entry.key !== key);
+}
+
+saveCart();
+renderCart();
+}
+function removeItem(key) { cart = cart.filter(item => item.key !== key); saveCart(); renderCart(); }
+function openCart() { const modal = $('#cartModal'); if (!modal) return; modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.style.overflow = 'hidden'; $('#closeCart')?.focus(); }
+function closeCart() { const modal = $('#cartModal'); if (!modal) return; modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.style.overflow = ''; $('#cartBtn')?.focus(); }
+function showStore() { $('#storeView')?.classList.remove('hidden'); $('#pageView')?.classList.add('hidden'); }
+function showPage(pageName) { const content = $('#pageContent'); if (!content) return;
+const pages = {
+  envios: `
+    <h1>Envíos y entregas</h1>
+    <p>En La Central Moda te ayudaremos a consultar las opciones de envío disponibles para tu destino antes de confirmar el pedido.</p>
+    <h2>Plazos de entrega</h2>
+    <p>Los plazos estimados dependen del destino, la disponibilidad del producto y el servicio de transporte. Confirmaremos el plazo aplicable antes de aceptar el pedido.</p>
+    <h2>Coste de envío</h2>
+    <p>El coste del envío se comunicará antes de finalizar la compra. No se confirmará un pedido sin informar previamente al cliente del importe aplicable.</p>
+    <h2>Consulta de pedidos</h2>
+    <p>Para consultar tu pedido, escríbenos por WhatsApp al +1 201 409 3304 e indica tu número de pedido, si ya lo tienes.</p>
+  `,
+  devoluciones: `
+    <h1>Devoluciones, reembolsos y cancelaciones</h1>
+    <div class="notice"><strong>Importante:</strong> esta política debe revisarse para ajustarla a la legislación aplicable al país de venta y a la operativa real de la tienda.</div>
+    <h2>Cómo solicitar una devolución</h2>
+    <p>Contacta con atención al cliente por WhatsApp al +1 201 409 3304. Indica el número de pedido, el producto y el motivo de la solicitud. Espera las instrucciones antes de enviar el artículo.</p>
+    <h2>Estado de los artículos</h2>
+    <p>Siempre que la normativa lo permita, los artículos deben devolverse sin usar, en buen estado y con sus etiquetas y embalaje originales. Los productos defectuosos o enviados por error se evaluarán conforme a la normativa aplicable.
+      </p>
+    <h2>Plazo de devolución</h2>
+    <p>El plazo exacto de devolución debe confirmarse antes de publicar esta política y aceptar pedidos. No se limitarán los derechos que la ley otorgue al consumidor.</p>
+    <h2>Reembolsos</h2>
+    <p>Una vez aprobada la devolución, se informará al cliente del método y plazo estimado del reembolso. Cuando el pago se haya procesado por un proveedor de pagos, el reembolso estará sujeto también a los procedimientos de dicho proveedor.</p>
+    <h2>Cancelaciones y productos defectuosos</h2>
+    <p>Para solicitar una cancelación, contacta con nosotros cuanto antes. Si el pedido ya fue preparado o enviado, te indicaremos las opciones disponibles conforme a la normativa aplicable.</p>
+  `,
+  privacidad: `
+    <h1>Política de privacidad</h1>
+    <div class="notice"><strong>Pendiente de completar:</strong> antes de publicar, añade la identidad legal o comercial aceptada, un correo real de contacto y los detalles de tratamiento que correspondan a tu negocio.</div>
+    <h2>Responsable del tratamiento</h2>
+    <p>Responsable: [COMPLETAR CON IDENTIDAD LEGAL O COMERCIAL]. Contacto de privacidad: [AÑADIR CORREO REAL].</p>
+    <h2>Datos recogidos y finalidad</h2>
+    <p>Los datos que el cliente facilite podrán utilizarse para gestionar consultas y pedidos, prestar atención al cliente y atender obligaciones legales aplicables. Solo deben recogerse los datos necesarios para estas finalidades.</p>
+    <h2>Pagos y proveedores</h2>
+    <p>Cuando se habilite AZUL, se deberá explicar qué datos se transmiten al proveedor de pagos y revisar sus condiciones y documentación de privacidad. La tienda no debe guardar números completos de tarjetas ni códigos de seguridad.</p>
+    <h2>Conservación y derechos</h2>
+    <p>Los periodos de conservación, la base jurídica, los destinatarios de datos y el procedimiento para ejercer derechos deben completarse según la legislación aplicable antes de recoger datos de clientes.</p>
+  `,
+  terminos: `
+    <h1>Términos y condiciones de compra</h1>
+    <p>Antes de confirmar un pedido, el cliente debe poder consultar el precio, la talla, la disponibilidad, los gastos de envío, las condiciones de devolución y los métodos de pago realmente disponibles.</p>
+    <h2>Precios y moneda</h2>
+    <p>Los precios del catálogo se muestran en pesos dominicanos (DOP). Los gastos de envío, si corresponden, deben informarse antes de confirmar el pedido.</p>
+    <h2>Disponibilidad</h2>
+    <p>La disponibilidad de productos y tallas debe confirmarse antes de aceptar el pedido. Las fotografías son ilustrativas y deben corresponder al producto ofrecido.</p>
+    <h2>Pagos</h2>
+    <p>El pago con tarjeta mediante AZUL no está habilitado en esta versión. No introduzcas ni envíes datos de tarjeta a través de formularios que no estén conectados a una pasarela de pago segura.</p>
+    <h2>Contacto</h2>
+    <p>Para consultas, contacta por WhatsApp al +1 201 409 3304.</p>
+  `,
+  contacto: `
+    <h1>Contacto y atención al cliente</h1>
+    <p>¿Tienes preguntas sobre una prenda, un zapato o una talla? Contacta con La Central Moda.</p>
+    <h2>WhatsApp</h2>
+    <p><a href="https://wa.me/12014093304" target="_blank" rel="noopener noreferrer">+1 201 409 3304</a></p>
+    <h2>Instagram</h2>
+    <p><a href="https://www.instagram.com/La_centralmoda/" target="_blank" rel="noopener noreferrer">@La_centralmoda</a></p>
+    <p>El correo electrónico de atención al cliente debe añadirse aquí cuando se confirme una dirección real y operativa.</p>
+  `
+};
+
+content.innerHTML = pages[pageName] || '<h1>Información</h1><p>Esta sección no está disponible.</p>';
+$('#storeView')?.classList.add('hidden');
+$('#pageView')?.classList.remove('hidden');
+window.scrollTo({top:0,behavior:'smooth'});
+}
+  document.addEventListener('click', event => { const addButton = event.target.closest('[data-add]'); if (addButton) { addToCart(Number(addButton.dataset.add)); return; }
+const quantityButton = event.target.closest('[data-qty]');
+if (quantityButton) {
+  changeQuantity(quantityButton.dataset.qty, Number(quantityButton.dataset.change));
+  return;
+}
+
+const removeButton = event.target.closest('[data-remove]');
+if (removeButton) {
+  removeItem(removeButton.dataset.remove);
+  return;
+}
+
+const pageLink = event.target.closest('[data-page]');
+if (pageLink) {
+  event.preventDefault();
+  showPage(pageLink.dataset.page);
+  history.replaceState(null,'',`#${pageLink.dataset.page}`);
+  return;
+}
+
+const categoryLink = event.target.closest('[data-category]');
+if (categoryLink) {
+  event.preventDefault();
+  currentCategory = categoryLink.dataset.category || 'Todo';
+  const selector = $('#categorySelect');
+  if (selector) selector.value = currentCategory;
+  showStore();
+  renderProducts();
+  location.hash = 'catalogo';
+  return;
+}
+
+if (event.target.closest('[data-home]')) {
+  event.preventDefault();
+  showStore();
+  history.replaceState(null,'','#top');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+});
+$('#categorySelect')?.addEventListener('change', event => { currentCategory = event.target.value; renderProducts(); });
+$('#sortSelect')?.addEventListener('change', event => { currentSort = event.target.value; renderProducts(); });
+$('#cartBtn')?.addEventListener('click', openCart); $('#closeCart')?.addEventListener('click', closeCart);
+$('#cartModal')?.addEventListener('click', event => { if (event.target === $('#cartModal')) closeCart(); });
+document.addEventListener('keydown', event => { if (event.key === 'Escape') closeCart(); });
+$('#checkoutBtn')?.addEventListener('click', () => { if (!cart.length) { alert('Tu carrito está vacío. Añade algún producto antes de continuar.'); return; }
+const orderLines = cart.map(item =>
+  `- ${item.name} | Talla: ${item.size} | Cantidad: ${item.quantity} | ${money.format(item.price * item.quantity)}`
+);
+
+const total = cart.reduce((sum,item) => sum + item.price * item.quantity,0);
+
+const message = [
+  'Hola, La Central Moda. Quiero consultar este pedido:',
+  '',
+  ...orderLines,
+  '',
+ n = event.target.closest('[data-qty]');
+if (qu
+  '',
+  'Por favor, confirmen disponibilidad, envío y forma de pago.'
+].join('\n');
+
+const whatsappURL =ddButton) { addToCart(Number(addButton.dataset.add)); return; }
+const qu
+window.open(whatsappURL,'_blank','noopener,noreferrer');
+});
+$('#currentYear').textContent = new Date().getFullYear();
+loadCart(); renderProducts(); renderCart();
+const initialPage = location.hash.replace('#',''); if (['envios','devoluciones','privacidad','terminos','contacto'].includes(initialPage)) { showPage(initialPage); }
+})(); </script>
