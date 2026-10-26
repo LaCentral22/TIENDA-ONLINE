@@ -1,325 +1,324 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>La Central Moda | Ropa Masculina</title>
-  <meta name="description" content="Colección masculina contemporánea: abrigos, punto, denim y camisas." />
-  
-  <!-- Tipografías de Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
-  
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+<option value="desc">Precio: mayor a menor</option>
+      </select>
 
-  <!-- Cabecera -->
-  <header class="header">
-    <div class="container nav-wrapper">
-      <a href="#top" class="brand-logo">La Central Moda</a>
-      <nav class="nav-links">
-        <a href="#catalogo" onclick="filterCategory('Todo')">Nueva colección</a>
-        <a href="#catalogo" onclick="filterCategory('Abrigos')">Abrigos</a>
-        <a href="#catalogo" onclick="filterCategory('Punto')">Punto</a>
-        <a href="#catalogo" onclick="filterCategory('Denim')">Denim</a>
-        <a href="#catalogo" onclick="filterCategory('Camisas')">Camisas</a>
-      </nav>
-      <div class="nav-actions">
-        <button id="cartBtn" class="btn-icon" aria-label="Abrir carrito">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-          <span id="cartCount" class="badge">0</span>
-        </button>
-      </div>
     </div>
-  </header>
 
-  <main id="top" class="container">
-    <!-- Hero / Portada -->
-    <section class="hero-grid">
-      <div class="hero-card">
-        <div>
-          <div class="pill-tag">
-            <span class="dot"></span>
-            <span class="brand-sub">La Central Moda</span>
-            <span class="season">· Otoño 26</span>
-          </div>
-          <h1 class="hero-title">Capas con intención, silueta precisa.</h1>
-          <p class="hero-desc">Tejidos técnicos, cortes limpios y un acabado refinado. Diseñada para el ritmo real de la ciudad.</p>
-        </div>
-        <div class="hero-buttons">
-          <a href="#catalogo" class="btn btn-primary">Ver colección</a>
-          <a href="#lookbook" class="btn btn-outline">Lookbook</a>
-        </div>
-      </div>
-      <div class="hero-image-wrap">
-        <img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1200&q=80" alt="Colección La Central Moda" class="hero-img" />
-      </div>
-    </section>
-
-    <!-- Categorías destacadas -->
-    <section class="categories-grid">
-      <div class="category-card" onclick="filterCategory('Abrigos')">
-        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=600&q=80" alt="Abrigos" />
-        <span class="cat-label">Abrigos</span>
-      </div>
-      <div class="category-card" onclick="filterCategory('Punto')">
-        <img src="https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=600&q=80" alt="Punto" />
-        <span class="cat-label">Punto & Jerséis</span>
-      </div>
-      <div class="category-card" onclick="filterCategory('Denim')">
-        <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=600&q=80" alt="Denim" />
-        <span class="cat-label">Denim japonés</span>
-      </div>
-      <div class="category-card" onclick="filterCategory('Camisas')">
-        <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=600&q=80" alt="Camisas" />
-        <span class="cat-label">Camisas Oxford</span>
-      </div>
-    </section>
-
-    <!-- Catálogo de Productos -->
-    <section id="catalogo" class="catalog-section">
-      <div class="catalog-header">
-        <div>
-          <p class="section-tag">Selección <span class="brand-tag">La Central Moda</span></p>
-          <h2 class="section-title">Piezas destacadas</h2>
-        </div>
-        <div class="filters-row">
-          <select id="categorySelect" onchange="filterCategory(this.value)" class="form-select">
-            <option value="Todo">Todas las categorías</option>
-            <option value="Abrigos">Abrigos</option>
-            <option value="Punto">Punto</option>
-            <option value="Denim">Denim</option>
-            <option value="Camisas">Camisas</option>
-          </select>
-          <select id="sizeSelect" class="form-select">
-            <option value="S">Talla S</option>
-            <option value="M" selected>Talla M</option>
-            <option value="L">Talla L</option>
-            <option value="XL">Talla XL</option>
-          </select>
-          <select id="sortSelect" onchange="sortProducts(this.value)" class="form-select">
-            <option value="default">Destacados</option>
-            <option value="asc">Precio: menor a mayor</option>
-            <option value="desc">Precio: mayor a menor</option>
-          </select>
-        </div>
-      </div>
-
-      <div id="productGrid" class="products-grid">
-        <!-- Renderizado dinámico vía JavaScript -->
-      </div>
-    </section>
-
-    <!-- Lookbook -->
-    <section id="lookbook" class="lookbook-banner">
-      <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1600&q=80" alt="Lookbook" class="lookbook-bg" />
-      <div class="lookbook-overlay"></div>
-      <div class="lookbook-content">
-        <p class="brand-logo lookbook-brand">La Central Moda</p>
-        <h2 class="lookbook-title">La ciudad después de las seis.</h2>
-        <p class="lookbook-desc">Una edición de lana virgen, denim rígido y cortes precisos pensados para perdurar.</p>
-        <a href="#catalogo" class="link-arrow">Comprar el look →</a>
-      </div>
-    </section>
-
-    <!-- Propuesta de Valor -->
-    <section class="features-grid">
-      <div class="feature-card">
-        <span class="feature-num">01</span>
-        <h3>Materiales honestos</h3>
-        <p>Lana Merino, algodón orgánico certificado y denim de alta densidad.</p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-num">02</span>
-        <h3>Entrega en 48 horas</h3>
-        <p>Envío seguro con seguimiento en tiempo real directo a tu puerta.</p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-num">03</span>
-        <h3>Garantía de talla</h3>
-        <p>30 días para cambios y devoluciones sencillas sin complicaciones.</p>
-      </div>
-    </section>
-
-    <!-- Newsletter -->
-    <section class="newsletter-section">
-      <p class="section-tag">Acceso anticipado</p>
-      <h2 class="newsletter-title">Nuevas piezas, una vez al mes.</h2>
-      <form class="newsletter-form" onsubmit="event.preventDefault(); alert('¡Gracias por unirte a La Central Moda!');">
-        <input type="email" placeholder="tu@correo.com" required class="newsletter-input" />
-        <button type="submit" class="btn btn-primary">Unirme</button>
-      </form>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div>
-        <p class="brand-logo footer-brand">La Central Moda</p>
-        <p class="footer-desc">Ropa masculina de temporada. Diseñada con precisión para el hombre moderno.</p>
-      </div>
-      <div>
-        <h4>Colecciones</h4>
-        <ul>
-          <li><a href="#catalogo" onclick="filterCategory('Abrigos')">Abrigos</a></li>
-          <li><a href="#catalogo" onclick="filterCategory('Punto')">Prendas de punto</a></li>
-          <li><a href="#catalogo" onclick="filterCategory('Denim')">Denim</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Atención</h4>
-        <ul>
-          <li><a href="#">Guía de tallas</a></li>
-          <li><a href="#">Envíos y entregas</a></li>
-          <li><a href="#">Contacto</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Garantías</h4>
-        <p class="footer-note">Pago seguro SSL · Envíos nacionales e internacionales.</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 La Central Moda. Todos los derechos reservados.</p>
-    </div>
-  </footer>
-
-  <!-- Drawer Carrito de Compras -->
-  <div id="cartModal" class="cart-backdrop">
-    <aside class="cart-drawer">
-      <div class="cart-header">
-        <h3>Tu Carrito</h3>
-        <button id="closeCart" class="btn-icon">✕</button>
-      </div>
-      <div id="cartItemsList" class="cart-items">
-        <!-- Renderizado dinámico -->
-      </div>
-      <div class="cart-footer">
-        <div class="cart-total-row">
-          <span>Total</span>
-          <span id="cartTotalText">0 €</span>
-        </div>
-        <button class="btn btn-primary btn-block" onclick="alert('Redirigiendo a pasarela de pago...')">Finalizar compra</button>
-      </div>
-    </aside>
   </div>
 
-  <!-- Lógica interactiva en JS -->
-  <script>
-    const products = [
-      { id: 1, name: "Abrigo Lana Merino", price: 889, category: "Abrigos", detail: "Carbón · Corte relajado", image: "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=600&q=80", tag: "Nuevo" },
-      { id: 2, name: "Jersey Punto Cuello Redondo", price: 999, oldPrice: 1299, category: "Punto", detail: "Gris marengo · Lana virgen", image: "https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=600&q=80", tag: "−20%" },
-      { id: 3, name: "Jean Recto Selvedge", price: 499, category: "Denim", detail: "Índigo rígido · 14 oz", image: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=600&q=80", tag: null },
-      { id: 4, name: "Camisa Oxford Regular", price: 785, category: "Camisas", detail: "Blanco puro · Algodón 100%", image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=600&q=80", tag: "Bestseller" }
-    ];
+  <div id="productGrid" class="products-grid" aria-live="polite"></div>
 
-    let cart = [];
-    let currentCategory = "Todo";
+</section>
 
-    function renderProducts(list) {
-      const container = document.getElementById("productGrid");
-      if (!list.length) {
-        container.innerHTML = '<p class="empty-msg">No hay productos en esta categoría.</p>';
-        return;
-      }
-      container.innerHTML = list.map(item => `
-        <article class="product-card">
-          <div class="product-thumb">
-            ${item.tag ? `<span class="product-badge">${item.tag}</span>` : ""}
-            <img src="${item.image}" alt="${item.name}" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <span class="product-cat">${item.category}</span>
-            <h3 class="product-name">${item.name}</h3>
-            <p class="product-desc">${item.detail}</p>
-            <div class="product-bottom">
-              <span class="product-price">${item.price} €</span>
-              <button class="btn btn-sm" onclick="addToCart(${item.id})">Añadir al carrito</button>
-            </div>
-          </div>
-        </article>
-      `).join("");
-    }
+<!-- LOOKBOOK -->
+<section id="lookbook" class="lookbook-banner">
 
-    function filterCategory(cat) {
-      currentCategory = cat;
-      document.getElementById("categorySelect").value = cat;
-      const filtered = cat === "Todo" ? products : products.filter(p => p.category === cat);
-      renderProducts(filtered);
-    }
+  <img
+    src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1600&q=80"
+    alt="Inspiración de moda"
+    class="lookbook-bg">
 
-    function sortProducts(order) {
-      let sorted = [...(currentCategory === "Todo" ? products : products.filter(p => p.category === currentCategory))];
-      if (order === "asc") sorted.sort((a, b) => a.price - b.price);
-      if (order === "desc") sorted.sort((a, b) => b.price - a.price);
-      renderProducts(sorted);
-    }
+  <div class="lookbook-overlay"></div>
 
-    function addToCart(productId) {
-      const size = document.getElementById("sizeSelect").value;
-      const product = products.find(p => p.id === productId);
-      const existing = cart.find(item => item.id === productId && item.size === size);
+  <div class="lookbook-content">
 
-      if (existing) {
-        existing.qty += 1;
-      } else {
-        cart.push({ ...product, size, qty: 1 });
-      }
-      updateCartUI();
-      openCart();
-    }
+    <p class="brand-logo lookbook-brand">La Central Moda</p>
 
-    function changeQty(productId, size, delta) {
-      const item = cart.find(i => i.id === productId && i.size === size);
-      if (!item) return;
-      item.qty += delta;
-      if (item.qty <= 0) {
-        cart = cart.filter(i => !(i.id === productId && i.size === size));
-      }
-      updateCartUI();
-    }
+    <h2 class="lookbook-title">
+      La ciudad después de las seis.
+    </h2>
 
-    function updateCartUI() {
-      const count = cart.reduce((sum, item) => sum + item.qty, 0);
-      const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
-      document.getElementById("cartCount").textContent = count;
-      document.getElementById("cartTotalText").textContent = total + " €";
+    <p class="lookbook-desc">
+      Una selección de tejidos, denim y cortes precisos
+      pensados para acompañarte durante toda la temporada.
+    </p>
 
-      const list = document.getElementById("cartItemsList");
-      if (!cart.length) {
-        list.innerHTML = '<p class="empty-cart-text">Tu carrito está vacío.</p>';
-        return;
-      }
-      list.innerHTML = cart.map(item => `
-        <div class="cart-item">
-          <img src="${item.image}" alt="${item.name}" />
-          <div class="cart-item-details">
-            <p class="cart-item-title">${item.name}</p>
-            <p class="cart-item-sub">Talla ${item.size} · ${item.price} €</p>
-            <div class="cart-item-ctrl">
-              <button onclick="changeQty(${item.id}, '${item.size}', -1)">−</button>
-              <span>${item.qty}</span>
-              <button onclick="changeQty(${item.id}, '${item.size}', 1)">+</button>
-            </div>
-          </div>
-        </div>
-      `).join("");
-    }
+    <a href="#catalogo" class="link-arrow">
+      Comprar la colección →
+    </a>
 
-    function openCart() { document.getElementById("cartModal").classList.add("open"); }
-    function closeCart() { document.getElementById("cartModal").classList.remove("open"); }
+  </div>
 
-    document.getElementById("cartBtn").addEventListener("click", openCart);
-    document.getElementById("closeCart").addEventListener("click", closeCart);
-    document.getElementById("cartModal").addEventListener("click", (e) => {
-      if (e.target.id === "cartModal") closeCart();
-    });
+</section>
 
-    // Carga inicial
-    renderProducts(products);
-  </script>
-</body>
-</html>
+<!-- VENTAJAS -->
+<section class="features-grid">
+
+  <article class="feature-card">
+    <span class="feature-num">01</span>
+    <h3>Calidad seleccionada</h3>
+    <p>Prendas elegidas por su diseño, comodidad y acabado.</p>
+  </article>
+
+  <article class="feature-card">
+    <span class="feature-num">02</span>
+    <h3>Envíos internacionales</h3>
+    <p>Consulta las condiciones y los plazos antes de comprar.</p>
+  </article>
+
+  <article class="feature-card">
+    <span class="feature-num">03</span>
+    <h3>Atención al cliente</h3>
+    <p>Contacta con nosotros para resolver tus dudas sobre pedidos.</p>
+  </article>
+
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section">
+
+  <p class="section-tag">Acceso anticipado</p>
+
+  <h2 class="newsletter-title">
+    Nuevas piezas, una vez al mes.
+  </h2>
+
+  <form id="newsletterForm" class="newsletter-form">
+
+    <label class="visually-hidden" for="newsletterEmail">
+      Correo electrónico
+    </label>
+
+    <input
+      id="newsletterEmail"
+      type="email"
+      placeholder="tu@correo.com"
+      autocomplete="email"
+      required
+      class="newsletter-input">
+
+    <button type="submit" class="btn btn-primary">
+      Unirme
+    </button>
+
+  </form>
+
+  <p id="newsletterMessage" class="form-message" aria-live="polite"></p>
+
+</section>
+<div class="container footer-grid">
+
+  <div>
+    <p class="brand-logo footer-brand">La Central Moda</p>
+    <p class="footer-desc">
+      Moda masculina contemporánea para el hombre moderno.
+    </p>
+  </div>
+
+  <div>
+    <h3>Colecciones</h3>
+    <ul>
+      <li><a href="#catalogo" data-category="Abrigos">Abrigos</a></li>
+      <li><a href="#catalogo" data-category="Punto">Punto</a></li>
+      <li><a href="#catalogo" data-category="Denim">Denim</a></li>
+      <li><a href="#catalogo" data-category="Camisas">Camisas</a></li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>Atención</h3>
+    <ul>
+      <li><a href="mailto:contacto@lacentralmoda.com">Contacto por correo</a></li>
+      <li><a href="#catalogo">Productos</a></li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>Información</h3>
+    <p class="footer-note">
+      Envíos nacionales e internacionales.
+    </p>
+    <p class="footer-note">
+      Los pagos electrónicos estarán disponibles cuando
+      finalice la integración con el proveedor autorizado.
+    </p>
+  </div>
+
+</div>
+
+<div class="footer-bottom">
+  <p>© 2026 La Central Moda. Todos los derechos reservados.</p>
+</div>
+<aside
+  class="cart-drawer"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="cartTitle">
+
+  <div class="cart-header">
+
+    <h2 id="cartTitle">Tu carrito</h2>
+
+    <button id="closeCart"
+            class="btn-icon"
+            type="button"
+            aria-label="Cerrar carrito">
+      ✕
+    </button>
+
+  </div>
+
+  <div id="cartItemsList" class="cart-items"></div>
+
+  <div class="cart-footer">
+
+    <div class="cart-total-row">
+      <span>Total</span>
+      <span id="cartTotalText">0,00 €</span>
+    </div>
+
+    <p id="checkoutMessage" class="form-message" aria-live="polite"></p>
+
+    <button
+      id="checkoutBtn"
+      class="btn btn-primary btn-block"
+      type="button">
+      Continuar al pago
+    </button>
+
+    <p class="checkout-note"> 
+      <a href="#top" class="brand-logo">La Central Moda</a>
+
+  <nav class="nav-links" aria-label="Categorías">
+    <a href="#catalogo" data-category="Todo">Colección</a>
+    <a href="#catalogo" data-category="Abrigos">Abrigos</a>
+    <a href="#catalogo" data-category="Punto">Punto</a>
+    <a href="#catalogo" data-category="Denim">Denim</a>
+    <a href="#catalogo" data-category="Camisas">Camisas</a>
+  </nav>
+
+  <button id="cartBtn"
+          class="btn-icon"
+          type="button"
+          aria-label="Abrir carrito">
+    <span aria-hidden="true">🛍</span>
+    <span id="cartCount" class="badge">0</span>
+  </button>
+
+</div>
+<!-- PORTADA -->
+<section class="hero-grid">
+
+  <div class="hero-card">
+
+    <div>
+      <div class="pill-tag">
+        <span class="dot"></span>
+        <span class="brand-sub">La Central Moda</span>
+        <span class="season">· Otoño 2026</span>
+      </div>
+
+      <h1 class="hero-title">
+        Capas con intención, silueta precisa.
+      </h1>
+
+      <p class="hero-desc">
+        Tejidos técnicos, cortes limpios y acabados refinados
+        para el ritmo real de la ciudad.
+      </p>
+    </div>
+
+    <div class="hero-buttons">
+      <a href="#catalogo" class="btn btn-primary">
+        Ver colección
+      </a>
+
+      <a href="#lookbook" class="btn btn-outline">
+        Lookbook
+      </a>
+    </div>
+
+  </div>
+
+  <div class="hero-image-wrap">
+    <img
+      src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1200&q=80"
+      alt="Colección de moda masculina"
+      class="hero-img">
+  </div>
+
+</section>
+
+<!-- CATEGORÍAS -->
+<section class="categories-grid" aria-label="Categorías destacadas">
+
+  <button class="category-card" type="button" data-category="Abrigos">
+    <img
+      src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=600&q=80"
+      alt="Abrigos">
+    <span class="cat-label">Abrigos</span>
+  </button>
+
+  <button class="category-card" type="button" data-category="Punto">
+    <img
+      src="https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=600&q=80"
+      alt="Prendas de punto">
+    <span class="cat-label">Punto y jerséis</span>
+  </button>
+
+  <button class="category-card" type="button" data-category="Denim">
+    <img
+      src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=600&q=80"
+      alt="Colección denim">
+    <span class="cat-label">Denim</span>
+  </button>
+
+  <button class="category-card" type="button" data-category="Camisas">
+    <img
+      src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=600&q=80"
+      alt="Camisas masculinas">
+    <span class="cat-label">Camisas</span>
+  </button>
+
+</section>
+
+<!-- CATÁLOGO -->
+<section id="catalogo" class="catalog-section">
+
+  <div class="catalog-header">
+
+    <div>
+      <p class="section-tag">
+        Selección <span class="brand-tag">La Central Moda</span>
+      </p>
+
+      <h2 class="section-title">Piezas destacadas</h2>
+    </div>
+
+    <div class="filters-row">
+
+      <label class="visually-hidden" for="categorySelect">
+        Categoría
+      </label>
+
+      <select id="categorySelect" class="form-select">
+        <option value="Todo">Todas las categorías</option>
+        <option value="Abrigos">Abrigos</option>
+        <option value="Punto">Punto</option>
+        <option value="Denim">Denim</option>
+        <option value="Camisas">Camisas</option>
+      </select>
+
+      <label class="visually-hidden" for="sizeSelect">
+        Talla
+      </label>
+
+      <select id="sizeSelect" class="form-select">
+        <option value="S">Talla S</option>
+        <option value="M" selected>Talla M</option>
+        <option value="L">Talla L</option>
+        <option value="XL">Talla XL</option>
+      </select>
+
+      <label class="visually-hidden" for="sortSelect">
+        Ordenar productos
+      </label>
+
+      <select id="sortSelect" class="form-select">
+        <option value="default">Destacados</option>
+        <option value="asc">Precio: menor a mayor</option>
+        El pago electrónico todavía no está conectado.
+    </p>
+
+  </div>
+
+</aside>
