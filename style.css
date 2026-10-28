@@ -555,6 +555,14 @@ body {
     gap: 1.75rem;
   }
 }
+.hero-banner {
+  background: linear-gradient(180deg, rgba(11, 15, 25, 0.8) 0%, rgba(11, 15, 25, 0.95) 100%),
+              url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+  padding: 4.5rem 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid #1e293b;
+}
+
 /* =========================================
    POLÍTICAS Y SOPORTE ORGANIZADOS PARA MÓVIL
    ========================================= */
