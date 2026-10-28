@@ -692,3 +692,110 @@ body {
 .acc-content strong {
   color: #e2e8f0;
 }
+/* =========================================
+   ESTILOS DE FACTURACIÓN Y PAGO CON TARJETA
+   ========================================= */
+
+.form-section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 1.25rem 0 0.75rem 0;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #1e293b;
+}
+
+.form-section-title span {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  background-color: #3b82f6;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 0.75rem;
+}
+
+.accepted-cards-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0b0f19;
+  border: 1px solid #1e293b;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 0.85rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.mini-badges {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.badge-card {
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+}
+
+.badge-card.visa {
+  background-color: #1e3a8a;
+  color: #60a5fa;
+}
+
+.badge-card.mc {
+  background-color: #7f1d1d;
+  color: #fca5a5;
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.input-with-icon input {
+  padding-right: 2.2rem;
+}
+
+.input-icon {
+  position: absolute;
+  right: 0.65rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  opacity: 0.6;
+}
+
+.payment-security-notice {
+  font-size: 0.75rem;
+  color: #64748b;
+  line-height: 1.4;
+  margin: 1rem 0;
+  padding: 0.5rem 0.65rem;
+  background-color: #0b0f19;
+  border-left: 3px solid #10b981;
+  border-radius: 4px;
+}
+
+.btn-checkout {
+  width: 100%;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: #ffffff;
+  border: none;
+  padding: 0.85rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.1s, opacity 0.2s;
+}
+
+.btn-checkout:active {
+  transform: scale(0.98);
+}
