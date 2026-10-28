@@ -1,0 +1,153 @@
+/* =========================================
+   OPTIMIZACIONES ESPECÍFICAS PARA MÓVIL
+   ========================================= */
+
+@media (max-width: 640px) {
+  /* 1. Barra de aviso superior compacta */
+  .top-bar {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.75rem;
+    line-height: 1.3;
+  }
+
+  /* 2. Navegación táctil optimizada */
+  .navbar {
+    padding: 0.65rem 0;
+  }
+
+  .nav-container {
+    padding: 0 1rem;
+    gap: 0.5rem;
+  }
+
+  .brand-logo {
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+  }
+
+  .nav-actions {
+    gap: 0.5rem;
+  }
+
+  .curr-btn {
+    padding: 0.3rem 0.45rem;
+    font-size: 0.7rem;
+  }
+
+  .cart-toggle-btn {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.75rem;
+    white-space: nowrap;
+  }
+
+  /* 3. Hero banner reducido para que los productos se vean rápido */
+  .hero-banner {
+    padding: 2.25rem 1rem 1.75rem 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.6rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .payment-badges {
+    gap: 0.5rem;
+  }
+
+  .card-logo {
+    width: 52px;
+    height: 32px;
+  }
+
+  /* 4. Cuadrícula de productos en 2 columnas (estilo tienda móvil) */
+  .container {
+    margin: 1.5rem auto;
+    padding: 0 0.85rem;
+  }
+
+  .section-title {
+    font-size: 1.35rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .product-card {
+    padding: 0.85rem;
+    border-radius: 10px;
+  }
+
+  .product-card h3 {
+    font-size: 0.95rem;
+    line-height: 1.25;
+    margin: 0.35rem 0;
+    min-height: 2.5em; /* alinea los botones en 2 líneas */
+  }
+
+  .product-price {
+    font-size: 1.05rem;
+    margin: 0.4rem 0 0.75rem 0;
+  }
+
+  .btn-add {
+    padding: 0.6rem 0.4rem;
+    font-size: 0.8rem;
+  }
+
+  /* 5. Carrito como Bottom Sheet en móvil (desde abajo hacia arriba) */
+  .cart-drawer {
+    top: auto;
+    bottom: -100%;
+    right: 0;
+    max-width: 100%;
+    height: 90vh;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.8);
+    transition: bottom 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .cart-drawer.open {
+    bottom: 0;
+  }
+
+  .cart-header {
+    padding: 1rem 1.25rem;
+  }
+
+  /* 6. Formulario de checkout accesible al teclado móvil */
+  .form-row {
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .form-group input {
+    padding: 0.75rem;
+    font-size: 1rem; /* evita el auto-zoom molesto de Safari en iOS */
+  }
+
+  .btn-checkout {
+    padding: 0.9rem;
+    font-size: 1rem;
+  }
+
+  /* 7. Footer vertical limpio */
+  .footer {
+    padding: 2.25rem 1rem 1.5rem 1rem;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+}
