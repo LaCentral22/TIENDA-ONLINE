@@ -1,165 +1,288 @@
-<p class="hero-desc" style="margin:0 auto 18px"></p>
-  <form id="newsletterForm" class="newsletter-form">
-    <label class="hidden" for="newsletterEmail">LACENTRALMODAA@GMAIL.COM</label>
-    <input id="newsletterEmail" type="email" placeholder="LACENTRALMODAA@GMAIL.COM" required class="newsletter-input">
-    <button type="submit" class="btn btn-primary">WhatsApp: +1 201-409-3304</button>
-  </form>
-  <p id="newsletterMessage" class="payment-note" role="status"></p>
-</section>
-:root { --bg: #121418; --surface: #1b1e24; --border: #2c3039; --text: #f3f4f6; --muted: #9ba1ad; --accent: #ff6838; --brand: "Playfair Display", Georgia, serif; --title: "Syne", sans-serif; --body: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif; --radius: 14px; }
-{ box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; scroll-padding-top: 85px; }
-body { background: var(--bg); color: var(--text); font-family: var(--body); line-height: 1.55; -webkit-font-smoothing: antialiased; }
-img { max-width: 100%; display: block; }
-a { color: inherit; }
-button, input, select, textarea { font: inherit; }
-button, a, select { touch-action: manipulation; }
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-.container { max-width: 1240px; margin: auto; padding: 0 20px; }
-/* ENCABEZADO Y NAVEGACIÓN */
-.brand-logo { font-family: var(--brand); font-style: italic; font-size: 1.45rem; font-weight: 600; text-decoration: none; white-space: nowrap; }
-.header { position: sticky; top: 0; z-index: 50; background: rgba(18, 20, 24, .94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
-.nav-wrapper { display: flex; align-items: center; justify-content: space-between; gap: 18px; min-height: 68px; }
-.nav-links { display: none; gap: 14px; align-items: center; }
-.nav-links a { color: var(--muted); text-decoration: none; font-size: .76rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
-.nav-links a:hover, .footer a:hover { color: var(--text); }
-.nav-actions { display: flex; align-items: center; gap: 8px; }
-.btn-icon { position: relative; display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border: 0; border-radius: 50%; background: transparent; color: var(--text); cursor: pointer; }
-.btn-icon:hover { background: var(--surface); }
-.badge { position: absolute; top: 0; right: 0; min-width: 19px; padding: 1px 5px; border-radius: 10px; background: var(--accent); color: #fff; font-size: .7rem; font-weight: 700; text-align: center; }
-/* BOTONES */
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 22px; border: 1px solid transparent; border-radius: 999px; font-size: .88rem; font-weight: 700; text-decoration: none; cursor: pointer; transition: background .2s, color .2s, border-color .2s; }
-.btn-primary { background: #fff; color: #121418; }
-.btn-primary:hover { background: #e2e4e8; }
-.btn-outline { background: transparent; border-color: var(--border); color: var(--text); }
-.btn-outline:hover { border-color: var(--text); }
-.btn-sm { padding: 9px 13px; background: var(--surface); border-color: var(--border); color: var(--text); font-size: .78rem; }
-.btn-sm:hover { background: #fff; color: #121418; }
-.btn-block { width: 100%; }
-/* PORTADA */
-.hero-grid { display: grid; grid-template-columns: 1fr; gap: 22px; padding: 32px 0; }
-.hero-card { display: flex; flex-direction: column; justify-content: space-between; padding: 30px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
-.pill-tag { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; color: var(--accent); }
-.dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
-.brand-sub { font-family: var(--brand); font-size: 1.1rem; font-style: italic; }
-.season { font-size: .72rem; font-weight: 700; text-transform: uppercase; }
-.hero-title, .section-title, .lookbook-title, .newsletter-title { font-family: var(--title); font-weight: 800; line-height: 1.08; }
-.hero-title { font-size: clamp(2rem, 4vw, 3.3rem); margin-bottom: 16px; }
-.hero-desc { max-width: 440px; color: var(--muted); font-size: .95rem; }
-.hero-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
-.hero-image-wrap { min-height: 320px; overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius); }
-.hero-img { width: 100%; height: 100%; min-height: 320px; object-fit: cover; }
-/* CATEGORÍAS */
-.categories-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; padding-bottom: 36px; }
-.category-card { position: relative; display: block; width: 100%; padding: 0; aspect-ratio: 4 / 5; overflow: hidden; border: 0; border-radius: 12px; background: var(--surface); color: var(--text); font-family: var(--body); text-align: left; cursor: pointer; }
-.category-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s; }
-.category-card:hover img { transform: scale(1.04); }
-.cat-label { position: absolute; inset: auto 0 0; padding: 28px 14px 14px; background: linear-gradient(transparent, rgba(18, 20, 24, .92)); font-size: .86rem; font-weight: 700; }
-/* CATÁLOGO Y FILTROS */
-.catalog-section { padding: 36px 0 54px; }
-.catalog-header { display: flex; flex-direction: column; gap: 18px; margin-bottom: 28px; }
-.section-tag { color: var(--accent); font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
-.brand-tag { font-family: var(--brand); font-size: 1rem; font-style: italic; text-transform: none; }
-.section-title { font-size: clamp(1.6rem, 3vw, 2rem); margin-top: 5px; }
-.filters-row { display: flex; flex-wrap: wrap; gap: 10px; }
-.form-select { min-width: 0; padding: 10px 14px; border: 1px solid var(--border); border-radius: 999px; background: var(--surface); color: var(--text); font-size: .82rem; }
-/* TARJETAS DE PRODUCTOS */
-.products-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
-.product-card { display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
-.product-thumb { position: relative; aspect-ratio: 4 / 5; background: #0f1013; }
-.product-thumb img { width: 100%; height: 100%; object-fit: cover; }
-.product-badge { position: absolute; top: 12px; left: 12px; padding: 4px 10px; border: 1px solid var(--border); border-radius: 999px; background: var(--bg); font-size: .72rem; font-weight: 700; }
-.product-info { display: flex; flex: 1; flex-direction: column; padding: 18px; }
-.product-cat { color: var(--muted); font-size: .7rem; font-weight: 700; text-transform: uppercase; }
-.product-name { margin: 5px 0; font-size: 1rem; }
-.product-desc { margin-bottom: 15px; color: var(--muted); font-size: .8rem; }
-.product-size-label { display: block; margin: 0 0 6px; color: var(--muted); font-size: .74rem; font-weight: 700; }
-.product-size { width: 100%; margin: 0 0 14px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 9px; background: #121418; color: var(--text); }
-.product-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: auto; }
-.product-price { font-size: 1.1rem; font-weight: 800; }
-/* LOOKBOOK */
-.lookbook-banner { position: relative; display: flex; align-items: center; min-height: 390px; margin: 32px 0; overflow: hidden; border-radius: var(--radius); }
-.lookbook-bg, .lookbook-overlay { position: absolute; inset: 0; width: 100%; height: 100%; }
-.lookbook-bg { object-fit: cover; }
-.lookbook-overlay { background: linear-gradient( 90deg, rgba(18, 20, 24, .94), rgba(18, 20, 24, .42) ); }
-.lookbook-content { position: relative; max-width: 550px; padding: 40px 28px; }
-.lookbook-brand { font-size: 1.9rem; margin-bottom: 12px; }
-.lookbook-title { font-size: clamp(1.8rem, 3.5vw, 2.5rem); margin-bottom: 14px; }
-.lookbook-desc { color: #cfd3dc; margin-bottom: 22px; }
-.link-arrow { display: inline-block; border-bottom: 1px solid #fff; padding-bottom: 4px; text-decoration: none; font-size: .82rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
-/* VENTAJAS */
-.features-grid { display: grid; grid-template-columns: 1fr; gap: 1px; margin: 34px 0; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--border); }
-.feature-card { padding: 26px; background: var(--surface); }
-.feature-num { color: var(--accent); font-size: .75rem; font-weight: 800; }
-.feature-card h3 { margin: 10px 0 6px; font-family: var(--title); font-size: 1.08rem; }
-.feature-card p { color: var(--muted); font-size: .85rem; }
-/* NOVEDADES Y WHATSAPP */
-.newsletter-section { text-align: center; padding: 48px 0; }
-.newsletter-title { font-size: clamp(1.6rem, 3vw, 2rem); margin: 8px 0 22px; }
-.newsletter-section .hero-desc { margin-left: auto; margin-right: auto; }
-/* PIE DE PÁGINA */
-.footer { margin-top: 34px; padding: 48px 0 22px; border-top: 1px solid var(--border); background: rgba(18, 20, 24, .96); }
-.footer-grid { display: grid; grid-template-columns: 1fr; gap: 28px; }
-.footer-brand { display: inline-block; margin-bottom: 10px; font-size: 1.7rem; }
-.footer-desc, .footer-note { max-width: 300px; color: var(--muted); font-size: .84rem; }
-.footer h4 { margin-bottom: 12px; font-size: .8rem; text-transform: uppercase; }
-.footer ul { list-style: none; }
-.footer li { margin-bottom: 8px; }
-.footer li a, .footer-inline-links a { color: var(--muted); font-size: .84rem; text-decoration: none; }
-.footer-inline-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--border); }
-.payment-brands { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
-.payment-brand { display: inline-flex; align-items: center; justify-content: center; min-width: 74px; min-height: 38px; padding: 6px 10px; border: 1px solid #d8dbe1; border-radius: 6px; background: #fff; color: #17202b; font-weight: 800; font-size: .82rem; }
-.payment-note { margin-top: 8px; color: var(--muted); font-size: .72rem; }
-.footer-bottom { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: .75rem; text-align: center; }
-/* CARRITO LATERAL */
-.cart-backdrop { position: fixed; inset: 0; z-index: 100; background: rgba(0, 0, 0, .68); backdrop-filter: blur(4px); display: none; }
-.cart-backdrop.open { display: block; }
-.cart-drawer { position: absolute; top: 0; right: 0; bottom: 0; display: flex; flex-direction: column; width: 100%; max-width: 430px; border-left: 1px solid var(--border); background: var(--surface); box-shadow: -10px 0 30px rgba(0, 0, 0, .4); }
-.cart-header, .cart-footer { padding: 20px; border-bottom: 1px solid var(--border); }
-.cart-header { display: flex; align-items: center; justify-content: space-between; }
-.cart-items { display: flex; flex: 1; flex-direction: column; gap: 16px; overflow: auto; padding: 20px; }
-.cart-item { display: flex; align-items: center; gap: 13px; }
-.cart-item img { width: 64px; height: 80px; object-fit: cover; border-radius: 8px; }
-.cart-item-details { flex: 1; min-width: 0; }
-.cart-item-title { font-size: .85rem; font-weight: 700; }
-.cart-item-sub { margin-top: 2px; color: var(--muted); font-size: .75rem; }
-.cart-item-ctrl { display: inline-flex; align-items: center; margin-top: 8px; border: 1px solid var(--border); border-radius: 999px; }
-.cart-item-ctrl button { padding: 4px 10px; border: 0; background: transparent; color: var(--text); cursor: pointer; }
-.cart-item-ctrl span { min-width: 20px; text-align: center; font-size: .8rem; }
-.cart-total-row { display: flex; justify-content: space-between; margin-bottom: 14px; font-size: 1.08rem; font-weight: 800; }
-.cart-footer { border-top: 1px solid var(--border); border-bottom: 0; }
-.cart-disclaimer { margin-top: 10px; color: var(--muted); font-size: .72rem; }
-.empty-cart-text, .empty-msg { margin-top: 30px; color: var(--muted); text-align: center; }
-/* PÁGINAS INFORMATIVAS */
-.page-panel { max-width: 900px; min-height: 55vh; margin: 30px auto; padding: 28px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
-.page-panel h1 { font-family: var(--title); font-size: clamp(1.7rem, 4vw, 2.5rem); margin-bottom: 18px; }
-.page-panel h2 { margin: 24px 0 8px; font-family: var(--title); font-size: 1.15rem; }
-.page-panel p, .page-panel li { color: #d3d6de; margin-bottom: 12px; }
-.page-panel ul { padding-left: 22px; }
-.page-panel a { overflow-wrap: anywhere; }
-.notice { padding: 14px; border-left: 3px solid var(--accent); background: #22262e; color: #e6e8ed; margin: 16px 0; }
-.back-link { display: inline-block; margin-top: 14px; color: var(--text); text-decoration: underline; }
-.hidden { display: none !important; }
-/* TABLET */
-@media (min-width: 580px) { .products-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-/* ESCRITORIO */
-@media (min-width: 768px) { .nav-links { display: flex; flex-wrap: wrap; justify-content: flex-end; }
-.categories-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
-.catalog-header { flex-direction: row; align-items: flex-end; justify-content: space-between; }
-.features-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.footer-grid { grid-template-columns: 2fr 1fr 1fr 1.5fr; } }
-@media (min-width: 960px) { .hero-grid { grid-template-columns: 5fr 7fr; align-items: stretch; }
-.hero-card { padding: 36px; }
-.hero-image-wrap, .hero-img { min-height: 410px; } }
-@media (min-width: 1024px) { .products-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
-/* MÓVILES */
-@media (max-width: 600px) { .container { padding-left: 16px; padding-right: 16px; }
-.hero-buttons .btn { flex: 1 1 auto; }
-.filters-row { display: grid; grid-template-columns: 1fr; width: 100%; }
-.form-select { width: 100%; }
-.product-bottom .btn { width: 100%; }
-.lookbook-content { padding: 32px 22px; }
-.page-panel { padding: 20px; }
-.cart-drawer { max-width: 100%; } }
-/* RESPETO A LA PREFERENCIA DE MOVIMIENTO REDUCIDO */
-@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; } }
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Central Moda — Camisetas y Calzados</title>
+  <meta name="description" content="Tienda de camisetas y calzados. Pagos internacionales con Visa y Mastercard. Envíos internacionales de 48 a 72 horas hábiles. Precios en DOP, USD y EUR.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Barra de aviso superior -->
+  <header class="top-bar">
+    <p>🚚 Envío internacional en 48 a 72 horas hábiles | Aceptamos pagos internacionales</p>
+  </header>
+
+  <!-- Navegación principal -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">LA CENTRAL MODA</a>
+      <div class="nav-actions">
+        <!-- Selector de moneda -->
+        <div class="currency-selector" role="group" aria-label="Cambiar moneda">
+          <button type="button" class="curr-btn active" data-currency="DOP">DOP</button>
+          <button type="button" class="curr-btn" data-currency="USD">USD</button>
+          <button type="button" class="curr-btn" data-currency="EUR">EUR</button>
+        </div>
+        <!-- Botón carrito -->
+        <button type="button" class="cart-toggle-btn" id="openCartBtn">
+          🛒 Carrito (<span id="cartCount">0</span>)
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Banner principal -->
+  <section class="hero-banner">
+    <div class="hero-content">
+      <h1>Estilo Urbano y Contemporáneo</h1>
+      <p>Camisetas esenciales y calzados modernos. Atención al cliente las 24 horas.</p>
+      <div class="payment-badges">
+        <!-- Logo Visa SVG -->
+        <svg viewBox="0 0 80 50" class="card-logo" aria-label="Visa">
+          <rect width="80" height="50" rx="6" fill="#1e293b"/>
+          <text x="40" y="33" text-anchor="middle" fill="#2563eb" font-family="Arial, sans-serif" font-weight="900" font-size="20" font-style="italic">VISA</text>
+        </svg>
+        <!-- Logo Mastercard SVG -->
+        <svg viewBox="0 0 80 50" class="card-logo" aria-label="Mastercard">
+          <rect width="80" height="50" rx="6" fill="#1e293b"/>
+          <circle cx="32" cy="25" r="13" fill="#eb001b"/>
+          <circle cx="48" cy="25" r="13" fill="#f79e1b"/>
+          <path d="M40 14.8a13 13 0 0 1 0 20.4a13 13 0 0 1 0-20.4z" fill="#ff5f00"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catálogo de productos -->
+  <main class="container">
+    <h2 class="section-title">Catálogo Destacado</h2>
+    <div class="products-grid" id="productsGrid">
+      <!-- Generado dinámicamente o estructurado -->
+      <article class="product-card" data-base-price="950">
+        <div class="product-info">
+          <span class="product-tag">Camisetas</span>
+          <h3>Camiseta Básica Algodón</h3>
+          <p class="product-price" data-price="950">RD$ 950 DOP</p>
+          <button type="button" class="btn-add" onclick="addToCart('Camiseta Básica Algodón', 950)">Añadir al Carrito</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-base-price="1450">
+        <div class="product-info">
+          <span class="product-tag">Camisetas</span>
+          <h3>Camiseta Oversize Lino</h3>
+          <p class="product-price" data-price="1450">RD$ 1,450 DOP</p>
+          <button type="button" class="btn-add" onclick="addToCart('Camiseta Oversize Lino', 1450)">Añadir al Carrito</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-base-price="3900">
+        <div class="product-info">
+          <span class="product-tag">Calzados</span>
+          <h3>Tenis Urbanos Blancos</h3>
+          <p class="product-price" data-price="3900">RD$ 3,900 DOP</p>
+          <button type="button" class="btn-add" onclick="addToCart('Tenis Urbanos Blancos', 3900)">Añadir al Carrito</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-base-price="2650">
+        <div class="product-info">
+          <span class="product-tag">Calzados</span>
+          <h3>Sandalia Cuero Natural</h3>
+          <p class="product-price" data-price="2650">RD$ 2,650 DOP</p>
+          <button type="button" class="btn-add" onclick="addToCart('Sandalia Cuero Natural', 2650)">Añadir al Carrito</button>
+        </div>
+      </article>
+    </div>
+
+    <!-- Políticas obligatorias para el tarjetahabiente -->
+    <section class="policies-section">
+      <h2 class="section-title">Políticas y Términos para el Tarjetahabiente</h2>
+      
+      <div class="policy-card">
+        <h3>1. Política de Devoluciones y Cancelaciones</h3>
+        <p><strong>Derechos del Tarjetahabiente:</strong> El cliente dispone de un plazo de hasta 30 días calendario tras recibir el producto para solicitar cambio o reembolso completo en caso de defecto de fábrica o disconformidad justificada con la prenda.</p>
+        <p><strong>Responsabilidades:</strong> Las prendas y calzados deben retornar sin uso, con etiquetas originales y en su empaque respectivo. Los reembolsos se procesan al mismo medio de pago utilizado (tarjeta de crédito/débito) en un período de 5 a 10 días laborables tras la recepción e inspección física.</p>
+      </div>
+
+      <div class="policy-card">
+        <h3>2. Política de Entregas y Envíos</h3>
+        <p><strong>Plazo de Entrega:</strong> Todos los envíos nacionales e internacionales se despachan con un tiempo estimado de tránsito de <strong>48 a 72 horas hábiles</strong> tras la verificación del pago.</p>
+        <p><strong>Rastreo y Cobertura:</strong> El cliente recibirá un código de seguimiento al despachar la orden. Para órdenes internacionales, los aranceles o tasas aduanales de destino son responsabilidad exclusiva del comprador.</p>
+      </div>
+
+      <div class="policy-card">
+        <h3>3. Privacidad y Seguridad en la Transmisión de Datos</h3>
+        <p><strong>Transmisión Cifrada:</strong> Toda comunicación se transmite bajo protocolos de cifrado seguro TLS/HTTPS de 256 bits.</p>
+        <p><strong>Tratamiento de Tarjetas:</strong> La Central Moda no almacena, captura ni procesa directamente números completos de tarjetas, fechas de vencimiento o códigos CVV. La validación y el procesamiento del cobro se realizan exclusivamente a través de la pasarela de pagos certificada y la entidad bancaria emisora correspondiente.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Panel Lateral / Modal del Carrito y Checkout -->
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h2>Tu Carrito</h2>
+      <button type="button" class="btn-close" id="closeCartBtn">&times;</button>
+    </div>
+
+    <div class="cart-body">
+      <div id="cartItemsList">
+        <p class="empty-msg">Tu carrito está vacío.</p>
+      </div>
+
+      <div class="cart-summary" id="cartSummary" style="display:none;">
+        <div class="summary-row">
+          <span>Subtotal:</span>
+          <strong id="cartSubtotal">DOP 0.00</strong>
+        </div>
+
+        <!-- Formulario de Checkout y Facturación -->
+        <form class="checkout-form" id="checkoutForm" onsubmit="event.preventDefault(); alert('Formulario listo. Conecta tu pasarela para cobros reales.');">
+          <h3>Dirección de Facturación</h3>
+          <div class="form-group">
+            <label for="fullName">Nombre y Apellidos del Tarjetahabiente</label>
+            <input type="text" id="fullName" required placeholder="Ej. Juan Pérez">
+          </div>
+          <div class="form-group">
+            <label for="address">Dirección Física de Facturación</label>
+            <input type="text" id="address" required placeholder="Calle, Número, Apto/Local">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="city">Ciudad / Sector</label>
+              <input type="text" id="city" required placeholder="Ej. Santo Domingo">
+            </div>
+            <div class="form-group">
+              <label for="country">País</label>
+              <input type="text" id="country" required placeholder="Ej. República Dominicana">
+            </div>
+          </div>
+
+          <h3>Método de Pago</h3>
+          <div class="card-icons-row">
+            <span>Aceptamos:</span>
+            <strong>Visa y Mastercard</strong>
+          </div>
+          <p class="security-note">El pago será transferido de forma segura a la pasarela bancaria oficial.</p>
+
+          <button type="submit" class="btn-checkout">Continuar al Pago</button>
+        </form>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Pie de página con datos permanentes del comercio -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>La Central Moda</h4>
+        <p>Especialistas en camisetas y calzados de calidad.</p>
+        <p>Pagos procesados en: <strong>DOP, USD y EUR</strong></p>
+      </div>
+      <div class="footer-col">
+        <h4>Servicio al Cliente (24 Horas)</h4>
+        <p>📧 Correo: <a href="mailto:lacentralmodaa@gmail.com">lacentralmodaa@gmail.com</a></p>
+        <p>💬 WhatsApp: <a href="https://wa.me/12014093304" target="_blank">+1 (201) 409-3304</a></p>
+        <p>⏰ Horario: <strong>Las 24 horas</strong></p>
+      </div>
+      <div class="footer-col">
+        <h4>Ubicación Permanente</h4>
+        <p>Av. Winston Churchill #95, Piantini</p>
+        <p>Santo Domingo, Distrito Nacional</p>
+        <p><strong>República Dominicana</strong></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 La Central Moda. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Configuración de divisas y tasas
+    const rates = { DOP: 1, USD: 0.0165, EUR: 0.0151 };
+    const symbols = { DOP: 'RD$ ', USD: '$ ', EUR: '€ ' };
+    let currentCurrency = 'DOP';
+    let cart = [];
+
+    // Cambiar moneda
+    document.querySelectorAll('.curr-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.curr-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentCurrency = btn.getAttribute('data-currency');
+        updatePrices();
+        renderCart();
+      });
+    });
+
+    function formatPrice(amountDOP) {
+      const converted = amountDOP * rates[currentCurrency];
+      return `${symbols[currentCurrency]}${converted.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ${currentCurrency}`;
+    }
+
+    function updatePrices() {
+      document.querySelectorAll('.product-card').forEach(card => {
+        const base = parseFloat(card.getAttribute('data-base-price'));
+        card.querySelector('.product-price').textContent = formatPrice(base);
+      });
+    }
+
+    // Lógica del carrito
+    const drawer = document.getElementById('cartDrawer');
+    document.getElementById('openCartBtn').addEventListener('click', () => drawer.classList.add('open'));
+    document.getElementById('closeCartBtn').addEventListener('click', () => drawer.classList.remove('open'));
+
+    function addToCart(name, price) {
+      const existing = cart.find(item => item.name === name);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ name, price, qty: 1 });
+      }
+      renderCart();
+      drawer.classList.add('open');
+    }
+
+    function renderCart() {
+      const countEl = document.getElementById('cartCount');
+      const listEl = document.getElementById('cartItemsList');
+      const summaryEl = document.getElementById('cartSummary');
+      const subtotalEl = document.getElementById('cartSubtotal');
+
+      const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+      countEl.textContent = totalItems;
+
+      if (cart.length === 0) {
+        listEl.innerHTML = '<p class="empty-msg">Tu carrito está vacío.</p>';
+        summaryEl.style.display = 'none';
+        return;
+      }
+
+      summaryEl.style.display = 'block';
+      let totalDOP = 0;
+      listEl.innerHTML = cart.map(item => {
+        totalDOP += item.price * item.qty;
+        return `
+          <div class="cart-item">
+            <div>
+              <strong>${item.name}</strong>
+              <div>${formatPrice(item.price)} x ${item.qty}</div>
+            </div>
+            <button class="btn-remove" onclick="removeFromCart('${item.name}')">Eliminar</button>
+          </div>
+        `;
+      }).join('');
+
+      subtotalEl.textContent = formatPrice(totalDOP);
+    }
+
+    function removeFromCart(name) {
+      cart = cart.filter(item => item.name !== name);
+      renderCart();
+    }
+  </script>
+</body>
+</html>
