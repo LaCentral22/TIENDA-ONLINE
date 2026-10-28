@@ -555,3 +555,140 @@ body {
     gap: 1.75rem;
   }
 }
+/* =========================================
+   POLÍTICAS Y SOPORTE ORGANIZADOS PARA MÓVIL
+   ========================================= */
+
+/* Caja de contacto rápido táctil */
+.mobile-support-box {
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.support-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #f1f5f9;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #10b981;
+}
+
+.support-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.quick-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.85rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.quick-contact-btn:hover {
+  opacity: 0.9;
+}
+
+.wa-btn {
+  background-color: #22c55e;
+  color: #ffffff;
+}
+
+.email-btn {
+  background-color: #1e293b;
+  color: #94a3b8;
+  border: 1px solid #334155;
+}
+
+/* Acordeón de políticas */
+.accordion-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.policy-accordion {
+  background-color: #111827;
+  border: 1px solid #1e2937;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.policy-accordion[open] {
+  border-color: #3b82f6;
+}
+
+.policy-accordion summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 600;
+  color: #f8fafc;
+  font-size: 0.95rem;
+}
+
+.policy-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.acc-icon {
+  margin-right: 0.6rem;
+  font-size: 1.1rem;
+}
+
+.acc-title {
+  flex: 1;
+}
+
+.acc-arrow {
+  color: #64748b;
+  font-size: 0.85rem;
+  transition: transform 0.2s;
+}
+
+.policy-accordion[open] .acc-arrow {
+  transform: rotate(180deg);
+  color: #3b82f6;
+}
+
+.acc-content {
+  padding: 0 1rem 1rem 1rem;
+  color: #94a3b8;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  border-top: 1px solid #1f2937;
+  padding-top: 0.75rem;
+}
+
+.acc-content p {
+  margin-bottom: 0.5rem;
+}
+
+.acc-content strong {
+  color: #e2e8f0;
+}
