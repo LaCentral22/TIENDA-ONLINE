@@ -245,31 +245,7 @@
           </div>
           <p class="security-note">El pago será transferido de forma segura a la pasarela bancaria oficial.</p>
 
-        // Formato automático de tarjeta en bloques de 4 dígitos
-function formatCardNumber(input) {
-  let val = input.value.replace(/\D/g, '');
-  let formatted = val.match(/.{1,4}/g)?.join(' ') || '';
-  input.value = formatted.substring(0, 19);
-}
-
-// Formato de expiración MM/AA
-function formatExpiry(input) {
-  let val = input.value.replace(/\D/g, '');
-  if (val.length >= 2) {
-    input.value = val.substring(0, 2) + '/' + val.substring(2, 4);
-  } else {
-    input.value = val;
-  }
-}
-
-// Manejo del envío
-function handlePaymentSubmit(e) {
-  e.preventDefault();
-  const name = document.getElementById('billName').value;
-  alert(`Formulario de facturación validado para ${name}. En un entorno en vivo, la pasarela bancaria conectada procesará el cargo.`);
-}
-
-
+        
   <!-- Pie de página con datos permanentes del comercio -->
   <footer class="footer">
     <div class="footer-container">
