@@ -10,376 +10,14 @@
 <body>
 
   <!-- Barra de aviso superior -->
-  <header class="top-bar">
-    <p>🚚 Envío internacional | Aceptamos pagos internacionales</p>
-  </header>
-  
-  <!-- Navegación principal -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="#" class="brand-logo">LA CENTRAL MODA</a>
-      <div class="nav-actions">
-        <!-- Selector de moneda -->
-        <div class="currency-selector" role="group" aria-label="Cambiar moneda">
-          <button type="button" class="curr-btn active" data-currency="DOP">DOP</button>
-          <button type="button" class="curr-btn" data-currency="USD">USD</button>
-          <button type="button" class="curr-btn" data-currency="EUR">EUR</button>
-        </div>
-         <button type="button" class="account-btn" id="openAuthBtn">
-  👤 <span id="accountBtnText">Crear Cuenta</span>
-</button>
-        <!-- Botón carrito -->
-        <button type="button" class="cart-toggle-btn" id="openCartBtn">
-          🛒 Carrito (<span id="cartCount">0</span>)
-        </button>
-      </div>
-    </div>
-  </nav>
-  
-  <!-- Banner principal -->
-  <section class="hero-banner">
-    <div class="hero-content">
-      <h1>Estilo Urbano y Contemporáneo</h1>
-      <p>Camisetas esenciales y calzados modernos. Atención al cliente las 24 horas.</p>
-      <div class="payment-badges">
-        <!-- Logo Visa SVG -->
-        <svg viewBox="0 0 80 50" class="card-logo" aria-label="Visa">
-          <rect width="80" height="50" rx="6" fill="#1e293b"/>
-          <text x="40" y="33" text-anchor="middle" fill="#2563eb" font-family="Arial, sans-serif" font-weight="900" font-size="20" font-style="italic">VISA</text>
-        </svg>
-        <!-- Logo Mastercard SVG -->
-        <svg viewBox="0 0 80 50" class="card-logo" aria-label="Mastercard">
-          <rect width="80" height="50" rx="6" fill="#1e293b"/>
-          <circle cx="32" cy="25" r="13" fill="#eb001b"/>
-          <circle cx="48" cy="25" r="13" fill="#f79e1b"/>
-          <path d="M40 14.8a13 13 0 0 1 0 20.4a13 13 0 0 1 0-20.4z" fill="#ff5f00"/>
-        </svg>
-      </div>
-    </div>
-  </section>
-
-  <!-- Catálogo de productos -->
-  <main class="container">
-    <h2 class="section-title">Catálogo Destacado</h2>
-    <div class="products-grid" id="productsGrid">
-      <!-- Generado dinámicamente o estructurado -->
-      <article class="product-card" data-base-price="950">
-        <div class="product-info">
-          <span class="product-tag">Camisetas</span>
-          <h3>Camiseta Básica Algodón</h3>
-          <p class="product-price" data-price="950">RD$ 950 DOP</p>
-          <button type="button" class="btn-add" onclick="addToCart('Camiseta Básica Algodón', 950)">Añadir al Carrito</button>
-        </div>
-      </article>
-
-      <article class="product-card" data-base-price="1450">
-        <div class="product-info">
-          <span class="product-tag">Camisetas</span>
-          <h3>Camiseta Oversize Lino</h3>
-          <p class="product-price" data-price="1450">RD$ 1,450 DOP</p>
-          <button type="button" class="btn-add" onclick="addToCart('Camiseta Oversize Lino', 1450)">Añadir al Carrito</button>
-        </div>
-      </article>
-
-      <article class="product-card" data-base-price="3900">
-        <div class="product-info">
-          <span class="product-tag">Calzados</span>
-          <h3>Tenis Urbanos Blancos</h3>
-          <p class="product-price" data-price="3900">RD$ 3,900 DOP</p>
-          <button type="button" class="btn-add" onclick="addToCart('Tenis Urbanos Blancos', 3900)">Añadir al Carrito</button>
-        </div>
-      </article>
-
-      <article class="product-card" data-base-price="2650">
-        <div class="product-info">
-          <span class="product-tag">Calzados</span>
-          <h3>Sandalia Cuero Natural</h3>
-          <p class="product-price" data-price="2650">RD$ 2,650 DOP</p>
-          <button type="button" class="btn-add" onclick="addToCart('Sandalia Cuero Natural', 2650)">Añadir al Carrito</button>
-        </div>
-      </article>
-    </div>
-
-    <!-- Políticas obligatorias para el tarjetahabiente -->
-    <section class="policies-section">
-      <h2 class="section-title">Políticas y Términos para el Tarjetahabiente</h2>
-      
-      <div class="policy-card">
-        <h3>1. Política de Devoluciones y Cancelaciones</h3>
-        <p><strong>Derechos del Tarjetahabiente:</strong> El cliente dispone de un plazo de hasta 30 días calendario tras recibir el producto para solicitar cambio o reembolso completo en caso de defecto de fábrica o disconformidad justificada con la prenda.</p>
-        <p><strong>Responsabilidades:</strong> Las prendas y calzados deben retornar sin uso, con etiquetas originales y en su empaque respectivo. Los reembolsos se procesan al mismo medio de pago utilizado (tarjeta de crédito/débito) en un período de 5 a 10 días laborables tras la recepción e inspección física.</p>
-      </div>
-
-      <div class="policy-card">
-        <h3>2. Política de Entregas y Envíos</h3>
-        <p><strong>Plazo de Entrega:</strong> Todos los envíos nacionales e internacionales se despachan <strong></strong> tras la verificación del pago.</p>
-        <p><strong>Rastreo y Cobertura:</strong> El cliente recibirá un código de seguimiento al despachar la orden. Para órdenes internacionales, los aranceles o tasas aduanales de destino son responsabilidad exclusiva del comprador.</p>
-      </div>
-
-      <div class="policy-card">
-        <h3>3. Privacidad y Seguridad en la Transmisión de Datos</h3>
-        <p><strong>Transmisión Cifrada:</strong> Toda comunicación se transmite bajo protocolos de cifrado seguro TLS/HTTPS de 256 bits.</p>
-        <p><strong>Tratamiento de Tarjetas:</strong> La Central Moda no almacena, captura ni procesa directamente números completos de tarjetas, fechas de vencimiento o códigos CVV. La validación y el procesamiento del cobro se realizan exclusivamente a través de la pasarela de pagos certificada y la entidad bancaria emisora correspondiente.</p>
-      </div>
-    </section>
-  </main>
-
-  <!-- Panel Lateral / Modal del Carrito y Checkout -->
-  <aside class="cart-drawer" id="cartDrawer">
-    <div class="cart-header">
-      <h2>Tu Carrito</h2>
-      <button type="button" class="btn-close" id="closeCartBtn">&times;</button>
-    </div>
-    
-    <div class="cart-body">
-      <div id="cartItemsList">
-        <p class="empty-msg">Tu carrito está vacío.</p>
-      </div>
-
-      <div class="cart-summary" id="cartSummary" style="display:none;">
-        <div class="summary-row">
-          <span>Subtotal:</span>
-          <strong id="cartSubtotal">DOP 0.00</strong>
-        </div>
-
-       <!-- Formulario Completo de Facturación y Pago con Tarjeta -->
-<form class="checkout-form" id="checkoutForm" onsubmit="handlePaymentSubmit(event)">
-  
-  <div class="form-section-title">
-    <span>1</span> Dirección de Facturación
-  </div>
-
-  <div class="form-group">
-    <label for="billName">Nombre completo del Tarjetahabiente *</label>
-    <input type="text" id="billName" required placeholder="Tal como figura en la tarjeta" autocomplete="cc-name">
-  </div>
-
-  <div class="form-group">
-    <label for="billEmail">Correo electrónico para recibo *</label>
-    <input type="email" id="billEmail" required placeholder="correo@ejemplo.com" autocomplete="email">
-  </div>
-
-  <div class="form-group">
-    <label for="billAddress">Dirección física de facturación *</label>
-    <input type="text" id="billAddress" required placeholder="Calle, número, edificio, apto." autocomplete="street-address">
-  </div>
-
-  <div class="form-row">
-    <div class="form-group">
-      <label for="billCity">Ciudad / Municipio *</label>
-      <input type="text" id="billCity" required placeholder="Ej. Santo Domingo" autocomplete="address-level2">
-    </div>
-    <div class="form-group">
-      <label for="billCountry">País *</label>
-      <input type="text" id="billCountry" required value="República Dominicana" autocomplete="country-name">
-    </div>
-  </div>
-
-  <div class="form-section-title">
-    <span>2</span> Datos de la Tarjeta (Visa / Mastercard)
-  </div>
-
-  <div class="accepted-cards-banner">
-    <span>Tarjetas aceptadas:</span>
-    <div class="mini-badges">
-      <span class="badge-card visa">VISA</span>
-      <span class="badge-card mc">Mastercard</span>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label for="cardNumber">Número de tarjeta *</label>
-    <div class="input-with-icon">
-      <input 
-        type="tel" 
-        id="cardNumber" 
-        required 
-        maxlength="19" 
-        placeholder="1234 5678 9012 3456" 
-        inputmode="numeric" 
-        autocomplete="cc-number"
-        oninput="formatCardNumber(this)"
-      >
-      <span class="input-icon">💳</span>
-    </div>
-  </div>
-
-  <div class="form-row">
-    <div class="form-group">
-      <label for="cardExpiry">Vencimiento *</label>
-      <input 
-        type="tel" 
-        id="cardExpiry" 
-        required 
-        maxlength="5" 
-        placeholder="MM/AA" 
-        inputmode="numeric" 
-        autocomplete="cc-exp"
-        oninput="formatExpiry(this)"
-      >
-    </div>
-    <div class="form-group">
-      <label for="cardCvc">Código de seguridad (CVV) *</label>
-      <input 
-        type="password" 
-        id="cardCvc" 
-        required 
-        maxlength="4" 
-        placeholder="123" 
-        inputmode="numeric" 
-        autocomplete="cc-csc"
-      >
-    </div>
-  </div>
-
-  <div class="payment-security-notice">
-    🔒 Transmisión encriptada, La tienda no retiene datos sensibles de la tarjeta.
-  </div>
-
-  <button type="submit" class="btn-checkout" id="payButton">
-    Pagar <span id="checkoutTotalDisplay"> </span>
-  </button>
-</form>
-
-          <h3>Método de Pago</h3>
-          <div class="card-icons-row">
-            <span>Aceptamos:</span>
-            <strong>Visa y Mastercard</strong>
-          </div>
-          <p class="security-note">El pago será transferido de forma segura a la pasarela bancaria oficial.</p>
-
-        
-  <!-- Pie de página con datos permanentes del comercio -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-col">
-        <h4>La Central Moda</h4>
-        <p>Especialistas en camisetas y calzados de calidad.</p>
-        <p>Pagos procesados en: <strong>DOP, USD y EUR</strong></p>
-      </div>
-      <div class="footer-col">
-        <h4>Servicio al Cliente (24 Horas)</h4>
-        <p>📧 Correo: <a href="mailto:lacentralmodaa@gmail.com">lacentralmodaa@gmail.com</a></p>
-        <p>💬 WhatsApp: <a href="https://wa.me/12014093304" target="_blank">+1 (201) 409-3304</a></p>
-        <p>⏰ Horario: <strong>Las 24 horas</strong></p>
-      </div>
-      <div class="footer-col">
-        <h4>Ubicación Permanente</h4>
-        <p>Av. Winston Churchill #95, Piantini</p>
-        <p>Santo Domingo, Distrito Nacional</p>
-        <p><strong>República Dominicana</strong></p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy;  La Central Moda. Todos los derechos reservados.</p>
-    </div>
-  </footer>
-
-  <script>
-    // Configuración de divisas y tasas
-    const rates = { DOP: 1, USD: 0.0165, EUR: 0.0151 };
-    const symbols = { DOP: 'RD$ ', USD: '$ ', EUR: '€ ' };
-    let currentCurrency = 'DOP';
-    let cart = [];
-
-    // Cambiar moneda
-    document.querySelectorAll('.curr-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.curr-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        currentCurrency = btn.getAttribute('data-currency');
-        updatePrices();
-        renderCart();
-      });
-    });
-
-    function formatPrice(amountDOP) {
-      const converted = amountDOP * rates[currentCurrency];
-      return `${symbols[currentCurrency]}${converted.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ${currentCurrency}`;
-    }
-
-    function updatePrices() {
-      document.querySelectorAll('.product-card').forEach(card => {
-        const base = parseFloat(card.getAttribute('data-base-price'));
-        card.querySelector('.product-price').textContent = formatPrice(base);
-      });
-    }
-
-    // Lógica del carrito
-    const drawer = document.getElementById('cartDrawer');
-    document.getElementById('openCartBtn').addEventListener('click', () => drawer.classList.add('open'));
-    document.getElementById('closeCartBtn').addEventListener('click', () => drawer.classList.remove('open'));
-
-    function addToCart(name, price) {
-      const existing = cart.find(item => item.name === name);
-      if (existing) {
-        existing.qty += 1;
-      } else {
-        cart.push({ name, price, qty: 1 });
-      }
-      renderCart();
-      drawer.classList.add('open');
-    }
-
-    function renderCart() {
-      const countEl = document.getElementById('cartCount');
-      const listEl = document.getElementById('cartItemsList');
-      const summaryEl = document.getElementById('cartSummary');
-      const subtotalEl = document.getElementById('cartSubtotal');
-
-      const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
-      countEl.textContent = totalItems;
-
-      if (cart.length === 0) {
-        listEl.innerHTML = '<p class="empty-msg">Tu carrito está vacío.</p>';
-        summaryEl.style.display = 'none';
-        return;
-      }
-
-      summaryEl.style.display = 'block';
-      let totalDOP = 0;
-      listEl.innerHTML = cart.map(item => {
-        totalDOP += item.price * item.qty;
-        return `
-          <div class="cart-item">
-            <div>
-              <strong>${item.name}</strong>
-              <div>${formatPrice(item.price)} x ${item.qty}</div>
-            </div>
-            <button class="btn-remove" onclick="removeFromCart('${item.name}')">Eliminar</button>
-          </div>
-        `;
-      }).join('');
-
-      subtotalEl.textContent = formatPrice(totalDOP);
-    }
-
-    function removeFromCart(name) {
-      cart = cart.filter(item => item.name !== name);
-      renderCart();
-    }
-  </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>La Central Moda — Camisetas y Calzados</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-
-  <!-- Barra superior -->
-  <div class="top-bar">
+  <aside class="top-bar" aria-label="Aviso comercial">
     <span>Aceptamos <strong>pagos internacionales</strong> · <strong>Envíos internacionales</strong> en 48/72 horas hábiles · Atención <strong>Las 24 horas</strong></span>
-  </div>
+  </aside>
 
-  <!-- Encabezado principal -->
+  <!-- Navegación principal -->
   <header class="main-header">
     <div class="container header-content">
-      <a href="#" class="logo">La Central Moda<span>.</span></a>
+      <a href="#" class="logo">LA CENTRAL MODA<span>.</span></a>
 
       <nav class="nav-links">
         <a href="#catalogo">Catálogo</a>
@@ -391,96 +29,113 @@
 
       <div class="header-actions">
         <!-- Selector de Moneda -->
-        <div class="currency-picker" role="group" aria-label="Moneda">
+        <div class="currency-picker" role="group" aria-label="Cambiar moneda">
           <button type="button" class="curr-btn active" data-cur="DOP">DOP</button>
           <button type="button" class="curr-btn" data-cur="USD">USD</button>
           <button type="button" class="curr-btn" data-cur="EUR">EUR</button>
         </div>
 
-        <!-- Botón Mi Cuenta -->
-        <button id="btn-cuenta" class="btn btn-outline" type="button">
+        <!-- Botón Cuenta -->
+        <button type="button" id="btn-cuenta" class="btn btn-outline">
           <span id="cuenta-label">👤 Mi Cuenta</span>
         </button>
 
         <!-- Botón Carrito -->
-        <button id="btn-carrito" class="btn btn-primary" type="button">
+        <button type="button" id="btn-carrito" class="btn btn-primary">
           🛍️ Carrito (<span id="cart-count">0</span>)
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Banner principal -->
   <section class="hero">
     <div class="container hero-content">
       <p class="tagline">Camisetas & Calzados</p>
       <h1>Viste simple.<br>Pisa firme.</h1>
-      <p class="subtitle">Moda urbana de alta durabilidad con envíos a todo el mundo y pagos seguros con tarjeta Visa y Mastercard.</p>
+      <p class="subtitle">Especialistas en estilo urbano contemporáneo. Aceptamos tarjetas internacionales con atención al cliente las 24 horas.</p>
+      
       <div class="hero-badges">
         <span>🔒 Pagos Seguros</span>
         <span>🌍 Envíos Internacionales</span>
         <span>⏱️ 24 Horas de Atención</span>
       </div>
+
+      <div class="card-logos" style="justify-content: center; margin-top: 1.5rem;">
+        <!-- Logo Visa SVG -->
+        <svg viewBox="0 0 80 50" class="card-logo-svg" style="width: 60px; height: 38px;" aria-label="Visa">
+          <rect width="80" height="50" rx="6" fill="#1e293b"/>
+          <text x="40" y="33" text-anchor="middle" fill="#2563eb" font-family="Arial, sans-serif" font-weight="900" font-size="20" font-style="italic">VISA</text>
+        </svg>
+        <!-- Logo Mastercard SVG -->
+        <svg viewBox="0 0 80 50" class="card-logo-svg" style="width: 60px; height: 38px;" aria-label="Mastercard">
+          <rect width="80" height="50" rx="6" fill="#1e293b"/>
+          <circle cx="32" cy="25" r="13" fill="#eb001b"/>
+          <circle cx="48" cy="25" r="13" fill="#f79e1b"/>
+          <path d="M40 14.8a13 13 0 0 1 0 20.4a13 13 0 0 1 0-20.4z" fill="#ff5f00"/>
+        </svg>
+      </div>
     </div>
   </section>
 
-  <!-- Catálogo de Productos -->
-  <section id="catalogo" class="container section">
-    <h2 class="section-title">Nuestra Colección</h2>
+  <!-- Catálogo de productos -->
+  <main class="container section" id="catalogo">
+    <h2 class="section-title">Catálogo Destacado</h2>
     <div class="products-grid">
       
-      <div class="product-card">
+      <article class="product-card">
         <div class="product-thumb">👕</div>
+        <p class="product-cat">Camisetas</p>
         <h3>Camiseta Básica Algodón</h3>
-        <p class="product-cat">Camisetas</p>
-        <p class="product-price" data-base="950">RD$ 950</p>
-        <button class="btn btn-add" onclick="agregarAlCarrito('Camiseta Básica Algodón', 950)">Añadir al Carrito</button>
-      </div>
+        <p class="product-price" data-base="950">RD$ 950 DOP</p>
+        <button type="button" class="btn btn-add" onclick="agregarAlCarrito('Camiseta Básica Algodón', 950)">Añadir al Carrito</button>
+      </article>
 
-      <div class="product-card">
+      <article class="product-card">
         <div class="product-thumb">👕</div>
-        <h3>Camiseta Oversize Lino</h3>
         <p class="product-cat">Camisetas</p>
-        <p class="product-price" data-base="1450">RD$ 1,450</p>
-        <button class="btn btn-add" onclick="agregarAlCarrito('Camiseta Oversize Lino', 1450)">Añadir al Carrito</button>
-      </div>
+        <h3>Camiseta Oversize Lino</h3>
+        <p class="product-price" data-base="1450">RD$ 1,450 DOP</p>
+        <button type="button" class="btn btn-add" onclick="agregarAlCarrito('Camiseta Oversize Lino', 1450)">Añadir al Carrito</button>
+      </article>
 
-      <div class="product-card">
+      <article class="product-card">
         <div class="product-thumb">👟</div>
+        <p class="product-cat">Calzados</p>
         <h3>Tenis Urbanos Blancos</h3>
-        <p class="product-cat">Calzados</p>
-        <p class="product-price" data-base="3900">RD$ 3,900</p>
-        <button class="btn btn-add" onclick="agregarAlCarrito('Tenis Urbanos Blancos', 3900)">Añadir al Carrito</button>
-      </div>
+        <p class="product-price" data-base="3900">RD$ 3,900 DOP</p>
+        <button type="button" class="btn btn-add" onclick="agregarAlCarrito('Tenis Urbanos Blancos', 3900)">Añadir al Carrito</button>
+      </article>
 
-      <div class="product-card">
+      <article class="product-card">
         <div class="product-thumb">👡</div>
-        <h3>Sandalia Cuero Natural</h3>
         <p class="product-cat">Calzados</p>
-        <p class="product-price" data-base="2650">RD$ 2,650</p>
-        <button class="btn btn-add" onclick="agregarAlCarrito('Sandalia Cuero Natural', 2650)">Añadir al Carrito</button>
-      </div>
+        <h3>Sandalia Cuero Natural</h3>
+        <p class="product-price" data-base="2650">RD$ 2,650 DOP</p>
+        <button type="button" class="btn btn-add" onclick="agregarAlCarrito('Sandalia Cuero Natural', 2650)">Añadir al Carrito</button>
+      </article>
 
     </div>
-  </section>
+  </main>
 
-  <!-- Políticas Comerciales -->
+  <!-- Políticas obligatorias para el tarjetahabiente -->
   <section class="container policies-section">
     <div id="devoluciones" class="policy-card">
-      <h3>Politica de Devolución</h3>
-      <p>Dispones de <strong>30 días continuos</strong> a partir de la entrega para solicitar cambios o devoluciones. Las prendas y calzados deben estar sin uso, con etiquetas y en su empaque original.</p>
-      <p>El reembolso se efectúa a la misma tarjeta Visa o Mastercard utilizada en un plazo de 5 a 10 días hábiles.</p>
+      <h3>1. Política de Devoluciones y Cancelaciones</h3>
+      <p><strong>Derechos del Tarjetahabiente:</strong> Dispones de un plazo de hasta <strong>30 días calendario</strong> tras recibir el pedido para solicitar cambio o reembolso completo en caso de disconformidad justificada o defecto de fábrica.</p>
+      <p><strong>Responsabilidades:</strong> Las prendas y calzados deben retornar sin uso, con etiquetas y empaque original. Los reembolsos se aplican a la misma tarjeta Visa o Mastercard utilizada en un lapso de 5 a 10 días laborables.</p>
     </div>
 
     <div id="entregas" class="policy-card">
-      <h3>Politica de Envíos y Entregas</h3>
-      <p>Realizamos <strong>envíos internacionales</strong> a todas partes del mundo con plazos de entrega estimados de <strong>48 a 72 horas hábiles</strong> tras procesar la orden.</p>
-      <p>Comercio permanente: Santo Domingo, República Dominicana. Servicio al cliente activo <strong>las 24 horas</strong>.</p>
+      <h3>2. Política de Entregas y Envíos</h3>
+      <p><strong>Plazo de Entrega:</strong> Todos los envíos nacionales e internacionales se despachan con un tiempo estimado de <strong>48 a 72 horas hábiles</strong> tras la verificación del pago.</p>
+      <p><strong>Rastreo y Cobertura:</strong> Recibirás un código de seguimiento al despachar la orden. Para envíos internacionales, los impuestos o aranceles locales de aduana corresponden al comprador.</p>
     </div>
 
     <div id="privacidad" class="policy-card">
-      <h3>Privacidad y Seguridad de Pagos</h3>
-      <p>Cumplimos con las normativas internacionales de protección de datos de tarjetahabientes. La transmisión de datos se procesa con cifrado TLS/SSL mediante pasarelas certificadas.</p>
+      <h3>3. Privacidad y Seguridad en Transmisión de Datos</h3>
+      <p><strong>Transmisión Cifrada:</strong> Toda la información viaja bajo protocolos seguros TLS/HTTPS de 256 bits.</p>
+      <p><strong>Tratamiento de Tarjetas:</strong> La Central Moda no almacena ni retiene números completos de tarjeta, fechas de expiración ni códigos CVV. La autenticación y cobro son procesados directamente por la pasarela de pagos certificada y la entidad bancaria emisora.</p>
       <div class="card-logos">
         <span class="card-badge visa">VISA</span>
         <span class="card-badge mastercard">Mastercard</span>
@@ -488,29 +143,39 @@
     </div>
   </section>
 
-  <!-- Pie de Página -->
+  <!-- Pie de página con datos permanentes del comercio -->
   <footer id="contacto" class="main-footer">
     <div class="container footer-content">
       <div>
         <h4>La Central Moda</h4>
-        <p>WhatsApp: <a href="https://wa.me/12014093304" target="_blank">+1 (201) 409-3304</a></p>
-        <p>Correo: <a href="mailto:lacentralmodaa@gmail.com">lacentralmodaa@gmail.com</a></p>
-        <p>Atención: Las 24 horas</p>
+        <p>Especialistas en camisetas y calzados contemporáneos.</p>
+        <p>Moneda base de cobro: <strong>DOP</strong> (visualización en USD y EUR).</p>
       </div>
+
       <div>
-        <h4>Pagos Aceptados</h4>
-        <p>Tarjetas de crédito y débito Visa y Mastercard nacionales e internacionales. Facturación oficial en DOP.</p>
+        <h4>Servicio al Cliente (24 Horas)</h4>
+        <p>📧 Correo: <a href="mailto:lacentralmodaa@gmail.com">lacentralmodaa@gmail.com</a></p>
+        <p>💬 WhatsApp: <a href="https://wa.me/12014093304" target="_blank">+1 (201) 409-3304</a></p>
+        <p>⏰ Horario: <strong>Las 24 horas</strong></p>
+      </div>
+
+      <div>
+        <h4>Ubicación Permanente</h4>
+        <p>Av. Winston Churchill #95, Piantini</p>
+        <p>Santo Domingo, Distrito Nacional</p>
+        <p><strong>República Dominicana</strong></p>
       </div>
     </div>
+
     <div class="footer-bottom">
       <p>© 2026 La Central Moda. Todos los derechos reservados.</p>
     </div>
   </footer>
 
-  <!-- MODAL: MI CUENTA (Crear cuenta / Iniciar sesión) -->
+  <!-- MODAL: MI CUENTA / REGISTRO -->
   <div id="modal-cuenta" class="modal-overlay" style="display:none;">
     <div class="modal-box">
-      <button class="modal-close" type="button" onclick="cerrarModalCuenta()">×</button>
+      <button class="modal-close" type="button" onclick="cerrarModalCuenta()" aria-label="Cerrar ventana">&times;</button>
       
       <div id="cuenta-vista-form">
         <div class="tab-switch">
@@ -520,22 +185,22 @@
 
         <form id="form-cuenta" onsubmit="guardarCuenta(event)">
           <div class="form-group" id="group-nombre">
-            <label>Nombre y Apellidos</label>
-            <input type="text" id="acc-nombre" placeholder="Ej. Juan Pérez" required />
+            <label for="acc-nombre">Nombre y Apellidos *</label>
+            <input type="text" id="acc-nombre" placeholder="Ej. Juan Pérez" required>
           </div>
 
           <div class="form-group">
-            <label>Correo Electrónico</label>
-            <input type="email" id="acc-email" placeholder="cliente@correo.com" required />
+            <label for="acc-email">Correo Electrónico *</label>
+            <input type="email" id="acc-email" placeholder="cliente@correo.com" required>
           </div>
 
           <div class="form-group">
-            <label>Contraseña</label>
-            <input type="password" id="acc-pass" placeholder="••••••••" required />
+            <label for="acc-pass">Contraseña *</label>
+            <input type="password" id="acc-pass" placeholder="••••••••" required>
           </div>
 
           <div class="form-group" id="group-direccion">
-            <label>Dirección de Envío Completa</label>
+            <label for="acc-direccion">Dirección de Envío Completa *</label>
             <textarea id="acc-direccion" rows="2" placeholder="Calle, número, sector, ciudad, país"></textarea>
           </div>
 
@@ -543,61 +208,73 @@
         </form>
       </div>
 
-      <!-- Vista cuando ya hay sesión iniciada -->
+      <!-- Vista cuando el usuario tiene sesión activa -->
       <div id="cuenta-vista-perfil" style="display:none;">
-        <h3>Mi Perfil</h3>
+        <h3 style="margin-bottom: 1rem;">Mi Cuenta</h3>
         <p class="profile-info">Hola, <strong id="perfil-nombre"></strong></p>
         <p class="profile-info">Correo: <span id="perfil-email"></span></p>
         <div class="profile-address">
           <strong>Dirección de envío guardada:</strong>
-          <p id="perfil-direccion">Sin dirección asignada.</p>
+          <p id="perfil-direccion" style="margin-top: 0.25rem;">Sin dirección asignada.</p>
         </div>
         <button type="button" class="btn btn-outline btn-block" onclick="cerrarSesion()">Cerrar Sesión</button>
       </div>
     </div>
   </div>
 
-  <!-- MODAL: CARRITO Y CHECKOUT -->
+  <!-- MODAL: CARRITO Y CHECKOUT CON TARJETA -->
   <div id="modal-carrito" class="modal-overlay" style="display:none;">
     <div class="modal-box modal-lg">
-      <button class="modal-close" type="button" onclick="cerrarCarrito()">×</button>
-      <h2>Bolsa de Compras</h2>
+      <button class="modal-close" type="button" onclick="cerrarCarrito()" aria-label="Cerrar carrito">&times;</button>
+      <h2 style="margin-bottom: 1rem;">Bolsa de Compras</h2>
       
       <div id="cart-items" class="cart-items-list">
         <p class="empty-msg">Tu carrito está vacío.</p>
       </div>
 
-      <div class="cart-summary">
+      <div class="cart-summary" id="cart-summary-box" style="display:none;">
         <div class="summary-line">
-          <span>Total:</span>
-          <strong id="cart-total">RD$ 0</strong>
+          <span>Subtotal:</span>
+          <strong id="cart-total">RD$ 0.00 DOP</strong>
         </div>
       </div>
 
-      <div id="checkout-form" class="checkout-area">
-        <h3>Datos de Envío y Facturación</h3>
+      <!-- Formulario de Facturación y Pago -->
+      <div id="checkout-form-container" class="checkout-area" style="display:none;">
+        <h3 style="margin-bottom: 1rem;">1. Facturación y Entrega</h3>
         <div class="form-grid">
-          <input type="text" id="check-nombre" placeholder="Nombre completo" required />
-          <input type="email" id="check-email" placeholder="Correo electrónico" required />
-          <input type="text" id="check-direccion" class="col-full" placeholder="Dirección de entrega completa" required />
-          <input type="text" id="check-tarjeta" class="col-full" placeholder="Número de tarjeta (Visa o Mastercard)" maxlength="19" required />
-          <input type="text" id="check-exp" placeholder="MM/AA" maxlength="5" required />
-          <input type="text" id="check-cvv" placeholder="CVV" maxlength="4" required />
+          <input type="text" id="check-nombre" placeholder="Nombre completo del tarjetahabiente *" required autocomplete="cc-name">
+          <input type="email" id="check-email" placeholder="Correo electrónico para recibo *" required autocomplete="email">
+          <input type="text" id="check-direccion" class="col-full" placeholder="Dirección física completa *" required autocomplete="street-address">
+          <input type="text" id="check-ciudad" placeholder="Ciudad / Municipio *" required>
+          <input type="text" id="check-pais" value="República Dominicana" required>
         </div>
+
+        <h3 style="margin: 1.25rem 0 0.5rem;">2. Datos de la Tarjeta (Visa / Mastercard)</h3>
+        <div class="card-logos" style="margin-bottom: 1rem;">
+          <span class="card-badge visa">VISA</span>
+          <span class="card-badge mastercard">Mastercard</span>
+        </div>
+
+        <div class="form-grid">
+          <input type="tel" id="check-tarjeta" class="col-full" placeholder="Número de tarjeta *" maxlength="19" required inputmode="numeric" oninput="formatoTarjeta(this)">
+          <input type="tel" id="check-exp" placeholder="Vencimiento (MM/AA) *" maxlength="5" required inputmode="numeric" oninput="formatoVencimiento(this)">
+          <input type="password" id="check-cvv" placeholder="CVV / CVC *" maxlength="4" required inputmode="numeric">
+        </div>
+
+        <p style="font-size: 0.8rem; color: #8c93a8; margin: 1rem 0;">🔒 Transmisión cifrada de 256 bits. La tienda no almacena datos de tu tarjeta.</p>
         <button type="button" class="btn btn-primary btn-block" onclick="procesarPago()">Confirmar y Pagar</button>
       </div>
     </div>
   </div>
 
-  <!-- SCRIPT INTEGRADO Y GARANTIZADO -->
+  <!-- JAVASCRIPT INTEGRADO -->
   <script>
-    // Variables y tasas de cambio
     const TASAS = { DOP: 1, USD: 0.0166, EUR: 0.0153 };
     const SIMBOLOS = { DOP: 'RD$ ', USD: '$ ', EUR: '€ ' };
     let monedaActual = 'DOP';
     let carrito = [];
 
-    // --- MANEJO DEL DOM Y EVENT LISTENERS ---
     document.addEventListener('DOMContentLoaded', function() {
       // 1. Botón Mi Cuenta
       const btnCuenta = document.getElementById('btn-cuenta');
@@ -634,11 +311,11 @@
         }
       });
 
-      // 5. Cargar sesión guardada si existe
+      // 5. Cargar sesión existente
       revisarSesionActiva();
     });
 
-    // --- FUNCIONES DE CUENTA DE USUARIO ---
+    // --- MI CUENTA ---
     function abrirModalCuenta() {
       const modal = document.getElementById('modal-cuenta');
       if (modal) modal.style.display = 'flex';
@@ -682,7 +359,7 @@
       const usuario = { nombre, email, direccion };
       localStorage.setItem('central_usuario', JSON.stringify(usuario));
 
-      alert('¡Cuenta registrada e iniciada correctamente!');
+      alert('¡Cuenta guardada con éxito!');
       revisarSesionActiva();
       cerrarModalCuenta();
     }
@@ -703,7 +380,7 @@
           document.getElementById('perfil-email').textContent = u.email;
           document.getElementById('perfil-direccion').textContent = u.direccion || 'Sin dirección registrada.';
         }
-        // Autocompletar datos de checkout
+        // Autocompletar datos en checkout
         const chkNom = document.getElementById('check-nombre');
         const chkEml = document.getElementById('check-email');
         const chkDir = document.getElementById('check-direccion');
@@ -723,11 +400,11 @@
       alert('Sesión cerrada.');
     }
 
-    // --- CARRITO Y PRECIOS ---
+    // --- PRECIOS Y CARRITO ---
     function formatearPrecio(montoDOP) {
       const tasa = TASAS[monedaActual] || 1;
       const conv = montoDOP * tasa;
-      return SIMBOLOS[monedaActual] + conv.toLocaleString('es-DO', { maximumFractionDigits: 2 });
+      return `${SIMBOLOS[monedaActual]}${conv.toLocaleString('es-DO', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ${monedaActual}`;
     }
 
     function actualizarPrecios() {
@@ -753,12 +430,16 @@
       const cont = document.getElementById('cart-items');
       const countEl = document.getElementById('cart-count');
       const totalEl = document.getElementById('cart-total');
+      const summaryBox = document.getElementById('cart-summary-box');
+      const checkoutBox = document.getElementById('checkout-form-container');
 
       let total = 0;
       let totalCant = 0;
 
       if (carrito.length === 0) {
         cont.innerHTML = '<p class="empty-msg">Tu carrito está vacío.</p>';
+        if (summaryBox) summaryBox.style.display = 'none';
+        if (checkoutBox) checkoutBox.style.display = 'none';
       } else {
         cont.innerHTML = carrito.map((item, idx) => {
           total += item.precio * item.cantidad;
@@ -771,12 +452,14 @@
               </div>
               <div>
                 <button type="button" class="btn-qty" onclick="cambiarCant(${idx}, -1)">-</button>
-                <span>${item.cantidad}</span>
+                <span style="margin: 0 6px;">${item.cantidad}</span>
                 <button type="button" class="btn-qty" onclick="cambiarCant(${idx}, 1)">+</button>
               </div>
             </div>
           `;
         }).join('');
+        if (summaryBox) summaryBox.style.display = 'flex';
+        if (checkoutBox) checkoutBox.style.display = 'block';
       }
 
       countEl.textContent = totalCant;
@@ -792,11 +475,29 @@
     function abrirCarrito() {
       const modal = document.getElementById('modal-carrito');
       if (modal) modal.style.display = 'flex';
+      renderCarrito();
     }
 
     function cerrarCarrito() {
       const modal = document.getElementById('modal-carrito');
       if (modal) modal.style.display = 'none';
+    }
+
+    // --- FORMATEO AUTOMÁTICO DE TARJETA ---
+    function formatoTarjeta(input) {
+      let val = input.value.replace(/\D/g, '');
+      val = val.substring(0, 16);
+      input.value = val.match(/.{1,4}/g)?.join(' ') || val;
+    }
+
+    function formatoVencimiento(input) {
+      let val = input.value.replace(/\D/g, '');
+      if (val.length >= 3) {
+        val = val.substring(0, 4);
+        input.value = val.substring(0, 2) + '/' + val.substring(2);
+      } else {
+        input.value = val;
+      }
     }
 
     function procesarPago() {
@@ -809,11 +510,11 @@
       const tar = document.getElementById('check-tarjeta').value.trim();
 
       if (!nom || !dir || !tar) {
-        alert('Por favor completa todos los campos de facturación y entrega.');
+        alert('Por favor completa todos los campos de entrega y tarjeta.');
         return;
       }
 
-      alert('¡Orden recibida con éxito! Enviaremos la confirmación a tu correo y despacharemos en un plazo de 48 a 72 horas hábiles.');
+      alert('¡Pago procesado con éxito! Recibirás los detalles de tu compra y número de rastreo en tu correo.');
       carrito = [];
       renderCarrito();
       cerrarCarrito();
