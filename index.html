@@ -361,3 +361,463 @@
   </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Central Moda — Camisetas y Calzados</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Barra superior -->
+  <div class="top-bar">
+    <span>Aceptamos <strong>pagos internacionales</strong> · <strong>Envíos internacionales</strong> en 48/72 horas hábiles · Atención <strong>Las 24 horas</strong></span>
+  </div>
+
+  <!-- Encabezado principal -->
+  <header class="main-header">
+    <div class="container header-content">
+      <a href="#" class="logo">La Central Moda<span>.</span></a>
+
+      <nav class="nav-links">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#devoluciones">Devoluciones</a>
+        <a href="#entregas">Entregas</a>
+        <a href="#privacidad">Privacidad</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Selector de Moneda -->
+        <div class="currency-picker" role="group" aria-label="Moneda">
+          <button type="button" class="curr-btn active" data-cur="DOP">DOP</button>
+          <button type="button" class="curr-btn" data-cur="USD">USD</button>
+          <button type="button" class="curr-btn" data-cur="EUR">EUR</button>
+        </div>
+
+        <!-- Botón Mi Cuenta -->
+        <button id="btn-cuenta" class="btn btn-outline" type="button">
+          <span id="cuenta-label">👤 Mi Cuenta</span>
+        </button>
+
+        <!-- Botón Carrito -->
+        <button id="btn-carrito" class="btn btn-primary" type="button">
+          🛍️ Carrito (<span id="cart-count">0</span>)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <p class="tagline">Camisetas & Calzados</p>
+      <h1>Viste simple.<br>Pisa firme.</h1>
+      <p class="subtitle">Moda urbana de alta durabilidad con envíos a todo el mundo y pagos seguros con tarjeta Visa y Mastercard.</p>
+      <div class="hero-badges">
+        <span>🔒 Pagos Seguros</span>
+        <span>🌍 Envíos Internacionales</span>
+        <span>⏱️ 24 Horas de Atención</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catálogo de Productos -->
+  <section id="catalogo" class="container section">
+    <h2 class="section-title">Nuestra Colección</h2>
+    <div class="products-grid">
+      
+      <div class="product-card">
+        <div class="product-thumb">👕</div>
+        <h3>Camiseta Básica Algodón</h3>
+        <p class="product-cat">Camisetas</p>
+        <p class="product-price" data-base="950">RD$ 950</p>
+        <button class="btn btn-add" onclick="agregarAlCarrito('Camiseta Básica Algodón', 950)">Añadir al Carrito</button>
+      </div>
+
+      <div class="product-card">
+        <div class="product-thumb">👕</div>
+        <h3>Camiseta Oversize Lino</h3>
+        <p class="product-cat">Camisetas</p>
+        <p class="product-price" data-base="1450">RD$ 1,450</p>
+        <button class="btn btn-add" onclick="agregarAlCarrito('Camiseta Oversize Lino', 1450)">Añadir al Carrito</button>
+      </div>
+
+      <div class="product-card">
+        <div class="product-thumb">👟</div>
+        <h3>Tenis Urbanos Blancos</h3>
+        <p class="product-cat">Calzados</p>
+        <p class="product-price" data-base="3900">RD$ 3,900</p>
+        <button class="btn btn-add" onclick="agregarAlCarrito('Tenis Urbanos Blancos', 3900)">Añadir al Carrito</button>
+      </div>
+
+      <div class="product-card">
+        <div class="product-thumb">👡</div>
+        <h3>Sandalia Cuero Natural</h3>
+        <p class="product-cat">Calzados</p>
+        <p class="product-price" data-base="2650">RD$ 2,650</p>
+        <button class="btn btn-add" onclick="agregarAlCarrito('Sandalia Cuero Natural', 2650)">Añadir al Carrito</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Políticas Comerciales -->
+  <section class="container policies-section">
+    <div id="devoluciones" class="policy-card">
+      <h3>Politica de Devolución</h3>
+      <p>Dispones de <strong>30 días continuos</strong> a partir de la entrega para solicitar cambios o devoluciones. Las prendas y calzados deben estar sin uso, con etiquetas y en su empaque original.</p>
+      <p>El reembolso se efectúa a la misma tarjeta Visa o Mastercard utilizada en un plazo de 5 a 10 días hábiles.</p>
+    </div>
+
+    <div id="entregas" class="policy-card">
+      <h3>Politica de Envíos y Entregas</h3>
+      <p>Realizamos <strong>envíos internacionales</strong> a todas partes del mundo con plazos de entrega estimados de <strong>48 a 72 horas hábiles</strong> tras procesar la orden.</p>
+      <p>Comercio permanente: Santo Domingo, República Dominicana. Servicio al cliente activo <strong>las 24 horas</strong>.</p>
+    </div>
+
+    <div id="privacidad" class="policy-card">
+      <h3>Privacidad y Seguridad de Pagos</h3>
+      <p>Cumplimos con las normativas internacionales de protección de datos de tarjetahabientes. La transmisión de datos se procesa con cifrado TLS/SSL mediante pasarelas certificadas.</p>
+      <div class="card-logos">
+        <span class="card-badge visa">VISA</span>
+        <span class="card-badge mastercard">Mastercard</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pie de Página -->
+  <footer id="contacto" class="main-footer">
+    <div class="container footer-content">
+      <div>
+        <h4>La Central Moda</h4>
+        <p>WhatsApp: <a href="https://wa.me/12014093304" target="_blank">+1 (201) 409-3304</a></p>
+        <p>Correo: <a href="mailto:lacentralmodaa@gmail.com">lacentralmodaa@gmail.com</a></p>
+        <p>Atención: Las 24 horas</p>
+      </div>
+      <div>
+        <h4>Pagos Aceptados</h4>
+        <p>Tarjetas de crédito y débito Visa y Mastercard nacionales e internacionales. Facturación oficial en DOP.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 La Central Moda. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- MODAL: MI CUENTA (Crear cuenta / Iniciar sesión) -->
+  <div id="modal-cuenta" class="modal-overlay" style="display:none;">
+    <div class="modal-box">
+      <button class="modal-close" type="button" onclick="cerrarModalCuenta()">×</button>
+      
+      <div id="cuenta-vista-form">
+        <div class="tab-switch">
+          <button type="button" id="tab-registro" class="tab-btn active" onclick="cambiarTabCuenta('registro')">Crear Cuenta</button>
+          <button type="button" id="tab-login" class="tab-btn" onclick="cambiarTabCuenta('login')">Iniciar Sesión</button>
+        </div>
+
+        <form id="form-cuenta" onsubmit="guardarCuenta(event)">
+          <div class="form-group" id="group-nombre">
+            <label>Nombre y Apellidos</label>
+            <input type="text" id="acc-nombre" placeholder="Ej. Juan Pérez" required />
+          </div>
+
+          <div class="form-group">
+            <label>Correo Electrónico</label>
+            <input type="email" id="acc-email" placeholder="cliente@correo.com" required />
+          </div>
+
+          <div class="form-group">
+            <label>Contraseña</label>
+            <input type="password" id="acc-pass" placeholder="••••••••" required />
+          </div>
+
+          <div class="form-group" id="group-direccion">
+            <label>Dirección de Envío Completa</label>
+            <textarea id="acc-direccion" rows="2" placeholder="Calle, número, sector, ciudad, país"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" id="btn-submit-cuenta">Guardar y Crear Cuenta</button>
+        </form>
+      </div>
+
+      <!-- Vista cuando ya hay sesión iniciada -->
+      <div id="cuenta-vista-perfil" style="display:none;">
+        <h3>Mi Perfil</h3>
+        <p class="profile-info">Hola, <strong id="perfil-nombre"></strong></p>
+        <p class="profile-info">Correo: <span id="perfil-email"></span></p>
+        <div class="profile-address">
+          <strong>Dirección de envío guardada:</strong>
+          <p id="perfil-direccion">Sin dirección asignada.</p>
+        </div>
+        <button type="button" class="btn btn-outline btn-block" onclick="cerrarSesion()">Cerrar Sesión</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: CARRITO Y CHECKOUT -->
+  <div id="modal-carrito" class="modal-overlay" style="display:none;">
+    <div class="modal-box modal-lg">
+      <button class="modal-close" type="button" onclick="cerrarCarrito()">×</button>
+      <h2>Bolsa de Compras</h2>
+      
+      <div id="cart-items" class="cart-items-list">
+        <p class="empty-msg">Tu carrito está vacío.</p>
+      </div>
+
+      <div class="cart-summary">
+        <div class="summary-line">
+          <span>Total:</span>
+          <strong id="cart-total">RD$ 0</strong>
+        </div>
+      </div>
+
+      <div id="checkout-form" class="checkout-area">
+        <h3>Datos de Envío y Facturación</h3>
+        <div class="form-grid">
+          <input type="text" id="check-nombre" placeholder="Nombre completo" required />
+          <input type="email" id="check-email" placeholder="Correo electrónico" required />
+          <input type="text" id="check-direccion" class="col-full" placeholder="Dirección de entrega completa" required />
+          <input type="text" id="check-tarjeta" class="col-full" placeholder="Número de tarjeta (Visa o Mastercard)" maxlength="19" required />
+          <input type="text" id="check-exp" placeholder="MM/AA" maxlength="5" required />
+          <input type="text" id="check-cvv" placeholder="CVV" maxlength="4" required />
+        </div>
+        <button type="button" class="btn btn-primary btn-block" onclick="procesarPago()">Confirmar y Pagar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPT INTEGRADO Y GARANTIZADO -->
+  <script>
+    // Variables y tasas de cambio
+    const TASAS = { DOP: 1, USD: 0.0166, EUR: 0.0153 };
+    const SIMBOLOS = { DOP: 'RD$ ', USD: '$ ', EUR: '€ ' };
+    let monedaActual = 'DOP';
+    let carrito = [];
+
+    // --- MANEJO DEL DOM Y EVENT LISTENERS ---
+    document.addEventListener('DOMContentLoaded', function() {
+      // 1. Botón Mi Cuenta
+      const btnCuenta = document.getElementById('btn-cuenta');
+      if (btnCuenta) {
+        btnCuenta.addEventListener('click', function(e) {
+          e.preventDefault();
+          abrirModalCuenta();
+        });
+      }
+
+      // 2. Botón Carrito
+      const btnCarrito = document.getElementById('btn-carrito');
+      if (btnCarrito) {
+        btnCarrito.addEventListener('click', function(e) {
+          e.preventDefault();
+          abrirCarrito();
+        });
+      }
+
+      // 3. Monedas
+      document.querySelectorAll('.curr-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.curr-btn').forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          monedaActual = this.getAttribute('data-cur');
+          actualizarPrecios();
+        });
+      });
+
+      // 4. Cerrar modales con clic fuera
+      window.addEventListener('click', function(e) {
+        if (e.target.classList.contains('modal-overlay')) {
+          e.target.style.display = 'none';
+        }
+      });
+
+      // 5. Cargar sesión guardada si existe
+      revisarSesionActiva();
+    });
+
+    // --- FUNCIONES DE CUENTA DE USUARIO ---
+    function abrirModalCuenta() {
+      const modal = document.getElementById('modal-cuenta');
+      if (modal) modal.style.display = 'flex';
+      revisarSesionActiva();
+    }
+
+    function cerrarModalCuenta() {
+      const modal = document.getElementById('modal-cuenta');
+      if (modal) modal.style.display = 'none';
+    }
+
+    function cambiarTabCuenta(tipo) {
+      const tabReg = document.getElementById('tab-registro');
+      const tabLog = document.getElementById('tab-login');
+      const grpNom = document.getElementById('group-nombre');
+      const grpDir = document.getElementById('group-direccion');
+      const btnSub = document.getElementById('btn-submit-cuenta');
+
+      if (tipo === 'registro') {
+        tabReg.classList.add('active');
+        tabLog.classList.remove('active');
+        grpNom.style.display = 'block';
+        grpDir.style.display = 'block';
+        btnSub.textContent = 'Guardar y Crear Cuenta';
+      } else {
+        tabLog.classList.add('active');
+        tabReg.classList.remove('active');
+        grpNom.style.display = 'none';
+        grpDir.style.display = 'none';
+        btnSub.textContent = 'Iniciar Sesión';
+      }
+    }
+
+    function guardarCuenta(e) {
+      e.preventDefault();
+      const email = document.getElementById('acc-email').value.trim();
+      const pass = document.getElementById('acc-pass').value;
+      const nombre = document.getElementById('acc-nombre').value.trim() || email.split('@')[0];
+      const direccion = document.getElementById('acc-direccion').value.trim();
+
+      const usuario = { nombre, email, direccion };
+      localStorage.setItem('central_usuario', JSON.stringify(usuario));
+
+      alert('¡Cuenta registrada e iniciada correctamente!');
+      revisarSesionActiva();
+      cerrarModalCuenta();
+    }
+
+    function revisarSesionActiva() {
+      const datos = localStorage.getItem('central_usuario');
+      const vistaForm = document.getElementById('cuenta-vista-form');
+      const vistaPerfil = document.getElementById('cuenta-vista-perfil');
+      const label = document.getElementById('cuenta-label');
+
+      if (datos) {
+        const u = JSON.parse(datos);
+        if (label) label.textContent = '👤 ' + u.nombre.split(' ')[0];
+        if (vistaForm) vistaForm.style.display = 'none';
+        if (vistaPerfil) {
+          vistaPerfil.style.display = 'block';
+          document.getElementById('perfil-nombre').textContent = u.nombre;
+          document.getElementById('perfil-email').textContent = u.email;
+          document.getElementById('perfil-direccion').textContent = u.direccion || 'Sin dirección registrada.';
+        }
+        // Autocompletar datos de checkout
+        const chkNom = document.getElementById('check-nombre');
+        const chkEml = document.getElementById('check-email');
+        const chkDir = document.getElementById('check-direccion');
+        if (chkNom && !chkNom.value) chkNom.value = u.nombre;
+        if (chkEml && !chkEml.value) chkEml.value = u.email;
+        if (chkDir && !chkDir.value && u.direccion) chkDir.value = u.direccion;
+      } else {
+        if (label) label.textContent = '👤 Mi Cuenta';
+        if (vistaForm) vistaForm.style.display = 'block';
+        if (vistaPerfil) vistaPerfil.style.display = 'none';
+      }
+    }
+
+    function cerrarSesion() {
+      localStorage.removeItem('central_usuario');
+      revisarSesionActiva();
+      alert('Sesión cerrada.');
+    }
+
+    // --- CARRITO Y PRECIOS ---
+    function formatearPrecio(montoDOP) {
+      const tasa = TASAS[monedaActual] || 1;
+      const conv = montoDOP * tasa;
+      return SIMBOLOS[monedaActual] + conv.toLocaleString('es-DO', { maximumFractionDigits: 2 });
+    }
+
+    function actualizarPrecios() {
+      document.querySelectorAll('.product-price').forEach(el => {
+        const base = parseFloat(el.getAttribute('data-base'));
+        el.textContent = formatearPrecio(base);
+      });
+      renderCarrito();
+    }
+
+    function agregarAlCarrito(nombre, precio) {
+      const idx = carrito.findIndex(p => p.nombre === nombre);
+      if (idx > -1) {
+        carrito[idx].cantidad++;
+      } else {
+        carrito.push({ nombre, precio, cantidad: 1 });
+      }
+      renderCarrito();
+      abrirCarrito();
+    }
+
+    function renderCarrito() {
+      const cont = document.getElementById('cart-items');
+      const countEl = document.getElementById('cart-count');
+      const totalEl = document.getElementById('cart-total');
+
+      let total = 0;
+      let totalCant = 0;
+
+      if (carrito.length === 0) {
+        cont.innerHTML = '<p class="empty-msg">Tu carrito está vacío.</p>';
+      } else {
+        cont.innerHTML = carrito.map((item, idx) => {
+          total += item.precio * item.cantidad;
+          totalCant += item.cantidad;
+          return `
+            <div class="cart-row">
+              <div>
+                <strong>${item.nombre}</strong><br>
+                <small>${formatearPrecio(item.precio)} x ${item.cantidad}</small>
+              </div>
+              <div>
+                <button type="button" class="btn-qty" onclick="cambiarCant(${idx}, -1)">-</button>
+                <span>${item.cantidad}</span>
+                <button type="button" class="btn-qty" onclick="cambiarCant(${idx}, 1)">+</button>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      countEl.textContent = totalCant;
+      totalEl.textContent = formatearPrecio(total);
+    }
+
+    function cambiarCant(idx, delta) {
+      carrito[idx].cantidad += delta;
+      if (carrito[idx].cantidad <= 0) carrito.splice(idx, 1);
+      renderCarrito();
+    }
+
+    function abrirCarrito() {
+      const modal = document.getElementById('modal-carrito');
+      if (modal) modal.style.display = 'flex';
+    }
+
+    function cerrarCarrito() {
+      const modal = document.getElementById('modal-carrito');
+      if (modal) modal.style.display = 'none';
+    }
+
+    function procesarPago() {
+      if (carrito.length === 0) {
+        alert('El carrito está vacío.');
+        return;
+      }
+      const nom = document.getElementById('check-nombre').value.trim();
+      const dir = document.getElementById('check-direccion').value.trim();
+      const tar = document.getElementById('check-tarjeta').value.trim();
+
+      if (!nom || !dir || !tar) {
+        alert('Por favor completa todos los campos de facturación y entrega.');
+        return;
+      }
+
+      alert('¡Orden recibida con éxito! Enviaremos la confirmación a tu correo y despacharemos en un plazo de 48 a 72 horas hábiles.');
+      carrito = [];
+      renderCarrito();
+      cerrarCarrito();
+    }
+  </script>
+</body>
+</html>
