@@ -1,6 +1,6 @@
 /* ========================================================
    LA CENTRAL MODA - DARK & LUXURY GOLD DESIGN SYSTEM
-   LISTO PARA AFILIACIÓN CON AZUL (BANCO POPULAR DOMINICANO)
+   INTEGRACIÓN AZUL API (HOSTED FIELDS IN-SITE)
    ======================================================== */
 
 :root {
@@ -16,8 +16,9 @@
   --gold-glow: rgba(212, 175, 55, 0.25);
   
   --azul-primary: #005696;
+  --azul-light: #2FA4FF;
   --azul-bg: rgba(0, 86, 150, 0.12);
-  --azul-border: rgba(0, 86, 150, 0.4);
+  --azul-border: rgba(0, 86, 150, 0.45);
 
   --text-main: #FFFFFF;
   --text-muted: #9E9EA8;
@@ -476,7 +477,7 @@ body {
   background: #1c1c24;
   border: 1px solid var(--border-subtle);
 }
-.badge-card.azul { color: #2FA4FF; border-color: var(--azul-border); background: var(--azul-bg); }
+.badge-card.azul { color: var(--azul-light); border-color: var(--azul-border); background: var(--azul-bg); }
 .badge-card.visa { color: #5B8DEF; }
 .badge-card.mastercard { color: #EB001B; }
 .footer-note { font-size: 0.78rem; color: var(--text-muted); }
@@ -536,7 +537,7 @@ body {
 .btn-close:hover { color: var(--text-main); }
 .modal-body { padding: 20px; }
 
-/* Pestañas de Mi Cuenta */
+/* Pestañas */
 .account-tabs {
   display: flex;
   gap: 8px;
@@ -682,7 +683,7 @@ body {
   margin-bottom: 14px;
 }
 
-/* Caja de Pasarela Segura Azul */
+/* Caja Específica de Azul API y Slots Hosted Fields */
 .azul-secure-container {
   background: rgba(0, 86, 150, 0.08);
   border: 1px solid var(--azul-border);
@@ -699,7 +700,7 @@ body {
 .azul-logo-text {
   font-weight: 800;
   font-size: 0.88rem;
-  color: #2FA4FF;
+  color: var(--azul-light);
   letter-spacing: 0.08em;
 }
 .azul-secure-label {
@@ -709,22 +710,25 @@ body {
 .azul-desc {
   font-size: 0.76rem;
   color: var(--text-muted);
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
-.azul-placeholder-box {
+.azul-fields-grid {
+  display: flex;
+  flex-direction: column;
+}
+.azul-input-slot {
   background: var(--bg-input);
-  border: 1px dashed var(--azul-border);
-  padding: 10px;
+  border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
-  text-align: center;
-}
-.azul-mock-row {
+  height: 40px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 6px;
-  font-size: 0.78rem;
-  color: #9ECBFF;
+  padding: 0 12px;
+}
+.slot-placeholder {
+  color: #627282;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
 }
 
 .checkout-secure-notice {
