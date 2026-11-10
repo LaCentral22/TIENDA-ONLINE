@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <!-- Barra superior informativa -->
   <aside class="topbar">
     <div class="topbar-container">
@@ -84,7 +83,7 @@
     <div class="products-grid" id="grid-productos"></div>
   </main>
 
-  <!-- Sección de Políticas -->
+  <!-- Sección de Políticas y Requisitos Legales -->
   <section class="policies-section" id="politicas">
     <div class="policies-container">
       <div class="policy-card">
@@ -110,10 +109,45 @@
         <h3>Seguridad Azul API</h3>
         <p>Procesamiento directo certificado por Servicios Digitales Popular bajo estándar PCI-DSS y autenticación 3-D Secure bancaria.</p>
       </div>
+
+      <!-- Tarjeta Detallada de Privacidad y Eliminación de Datos (Requisito Azul / Bancario) -->
+      <div class="policy-card policy-card-full" id="privacidad-datos">
+        <div class="policy-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <h3>Política de Privacidad y Tratamiento de Datos Personales</h3>
+        <p class="policy-intro">En <strong>LA CENTRAL MODA</strong> garantizamos la protección, confidencialidad y correcto tratamiento de los datos personales de nuestros clientes y tarjetahabientes, de acuerdo con las normativas comerciales de comercio electrónico y las exigencias de <em>Servicios Digitales Popular (AZUL)</em>.</p>
+        
+        <div class="policy-grid-details">
+          <div class="policy-detail-item">
+            <h4 class="policy-subtitle"><span class="gold-bullet">1.</span> ¿Qué datos personales recopilamos?</h4>
+            <p>Recopilamos únicamente los datos necesarios para la gestión de compras y envíos: <strong>nombre completo</strong> del tarjetahabiente, <strong>correo electrónico</strong>, <strong>número de teléfono / WhatsApp</strong> y <strong>dirección física completa</strong> (calle, número de inmueble, sector, ciudad, código postal y país), tanto para fines de entrega física como de facturación.</p>
+          </div>
+
+          <div class="policy-detail-item">
+            <h4 class="policy-subtitle"><span class="gold-bullet">2.</span> ¿Para qué utilizamos sus datos?</h4>
+            <p>Los datos suministrados se utilizan exclusivamente para: (a) procesar y validar su orden de compra; (b) coordinar el despacho y entrega de sus artículos con guías de rastreo; (c) emitir los comprobantes y facturas comerciales correspondientes; y (d) responder solicitudes de soporte, cambio o devolución a través de nuestro servicio al cliente.</p>
+          </div>
+
+          <div class="policy-detail-item">
+            <h4 class="policy-subtitle"><span class="gold-bullet">3.</span> ¿Cómo protegemos su información y datos de tarjeta?</h4>
+            <p>Toda la navegación y transmisión de datos se realiza bajo protocolo cifrado de alta seguridad <strong>HTTPS / TLS de 256 bits</strong>.<br>
+            <strong>Seguridad en transacciones con tarjeta:</strong> En estricto cumplimiento de los estándares internacionales <em>PCI-DSS</em> y las directrices de <em>AZUL</em>, <strong>LA CENTRAL MODA no captura, no procesa, no transmite ni almacena en sus servidores datos sensibles de tarjetas</strong> (números de tarjeta, fechas de expiración o código CVV). Toda la captura es realizada en el entorno seguro tokenizado de <strong>AZUL API</strong> y validada por el banco emisor mediante los protocolos de autenticación <strong>Verified by Visa (Visa Secure)</strong> y <strong>Mastercard Identity Check</strong>.</p>
+          </div>
+
+          <div class="policy-detail-item">
+            <h4 class="policy-subtitle"><span class="gold-bullet">4.</span> ¿Cómo solicitar la eliminación o rectificación de sus datos?</h4>
+            <p>Todo tarjetahabiente o cliente tiene el derecho permanente de solicitar la consulta, actualización o <strong>eliminación definitiva de sus datos personales</strong> de nuestras bases de datos y registros locales. Para ejercer este derecho, puede solicitarlo directamente por cualquiera de nuestros canales oficiales:
+            <br>• <strong>Correo Electrónico:</strong> <a href="mailto:lacentralmodaa@gmail.com" class="gold-link">lacentralmodaa@gmail.com</a>
+            <br>• <strong>WhatsApp de Atención:</strong> <a href="https://wa.me/12014093304" target="_blank" rel="noopener" class="gold-link">+1 (201) 409-3304</a>
+            <br>Toda solicitud de supresión de datos es confirmada y procesada en un plazo máximo de <strong>24 a 48 horas hábiles</strong>.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Pie de Página -->
+  <!-- Pie de página con datos obligatorios -->
   <footer class="main-footer">
     <div class="footer-container">
       <div class="footer-col">
@@ -128,6 +162,7 @@
         <p>Email: <a href="mailto:lacentralmodaa@gmail.com">lacentralmodaa@gmail.com</a></p>
         <p>WhatsApp: <a href="https://wa.me/12014093304" target="_blank" rel="noopener">+1 (201) 409-3304</a></p>
         <p>Horario: Soporte y gestión continua.</p>
+        <p><a href="#privacidad-datos" class="gold-link" style="font-size: 0.8rem;">Ver Política de Privacidad</a></p>
       </div>
 
       <div class="footer-col">
@@ -138,144 +173,163 @@
           <span class="badge-card visa">VISA</span>
           <span class="badge-card mastercard">Mastercard</span>
         </div>
-        <p class="footer-note">Aceptamos tarjetas de crédito y débito nacionales e internacionales.</p>
+        <p class="footer-note" style="margin-top: 10px; margin-bottom: 6px;">Autenticación y Seguridad 3-D Secure:</p>
+        <div class="footer-3ds-badges">
+          <div class="badge-3ds-mini" title="Verified by Visa / Visa Secure">
+            <span class="badge-tag visa-tag">VISA SECURE</span>
+            <span class="badge-sub-tag">Verified by Visa</span>
+          </div>
+          <div class="badge-3ds-mini" title="Mastercard Identity Check">
+            <span class="badge-tag mc-tag">MASTERCARD</span>
+            <span class="badge-sub-tag">Identity Check</span>
+          </div>
+        </div>
+        <p class="footer-note" style="margin-top: 8px;">Aceptamos tarjetas de crédito y débito nacionales e internacionales.</p>
       </div>
     </div>
+
     <div class="footer-bottom">
       <p>&copy; 2026 LA CENTRAL MODA. Todos los derechos reservados.</p>
     </div>
   </footer>
 
-  <!-- Modal Mi Cuenta -->
-  <div class="modal-backdrop" id="modal-cuenta">
-    <div class="modal-box modal-box-sm">
+  <!-- Modal: Mi Cuenta y Devoluciones -->
+  <div class="modal-backdrop" id="modal-cuenta" role="dialog" aria-modal="true">
+    <div class="modal-card">
       <div class="modal-header">
-        <h3>Mi Cuenta de Usuario</h3>
+        <h3 class="modal-title">Mi Cuenta &amp; Envíos</h3>
         <button type="button" class="btn-close" onclick="cerrarModalCuenta()">&times;</button>
       </div>
+      
       <div class="modal-body">
-        <div class="account-tabs">
-          <button type="button" class="tab-btn active" id="tab-btn-perfil" onclick="mostrarPestanaCuenta('perfil')">Perfil y Domicilio</button>
-          <button type="button" class="tab-btn" id="tab-btn-devolucion" onclick="mostrarPestanaCuenta('devolucion')">Devoluciones</button>
-        </div>
-
-        <div id="view-cuenta-perfil">
-          <form id="form-cuenta" onsubmit="guardarCuenta(event)">
-            <div class="form-group">
-              <label for="acc-nombre">Nombre y Apellido</label>
-              <input type="text" id="acc-nombre" required placeholder="Ej. Carlos Daniel">
-            </div>
-            <div class="form-group">
+        <!-- Formulario de Perfil y Dirección Domiciliaria -->
+        <form id="form-cuenta" onsubmit="guardarCuenta(event)">
+          <span class="form-section-title">Datos Personales y de Domicilio</span>
+          <div class="form-group">
+            <label for="acc-nombre">Nombre Completo</label>
+            <input type="text" id="acc-nombre" required placeholder="Ej. Carlos Daniel">
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group col-half">
               <label for="acc-email">Correo Electrónico</label>
-              <input type="email" id="acc-email" required placeholder="cliente@correo.com">
+              <input type="email" id="acc-email" required placeholder="tu@correo.com">
             </div>
-            <div class="form-group">
+            <div class="form-group col-half">
               <label for="acc-telefono">Teléfono / WhatsApp</label>
               <input type="tel" id="acc-telefono" required placeholder="+1 809 000 0000">
             </div>
+          </div>
 
-            <div class="form-divider"></div>
-            <span class="form-section-title">Dirección de Domicilio de Entrega</span>
-
-            <div class="form-group">
-              <label for="acc-calle">Nombre de Calle o Avenida</label>
+          <div class="form-row">
+            <div class="form-group" style="flex: 2;">
+              <label for="acc-calle">Calle / Avenida</label>
               <input type="text" id="acc-calle" required placeholder="Ej. Av. Winston Churchill">
             </div>
-
-            <div class="form-row">
-              <div class="form-group col-half">
-                <label for="acc-numero">Número / Edif. / Apto.</label>
-                <input type="text" id="acc-numero" required placeholder="Ej. #95, Apto 4B">
-              </div>
-              <div class="form-group col-half">
-                <label for="acc-sector">Sector / Barrio</label>
-                <input type="text" id="acc-sector" required placeholder="Ej. Piantini">
-              </div>
+            <div class="form-group" style="flex: 1;">
+              <label for="acc-numero">No. / Apto</label>
+              <input type="text" id="acc-numero" required placeholder="Ej. 104, Apto 3B">
             </div>
+          </div>
 
-            <div class="form-row">
-              <div class="form-group col-half">
-                <label for="acc-ciudad">Ciudad / Provincia</label>
-                <input type="text" id="acc-ciudad" required placeholder="Ej. Santo Domingo, D.N.">
-              </div>
-              <div class="form-group col-half">
-                <label for="acc-codigopostal">Código Postal</label>
-                <input type="text" id="acc-codigopostal" required placeholder="Ej. 10127">
-              </div>
+          <div class="form-row">
+            <div class="form-group col-half">
+              <label for="acc-sector">Sector / Urbanización</label>
+              <input type="text" id="acc-sector" required placeholder="Ej. Piantini">
             </div>
+            <div class="form-group col-half">
+              <label for="acc-ciudad">Ciudad / Provincia</label>
+              <input type="text" id="acc-ciudad" required placeholder="Ej. Santo Domingo">
+            </div>
+          </div>
 
-            <div class="form-group">
+          <div class="form-row">
+            <div class="form-group col-half">
+              <label for="acc-codigopostal">Código Postal</label>
+              <input type="text" id="acc-codigopostal" placeholder="10148">
+            </div>
+            <div class="form-group col-half">
               <label for="acc-pais">País</label>
-              <input type="text" id="acc-pais" required value="República Dominicana">
+              <input type="text" id="acc-pais" value="República Dominicana" required>
             </div>
+          </div>
 
-            <button type="submit" class="btn-gold-block">Guardar Datos de Domicilio</button>
-          </form>
-        </div>
+          <button type="submit" class="btn-gold-block">Guardar Datos de Cuenta</button>
+        </form>
 
-        <div id="view-cuenta-devolucion" style="display: none;">
-          <form id="form-devolucion" onsubmit="procesarSolicitudDevolucion(event)">
-            <p class="info-text">Solicita el cambio o devolución de tu orden dentro de los primeros 15 días posteriores a la recepción.</p>
-            
-            <div class="form-group">
-              <label for="dev-orden">Número de Pedido u Orden</label>
-              <input type="text" id="dev-orden" required placeholder="Ej. LCM-2026-001">
-            </div>
+        <div class="form-divider"></div>
 
-            <div class="form-group">
-              <label for="dev-motivo">Motivo de la Solicitud</label>
-              <select id="dev-motivo" required class="select-styled">
-                <option value="">Seleccione un motivo...</option>
-                <option value="Talla incorrecta">Cambio por talla diferente</option>
-                <option value="Defecto de fábrica">Defecto de costura o material</option>
-                <option value="Producto no coincide">El artículo no coincide con la foto</option>
-                <option value="Otro">Otro motivo</option>
-              </select>
-            </div>
+        <!-- Gestión de Devoluciones -->
+        <span class="form-section-title">Centro de Cambios y Devoluciones</span>
+        <p class="info-text">
+          Garantía de 15 días posteriores a la recepción de su compra.
+        </p>
 
-            <div class="form-group">
-              <label for="dev-detalles">Detalles adicionales</label>
-              <textarea id="dev-detalles" rows="3" placeholder="Describe brevemente el caso..."></textarea>
-            </div>
-
-            <button type="submit" class="btn-gold-block">Enviar Solicitud a Soporte</button>
-          </form>
-        </div>
+        <form id="form-devolucion" onsubmit="procesarSolicitudDevolucion(event)">
+          <div class="form-group">
+            <label for="dev-orden">Número de Orden</label>
+            <input type="text" id="dev-orden" required placeholder="Ej. LCM-84920">
+          </div>
+          <div class="form-group">
+            <label for="dev-motivo">Motivo de Devolución</label>
+            <select id="dev-motivo" class="select-styled" required>
+              <option value="">Selecciona un motivo</option>
+              <option value="cambio_talla">Cambio de Talla</option>
+              <option value="defecto">Defecto de Fabricación</option>
+              <option value="no_conforme">No cumple expectativas</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="dev-detalle">Detalles adicionales</label>
+            <textarea id="dev-detalle" rows="2" placeholder="Describa el motivo..."></textarea>
+          </div>
+          <button type="submit" class="btn-ghost-block">Solicitar Devolución</button>
+        </form>
       </div>
     </div>
   </div>
 
-  <!-- Modal Bolsa y Checkout Embebido API de Azul -->
-  <div class="modal-backdrop" id="modal-carrito">
-    <div class="modal-box modal-box-lg">
+  <!-- Modal: Bolsa de Compras y Checkout API Azul -->
+  <div class="modal-backdrop" id="modal-carrito" role="dialog" aria-modal="true">
+    <div class="modal-card modal-large">
       <div class="modal-header">
-        <h3>Bolsa de Compras</h3>
+        <h3 class="modal-title">Bolsa de Compras &amp; Checkout</h3>
         <button type="button" class="btn-close" onclick="cerrarModalCarrito()">&times;</button>
       </div>
-
+      
       <div class="modal-body modal-split">
-        <!-- Lista de Artículos -->
+        <!-- Columna 1: Artículos de la Bolsa -->
         <div class="cart-items-column">
-          <h4 class="column-subtitle">Artículos Seleccionados</h4>
-          <div id="cart-list" class="cart-items-list"></div>
+          <span class="form-section-title">Tus Artículos Seleccionados</span>
+          <div class="cart-items-list" id="cart-items-container"></div>
           
-          <div class="cart-summary-line">
-            <span>Total a pagar:</span>
-            <strong id="cart-total-display" class="gold-text">DOP 0.00</strong>
+          <div class="cart-summary-box">
+            <div class="cart-summary-line">
+              <span>Subtotal:</span>
+              <strong id="cart-subtotal">DOP 0.00</strong>
+            </div>
+            <div class="cart-summary-line">
+              <span>Envío Internacional (48/72 hrs):</span>
+              <strong class="gold-text">GRATIS</strong>
+            </div>
+            <div class="cart-summary-line total-line">
+              <span>Total a Liquidar:</span>
+              <strong class="gold-text" id="cart-total">DOP 0.00</strong>
+            </div>
+            <p class="currency-note-azul">
+              * La liquidación se emite en <strong>DOP (Pesos Dominicanos)</strong> según normativa bancaria local.
+            </p>
           </div>
-          <p class="currency-note-azul">* La liquidación final mediante la API de Azul se realiza en Pesos Dominicanos (DOP).</p>
         </div>
 
-        <!-- Checkout Embebido (API Azul) -->
+        <!-- Columna 2: Facturación y Checkout API Azul -->
         <div class="cart-checkout-column">
-          <h4 class="column-subtitle">Facturación y Pago Integrado</h4>
-          <form id="form-checkout" onsubmit="ejecutarCobroAzulAPI(event)">
-            
-            <span class="form-section-title">Datos del Tarjetahabiente</span>
-            
+          <form id="form-pago-azul" onsubmit="ejecutarCobroAzulAPI(event)">
+            <span class="form-section-title">Dirección de Facturación</span>
+
             <div class="form-group">
-              <label for="pay-nombre">Nombre de Tarjeta</label>
-              <input type="text" id="pay-nombre" required placeholder="Como aparece en la tarjeta">
+              <label for="pay-nombre">Nombre de Tarjeta (Tarjetahabiente)</label>
+              <input type="text" id="pay-nombre" required placeholder="Como figura en el plástico">
             </div>
 
             <div class="form-row">
@@ -284,49 +338,45 @@
                 <input type="email" id="pay-email" required placeholder="recibo@correo.com">
               </div>
               <div class="form-group col-half">
-                <label for="pay-telefono">Teléfono</label>
+                <label for="pay-telefono">Teléfono de Contacto</label>
                 <input type="tel" id="pay-telefono" required placeholder="+1 809 000 0000">
               </div>
             </div>
 
-            <div class="form-divider"></div>
-            <span class="form-section-title">Dirección de Facturación Ordenada</span>
-
-            <div class="form-group">
-              <label for="pay-calle">Nombre de Calle o Avenida</label>
-              <input type="text" id="pay-calle" required placeholder="Ej. Calle Manuel de Jesús Troncoso">
-            </div>
-
             <div class="form-row">
-              <div class="form-group col-half">
-                <label for="pay-numero">Número / Edificio</label>
-                <input type="text" id="pay-numero" required placeholder="Ej. #12, Torre B">
+              <div class="form-group" style="flex: 2;">
+                <label for="pay-calle">Nombre de Calle / Av.</label>
+                <input type="text" id="pay-calle" required placeholder="Calle de residencia">
               </div>
-              <div class="form-group col-half">
-                <label for="pay-sector">Sector / Barrio</label>
-                <input type="text" id="pay-sector" required placeholder="Ej. Piantini">
+              <div class="form-group" style="flex: 1;">
+                <label for="pay-numero">Número</label>
+                <input type="text" id="pay-numero" required placeholder="No. Inmueble">
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-group col-half">
-                <label for="pay-ciudad">Ciudad / Provincia</label>
-                <input type="text" id="pay-ciudad" required placeholder="Ej. Santo Domingo, D.N.">
+                <label for="pay-sector">Sector</label>
+                <input type="text" id="pay-sector" required placeholder="Sector o Barrio">
               </div>
+              <div class="form-group col-half">
+                <label for="pay-ciudad">Ciudad</label>
+                <input type="text" id="pay-ciudad" required placeholder="Ciudad">
+              </div>
+            </div>
+
+            <div class="form-row">
               <div class="form-group col-half">
                 <label for="pay-codigopostal">Código Postal</label>
-                <input type="text" id="pay-codigopostal" required placeholder="Ej. 10125">
+                <input type="text" id="pay-codigopostal" placeholder="Código Postal">
+              </div>
+              <div class="form-group col-half">
+                <label for="pay-pais">País</label>
+                <input type="text" id="pay-pais" value="República Dominicana" required>
               </div>
             </div>
 
-            <div class="form-group">
-              <label for="pay-pais">País</label>
-              <input type="text" id="pay-pais" required value="República Dominicana">
-            </div>
-
-            <div class="form-divider"></div>
-
-            <!-- Contenedor Embebido para los Hosted Fields de Azul -->
+            <!-- Caja Específica de Azul API y Slots Hosted Fields -->
             <div class="azul-secure-container">
               <div class="azul-badge-header">
                 <span class="azul-logo-text">AZUL API</span>
@@ -360,6 +410,37 @@
                   </div>
                 </div>
               </div>
+
+              <!-- Distintivos Oficiales de Seguridad 3-D Secure requeridos por Azul -->
+              <div class="security-badges-wrapper">
+                <span class="security-badges-label">Autenticación Bancaria 3-D Secure:</span>
+                <div class="security-badges-list">
+                  <!-- Verified by Visa / Visa Secure -->
+                  <div class="badge-3ds badge-visa-secure" title="Autenticación Verified by Visa / Visa Secure">
+                    <svg width="128" height="34" viewBox="0 0 128 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="128" height="34" rx="5" fill="#0c1017" stroke="#22314a" stroke-width="1"/>
+                      <path d="M22.5 12.2l-2.9 9.8h-1.9l-1.5-7.6c-.1-.4-.2-.5-.5-.7-.5-.3-1.3-.6-2.1-.8l.1-.4h3.5c.5 0 .8.3.9.9l.9 5 2.2-6.2h2.2zm6.8 6.6c0-2.5-3.5-2.7-3.5-3.9 0-.4.4-.8 1.2-.9.4 0 1.4.1 2.1.4l.4-1.8c-.6-.2-1.3-.4-2.1-.4-2.2 0-3.7 1.2-3.7 2.9 0 1.3 1.1 1.9 1.9 2.4.9.4 1.2.7 1.2 1.1 0 .6-.7.9-1.3.9-.9 0-1.4-.2-2.2-.5l-.4 1.9c.7.3 1.5.4 2.4.4 2.4 0 3.9-1.2 3.9-2.9zm4.3 3.2h2l1.2-9.8h-2l-1.2 9.8zm-8.4-9.8h-2.2l-3.4 9.8h2.1l.4-1.2h2.6l.3 1.2h1.9l-1.7-9.8zm-1.7 7l1-3.1.7 3.1h-1.7z" fill="#2563EB"/>
+                      <line x1="39" y1="7" x2="39" y2="27" stroke="#2b3b55" stroke-width="1"/>
+                      <text x="45" y="16.5" fill="#F8FAFC" font-family="'Montserrat', sans-serif" font-size="8" font-weight="700" letter-spacing="0.4">VISA</text>
+                      <text x="45" y="24.5" fill="#38BDF8" font-family="'Montserrat', sans-serif" font-size="7" font-weight="600" letter-spacing="0.3">SECURE</text>
+                      <path d="M112 14.5v-1.5c0-1.4-1.1-2.5-2.5-2.5s-2.5 1.1-2.5 2.5v1.5c-.6 0-1 .4-1 1v5c0 .6.4 1 1 1h5c.6 0 1-.4 1-1v-5c0-.6-.4-1-1-1zm-3.8-1.5c0-.7.6-1.3 1.3-1.3s1.3.6 1.3 1.3v1.5h-2.6v-1.5z" fill="#D4AF37"/>
+                    </svg>
+                  </div>
+                  <!-- Mastercard Identity Check -->
+                  <div class="badge-3ds badge-mc-idcheck" title="Autenticación Mastercard Identity Check">
+                    <svg width="152" height="34" viewBox="0 0 152 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="152" height="34" rx="5" fill="#0c1017" stroke="#22314a" stroke-width="1"/>
+                      <circle cx="17" cy="17" r="7.5" fill="#EB001B"/>
+                      <circle cx="27" cy="17" r="7.5" fill="#F79E1B" fill-opacity="0.92"/>
+                      <path d="M22 11.2a7.5 7.5 0 0 1 2.5 5.8 7.5 7.5 0 0 1-2.5 5.8 7.5 7.5 0 0 1-2.5-5.8c0-2.3 1-4.4 2.5-5.8z" fill="#FF5F00"/>
+                      <line x1="39" y1="7" x2="39" y2="27" stroke="#2b3b55" stroke-width="1"/>
+                      <text x="45" y="15.5" fill="#F8FAFC" font-family="'Montserrat', sans-serif" font-size="7.2" font-weight="700">mastercard</text>
+                      <text x="45" y="24" fill="#F79E1B" font-family="'Montserrat', sans-serif" font-size="6.8" font-weight="600" letter-spacing="0.2">ID Check</text>
+                      <path d="M136 11l-4 1.5v3.5c0 2.8 1.8 5.2 4 6 2.2-.8 4-3.2 4-6v-3.5l-4-1.5zm-.5 8l-2-2 1-1 1 1 2.5-2.5 1 1-3.5 3.5z" fill="#D4AF37"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <button type="submit" class="btn-gold-block btn-pay-now" id="btn-submit-pago">
@@ -376,67 +457,68 @@
     </div>
   </div>
 
+  <!-- Lógica JavaScript Dinámica -->
   <script>
-    // Catálogo con múltiples fotos y tallas
+    // Catálogo con variantes de tallas y galerías HD
     const productos = [
       {
         id: 1,
-        nombre: "Camiseta Signature Gold",
-        categoria: "Camisetas",
-        precioDOP: 2200,
+        nombre: "Camiseta Imperial Golden Oversize",
+        categoria: "Camisetas Exclusivas",
+        precioDOP: 2450,
         tallas: ["S", "M", "L", "XL"],
         fotos: [
-          "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1200&q=80",
-          "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=1200&q=80",
-          "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1200&q=80"
+          "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=800&q=80"
         ]
       },
       {
         id: 2,
-        nombre: "Calzado Urbano Royal Obsidian",
-        categoria: "Calzados",
+        nombre: "Calzado Royal Shadow Leather",
+        categoria: "Calzado de Alta Gama",
         precioDOP: 5800,
         tallas: ["40", "41", "42", "43", "44"],
         fotos: [
-          "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=1200&q=80",
-          "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=1200&q=80",
-          "https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=1200&q=80"
+          "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=800&q=80"
         ]
       },
       {
         id: 3,
-        nombre: "Camiseta Minimalist Dark Velvet",
-        categoria: "Camisetas",
-        precioDOP: 2400,
-        tallas: ["S", "M", "L", "XL"],
+        nombre: "Camiseta Minimalist Noir Gold Edition",
+        categoria: "Camisetas Exclusivas",
+        precioDOP: 2150,
+        tallas: ["S", "M", "L"],
         fotos: [
-          "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1200&q=80",
-          "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1200&q=80",
-          "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=1200&q=80"
+          "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80"
         ]
       },
       {
         id: 4,
-        nombre: "Sneakers Gold Edition Elite",
-        categoria: "Calzados",
-        precioDOP: 6500,
-        tallas: ["41", "42", "43", "44", "45"],
+        nombre: "Sneakers Gold High Velvet",
+        categoria: "Calzado de Alta Gama",
+        precioDOP: 6400,
+        tallas: ["39", "40", "41", "42", "43"],
         fotos: [
-          "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=1200&q=80",
-          "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=1200&q=80",
-          "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=1200&q=80"
+          "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80"
         ]
       }
     ];
 
     let monedaActual = 'DOP';
-    const tasas = { DOP: 1, USD: 0.017, EUR: 0.015 };
+    const tasasCambio = { DOP: 1, USD: 0.017, EUR: 0.015 };
+    const simbolosMoneda = { DOP: 'DOP ', USD: '$', EUR: '€' };
+
     let carrito = [];
-    const tallasSeleccionadas = {};
+    const seleccionPrevia = {};
 
     function formatearPrecio(montoDOP) {
-      const convertido = montoDOP * tasas[monedaActual];
-      return `${monedaActual} ${convertido.toLocaleString('es-DO', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+      const convertido = montoDOP * tasasCambio[monedaActual];
+      return `${simbolosMoneda[monedaActual]}${convertido.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
     }
 
     function cambiarMoneda(nuevaMoneda) {
@@ -445,171 +527,167 @@
       actualizarCarritoUI();
     }
 
-    function seleccionarFoto(productoId, urlFoto) {
-      const img = document.getElementById(`main-img-${productoId}`);
-      if (img) img.src = urlFoto;
-    }
-
-    function seleccionarTalla(productoId, talla, botonElemento) {
-      tallasSeleccionadas[productoId] = talla;
-      const contenedor = document.getElementById(`sizes-${productoId}`);
-      if (contenedor) {
-        contenedor.querySelectorAll('.btn-size').forEach(b => b.classList.remove('active'));
-      }
-      botonElemento.classList.add('active');
-    }
-
     function renderizarProductos() {
-      const contenedor = document.getElementById('grid-productos');
-      if (!contenedor) return;
+      const grid = document.getElementById('grid-productos');
+      if (!grid) return;
+      grid.innerHTML = '';
 
-      contenedor.innerHTML = productos.map(p => {
-        const tallaActual = tallasSeleccionadas[p.id] || p.tallas[0];
-        if (!tallasSeleccionadas[p.id]) tallasSeleccionadas[p.id] = p.tallas[0];
+      productos.forEach(p => {
+        if (!seleccionPrevia[p.id]) {
+          seleccionPrevia[p.id] = { fotoIndex: 0, talla: p.tallas[0] };
+        }
+        const estado = seleccionPrevia[p.id];
 
-        return `
-          <article class="product-card">
-            <div class="product-image-container">
-              <img id="main-img-${p.id}" src="${p.fotos[0]}" alt="${p.nombre}" class="product-main-img" loading="lazy">
-              <div class="product-thumbs">
-                ${p.fotos.map(foto => `
-                  <button type="button" class="thumb-btn" onclick="seleccionarFoto(${p.id}, '${foto}')">
-                    <img src="${foto}" alt="Miniatura">
-                  </button>
-                `).join('')}
-              </div>
+        const card = document.createElement('article');
+        card.className = 'product-card';
+
+        const thumbsHtml = p.fotos.map((f, idx) => `
+          <button type="button" class="thumb-btn ${idx === estado.fotoIndex ? 'active' : ''}" onclick="cambiarFoto(${p.id}, ${idx})">
+            <img src="${f}" alt="${p.nombre} miniatura ${idx + 1}" loading="lazy">
+          </button>
+        `).join('');
+
+        const tallasHtml = p.tallas.map(t => `
+          <button type="button" class="size-chip ${t === estado.talla ? 'active' : ''}" onclick="seleccionarTalla(${p.id}, '${t}')">${t}</button>
+        `).join('');
+
+        card.innerHTML = `
+          <div class="product-media">
+            <img id="p-img-${p.id}" src="${p.fotos[estado.fotoIndex]}" alt="${p.nombre}" class="product-main-img" loading="lazy">
+            <div class="product-thumbs">${thumbsHtml}</div>
+          </div>
+          <div class="product-info">
+            <span class="product-cat">${p.categoria}</span>
+            <h3 class="product-title">${p.nombre}</h3>
+            <div class="product-price-row">
+              <span class="product-price" id="p-price-${p.id}">${formatearPrecio(p.precioDOP)}</span>
+              <span class="product-base-note">(Moneda base: DOP ${p.precioDOP.toFixed(2)})</span>
             </div>
-
-            <div class="product-info">
-              <span class="product-category">${p.categoria}</span>
-              <h3 class="product-name">${p.nombre}</h3>
-              <p class="product-price">${formatearPrecio(p.precioDOP)}</p>
-
-              <div class="product-sizes-wrap">
-                <span class="sizes-label">Talla:</span>
-                <div class="sizes-options" id="sizes-${p.id}">
-                  ${p.tallas.map(t => `
-                    <button type="button" class="btn-size ${t === tallaActual ? 'active' : ''}" onclick="seleccionarTalla(${p.id}, '${t}', this)">${t}</button>
-                  `).join('')}
-                </div>
-              </div>
-
-              <button type="button" class="btn-gold-block" onclick="agregarAlCarrito(${p.id})">
-                Añadir a la Bolsa
-              </button>
+            <div class="sizes-wrap">
+              <span class="sizes-label">Seleccionar Talla:</span>
+              <div class="sizes-list" id="p-sizes-${p.id}">${tallasHtml}</div>
             </div>
-          </article>
+            <button type="button" class="btn-gold-block" onclick="agregarAlCarrito(${p.id})">
+              Añadir a la Bolsa
+            </button>
+          </div>
         `;
-      }).join('');
+        grid.appendChild(card);
+      });
     }
 
-    function agregarAlCarrito(productoId) {
-      const prod = productos.find(p => p.id === productoId);
+    function cambiarFoto(prodId, fotoIdx) {
+      seleccionPrevia[prodId].fotoIndex = fotoIdx;
+      const prod = productos.find(x => x.id === prodId);
+      const imgElem = document.getElementById(`p-img-${prodId}`);
+      if (imgElem && prod) {
+        imgElem.src = prod.fotos[fotoIdx];
+      }
+      renderizarProductos();
+    }
+
+    function seleccionarTalla(prodId, talla) {
+      seleccionPrevia[prodId].talla = talla;
+      renderizarProductos();
+    }
+
+    function agregarAlCarrito(prodId) {
+      const prod = productos.find(x => x.id === prodId);
       if (!prod) return;
+      const tallaElegida = seleccionPrevia[prodId].talla;
 
-      const talla = tallasSeleccionadas[productoId] || prod.tallas[0];
-      const itemExistente = carrito.find(item => item.id === productoId && item.talla === talla);
-
-      if (itemExistente) {
-        itemExistente.cantidad += 1;
+      const existente = carrito.find(item => item.id === prodId && item.talla === tallaElegida);
+      if (existente) {
+        existente.cantidad += 1;
       } else {
         carrito.push({
           id: prod.id,
           nombre: prod.nombre,
           precioDOP: prod.precioDOP,
+          talla: tallaElegida,
           foto: prod.fotos[0],
-          talla: talla,
           cantidad: 1
         });
       }
-
       actualizarCarritoUI();
       abrirModalCarrito();
     }
 
-    function modificarCantidad(index, delta) {
+    function cambiarCantidad(index, delta) {
       if (!carrito[index]) return;
       carrito[index].cantidad += delta;
-      if (carrito[index].cantidad <= 0) carrito.splice(index, 1);
+      if (carrito[index].cantidad <= 0) {
+        carrito.splice(index, 1);
+      }
+      actualizarCarritoUI();
+    }
+
+    function eliminarDelCarrito(index) {
+      carrito.splice(index, 1);
       actualizarCarritoUI();
     }
 
     function actualizarCarritoUI() {
-      const contador = document.getElementById('cart-counter');
-      const totalDisplay = document.getElementById('cart-total-display');
-      const payTotalBtn = document.getElementById('btn-pay-total');
-      const lista = document.getElementById('cart-list');
-
       const totalItems = carrito.reduce((acc, item) => acc + item.cantidad, 0);
-      const totalMontoDOP = carrito.reduce((acc, item) => acc + (item.precioDOP * item.cantidad), 0);
+      const totalDOP = carrito.reduce((acc, item) => acc + (item.precioDOP * item.cantidad), 0);
 
-      if (contador) contador.textContent = totalItems;
-      const textoTotal = formatearPrecio(totalMontoDOP);
-      if (totalDisplay) totalDisplay.textContent = textoTotal;
-      if (payTotalBtn) payTotalBtn.textContent = textoTotal;
+      const counter = document.getElementById('cart-counter');
+      if (counter) counter.textContent = totalItems;
 
-      if (!lista) return;
-
-      if (carrito.length === 0) {
-        lista.innerHTML = `<p class="cart-empty-msg">Tu bolsa está vacía. Selecciona una prenda para comenzar.</p>`;
-        return;
+      const container = document.getElementById('cart-items-container');
+      if (container) {
+        if (carrito.length === 0) {
+          container.innerHTML = '<p class="cart-empty-msg">Tu bolsa de compras está vacía.</p>';
+        } else {
+          container.innerHTML = carrito.map((item, idx) => `
+            <div class="cart-item-row">
+              <img src="${item.foto}" alt="${item.nombre}" class="cart-item-thumb">
+              <div class="cart-item-info">
+                <h4>${item.nombre}</h4>
+                <span class="cart-item-meta">Talla: <strong>${item.talla}</strong> | ${formatearPrecio(item.precioDOP)} c/u</span>
+                <div class="qty-control">
+                  <button type="button" class="btn-qty" onclick="cambiarCantidad(${idx}, -1)">-</button>
+                  <span class="qty-num">${item.cantidad}</span>
+                  <button type="button" class="btn-qty" onclick="cambiarCantidad(${idx}, 1)">+</button>
+                  <button type="button" class="btn-remove" onclick="eliminarDelCarrito(${idx})">Eliminar</button>
+                </div>
+              </div>
+              <div class="cart-item-price-col">
+                <strong>${formatearPrecio(item.precioDOP * item.cantidad)}</strong>
+              </div>
+            </div>
+          `).join('');
+        }
       }
 
-      lista.innerHTML = carrito.map((item, idx) => `
-        <div class="cart-item">
-          <img src="${item.foto}" alt="${item.nombre}" class="cart-item-img">
-          <div class="cart-item-details">
-            <span class="cart-item-title">${item.nombre}</span>
-            <span class="cart-item-meta">Talla: <strong class="gold-text">${item.talla}</strong> | ${formatearPrecio(item.precioDOP)}</span>
-            <div class="cart-qty-ctrl">
-              <button type="button" class="btn-qty" onclick="modificarCantidad(${idx}, -1)">-</button>
-              <span class="qty-num">${item.cantidad}</span>
-              <button type="button" class="btn-qty" onclick="modificarCantidad(${idx}, 1)">+</button>
-            </div>
-          </div>
-        </div>
-      `).join('');
+      const subtotalElem = document.getElementById('cart-subtotal');
+      const totalElem = document.getElementById('cart-total');
+      const payTotalElem = document.getElementById('btn-pay-total');
+
+      const precioStr = formatearPrecio(totalDOP);
+      if (subtotalElem) subtotalElem.textContent = precioStr;
+      if (totalElem) totalElem.textContent = precioStr;
+      if (payTotalElem) payTotalElem.textContent = precioStr;
     }
 
-    // Control de Modales
     function abrirModalCarrito() {
       document.getElementById('modal-carrito').classList.add('active');
-      precargarFacturacionDesdeCuenta();
+      precargarDireccionEnCheckout();
     }
     function cerrarModalCarrito() {
       document.getElementById('modal-carrito').classList.remove('active');
     }
     function abrirModalCuenta() {
       document.getElementById('modal-cuenta').classList.add('active');
-      precargarCuentaModal();
+      precargarFormularioCuenta();
     }
     function cerrarModalCuenta() {
       document.getElementById('modal-cuenta').classList.remove('active');
     }
 
-    function mostrarPestanaCuenta(pestana) {
-      const btnPerfil = document.getElementById('tab-btn-perfil');
-      const btnDev = document.getElementById('tab-btn-devolucion');
-      const viewPerfil = document.getElementById('view-cuenta-perfil');
-      const viewDev = document.getElementById('view-cuenta-devolucion');
-
-      if (pestana === 'perfil') {
-        btnPerfil.classList.add('active');
-        btnDev.classList.remove('active');
-        viewPerfil.style.display = 'block';
-        viewDev.style.display = 'none';
-      } else {
-        btnDev.classList.add('active');
-        btnPerfil.classList.remove('active');
-        viewPerfil.style.display = 'none';
-        viewDev.style.display = 'block';
-      }
-    }
-
-    // Persistencia LocalStorage
     function guardarCuenta(e) {
       e.preventDefault();
-      const cuenta = {
+      const cuentaData = {
         nombre: document.getElementById('acc-nombre').value.trim(),
         email: document.getElementById('acc-email').value.trim(),
         telefono: document.getElementById('acc-telefono').value.trim(),
@@ -620,32 +698,31 @@
         codigopostal: document.getElementById('acc-codigopostal').value.trim(),
         pais: document.getElementById('acc-pais').value.trim()
       };
-      localStorage.setItem('la_central_cuenta_azul', JSON.stringify(cuenta));
+      localStorage.setItem('la_central_cuenta_azul', JSON.stringify(cuentaData));
+      alert('¡Cuenta y dirección guardadas correctamente!');
       actualizarBotonCuenta();
       cerrarModalCuenta();
-      alert('¡Datos de domicilio guardados correctamente!');
     }
 
-    function precargarCuentaModal() {
+    function precargarFormularioCuenta() {
       const raw = localStorage.getItem('la_central_cuenta_azul');
       if (!raw) return;
       const c = JSON.parse(raw);
-      if (document.getElementById('acc-nombre')) document.getElementById('acc-nombre').value = c.nombre || '';
-      if (document.getElementById('acc-email')) document.getElementById('acc-email').value = c.email || '';
-      if (document.getElementById('acc-telefono')) document.getElementById('acc-telefono').value = c.telefono || '';
-      if (document.getElementById('acc-calle')) document.getElementById('acc-calle').value = c.calle || '';
-      if (document.getElementById('acc-numero')) document.getElementById('acc-numero').value = c.numero || '';
-      if (document.getElementById('acc-sector')) document.getElementById('acc-sector').value = c.sector || '';
-      if (document.getElementById('acc-ciudad')) document.getElementById('acc-ciudad').value = c.ciudad || '';
-      if (document.getElementById('acc-codigopostal')) document.getElementById('acc-codigopostal').value = c.codigopostal || '';
-      if (document.getElementById('acc-pais')) document.getElementById('acc-pais').value = c.pais || 'República Dominicana';
+      if (c.nombre) document.getElementById('acc-nombre').value = c.nombre;
+      if (c.email) document.getElementById('acc-email').value = c.email;
+      if (c.telefono) document.getElementById('acc-telefono').value = c.telefono;
+      if (c.calle) document.getElementById('acc-calle').value = c.calle;
+      if (c.numero) document.getElementById('acc-numero').value = c.numero;
+      if (c.sector) document.getElementById('acc-sector').value = c.sector;
+      if (c.ciudad) document.getElementById('acc-ciudad').value = c.ciudad;
+      if (c.codigopostal) document.getElementById('acc-codigopostal').value = c.codigopostal;
+      if (c.pais) document.getElementById('acc-pais').value = c.pais;
     }
 
-    function precargarFacturacionDesdeCuenta() {
+    function precargarDireccionEnCheckout() {
       const raw = localStorage.getItem('la_central_cuenta_azul');
       if (!raw) return;
       const c = JSON.parse(raw);
-
       const fNombre = document.getElementById('pay-nombre');
       const fEmail = document.getElementById('pay-email');
       const fTel = document.getElementById('pay-telefono');
@@ -683,7 +760,6 @@
       e.preventDefault();
       const orden = document.getElementById('dev-orden').value.trim();
       const motivo = document.getElementById('dev-motivo').value;
-
       alert(`Solicitud de devolución registrada para la orden: ${orden}\nMotivo: ${motivo}\nNuestro equipo le responderá en menos de 24 horas.`);
       document.getElementById('form-devolucion').reset();
       cerrarModalCuenta();
@@ -696,7 +772,6 @@
         alert('La bolsa está vacía. Seleccione un artículo.');
         return;
       }
-
       const totalMontoDOP = carrito.reduce((acc, item) => acc + (item.precioDOP * item.cantidad), 0);
       const datosFacturacion = {
         tarjetahabiente: document.getElementById('pay-nombre').value.trim(),
@@ -711,10 +786,21 @@
         montoDOP: totalMontoDOP
       };
 
-      // Flujo de API: El SDK de Azul tokeniza la tarjeta en el slot y devuelve un Token.
-      // Luego este objeto se envía con un fetch('https://tu-servidor.com/api/azul-pago') a tu backend.
       alert(`[Transacción Lista para Azul API]\nCliente: ${datosFacturacion.tarjetahabiente}\nMonto: DOP ${datosFacturacion.montoDOP.toFixed(2)}\nDirección: ${datosFacturacion.calle} #${datosFacturacion.numero}, ${datosFacturacion.sector}\n\nLos datos estructurados están listos para ser procesados por el backend con tu MerchantID de Azul.`);
     }
+
+    // Cerrar modales con clic fuera y Escape
+    window.addEventListener('click', (e) => {
+      if (e.target.classList.contains('modal-backdrop')) {
+        e.target.classList.remove('active');
+      }
+    });
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        cerrarModalCarrito();
+        cerrarModalCuenta();
+      }
+    });
 
     window.addEventListener('DOMContentLoaded', () => {
       renderizarProductos();
