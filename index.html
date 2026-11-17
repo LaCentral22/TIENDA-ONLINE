@@ -223,9 +223,7 @@
           </div>
           <button type="submit" class="btn-gold-block">Guardar Datos de Cuenta</button>
         </form>
-
         <div class="form-divider"></div>
-
         <span class="form-section-title">Centro de Cambios y Devoluciones</span>
         <p class="info-text">Garantía de 15 días posteriores a la recepción de su compra.</p>
         <form id="form-devolucion" onsubmit="procesarSolicitudDevolucion(event)">
@@ -294,12 +292,10 @@
               <label for="pay-nombre">Nombre Completo</label>
               <input type="text" id="pay-nombre" required placeholder="Nombre del titular de la tarjeta">
             </div>
-
             <div class="form-group">
               <label for="pay-direccion">Dirección</label>
               <input type="text" id="pay-direccion" required placeholder="Calle, número, apto o sector">
             </div>
-
             <div class="form-group">
               <label for="pay-estado">Estado / Provincia</label>
               <input type="text" id="pay-estado" required placeholder="Estado o provincia">
@@ -681,26 +677,55 @@
       });
     }
 
-    // Ejecución del formulario de pago
-    function ejecutarCobroAzulAPI(e) {
+    // Ejecución del cobro enviando los datos a /api/pagar (Servidor Azul)
+    async function ejecutarCobroAzulAPI(e) {
       e.preventDefault();
       if (carrito.length === 0) {
         alert('La bolsa está vacía. Seleccione un artículo.');
         return;
       }
-      const totalMontoDOP = carrito.reduce((acc, item) => acc + (item.precioDOP * item.cantidad), 0);
-      const numTarjeta = document.getElementById('pay-tarjeta').value.replace(/\s/g, '');
-      const ultimos4 = numTarjeta.slice(-4) || '••••';
 
-      const datosFacturacion = {
-        nombreCompleto: document.getElementById('pay-nombre').value.trim(),
+      const btnSubmit = document.getElementById('btn-submit-pago');
+      const textoOriginal = btnSubmit.innerHTML;
+      btnSubmit.disabled = true;
+      btnSubmit.innerHTML = 'Procesando pago con Azul...';
+
+      const totalMontoDOP = carrito.reduce((acc, item) => acc + (item.precioDOP * item.cantidad), 0);
+
+      const payload = {
+        nombre: document.getElementById('pay-nombre').value.trim(),
         direccion: document.getElementById('pay-direccion').value.trim(),
         estado: document.getElementById('pay-estado').value.trim(),
-        tarjetaMascara: `•••• •••• •••• ${ultimos4}`,
+        tarjeta: document.getElementById('pay-tarjeta').value,
+        expiracion: document.getElementById('pay-expiracion').value,
+        cvv: document.getElementById('pay-cvv').value,
         montoDOP: totalMontoDOP
       };
 
-      alert(`[Transacción Lista para Procesar]\nCliente: ${datosFacturacion.nombreCompleto}\nDirección: ${datosFacturacion.direccion}\nEstado: ${datosFacturacion.estado}\nTarjeta: ${datosFacturacion.tarjetaMascara}\nTotal: DOP ${datosFacturacion.montoDOP.toFixed(2)}\n\nDatos listos para enviar al backend y procesar con Azul.`);
+      try {
+        const respuesta = await fetch('/api/pagar', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await respuesta.json();
+
+        if (data.success) {
+          alert(`¡Pago Aprobado con Éxito!\n\nNo. de Orden: ${data.orderNumber}\nCódigo de Autorización: ${data.authorizationCode}\n\nGracias por su compra en La Central Moda.`);
+          carrito = [];
+          actualizarCarritoUI();
+          document.getElementById('form-pago-azul').reset();
+          cerrarModalCarrito();
+        } else {
+          alert(`El pago no pudo procesarse: ${data.message || 'Verifique los datos de su tarjeta.'}`);
+        }
+      } catch (err) {
+        alert('Error de conexión con el servidor. Verifique que el backend en /api/pagar esté desplegado.');
+      } finally {
+        btnSubmit.disabled = false;
+        btnSubmit.innerHTML = textoOriginal;
+      }
     }
 
     // Cerrar modales con clic exterior o tecla Escape
