@@ -1,0 +1,87 @@
+// api/pagar.js - Servidor Serverless Node.js para Vercel
+export default async function handler(req, res) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ success: false, message: 'Método no permitido' });
+  }
+
+  try {
+    const { nombre, direccion, estado, tarjeta, expiracion, cvv, montoDOP } = req.body;
+
+    if (!nombre || !direccion || !estado || !tarjeta || !expiracion || !cvv || !montoDOP) {
+      return res.status(400).json({ success: false, message: 'Todos los campos son obligatorios' });
+    }
+
+    // Formateo de tarjeta y fecha
+    const numTarjeta = tarjeta.replace(/\s+/g, '');
+    const [mes, anio] = expiracion.split('/').map(v => v.trim());
+    const anioCompleto = anio.length === 2 ? `20${anio}` : anio;
+    const expFormato = `${anioCompleto}${mes.padStart(2, '0')}`;
+    const montoCentavos = Math.round(Number(montoDOP) * 100).toString();
+
+    // Variables de entorno protegidas (configuradas en Vercel)
+    const merchantId = process.env.AZUL_MERCHANT_ID;
+    const auth1 = process.env.AZUL_AUTH1;
+    const auth2 = process.env.AZUL_AUTH2;
+    const endpointAzul = process.env.AZUL_ENDPOINT_URL || 'https://pruebas.azul.com.do/webservices/JSON/Default.aspx';
+
+    if (!merchantId || !auth1 || !auth2) {
+      return res.status(500).json({
+        success: false,
+        message: 'Faltan credenciales de Azul en las variables de entorno del servidor'
+      });
+    }
+
+    const orden = `LCM-${Date.now()}`;
+
+    // Payload oficial para el WebService de Azul
+    const payloadAzul = {
+      Channel: 'EC',
+      Store: merchantId,
+      CardNumber: numTarjeta,
+      Expiration: expFormato,
+      CVC: cvv,
+      PosInputMode: 'E-Commerce',
+      TrxType: 'Sale',
+      Amount: montoCentavos,
+      Itbis: '000',
+      OrderNumber: orden,
+      CustomData: `${nombre}|${direccion}|${estado}`
+    };
+
+    const respuestaAzul = await fetch(endpointAzul, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Auth1': auth1,
+        'Auth2': auth2
+      },
+      body: JSON.stringify(payloadAzul)
+    });
+
+    const resultado = await respuestaAzul.json();
+
+    // Verificación de aprobación bancaria
+    if (resultado.IsoCode === '00' || resultado.ResponseCode === '00' || resultado.AuthorizationCode) {
+      return res.status(200).json({
+        success: true,
+        orderNumber: orden,
+        authorizationCode: resultado.AuthorizationCode || 'APROBADO',
+        rrn: resultado.RRN || '',
+        message: 'Transacción aprobada'
+      });
+    } else {
+      return res.status(400).json({
+        success: false,
+        orderNumber: orden,
+        message: resultado.ResponseMessage || 'Transacción denegada por el banco emisor'
+      });
+    }
+
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: 'Error de comunicación con el WebService de Azul'
+    });
+  }
+}
+
