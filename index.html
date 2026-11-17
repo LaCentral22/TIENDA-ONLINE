@@ -30,9 +30,8 @@
           <span class="brand-title">LA CENTRAL<span class="gold-dot">.</span>MODA</span>
         </a>
       </div>
-
       <nav class="nav-actions">
-        <!-- Selector de Moneda (Moneda oficial DOP) -->
+        <!-- Selector de Moneda -->
         <div class="currency-box">
           <label for="currency-select" class="sr-only">Moneda</label>
           <select id="currency-select" onchange="cambiarMoneda(this.value)">
@@ -41,13 +40,11 @@
             <option value="EUR">EUR</option>
           </select>
         </div>
-
         <!-- Botón Mi Cuenta -->
         <button type="button" class="btn-ghost" onclick="abrirModalCuenta()" id="btn-cuenta-nav">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
           <span id="label-cuenta">Mi Cuenta</span>
         </button>
-
         <!-- Botón Carrito -->
         <button type="button" class="btn-gold" onclick="abrirModalCarrito()">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
@@ -79,7 +76,6 @@
       <h2 class="section-title">PRODUCTOS DESTACADOS</h2>
       <div class="gold-line"></div>
     </div>
-
     <div class="products-grid" id="grid-productos"></div>
   </main>
 
@@ -93,7 +89,6 @@
         <h3>Políticas de Devolución</h3>
         <p>Aceptamos devoluciones y cambios dentro de los <strong>15 días posteriores</strong> a la entrega. Puedes tramitar tu solicitud desde la sección <em>Mi Cuenta</em>.</p>
       </div>
-
       <div class="policy-card">
         <div class="policy-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
@@ -101,7 +96,6 @@
         <h3>Envíos y Entregas</h3>
         <p>Despachos internacionales y locales con plazo estimado de <strong>48 a 72 horas hábiles</strong> y número de rastreo directo a su correo.</p>
       </div>
-
       <div class="policy-card">
         <div class="policy-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
@@ -110,7 +104,7 @@
         <p>Procesamiento directo certificado por Servicios Digitales Popular bajo estándar PCI-DSS y autenticación 3-D Secure bancaria.</p>
       </div>
 
-      <!-- Tarjeta Detallada de Privacidad y Eliminación de Datos (Requisito Azul / Bancario) -->
+      <!-- Tarjeta Detallada de Privacidad y Eliminación de Datos -->
       <div class="policy-card policy-card-full" id="privacidad-datos">
         <div class="policy-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
@@ -121,20 +115,17 @@
         <div class="policy-grid-details">
           <div class="policy-detail-item">
             <h4 class="policy-subtitle"><span class="gold-bullet">1.</span> ¿Qué datos personales recopilamos?</h4>
-            <p>Recopilamos únicamente los datos necesarios para la gestión de compras y envíos: <strong>nombre completo</strong> del tarjetahabiente, <strong>correo electrónico</strong>, <strong>número de teléfono / WhatsApp</strong> y <strong>dirección física completa</strong> (calle, número de inmueble, sector, ciudad, código postal y país), tanto para fines de entrega física como de facturación.</p>
+            <p>Recopilamos únicamente los datos necesarios para la gestión de compras y envíos: <strong>nombre completo</strong> del tarjetahabiente, <strong>correo electrónico</strong>, <strong>número de teléfono / WhatsApp</strong> y <strong>dirección física</strong> (calle, estado o provincia y país), tanto para fines de entrega física como de facturación.</p>
           </div>
-
           <div class="policy-detail-item">
             <h4 class="policy-subtitle"><span class="gold-bullet">2.</span> ¿Para qué utilizamos sus datos?</h4>
             <p>Los datos suministrados se utilizan exclusivamente para: (a) procesar y validar su orden de compra; (b) coordinar el despacho y entrega de sus artículos con guías de rastreo; (c) emitir los comprobantes y facturas comerciales correspondientes; y (d) responder solicitudes de soporte, cambio o devolución a través de nuestro servicio al cliente.</p>
           </div>
-
           <div class="policy-detail-item">
             <h4 class="policy-subtitle"><span class="gold-bullet">3.</span> ¿Cómo protegemos su información y datos de tarjeta?</h4>
             <p>Toda la navegación y transmisión de datos se realiza bajo protocolo cifrado de alta seguridad <strong>HTTPS / TLS de 256 bits</strong>.<br>
-            <strong>Seguridad en transacciones con tarjeta:</strong> En estricto cumplimiento de los estándares internacionales <em>PCI-DSS</em> y las directrices de <em>AZUL</em>, <strong>LA CENTRAL MODA no captura, no procesa, no transmite ni almacena en sus servidores datos sensibles de tarjetas</strong> (números de tarjeta, fechas de expiración o código CVV). Toda la captura es realizada en el entorno seguro tokenizado de <strong>AZUL API</strong> y validada por el banco emisor mediante los protocolos de autenticación <strong>Verified by Visa (Visa Secure)</strong> y <strong>Mastercard Identity Check</strong>.</p>
+            <strong>Seguridad en transacciones con tarjeta:</strong> En estricto cumplimiento de los estándares internacionales <em>PCI-DSS</em> y las directrices de <em>AZUL</em>, <strong>LA CENTRAL MODA no almacena en sus servidores datos sensibles de tarjetas</strong>. Toda la captura es realizada en el entorno seguro tokenizado de <strong>AZUL API</strong> y validada por el banco emisor mediante los protocolos de autenticación <strong>Verified by Visa (Visa Secure)</strong> y <strong>Mastercard Identity Check</strong>.</p>
           </div>
-
           <div class="policy-detail-item">
             <h4 class="policy-subtitle"><span class="gold-bullet">4.</span> ¿Cómo solicitar la eliminación o rectificación de sus datos?</h4>
             <p>Todo tarjetahabiente o cliente tiene el derecho permanente de solicitar la consulta, actualización o <strong>eliminación definitiva de sus datos personales</strong> de nuestras bases de datos y registros locales. Para ejercer este derecho, puede solicitarlo directamente por cualquiera de nuestros canales oficiales:
@@ -156,7 +147,6 @@
         <p class="store-address"><strong>Dirección física:</strong> Santo Domingo, Distrito Nacional, República Dominicana.</p>
         <p><strong>Moneda de liquidación:</strong> DOP (Pesos Dominicanos)</p>
       </div>
-
       <div class="footer-col">
         <h4>Atención 24 Horas</h4>
         <p>Email: <a href="mailto:lacentralmodaa@gmail.com">lacentralmodaa@gmail.com</a></p>
@@ -164,7 +154,6 @@
         <p>Horario: Soporte y gestión continua.</p>
         <p><a href="#privacidad-datos" class="gold-link" style="font-size: 0.8rem;">Ver Política de Privacidad</a></p>
       </div>
-
       <div class="footer-col">
         <h4>Procesamiento Integrado</h4>
         <p class="footer-note">Conexión directa vía API con:</p>
@@ -187,7 +176,6 @@
         <p class="footer-note" style="margin-top: 8px;">Aceptamos tarjetas de crédito y débito nacionales e internacionales.</p>
       </div>
     </div>
-
     <div class="footer-bottom">
       <p>&copy; 2026 LA CENTRAL MODA. Todos los derechos reservados.</p>
     </div>
@@ -202,7 +190,6 @@
       </div>
       
       <div class="modal-body">
-        <!-- Formulario de Perfil y Dirección Domiciliaria -->
         <form id="form-cuenta" onsubmit="guardarCuenta(event)">
           <span class="form-section-title">Datos Personales y de Domicilio</span>
           <div class="form-group">
@@ -220,51 +207,27 @@
               <input type="tel" id="acc-telefono" required placeholder="+1 809 000 0000">
             </div>
           </div>
-
-          <div class="form-row">
-            <div class="form-group" style="flex: 2;">
-              <label for="acc-calle">Calle / Avenida</label>
-              <input type="text" id="acc-calle" required placeholder="Ej. Av. Winston Churchill">
-            </div>
-            <div class="form-group" style="flex: 1;">
-              <label for="acc-numero">No. / Apto</label>
-              <input type="text" id="acc-numero" required placeholder="Ej. 104, Apto 3B">
-            </div>
+          <div class="form-group">
+            <label for="acc-direccion">Dirección Completa</label>
+            <input type="text" id="acc-direccion" required placeholder="Calle, número, sector o apto">
           </div>
-
           <div class="form-row">
             <div class="form-group col-half">
-              <label for="acc-sector">Sector / Urbanización</label>
-              <input type="text" id="acc-sector" required placeholder="Ej. Piantini">
-            </div>
-            <div class="form-group col-half">
-              <label for="acc-ciudad">Ciudad / Provincia</label>
-              <input type="text" id="acc-ciudad" required placeholder="Ej. Santo Domingo">
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group col-half">
-              <label for="acc-codigopostal">Código Postal</label>
-              <input type="text" id="acc-codigopostal" placeholder="10148">
+              <label for="acc-estado">Estado / Provincia</label>
+              <input type="text" id="acc-estado" required placeholder="Ej. Distrito Nacional">
             </div>
             <div class="form-group col-half">
               <label for="acc-pais">País</label>
               <input type="text" id="acc-pais" value="República Dominicana" required>
             </div>
           </div>
-
           <button type="submit" class="btn-gold-block">Guardar Datos de Cuenta</button>
         </form>
 
         <div class="form-divider"></div>
 
-        <!-- Gestión de Devoluciones -->
         <span class="form-section-title">Centro de Cambios y Devoluciones</span>
-        <p class="info-text">
-          Garantía de 15 días posteriores a la recepción de su compra.
-        </p>
-
+        <p class="info-text">Garantía de 15 días posteriores a la recepción de su compra.</p>
         <form id="form-devolucion" onsubmit="procesarSolicitudDevolucion(event)">
           <div class="form-group">
             <label for="dev-orden">Número de Orden</label>
@@ -289,7 +252,7 @@
     </div>
   </div>
 
-  <!-- Modal: Bolsa de Compras y Checkout API Azul -->
+  <!-- Modal: Bolsa de Compras y Checkout Simplificado -->
   <div class="modal-backdrop" id="modal-carrito" role="dialog" aria-modal="true">
     <div class="modal-card modal-large">
       <div class="modal-header">
@@ -322,100 +285,58 @@
           </div>
         </div>
 
-        <!-- Columna 2: Facturación y Checkout API Azul -->
+        <!-- Columna 2: Checkout Simplificado (Nombre, Dirección, Estado, Tarjeta) -->
         <div class="cart-checkout-column">
           <form id="form-pago-azul" onsubmit="ejecutarCobroAzulAPI(event)">
-            <span class="form-section-title">Dirección de Facturación</span>
+            <span class="form-section-title">Datos del Tarjetahabiente</span>
+            
+            <div class="form-group">
+              <label for="pay-nombre">Nombre Completo</label>
+              <input type="text" id="pay-nombre" required placeholder="Nombre del titular de la tarjeta">
+            </div>
 
             <div class="form-group">
-              <label for="pay-nombre">Nombre de Tarjeta (Tarjetahabiente)</label>
-              <input type="text" id="pay-nombre" required placeholder="Como figura en el plástico">
+              <label for="pay-direccion">Dirección</label>
+              <input type="text" id="pay-direccion" required placeholder="Calle, número, apto o sector">
             </div>
 
-            <div class="form-row">
-              <div class="form-group col-half">
-                <label for="pay-email">Correo para Recibo</label>
-                <input type="email" id="pay-email" required placeholder="recibo@correo.com">
-              </div>
-              <div class="form-group col-half">
-                <label for="pay-telefono">Teléfono de Contacto</label>
-                <input type="tel" id="pay-telefono" required placeholder="+1 809 000 0000">
-              </div>
+            <div class="form-group">
+              <label for="pay-estado">Estado / Provincia</label>
+              <input type="text" id="pay-estado" required placeholder="Estado o provincia">
             </div>
 
-            <div class="form-row">
-              <div class="form-group" style="flex: 2;">
-                <label for="pay-calle">Nombre de Calle / Av.</label>
-                <input type="text" id="pay-calle" required placeholder="Calle de residencia">
-              </div>
-              <div class="form-group" style="flex: 1;">
-                <label for="pay-numero">Número</label>
-                <input type="text" id="pay-numero" required placeholder="No. Inmueble">
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group col-half">
-                <label for="pay-sector">Sector</label>
-                <input type="text" id="pay-sector" required placeholder="Sector o Barrio">
-              </div>
-              <div class="form-group col-half">
-                <label for="pay-ciudad">Ciudad</label>
-                <input type="text" id="pay-ciudad" required placeholder="Ciudad">
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group col-half">
-                <label for="pay-codigopostal">Código Postal</label>
-                <input type="text" id="pay-codigopostal" placeholder="Código Postal">
-              </div>
-              <div class="form-group col-half">
-                <label for="pay-pais">País</label>
-                <input type="text" id="pay-pais" value="República Dominicana" required>
-              </div>
-            </div>
-
-            <!-- Caja Específica de Azul API y Slots Hosted Fields -->
+            <!-- Datos de la Tarjeta -->
             <div class="azul-secure-container">
               <div class="azul-badge-header">
                 <span class="azul-logo-text">AZUL API</span>
-                <span class="azul-secure-label">Hosted Fields Tokenizer</span>
+                <span class="azul-secure-label">Datos de la Tarjeta</span>
               </div>
               <p class="azul-desc">
-                Permaneces en <strong>La Central Moda</strong>. Los datos sensibles son tokenizados de forma segura directamente por Azul.
+                Permaneces en <strong>La Central Moda</strong>. Conexión segura integrada.
               </p>
               
-              <!-- Contenedor donde se montan los campos seguros del SDK de Azul -->
               <div id="azul-hosted-fields-container" class="azul-fields-grid">
                 <div class="form-group">
-                  <label>Número de Tarjeta (Azul Hosted Field)</label>
-                  <div class="azul-input-slot" id="azul-card-number-slot">
-                    <span class="slot-placeholder">•••• •••• •••• •••• [Iframe Seguro Azul]</span>
-                  </div>
+                  <label for="pay-tarjeta">Número de Tarjeta</label>
+                  <input type="text" id="pay-tarjeta" maxlength="19" placeholder="•••• •••• •••• ••••" required autocomplete="cc-number">
                 </div>
-
                 <div class="form-row">
                   <div class="form-group col-half">
-                    <label>Expiración (MM/AA)</label>
-                    <div class="azul-input-slot" id="azul-card-exp-slot">
-                      <span class="slot-placeholder">MM / AA</span>
-                    </div>
+                    <label for="pay-expiracion">Expiración (MM/AA)</label>
+                    <input type="text" id="pay-expiracion" maxlength="5" placeholder="MM/AA" required autocomplete="cc-exp">
                   </div>
                   <div class="form-group col-half">
-                    <label>Código CVC/CVV</label>
-                    <div class="azul-input-slot" id="azul-card-cvc-slot">
-                      <span class="slot-placeholder">CVC</span>
-                    </div>
+                    <label for="pay-cvv">Código de Seguridad (CVV)</label>
+                    <input type="password" id="pay-cvv" maxlength="4" placeholder="CVC / CVV" required autocomplete="cc-csc">
                   </div>
                 </div>
               </div>
 
-              <!-- Distintivos Oficiales de Seguridad 3-D Secure requeridos por Azul -->
+              <!-- Distintivos Oficiales de Seguridad 3-D Secure -->
               <div class="security-badges-wrapper">
                 <span class="security-badges-label">Autenticación Bancaria 3-D Secure:</span>
                 <div class="security-badges-list">
-                  <!-- Verified by Visa / Visa Secure -->
+                  <!-- Verified by Visa -->
                   <div class="badge-3ds badge-visa-secure" title="Autenticación Verified by Visa / Visa Secure">
                     <svg width="128" height="34" viewBox="0 0 128 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <rect width="128" height="34" rx="5" fill="#0c1017" stroke="#22314a" stroke-width="1"/>
@@ -459,7 +380,6 @@
 
   <!-- Lógica JavaScript Dinámica -->
   <script>
-    // Catálogo con variantes de tallas y galerías HD
     const productos = [
       {
         id: 1,
@@ -512,7 +432,6 @@
     let monedaActual = 'DOP';
     const tasasCambio = { DOP: 1, USD: 0.017, EUR: 0.015 };
     const simbolosMoneda = { DOP: 'DOP ', USD: '$', EUR: '€' };
-
     let carrito = [];
     const seleccionPrevia = {};
 
@@ -531,26 +450,21 @@
       const grid = document.getElementById('grid-productos');
       if (!grid) return;
       grid.innerHTML = '';
-
       productos.forEach(p => {
         if (!seleccionPrevia[p.id]) {
           seleccionPrevia[p.id] = { fotoIndex: 0, talla: p.tallas[0] };
         }
         const estado = seleccionPrevia[p.id];
-
         const card = document.createElement('article');
         card.className = 'product-card';
-
         const thumbsHtml = p.fotos.map((f, idx) => `
           <button type="button" class="thumb-btn ${idx === estado.fotoIndex ? 'active' : ''}" onclick="cambiarFoto(${p.id}, ${idx})">
             <img src="${f}" alt="${p.nombre} miniatura ${idx + 1}" loading="lazy">
           </button>
         `).join('');
-
         const tallasHtml = p.tallas.map(t => `
           <button type="button" class="size-chip ${t === estado.talla ? 'active' : ''}" onclick="seleccionarTalla(${p.id}, '${t}')">${t}</button>
         `).join('');
-
         card.innerHTML = `
           <div class="product-media">
             <img id="p-img-${p.id}" src="${p.fotos[estado.fotoIndex]}" alt="${p.nombre}" class="product-main-img" loading="lazy">
@@ -595,7 +509,6 @@
       const prod = productos.find(x => x.id === prodId);
       if (!prod) return;
       const tallaElegida = seleccionPrevia[prodId].talla;
-
       const existente = carrito.find(item => item.id === prodId && item.talla === tallaElegida);
       if (existente) {
         existente.cantidad += 1;
@@ -630,10 +543,8 @@
     function actualizarCarritoUI() {
       const totalItems = carrito.reduce((acc, item) => acc + item.cantidad, 0);
       const totalDOP = carrito.reduce((acc, item) => acc + (item.precioDOP * item.cantidad), 0);
-
       const counter = document.getElementById('cart-counter');
       if (counter) counter.textContent = totalItems;
-
       const container = document.getElementById('cart-items-container');
       if (container) {
         if (carrito.length === 0) {
@@ -659,11 +570,9 @@
           `).join('');
         }
       }
-
       const subtotalElem = document.getElementById('cart-subtotal');
       const totalElem = document.getElementById('cart-total');
       const payTotalElem = document.getElementById('btn-pay-total');
-
       const precioStr = formatearPrecio(totalDOP);
       if (subtotalElem) subtotalElem.textContent = precioStr;
       if (totalElem) totalElem.textContent = precioStr;
@@ -674,13 +583,16 @@
       document.getElementById('modal-carrito').classList.add('active');
       precargarDireccionEnCheckout();
     }
+
     function cerrarModalCarrito() {
       document.getElementById('modal-carrito').classList.remove('active');
     }
+
     function abrirModalCuenta() {
       document.getElementById('modal-cuenta').classList.add('active');
       precargarFormularioCuenta();
     }
+
     function cerrarModalCuenta() {
       document.getElementById('modal-cuenta').classList.remove('active');
     }
@@ -691,11 +603,8 @@
         nombre: document.getElementById('acc-nombre').value.trim(),
         email: document.getElementById('acc-email').value.trim(),
         telefono: document.getElementById('acc-telefono').value.trim(),
-        calle: document.getElementById('acc-calle').value.trim(),
-        numero: document.getElementById('acc-numero').value.trim(),
-        sector: document.getElementById('acc-sector').value.trim(),
-        ciudad: document.getElementById('acc-ciudad').value.trim(),
-        codigopostal: document.getElementById('acc-codigopostal').value.trim(),
+        direccion: document.getElementById('acc-direccion').value.trim(),
+        estado: document.getElementById('acc-estado').value.trim(),
         pais: document.getElementById('acc-pais').value.trim()
       };
       localStorage.setItem('la_central_cuenta_azul', JSON.stringify(cuentaData));
@@ -711,11 +620,8 @@
       if (c.nombre) document.getElementById('acc-nombre').value = c.nombre;
       if (c.email) document.getElementById('acc-email').value = c.email;
       if (c.telefono) document.getElementById('acc-telefono').value = c.telefono;
-      if (c.calle) document.getElementById('acc-calle').value = c.calle;
-      if (c.numero) document.getElementById('acc-numero').value = c.numero;
-      if (c.sector) document.getElementById('acc-sector').value = c.sector;
-      if (c.ciudad) document.getElementById('acc-ciudad').value = c.ciudad;
-      if (c.codigopostal) document.getElementById('acc-codigopostal').value = c.codigopostal;
+      if (c.direccion) document.getElementById('acc-direccion').value = c.direccion;
+      if (c.estado) document.getElementById('acc-estado').value = c.estado;
       if (c.pais) document.getElementById('acc-pais').value = c.pais;
     }
 
@@ -724,24 +630,13 @@
       if (!raw) return;
       const c = JSON.parse(raw);
       const fNombre = document.getElementById('pay-nombre');
-      const fEmail = document.getElementById('pay-email');
-      const fTel = document.getElementById('pay-telefono');
-      const fCalle = document.getElementById('pay-calle');
-      const fNum = document.getElementById('pay-numero');
-      const fSector = document.getElementById('pay-sector');
-      const fCiudad = document.getElementById('pay-ciudad');
-      const fCP = document.getElementById('pay-codigopostal');
-      const fPais = document.getElementById('pay-pais');
-
+      const fDireccion = document.getElementById('pay-direccion');
+      const fEstado = document.getElementById('pay-estado');
       if (fNombre && !fNombre.value) fNombre.value = c.nombre || '';
-      if (fEmail && !fEmail.value) fEmail.value = c.email || '';
-      if (fTel && !fTel.value) fTel.value = c.telefono || '';
-      if (fCalle && !fCalle.value) fCalle.value = c.calle || '';
-      if (fNum && !fNum.value) fNum.value = c.numero || '';
-      if (fSector && !fSector.value) fSector.value = c.sector || '';
-      if (fCiudad && !fCiudad.value) fCiudad.value = c.ciudad || '';
-      if (fCP && !fCP.value) fCP.value = c.codigopostal || '';
-      if (fPais && !fPais.value) fPais.value = c.pais || 'República Dominicana';
+      if (fDireccion && !fDireccion.value) {
+        fDireccion.value = c.direccion || [c.calle, c.numero, c.sector].filter(Boolean).join(', ') || '';
+      }
+      if (fEstado && !fEstado.value) fEstado.value = c.estado || c.ciudad || '';
     }
 
     function actualizarBotonCuenta() {
@@ -765,7 +660,28 @@
       cerrarModalCuenta();
     }
 
-    // Ejecución de cobro embebido (Frontend listo para enviar token a Backend)
+    // Formateo visual automático para campos de tarjeta
+    const inputTarjeta = document.getElementById('pay-tarjeta');
+    if (inputTarjeta) {
+      inputTarjeta.addEventListener('input', (e) => {
+        let v = e.target.value.replace(/\D/g, '').substring(0, 16);
+        e.target.value = v.replace(/(.{4})/g, '$1 ').trim();
+      });
+    }
+
+    const inputExp = document.getElementById('pay-expiracion');
+    if (inputExp) {
+      inputExp.addEventListener('input', (e) => {
+        let v = e.target.value.replace(/\D/g, '').substring(0, 4);
+        if (v.length >= 2) {
+          e.target.value = v.substring(0, 2) + '/' + v.substring(2);
+        } else {
+          e.target.value = v;
+        }
+      });
+    }
+
+    // Ejecución del formulario de pago
     function ejecutarCobroAzulAPI(e) {
       e.preventDefault();
       if (carrito.length === 0) {
@@ -773,28 +689,27 @@
         return;
       }
       const totalMontoDOP = carrito.reduce((acc, item) => acc + (item.precioDOP * item.cantidad), 0);
+      const numTarjeta = document.getElementById('pay-tarjeta').value.replace(/\s/g, '');
+      const ultimos4 = numTarjeta.slice(-4) || '••••';
+
       const datosFacturacion = {
-        tarjetahabiente: document.getElementById('pay-nombre').value.trim(),
-        email: document.getElementById('pay-email').value.trim(),
-        telefono: document.getElementById('pay-telefono').value.trim(),
-        calle: document.getElementById('pay-calle').value.trim(),
-        numero: document.getElementById('pay-numero').value.trim(),
-        sector: document.getElementById('pay-sector').value.trim(),
-        ciudad: document.getElementById('pay-ciudad').value.trim(),
-        codigoPostal: document.getElementById('pay-codigopostal').value.trim(),
-        pais: document.getElementById('pay-pais').value.trim(),
+        nombreCompleto: document.getElementById('pay-nombre').value.trim(),
+        direccion: document.getElementById('pay-direccion').value.trim(),
+        estado: document.getElementById('pay-estado').value.trim(),
+        tarjetaMascara: `•••• •••• •••• ${ultimos4}`,
         montoDOP: totalMontoDOP
       };
 
-      alert(`[Transacción Lista para Azul API]\nCliente: ${datosFacturacion.tarjetahabiente}\nMonto: DOP ${datosFacturacion.montoDOP.toFixed(2)}\nDirección: ${datosFacturacion.calle} #${datosFacturacion.numero}, ${datosFacturacion.sector}\n\nLos datos estructurados están listos para ser procesados por el backend con tu MerchantID de Azul.`);
+      alert(`[Transacción Lista para Procesar]\nCliente: ${datosFacturacion.nombreCompleto}\nDirección: ${datosFacturacion.direccion}\nEstado: ${datosFacturacion.estado}\nTarjeta: ${datosFacturacion.tarjetaMascara}\nTotal: DOP ${datosFacturacion.montoDOP.toFixed(2)}\n\nDatos listos para enviar al backend y procesar con Azul.`);
     }
 
-    // Cerrar modales con clic fuera y Escape
+    // Cerrar modales con clic exterior o tecla Escape
     window.addEventListener('click', (e) => {
       if (e.target.classList.contains('modal-backdrop')) {
         e.target.classList.remove('active');
       }
     });
+
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         cerrarModalCarrito();
