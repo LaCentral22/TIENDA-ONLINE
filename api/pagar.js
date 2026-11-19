@@ -1,111 +1,74 @@
+const crypto = require('crypto');
+
 module.exports = async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-  if (req.method === 'OPTIONS') return res.status(200).end();
-  if (req.method !== 'POST') return res.status(405).json({ success: false, message: 'Método no permitido' });
-
-  const body = req.body || {};
-
-  // 1. Leer los campos exactamente como los envía tu index.html
-  const rawCard = body.tarjeta || body.cardNumber || '';
-  const rawExp = body.expiracion || body.expiration || '';
-  const rawCvc = body.cvv || body.cvc || '';
-  const rawAmount = body.montoDOP || body.amount || 100;
-  const orderNum = `LCM-${Date.now()}`;
-
-  const merchantId = String(process.env.AZUL_MERCHANT_ID || '').trim();
-  const authKey = String(process.env.AZUL_AUTH_KEY || '').trim();
-  const endpoint = process.env.AZUL_ENDPOINT_URL || 'https://pruebas.azul.com.do/webservices/JSON/Default.aspx';
-
-  if (!merchantId || !authKey) {
-    return res.status(500).json({ 
-      success: false, 
-      message: 'Faltan credenciales de Azul en Vercel (AZUL_MERCHANT_ID o AZUL_AUTH_KEY)' 
-    });
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
   }
 
-  // 2. Extraer solo los números de la tarjeta
-  const cleanCard = String(rawCard).replace(/\D/g, '');
-
-  // 3. Convertir fecha (ej. 12/28) al formato AAAAMM que exige Azul (202812)
-  let cleanExp = String(rawExp).replace(/\D/g, '');
-  let formattedExp = cleanExp;
-  if (cleanExp.length === 4) {
-    const mm = cleanExp.substring(0, 2);
-    const yy = cleanExp.substring(2, 4);
-    formattedExp = '20' + yy + mm;
-  } else if (cleanExp.length === 6 && parseInt(cleanExp.substring(0, 2), 10) <= 12) {
-    const mm = cleanExp.substring(0, 2);
-    const yyyy = cleanExp.substring(2, 6);
-    formattedExp = yyyy + mm;
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Método no permitido' });
   }
-
-  // 4. Convertir monto a centavos para Azul (ej: 2450 DOP -> 245000)
-  const parsedAmount = parseFloat(String(rawAmount).replace(/[^0-9.]/g, '')) || 100;
-  const amountCents = Math.round(parsedAmount * 100).toString();
-
-  const payload = {
-    Channel: 'EC',
-    Store: merchantId,
-    CardNumber: cleanCard,
-    Expiration: formattedExp,
-    CVC: String(rawCvc).trim(),
-    PosInputMode: 'E-Commerce',
-    TrxType: 'Sale',
-    Amount: amountCents,
-    Itbis: '0',
-    Payments: '1',
-    Plan: '0',
-    AcquirerRefData: '1',
-    CurrencyPosCode: '$',
-    CustomOrderId: orderNum,
-    OrderNumber: orderNum,
-    ForceNo3DS: '1'
-  };
-
-  console.log('--- ENVIANDO TRANSACCIÓN A AZUL ---');
-  console.log('PAYLOAD AZUL:', JSON.stringify(payload, null, 2));
 
   try {
-    const response = await fetch(endpoint, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Auth1': merchantId,
-        'Auth2': authKey
-      },
-      body: JSON.stringify(payload)
-    });
+    const merchantId = (process.env.AZUL_MERCHANT_ID || '39038540035').trim();
+    const privateKey = (process.env.AZUL_AUTH_KEY || '').trim();
 
-    const rawText = await response.text();
-    console.log('RESPUESTA RAW DE AZUL:', rawText);
-
-    let azulData = {};
-    try {
-      azulData = JSON.parse(rawText);
-    } catch {
-      return res.status(502).json({ 
-        success: false, 
-        message: 'Respuesta inválida de Azul: ' + rawText 
-      });
+    if (!privateKey) {
+      return res.status(500).json({ error: 'Falta configurar AZUL_AUTH_KEY en Vercel' });
     }
 
-    // Comprobar aprobación: IsoCode '00' o ResponseMessage 'APROBADA'
-    const isApproved = (azulData.IsoCode === '00' || azulData.ResponseCode === '00' || azulData.ResponseMessage === 'APROBADA');
+    const { amount } = req.body || {};
+    const rawAmount = parseFloat(amount) || 100;
+    const amountInCents = Math.round(rawAmount * 100).toString();
+    const orderId = 'LCM-' + Date.now();
+
+    // Detectar el dominio de tu tienda para las URLs de retorno
+    const protocol = req.headers['x-forwarded-proto'] || 'https';
+    const host = req.headers.host;
+    const storeUrl = `${protocol}://${host}`;
+
+    const params = {
+      MerchantId: merchantId,
+      MerchantName: 'La Central Moda',
+      MerchantType: 'ecommerce',
+      CurrencyCode: '$',
+      OrderNumber: orderId,
+      Amount: amountInCents,
+      ITBIS: '0',
+      ApprovedUrl: storeUrl,
+      DeclinedUrl: storeUrl,
+      CancelUrl: storeUrl,
+      ResponsePostUrl: storeUrl,
+      UseCustomField1: '0',
+      CustomField1Label: 'Custom1',
+      CustomField1Value: 'Value1',
+      UseCustomField2: '0',
+      CustomField2Label: 'Custom2',
+      CustomField2Value: 'Value2'
+    };
+
+    // Concatenación en orden exacto exigido por Azul + Llave Privada
+    const plainText = Object.values(params).join('') + privateKey;
+    const authHash = crypto
+      .createHash('sha512')
+      .update(Buffer.from(plainText, 'utf16le'))
+      .digest('hex');
+
+    const formParams = {
+      ...params,
+      ShowTransactionResult: '0',
+      AuthHash: authHash
+    };
 
     return res.status(200).json({
-      success: isApproved,
-      orderNumber: azulData.OrderNumber || azulData.CustomOrderId || orderNum,
-      authorizationCode: azulData.AuthorizationCode || '',
-      message: azulData.ResponseMessage || azulData.ErrorDescription || (isApproved ? 'Pago Aprobado' : 'Transacción declinada')
+      url: 'https://pruebas.azul.com.do/PaymentPage/default.aspx',
+      params: formParams
     });
-  } catch (error) {
-    console.error('ERROR CONEXIÓN AZUL:', error);
-    return res.status(500).json({ 
-      success: false, 
-      message: 'Fallo de conexión con Azul: ' + error.message 
-    });
+  } catch (err) {
+    return res.status(500).json({ error: 'Error interno: ' + err.message });
   }
 };
