@@ -8,7 +8,6 @@ module.exports = async function handler(req, res) {
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
   }
-
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Método no permitido' });
   }
@@ -18,19 +17,26 @@ module.exports = async function handler(req, res) {
     const privateKey = (process.env.AZUL_AUTH_KEY || '').trim();
 
     if (!privateKey) {
-      return res.status(500).json({ error: 'Falta configurar AZUL_AUTH_KEY en Vercel' });
+      return res.status(500).json({ error: 'Falta configurar AZUL_AUTH_KEY en las variables de entorno' });
     }
 
-    const { amount } = req.body || {};
+    const { amount, itbis } = req.body || {};
     const rawAmount = parseFloat(amount) || 100;
     const amountInCents = Math.round(rawAmount * 100).toString();
+
+    // Azul exige que si no hay ITBIS se envíe '000' (0.00)
+    let itbisInCents = '000';
+    if (itbis && parseFloat(itbis) > 0) {
+      itbisInCents = Math.round(parseFloat(itbis) * 100).toString();
+    }
+
     const orderId = 'LCM-' + Date.now();
 
-    // Detectar el dominio de tu tienda para las URLs de retorno
     const protocol = req.headers['x-forwarded-proto'] || 'https';
     const host = req.headers.host;
     const storeUrl = `${protocol}://${host}`;
 
+    // Parámetros en el orden exacto especificado por la documentación oficial de Azul
     const params = {
       MerchantId: merchantId,
       MerchantName: 'La Central Moda',
@@ -38,21 +44,21 @@ module.exports = async function handler(req, res) {
       CurrencyCode: '$',
       OrderNumber: orderId,
       Amount: amountInCents,
-      ITBIS: '0',
+      ITBIS: itbisInCents,
       ApprovedUrl: storeUrl,
       DeclinedUrl: storeUrl,
       CancelUrl: storeUrl,
-      ResponsePostUrl: storeUrl,
       UseCustomField1: '0',
-      CustomField1Label: 'Custom1',
-      CustomField1Value: 'Value1',
+      CustomField1Label: '',
+      CustomField1Value: '',
       UseCustomField2: '0',
-      CustomField2Label: 'Custom2',
-      CustomField2Value: 'Value2'
+      CustomField2Label: '',
+      CustomField2Value: ''
     };
 
-    // Concatenación en orden exacto exigido por Azul + Llave Privada
+    // Concatenación exacta requerida para AuthHash + AuthKey
     const plainText = Object.values(params).join('') + privateKey;
+
     const authHash = crypto
       .createHash('sha512')
       .update(Buffer.from(plainText, 'utf16le'))
