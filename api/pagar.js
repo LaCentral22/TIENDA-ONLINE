@@ -24,7 +24,7 @@ module.exports = async function handler(req, res) {
     const rawAmount = parseFloat(amount) || 100;
     const amountInCents = Math.round(rawAmount * 100).toString();
 
-    // Azul exige que si no hay ITBIS se envíe '000' (0.00)
+    // Azul exige '000' para 0.00
     let itbisInCents = '000';
     if (itbis && parseFloat(itbis) > 0) {
       itbisInCents = Math.round(parseFloat(itbis) * 100).toString();
@@ -36,7 +36,7 @@ module.exports = async function handler(req, res) {
     const host = req.headers.host;
     const storeUrl = `${protocol}://${host}`;
 
-    // Parámetros en el orden exacto especificado por la documentación oficial de Azul
+    // Campos en orden estricto de Azul
     const params = {
       MerchantId: merchantId,
       MerchantName: 'La Central Moda',
@@ -56,11 +56,12 @@ module.exports = async function handler(req, res) {
       CustomField2Value: ''
     };
 
-    // Concatenación exacta requerida para AuthHash + AuthKey
+    // La cadena une los 16 campos + AuthKey al final
     const plainText = Object.values(params).join('') + privateKey;
 
+    // HMAC-SHA512 con clave AuthKey y codificación UTF-16LE requerida por Azul
     const authHash = crypto
-      .createHash('sha512')
+      .createHmac('sha512', privateKey)
       .update(Buffer.from(plainText, 'utf16le'))
       .digest('hex');
 
@@ -70,8 +71,14 @@ module.exports = async function handler(req, res) {
       AuthHash: authHash
     };
 
+    // Si tus credenciales son de producción, usa: https://pagos.azul.com.do/paymentpage/default.aspx
+    // Si son de sandbox/pruebas, usa: https://pruebas.azul.com.do/PaymentPage/default.aspx
+    const azulUrl = process.env.AZUL_ENV === 'production'
+      ? 'https://pagos.azul.com.do/paymentpage/default.aspx'
+      : 'https://pruebas.azul.com.do/PaymentPage/default.aspx';
+
     return res.status(200).json({
-      url: 'https://pruebas.azul.com.do/PaymentPage/default.aspx',
+      url: azulUrl,
       params: formParams
     });
   } catch (err) {
