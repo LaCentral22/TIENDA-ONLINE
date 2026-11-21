@@ -291,330 +291,745 @@
 
   <!-- SCRIPTS Y LOGICA DE TIENDA -->
   <script>
+        // Catálogo Oficial La Central Moda (43 Artículos de Lujo Verificados)
+    // Para usar tus propias fotos de inventario, coloca tus imágenes en una carpeta (ej: img/productos/)
+    // y reemplaza las URLs por la ruta local correspondiente, ej: "img/productos/versace-cinturon-1.jpg"
     const productos = [
-      // Cinturones Versace ($200 - $300 USD)
-      {
-        id: 1,
-        nombre: 'Cinturón Versace Medusa Buckle Reversible Leather',
-        marca: 'Versace',
-        categoria: 'Cinturones & Accesorios',
-        genero: 'hombre',
-        precioUSD: 245,
-        tallas: ['85cm (32)', '90cm (34)', '95cm (36)', '100cm (38)'],
-        fotos: [
-          'https://images.unsplash.com/photo-1624222247344-550fb60583dc?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=800&q=80'
-        ]
-      },
-      {
-        id: 2,
-        nombre: 'Cinturón Versace Barocco Heritage Gold Leather',
-        marca: 'Versace',
-        categoria: 'Cinturones & Accesorios',
-        genero: 'hombre',
-        precioUSD: 285,
-        tallas: ['85cm (32)', '90cm (34)', '95cm (36)'],
-        fotos: [
-          'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1624222247344-550fb60583dc?auto=format&fit=crop&w=800&q=80'
-        ]
-      },
-      {
-        id: 3,
-        nombre: 'Cinturón Versace Classic Greca Smooth Calfskin',
-        marca: 'Versace',
-        categoria: 'Cinturones & Accesorios',
-        genero: 'hombre',
-        precioUSD: 220,
-        tallas: ['85cm (32)', '90cm (34)', '95cm (36)', '100cm (38)'],
-        fotos: [
-          'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=800&q=80'
-        ]
-      },
-
-      // Gucci
-      {
-        id: 4,
-        nombre: 'Gucci Camiseta GG Supreme Heritage Embroidered',
-        marca: 'Gucci',
-        categoria: 'Hombre',
-        genero: 'hombre',
-        precioUSD: 590,
-        tallas: ['S', 'M', 'L', 'XL'],
-        fotos: [
-          'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80'
-        ]
-      },
-      {
-        id: 5,
-        nombre: 'Gucci Vestido Seda Floral Primavera Edición Especial',
-        marca: 'Gucci',
-        categoria: 'Mujer',
-        genero: 'mujer',
-        precioUSD: 1450,
-        tallas: ['XS', 'S', 'M', 'L'],
-        fotos: [
-          'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80'
-        ]
-      },
-
-      // Prada
-      {
-        id: 6,
-        nombre: 'Prada Chaqueta Bomber Re-Nylon Minimalist',
-        marca: 'Prada',
-        categoria: 'Hombre',
-        genero: 'hombre',
-        precioUSD: 1850,
-        tallas: ['M', 'L', 'XL'],
-        fotos: [
-          'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80'
-        ]
-      },
-      {
-        id: 7,
-        nombre: 'Prada Top de Punto Fino & Falda Midi Plisada',
-        marca: 'Prada',
-        categoria: 'Mujer',
-        genero: 'mujer',
-        precioUSD: 1290,
-        tallas: ['XS', 'S', 'M'],
-        fotos: [
-          'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80'
-        ]
-      },
-
-      // Cartier
-      {
-        id: 8,
-        nombre: 'Cartier Reloj Santos de Cartier Automatic Steel',
-        marca: 'Cartier',
-        categoria: 'Joyería & Relojería',
-        genero: 'lujo',
-        precioUSD: 3950,
-        tallas: ['Medium 35mm', 'Large 40mm'],
-        fotos: [
-          'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80'
-        ]
-      },
-
-      // Sephora
-      {
-        id: 9,
-        nombre: 'Sephora Exclusive Eau de Parfum Haute Collection',
-        marca: 'Sephora',
-        categoria: 'Belleza & Fragancias',
-        genero: 'lujo',
-        precioUSD: 240,
-        tallas: ['50ml', '100ml'],
-        fotos: [
-          'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=800&q=80'
-        ]
-      },
-
-      // Dior
-      {
-        id: 10,
-        nombre: 'Dior Sneakers B23 High-Top Dior Oblique Canvas',
-        marca: 'Dior',
-        categoria: 'Hombre',
-        genero: 'hombre',
-        precioUSD: 1150,
-        tallas: ['40', '41', '42', '43', '44'],
-        fotos: [
-          'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=800&q=80'
-        ]
-      },
-      {
-        id: 11,
-        nombre: 'Dior Blusa Elegante Seda Pura & Botones Joya',
-        marca: 'Dior',
-        categoria: 'Mujer',
-        genero: 'mujer',
-        precioUSD: 1350,
-        tallas: ['S', 'M', 'L'],
-        fotos: [
-          'https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80'
-        ]
-      },
-
-      // Burberry
-      {
-        id: 12,
-        nombre: 'Burberry Camisa Popelín de Algodón Vintage Check',
-        marca: 'Burberry',
-        categoria: 'Hombre',
-        genero: 'hombre',
-        precioUSD: 490,
-        tallas: ['S', 'M', 'L', 'XL'],
-        fotos: [
-          'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=800&q=80'
-        ]
-      },
-      {
-        id: 13,
-        nombre: 'Burberry Trench Coat The Kensington Long Heritage',
-        marca: 'Burberry',
-        categoria: 'Mujer',
-        genero: 'mujer',
-        precioUSD: 2190,
-        tallas: ['XS', 'S', 'M', 'L'],
-        fotos: [
-          'https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=800&q=80'
-        ]
-      },
-
-      // Fendi
-      {
-        id: 14,
-        nombre: 'Fendi Suéter Monograma FF Jacquard Roma',
-        marca: 'Fendi',
-        categoria: 'Hombre',
-        genero: 'hombre',
-        precioUSD: 980,
-        tallas: ['S', 'M', 'L', 'XL'],
-        fotos: [
-          'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=800&q=80'
-        ]
-      },
-      {
-        id: 15,
-        nombre: 'Fendi Conjunto Top & Falda Baguette Monogram',
-        marca: 'Fendi',
-        categoria: 'Mujer',
-        genero: 'mujer',
-        precioUSD: 1650,
-        tallas: ['S', 'M', 'L'],
-        fotos: [
-          'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80'
-        ]
-      },
-
-      // Balenciaga
-      {
-        id: 16,
-        nombre: 'Balenciaga Sudadera Oversized Heavyweight Logo',
-        marca: 'Balenciaga',
-        categoria: 'Hombre',
-        genero: 'hombre',
-        precioUSD: 850,
-        tallas: ['XS', 'S', 'M', 'L'],
-        fotos: [
-          'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=800&q=80'
-        ]
-      },
-      {
-        id: 17,
-        nombre: 'Balenciaga Zapatillas Triple S Clear Sole Platform',
-        marca: 'Balenciaga',
-        categoria: 'Mujer',
-        genero: 'mujer',
-        precioUSD: 995,
-        tallas: ['36', '37', '38', '39', '40'],
-        fotos: [
-          'https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=800&q=80'
-        ]
-      },
-
-      // Louis Vuitton
-      {
-        id: 18,
-        nombre: 'Louis Vuitton Zapatillas LV Trainer Calf Leather',
-        marca: 'Louis Vuitton',
-        categoria: 'Hombre',
-        genero: 'hombre',
-        precioUSD: 1320,
-        tallas: ['40', '41', '42', '43', '44'],
-        fotos: [
-          'https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=800&q=80'
-        ]
-      },
-      {
-        id: 19,
-        nombre: 'Louis Vuitton Chaqueta Denim Monogram Jacquard',
-        marca: 'Louis Vuitton',
-        categoria: 'Mujer',
-        genero: 'mujer',
-        precioUSD: 2450,
-        tallas: ['XS', 'S', 'M'],
-        fotos: [
-          'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=800&q=80'
-        ]
-      },
-
-      // Versace (Ropa)
-      {
-        id: 20,
-        nombre: 'Versace Camisa de Seda Barocco Heritage Gold',
-        marca: 'Versace',
-        categoria: 'Hombre',
-        genero: 'hombre',
-        precioUSD: 1190,
-        tallas: ['M', 'L', 'XL'],
-        fotos: [
-          'https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80'
-        ]
-      },
-      {
-        id: 21,
-        nombre: 'Versace Vestido Corto Medusa Hardware Black',
-        marca: 'Versace',
-        categoria: 'Mujer',
-        genero: 'mujer',
-        precioUSD: 1450,
-        tallas: ['XS', 'S', 'M'],
-        fotos: [
-          'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=800&q=80'
-        ]
-      },
-
-      // Givenchy
-      {
-        id: 22,
-        nombre: 'Givenchy Hoodie Logo Paris Reverse Black',
-        marca: 'Givenchy',
-        categoria: 'Hombre',
-        genero: 'hombre',
-        precioUSD: 790,
-        tallas: ['S', 'M', 'L', 'XL'],
-        fotos: [
-          'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80'
-        ]
-      },
-      {
-        id: 23,
-        nombre: 'Givenchy Camiseta Slim Fit Logo Bordado Blanco',
-        marca: 'Givenchy',
-        categoria: 'Mujer',
-        genero: 'mujer',
-        precioUSD: 450,
-        tallas: ['XS', 'S', 'M'],
-        fotos: [
-          'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80'
-        ]
-      }
-    ];
+  {
+    "id": 1,
+    "nombre": "Versace Jeans Couture Cinturón Baroque Buckle Leather",
+    "marca": "Versace",
+    "categoria": "Cinturones & Accesorios",
+    "genero": "hombre",
+    "precioUSD": 245,
+    "tallas": [
+      "85cm (32)",
+      "90cm (34)",
+      "95cm (36)",
+      "100cm (38)"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1624222247344-550fb60583dc?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 2,
+    "nombre": "Versace Jeans Couture Cinturón Reversible Western Gold",
+    "marca": "Versace",
+    "categoria": "Cinturones & Accesorios",
+    "genero": "hombre",
+    "precioUSD": 285,
+    "tallas": [
+      "85cm (32)",
+      "90cm (34)",
+      "95cm (36)"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1624222247344-550fb60583dc?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 3,
+    "nombre": "Versace Jeans Couture Cinturón Classic Lettering Smooth",
+    "marca": "Versace",
+    "categoria": "Cinturones & Accesorios",
+    "genero": "hombre",
+    "precioUSD": 220,
+    "tallas": [
+      "85cm (32)",
+      "90cm (34)",
+      "95cm (36)",
+      "100cm (38)"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1624222247344-550fb60583dc?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 4,
+    "nombre": "Gucci Camiseta con Logo GG Blade Estampado",
+    "marca": "Gucci",
+    "categoria": "Hombre",
+    "genero": "hombre",
+    "precioUSD": 590,
+    "tallas": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 5,
+    "nombre": "Gucci Cinturón de Piel GG Marmont Hebilla Dorada 3cm",
+    "marca": "Gucci",
+    "categoria": "Cinturones & Accesorios",
+    "genero": "hombre",
+    "precioUSD": 490,
+    "tallas": [
+      "80cm (30)",
+      "85cm (32)",
+      "90cm (34)",
+      "95cm (36)"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1624222247344-550fb60583dc?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 6,
+    "nombre": "Gucci Zapatillas Ace de Piel con Raya Web",
+    "marca": "Gucci",
+    "categoria": "Hombre",
+    "genero": "hombre",
+    "precioUSD": 890,
+    "tallas": [
+      "40 EU (7 US)",
+      "41 EU (8 US)",
+      "42 EU (9 US)",
+      "43 EU (10 US)",
+      "44 EU (11 US)"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 7,
+    "nombre": "Gucci Vestido Camisero de Seda con Estampado Flora",
+    "marca": "Gucci",
+    "categoria": "Mujer",
+    "genero": "mujer",
+    "precioUSD": 2300,
+    "tallas": [
+      "38 IT (XS)",
+      "40 IT (S)",
+      "42 IT (M)",
+      "44 IT (L)"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 8,
+    "nombre": "Gucci Bolso Jackie 1961 Pequeño de Piel",
+    "marca": "Gucci",
+    "categoria": "Mujer",
+    "genero": "mujer",
+    "precioUSD": 3200,
+    "tallas": [
+      "Talla Única (Small)"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 9,
+    "nombre": "Prada Chaqueta Bomber Re-Nylon con Logo Triangular",
+    "marca": "Prada",
+    "categoria": "Hombre",
+    "genero": "hombre",
+    "precioUSD": 2450,
+    "tallas": [
+      "46 IT (S)",
+      "48 IT (M)",
+      "50 IT (L)",
+      "52 IT (XL)"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 10,
+    "nombre": "Prada Mocasines Monolith de Piel Spazzolato",
+    "marca": "Prada",
+    "categoria": "Hombre",
+    "genero": "hombre",
+    "precioUSD": 1250,
+    "tallas": [
+      "40 EU (7 US)",
+      "41 EU (8 US)",
+      "42 EU (9 US)",
+      "43 EU (10 US)"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 11,
+    "nombre": "Prada Camisa de Popelín de Algodón Blanco Corte Recto",
+    "marca": "Prada",
+    "categoria": "Hombre",
+    "genero": "hombre",
+    "precioUSD": 750,
+    "tallas": [
+      "38 (15)",
+      "39 (15.5)",
+      "40 (16)",
+      "41 (16.5)"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 12,
+    "nombre": "Prada Bolso Re-Edition 2000 en Tejido Re-Nylon",
+    "marca": "Prada",
+    "categoria": "Mujer",
+    "genero": "mujer",
+    "precioUSD": 1350,
+    "tallas": [
+      "Talla Única"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 13,
+    "nombre": "Cartier Reloj Santos de Cartier Automático Acero Grande",
+    "marca": "Cartier",
+    "categoria": "Joyería & Relojería",
+    "genero": "lujo",
+    "precioUSD": 7750,
+    "tallas": [
+      "Caja 39.8mm (Acero)"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 14,
+    "nombre": "Cartier Pulsera Love Clásica en Oro Amarillo 18k",
+    "marca": "Cartier",
+    "categoria": "Joyería & Relojería",
+    "genero": "lujo",
+    "precioUSD": 7350,
+    "tallas": [
+      "Talla 16",
+      "Talla 17",
+      "Talla 18",
+      "Talla 19"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1533139502658-0198f920d8e8?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 15,
+    "nombre": "Maison Margiela Replica Jazz Club Eau de Toilette 100ml",
+    "marca": "Sephora",
+    "categoria": "Belleza & Fragancias",
+    "genero": "lujo",
+    "precioUSD": 165,
+    "tallas": [
+      "100ml / 3.4 fl oz"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 16,
+    "nombre": "Tom Ford Private Blend Oud Wood Eau de Parfum 50ml",
+    "marca": "Sephora",
+    "categoria": "Belleza & Fragancias",
+    "genero": "lujo",
+    "precioUSD": 295,
+    "tallas": [
+      "50ml / 1.7 fl oz"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 17,
+    "nombre": "Dior Sneakers B23 High-Top Dior Oblique Canvas",
+    "marca": "Dior",
+    "categoria": "Hombre",
+    "genero": "hombre",
+    "precioUSD": 1200,
+    "tallas": [
+      "40 EU (7 US)",
+      "41 EU (8 US)",
+      "42 EU (9 US)",
+      "43 EU (10 US)",
+      "44 EU (11 US)"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 18,
+    "nombre": "Dior Camiseta de Algodón con Bordado CD Icon",
+    "marca": "Dior",
+    "categoria": "Hombre",
+    "genero": "hombre",
+    "precioUSD": 750,
+    "tallas": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 19,
+    "nombre": "Dior Bolso Saddle en Piel de Becerro Graneada Negra",
+    "marca": "Dior",
+    "categoria": "Mujer",
+    "genero": "mujer",
+    "precioUSD": 4200,
+    "tallas": [
+      "Talla Única (25.5 x 20 x 6.5 cm)"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 20,
+    "nombre": "Dior Sneakers B27 Low-Top Piel Lisa y Dior Oblique Galaxy",
+    "marca": "Dior",
+    "categoria": "Hombre",
+    "genero": "hombre",
+    "precioUSD": 1150,
+    "tallas": [
+      "41 EU (8 US)",
+      "42 EU (9 US)",
+      "43 EU (10 US)",
+      "44 EU (11 US)"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 21,
+    "nombre": "Burberry Camisa Popelín de Algodón Vintage Check Beige",
+    "marca": "Burberry",
+    "categoria": "Hombre",
+    "genero": "hombre",
+    "precioUSD": 550,
+    "tallas": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 22,
+    "nombre": "Burberry Gabardina The Kensington Heritage Long Trench Coat",
+    "marca": "Burberry",
+    "categoria": "Mujer",
+    "genero": "mujer",
+    "precioUSD": 2590,
+    "tallas": [
+      "UK 6 (US 2)",
+      "UK 8 (US 4)",
+      "UK 10 (US 6)",
+      "UK 12 (US 8)"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 23,
+    "nombre": "Burberry Bufanda Classic Check en Pura Cachemira Escocesa",
+    "marca": "Burberry",
+    "categoria": "Cinturones & Accesorios",
+    "genero": "hombre",
+    "precioUSD": 520,
+    "tallas": [
+      "168 x 30 cm"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 24,
+    "nombre": "Burberry Polo de Piqué de Algodón con Detalle Check",
+    "marca": "Burberry",
+    "categoria": "Hombre",
+    "genero": "hombre",
+    "precioUSD": 420,
+    "tallas": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 25,
+    "nombre": "Fendi Suéter de Cuello Redondo de Lana con Motivo FF Roma",
+    "marca": "Fendi",
+    "categoria": "Hombre",
+    "genero": "hombre",
+    "precioUSD": 1150,
+    "tallas": [
+      "48 IT (M)",
+      "50 IT (L)",
+      "52 IT (XL)"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 26,
+    "nombre": "Fendi Bolso Baguette Mediano en Jacquard Monograma FF",
+    "marca": "Fendi",
+    "categoria": "Mujer",
+    "genero": "mujer",
+    "precioUSD": 3490,
+    "tallas": [
+      "Mediano (27 x 15 x 6 cm)"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 27,
+    "nombre": "Fendi Camisa de Seda Twill Estampado Micro FF",
+    "marca": "Fendi",
+    "categoria": "Hombre",
+    "genero": "hombre",
+    "precioUSD": 1390,
+    "tallas": [
+      "39 (15.5)",
+      "40 (16)",
+      "41 (16.5)"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 28,
+    "nombre": "Fendi Zapatillas Flow de Piel y Tejido Técnico",
+    "marca": "Fendi",
+    "categoria": "Hombre",
+    "genero": "hombre",
+    "precioUSD": 950,
+    "tallas": [
+      "41 EU (8 US)",
+      "42 EU (9 US)",
+      "43 EU (10 US)"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 29,
+    "nombre": "Balenciaga Zapatillas Triple S Clear Sole Platform",
+    "marca": "Balenciaga",
+    "categoria": "Hombre",
+    "genero": "hombre",
+    "precioUSD": 1150,
+    "tallas": [
+      "40 EU (7 US)",
+      "41 EU (8 US)",
+      "42 EU (9 US)",
+      "43 EU (10 US)",
+      "44 EU (11 US)"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 30,
+    "nombre": "Balenciaga Sudadera con Capucha Oversized Medium Fit Logo",
+    "marca": "Balenciaga",
+    "categoria": "Hombre",
+    "genero": "hombre",
+    "precioUSD": 995,
+    "tallas": [
+      "XS (Oversized)",
+      "S (Oversized)",
+      "M (Oversized)",
+      "L (Oversized)"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 31,
+    "nombre": "Balenciaga Zapatillas Speed 2.0 Sock Sneaker Knit",
+    "marca": "Balenciaga",
+    "categoria": "Hombre",
+    "genero": "hombre",
+    "precioUSD": 950,
+    "tallas": [
+      "41 EU (8 US)",
+      "42 EU (9 US)",
+      "43 EU (10 US)",
+      "44 EU (11 US)"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 32,
+    "nombre": "Balenciaga Bolso Le Cagole XS de Piel con Remaches",
+    "marca": "Balenciaga",
+    "categoria": "Mujer",
+    "genero": "mujer",
+    "precioUSD": 2350,
+    "tallas": [
+      "XS (26 x 12.5 x 7 cm)"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 33,
+    "nombre": "Louis Vuitton Zapatillas LV Trainer Calf Leather & Denim",
+    "marca": "Louis Vuitton",
+    "categoria": "Hombre",
+    "genero": "hombre",
+    "precioUSD": 1360,
+    "tallas": [
+      "7 LV (8 US)",
+      "8 LV (9 US)",
+      "9 LV (10 US)",
+      "10 LV (11 US)"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 34,
+    "nombre": "Louis Vuitton Cinturón LV Initiales 40mm Reversible Monogram",
+    "marca": "Louis Vuitton",
+    "categoria": "Cinturones & Accesorios",
+    "genero": "hombre",
+    "precioUSD": 590,
+    "tallas": [
+      "85cm (34)",
+      "90cm (36)",
+      "95cm (38)",
+      "100cm (40)"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1624222247344-550fb60583dc?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 35,
+    "nombre": "Louis Vuitton Cartera Multiple Wallet Canvas Monogram",
+    "marca": "Louis Vuitton",
+    "categoria": "Cinturones & Accesorios",
+    "genero": "hombre",
+    "precioUSD": 540,
+    "tallas": [
+      "11.5 x 9 x 1.5 cm"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 36,
+    "nombre": "Louis Vuitton Bolso Speedy Bandoulière 25 Monogram",
+    "marca": "Louis Vuitton",
+    "categoria": "Mujer",
+    "genero": "mujer",
+    "precioUSD": 1960,
+    "tallas": [
+      "Speedy 25 (25 x 19 x 15 cm)"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 37,
+    "nombre": "Louis Vuitton Chaqueta Denim Monogram Jacquard Azul",
+    "marca": "Louis Vuitton",
+    "categoria": "Hombre",
+    "genero": "hombre",
+    "precioUSD": 2850,
+    "tallas": [
+      "48 FR (M)",
+      "50 FR (L)",
+      "52 FR (XL)"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 38,
+    "nombre": "Versace Camisa de Seda Estampado Barocco Heritage Gold",
+    "marca": "Versace",
+    "categoria": "Hombre",
+    "genero": "hombre",
+    "precioUSD": 1375,
+    "tallas": [
+      "39 (15.5)",
+      "40 (16)",
+      "41 (16.5)",
+      "42 (17)"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 39,
+    "nombre": "Versace Vestido Corto Medusa Hardware Punto Milano Negro",
+    "marca": "Versace",
+    "categoria": "Mujer",
+    "genero": "mujer",
+    "precioUSD": 1650,
+    "tallas": [
+      "38 IT (XS)",
+      "40 IT (S)",
+      "42 IT (M)"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 40,
+    "nombre": "Givenchy Sudadera con Capucha Logo Paris Reverse Negro",
+    "marca": "Givenchy",
+    "categoria": "Hombre",
+    "genero": "hombre",
+    "precioUSD": 990,
+    "tallas": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 41,
+    "nombre": "Givenchy Bolso Antigona Small de Piel de Becerro",
+    "marca": "Givenchy",
+    "categoria": "Mujer",
+    "genero": "mujer",
+    "precioUSD": 2490,
+    "tallas": [
+      "Small (28 x 25 x 15 cm)"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 42,
+    "nombre": "Givenchy Camiseta Slim Fit Logo Bordado Blanco",
+    "marca": "Givenchy",
+    "categoria": "Mujer",
+    "genero": "mujer",
+    "precioUSD": 490,
+    "tallas": [
+      "XS",
+      "S",
+      "M",
+      "L"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": 43,
+    "nombre": "Givenchy Zapatillas City Sport de Piel Blanca con Logo",
+    "marca": "Givenchy",
+    "categoria": "Hombre",
+    "genero": "hombre",
+    "precioUSD": 650,
+    "tallas": [
+      "41 EU (8 US)",
+      "42 EU (9 US)",
+      "43 EU (10 US)"
+    ],
+    "fotos": [
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=800&q=80"
+    ]
+  }
+];
 
     let carrito = [];
     const seleccionPrevia = {};
