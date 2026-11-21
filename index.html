@@ -1,25 +1,38 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LA CENTRAL MODA | Tienda Oficial</title>
+  <title>LA CENTRAL MODA | Tienda Oficial de Lujo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- BARRA SUPERIOR -->
   <aside class="topbar">
     <div class="topbar-container">
-      <span class="topbar-item"><strong class="gold-text">Envío internacional:</strong> Entrega estimada en 48/72 horas hábiles</span>
+      <span class="topbar-item"><strong class="gold-text">Envío internacional asegurado:</strong> Entrega express en 48/72 horas</span>
       <span class="topbar-divider">|</span>
-      <span class="topbar-item">Atención al cliente <strong class="gold-text">24 Horas</strong></span>
+      <span class="topbar-item">Atención al cliente <strong class="gold-text">24 Horas VIP</strong></span>
       <span class="topbar-divider">|</span>
       <span class="topbar-item">WhatsApp: <a href="https://wa.me/12014093304" target="_blank" rel="noopener">+1 (201) 409-3304</a></span>
     </div>
   </aside>
 
+  <!-- AVISO DE AUTENTICIDAD Y ORIGINALIDAD GARANTIZADA -->
+  <div class="auth-banner">
+    <span class="auth-badge-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        <path d="M9 12l2 2 4-4"></path>
+      </svg>
+    </span>
+    <span><strong>100% Autenticidad Garantizada:</strong> Todas nuestras prendas y artículos de diseño son originales legítimos importados con garantía y certificado de origen.</span>
+  </div>
+
+  <!-- ENCABEZADO PRINCIPAL -->
   <header class="main-header">
     <div class="header-container">
       <div class="brand">
@@ -28,70 +41,120 @@
           <span class="brand-title">LA CENTRAL<span class="gold-dot">.</span>MODA</span>
         </a>
       </div>
+
+      <!-- BUSCADOR SUPERIOR -->
+      <div class="search-box">
+        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="search-input" class="search-input" placeholder="Buscar por marca (Gucci, Versace, Dior...), prenda..." oninput="filtrarProductos()">
+      </div>
+
+      <!-- ACCIONES DE NAVEGACION -->
       <nav class="nav-actions">
-        <div class="currency-box">
-          <label for="currency-select" class="sr-only">Moneda</label>
-          <select id="currency-select" onchange="cambiarMoneda(this.value)">
-            <option value="DOP" selected>DOP</option>
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
-          </select>
+        <!-- INDICADOR DE MONEDA UNICA USD -->
+        <div class="currency-badge-usd" title="Moneda oficial de la tienda">
+          <span>USD ($)</span>
         </div>
+
+        <!-- BOTÓN CAMBIO DE MODO CLARO / OSCURO -->
+        <button type="button" class="btn-theme-toggle" id="btn-theme-toggle" onclick="toggleTema()" title="Cambiar a modo claro/oscuro">
+          <span id="theme-icon">☀️</span>
+          <span id="theme-text">Modo</span>
+        </button>
+
+        <!-- MI CUENTA -->
         <button type="button" class="btn-ghost" onclick="abrirModalCuenta()" id="btn-cuenta-nav">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
           <span id="label-cuenta">Mi Cuenta</span>
         </button>
+
+        <!-- BOLSA DE COMPRAS -->
         <button type="button" class="btn-gold" onclick="abrirModalCarrito()">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
           <span>Bolsa (<span id="cart-counter">0</span>)</span>
         </button>
       </nav>
     </div>
   </header>
 
+  <!-- PORTADA / HERO -->
   <section class="hero-section">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <span class="hero-tag">NUEVA COLECCIÓN</span>
+      <span class="hero-tag">COLECCIÓN ALTA COSTURA &amp; DISEÑO</span>
       <h1 class="hero-title">ELEGANCIA URBANA &amp; ALTA DISTINCIÓN</h1>
-      <p class="hero-desc">Calzado y prendas exclusivas. Pagos procesados de forma segura por Azul.</p>
+      <p class="hero-desc">Prendas y calzado exclusivo de Gucci, Prada, Dior, Versace, Louis Vuitton y más. Pagos procesados en dólares (USD) de forma segura por Azul.</p>
       <div class="hero-badges">
-        <span class="badge-gold">Página de Pago Azul</span>
-        <span class="badge-gold">Tarjetas Internacionales</span>
-        <span class="badge-gold">Garantía de Devolución</span>
+        <span class="badge-gold">✓ 100% Prendas Originales</span>
+        <span class="badge-gold">✓ Colección Hombre &amp; Mujer</span>
+        <span class="badge-gold">✓ Cinturones Versace $200 - $300 USD</span>
+        <span class="badge-gold">✓ Pasarela Segura Azul</span>
       </div>
     </div>
   </section>
 
+  <!-- BARRA DE PESTAÑAS / FILTRO DE CATALOGO -->
+  <div class="filters-wrap">
+    <div class="gender-tabs">
+      <button type="button" class="tab-btn active" onclick="cambiarFiltroGenero('todos', this)">Todos los Artículos</button>
+      <button type="button" class="tab-btn" onclick="cambiarFiltroGenero('hombre', this)">Ropa de Hombre</button>
+      <button type="button" class="tab-btn" onclick="cambiarFiltroGenero('mujer', this)">Ropa de Mujer</button>
+      <button type="button" class="tab-btn" onclick="cambiarFiltroGenero('cinturones', this)">Cinturones Versace ($200-$300)</button>
+      <button type="button" class="tab-btn" onclick="cambiarFiltroGenero('lujo', this)">Joyería &amp; Perfumes</button>
+    </div>
+    <div class="results-count" id="results-count">Mostrando artículos</div>
+  </div>
+
+  <!-- SECCION DE CATALOGO -->
   <main class="catalog-section" id="catalogo">
     <div class="section-title-wrap">
-      <span class="section-subtitle">SELECCIÓN EXCLUSIVA</span>
+      <span class="section-subtitle">SELECCIÓN EXCLUSIVA INTERNACIONAL</span>
       <h2 class="section-title">PRODUCTOS DESTACADOS</h2>
       <div class="gold-line"></div>
     </div>
     <div class="products-grid" id="grid-productos"></div>
   </main>
 
+  <!-- SECCIÓN POLÍTICAS & GARANTÍAS -->
   <section class="policies-section" id="politicas">
     <div class="policies-container">
       <div class="policy-card">
-        <div class="policy-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg></div>
-        <h3>Políticas de Devolución</h3>
-        <p>Aceptamos devoluciones y cambios dentro de los <strong>15 días posteriores</strong> a la entrega. Puedes tramitar tu solicitud desde la sección <em>Mi Cuenta</em>.</p>
+        <div class="policy-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold-text"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <h3>100% Piezas Originales</h3>
+        <p>Trabajamos exclusivamente con mercancía original con número de serie y garantía de fabricante de las principales casas de moda.</p>
       </div>
+
       <div class="policy-card">
-        <div class="policy-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg></div>
-        <h3>Envíos y Entregas</h3>
+        <div class="policy-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold-text"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+        </div>
+        <h3>Envíos y Entregas VIP</h3>
         <p>Despachos internacionales y locales con plazo estimado de <strong>48 a 72 horas hábiles</strong> y número de rastreo directo a su correo.</p>
       </div>
+
       <div class="policy-card">
-        <div class="policy-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></div>
-        <h3>Pago seguro con Azul</h3>
-        <p>El pago se completa en la página segura de Azul. La autenticación, cuando corresponda, la gestionan Azul y el banco emisor.</p>
+        <div class="policy-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold-text"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        </div>
+        <h3>Pago Seguro con Azul (USD)</h3>
+        <p>El cobro se procesa en dólares estadounidenses (USD) mediante la plataforma bancaria segura de Azul y protocolos de protección al comprador.</p>
       </div>
 
       <div class="policy-card policy-card-full" id="privacidad-datos">
-        <div class="policy-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+        <div class="policy-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold-text"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
         <h3>Política de Privacidad y Tratamiento de Datos Personales</h3>
         <p class="policy-intro">En <strong>LA CENTRAL MODA</strong> tratamos los datos personales necesarios para gestionar pedidos, envíos y atención al cliente.</p>
         <div class="policy-grid-details">
@@ -105,24 +168,25 @@
           </div>
           <div class="policy-detail-item">
             <h4 class="policy-subtitle"><span class="gold-bullet">3.</span> ¿Cómo protegemos sus datos?</h4>
-            <p>El pago se realiza en la Página de Pago de Azul. La tienda no recopila ni envía los datos de tarjeta al endpoint propio. La transmisión depende de HTTPS del sitio y de las medidas de seguridad de Azul. No afirmamos certificaciones, cifrados específicos ni autenticación 3-D Secure hasta que estén confirmados para esta integración.</p>
+            <p>El pago se realiza en la Página de Pago de Azul. La tienda no recopila ni guarda los datos de tarjeta en servidores propios. La transmisión depende de HTTPS y de la infraestructura de seguridad de Azul.</p>
           </div>
           <div class="policy-detail-item">
             <h4 class="policy-subtitle"><span class="gold-bullet">4.</span> ¿Cómo solicitar acceso o eliminación de datos?</h4>
-            <p>Puede solicitar acceso, corrección o eliminación escribiendo a <a href="mailto:lacentralmodaa@gmail.com" class="gold-link">lacentralmodaa@gmail.com</a> o por <a href="https://wa.me/12014093304" target="_blank" rel="noopener" class="gold-link">WhatsApp +1 (201) 409-3304</a>. La solicitud se atenderá conforme a las obligaciones legales aplicables; no prometemos eliminación de registros que deban conservarse legalmente.</p>
+            <p>Puede solicitar acceso, corrección o eliminación escribiendo a <a href="mailto:lacentralmodaa@gmail.com" class="gold-link">lacentralmodaa@gmail.com</a> o por <a href="https://wa.me/12014093304" target="_blank" rel="noopener" class="gold-link">WhatsApp +1 (201) 409-3304</a>.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- PIE DE PÁGINA -->
   <footer class="main-footer">
     <div class="footer-container">
       <div class="footer-col">
         <h4 class="brand-title-small">LA CENTRAL<span class="gold-dot">.</span>MODA</h4>
-        <p>Comercio electrónico de moda urbana y calzado.</p>
+        <p>Boutique de alta gama internacional con prendas originales para hombre y mujer.</p>
         <p class="store-address"><strong>Dirección física:</strong> Santo Domingo, Distrito Nacional, República Dominicana.</p>
-        <p><strong>Moneda base:</strong> DOP (Pesos Dominicanos)</p>
+        <p><strong>Moneda Oficial:</strong> USD ($ Dólares Estadounidenses)</p>
       </div>
       <div class="footer-col">
         <h4>Atención al Cliente</h4>
@@ -132,22 +196,28 @@
         <p><a href="#privacidad-datos" class="gold-link" style="font-size:0.8rem">Ver Política de Privacidad</a></p>
       </div>
       <div class="footer-col">
-        <h4>Medios de Pago</h4>
-        <p class="footer-note">Pago en la Página de Pago de Azul:</p>
+        <h4>Medios de Pago Protegidos</h4>
+        <p class="footer-note">Transacciones procesadas por Azul:</p>
         <div class="payment-badges">
           <span class="badge-card azul">AZUL</span>
           <span class="badge-card visa">VISA</span>
           <span class="badge-card mastercard">Mastercard</span>
         </div>
-        <p class="footer-note" style="margin-top:10px">Aceptamos tarjetas según disponibilidad y aprobación del procesador.</p>
+        <p class="footer-note" style="margin-top:10px">Cobros liquidados en USD según aprobación de la entidad bancaria.</p>
       </div>
     </div>
-    <div class="footer-bottom"><p>&copy; 2026 LA CENTRAL MODA. Todos los derechos reservados.</p></div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 LA CENTRAL MODA. Todos los derechos reservados. Moda 100% original certificada.</p>
+    </div>
   </footer>
 
+  <!-- MODAL MI CUENTA -->
   <div class="modal-backdrop" id="modal-cuenta" role="dialog" aria-modal="true">
     <div class="modal-card">
-      <div class="modal-header"><h3 class="modal-title">Mi Cuenta &amp; Envíos</h3><button type="button" class="btn-close" onclick="cerrarModalCuenta()">&times;</button></div>
+      <div class="modal-header">
+        <h3 class="modal-title">Mi Cuenta &amp; Envíos</h3>
+        <button type="button" class="btn-close" onclick="cerrarModalCuenta()">&times;</button>
+      </div>
       <div class="modal-body">
         <form id="form-cuenta" onsubmit="guardarCuenta(event)">
           <span class="form-section-title">Datos Personales y de Domicilio</span>
@@ -168,7 +238,14 @@
         <p class="info-text">Garantía de 15 días posteriores a la recepción de su compra.</p>
         <form id="form-devolucion" onsubmit="procesarSolicitudDevolucion(event)">
           <div class="form-group"><label for="dev-orden">Número de Orden</label><input type="text" id="dev-orden" required placeholder="Ej. LCM-84920"></div>
-          <div class="form-group"><label for="dev-motivo">Motivo de Devolución</label><select id="dev-motivo" class="select-styled" required><option value="">Selecciona un motivo</option><option value="cambio_talla">Cambio de Talla</option><option value="defecto">Defecto de Fabricación</option><option value="no_conforme">No cumple expectativas</option></select></div>
+          <div class="form-group"><label for="dev-motivo">Motivo de Devolución</label>
+            <select id="dev-motivo" class="select-styled" required>
+              <option value="">Selecciona un motivo</option>
+              <option value="cambio_talla">Cambio de Talla</option>
+              <option value="defecto">Defecto de Fabricación</option>
+              <option value="no_conforme">No cumple expectativas</option>
+            </select>
+          </div>
           <div class="form-group"><label for="dev-detalle">Detalles adicionales</label><textarea id="dev-detalle" rows="2" placeholder="Describa el motivo..."></textarea></div>
           <button type="submit" class="btn-ghost-block">Solicitar Devolución</button>
         </form>
@@ -176,18 +253,22 @@
     </div>
   </div>
 
+  <!-- MODAL CARRITO & CHECKOUT AZUL EN USD -->
   <div class="modal-backdrop" id="modal-carrito" role="dialog" aria-modal="true">
     <div class="modal-card modal-large">
-      <div class="modal-header"><h3 class="modal-title">Bolsa de Compras &amp; Checkout</h3><button type="button" class="btn-close" onclick="cerrarModalCarrito()">&times;</button></div>
+      <div class="modal-header">
+        <h3 class="modal-title">Bolsa de Compras &amp; Checkout</h3>
+        <button type="button" class="btn-close" onclick="cerrarModalCarrito()">&times;</button>
+      </div>
       <div class="modal-body modal-split">
         <div class="cart-items-column">
           <span class="form-section-title">Tus Artículos Seleccionados</span>
           <div class="cart-items-list" id="cart-items-container"></div>
           <div class="cart-summary-box">
-            <div class="cart-summary-line"><span>Subtotal:</span><strong id="cart-subtotal">DOP 0.00</strong></div>
-            <div class="cart-summary-line"><span>Envío:</span><strong class="gold-text">GRATIS</strong></div>
-            <div class="cart-summary-line total-line"><span>Total a Pagar:</span><strong class="gold-text" id="cart-total">DOP 0.00</strong></div>
-            <p class="currency-note-azul">* El cobro se procesará en DOP (Pesos Dominicanos).</p>
+            <div class="cart-summary-line"><span>Subtotal:</span><strong id="cart-subtotal">$0.00 USD</strong></div>
+            <div class="cart-summary-line"><span>Envío Asegurado:</span><strong class="gold-text">GRATIS</strong></div>
+            <div class="cart-summary-line total-line"><span>Total a Pagar:</span><strong class="gold-text" id="cart-total">$0.00 USD</strong></div>
+            <p class="currency-note-azul">* Todos los cobros se procesarán en Dólares Estadounidenses (USD $).</p>
           </div>
         </div>
         <div class="cart-checkout-column">
@@ -196,108 +277,722 @@
             <div class="form-group"><label for="pay-nombre">Nombre Completo</label><input type="text" id="pay-nombre" required placeholder="Nombre completo"></div>
             <div class="form-group"><label for="pay-direccion">Dirección</label><input type="text" id="pay-direccion" required placeholder="Calle, número, apto o sector"></div>
             <div class="form-group"><label for="pay-estado">Estado / Provincia</label><input type="text" id="pay-estado" required placeholder="Estado o provincia"></div>
-            <div class="notice-azul"><strong>Pago procesado por Azul</strong><p>Al continuar, se abrirá la Página de Pago segura de Azul. Introduce los datos de la tarjeta únicamente allí. No escribas ni envíes el número de tarjeta o CVV en esta tienda.</p></div>
-            <button type="submit" class="btn-gold-block btn-pay-now" id="btn-submit-pago">Continuar a Azul (<span id="btn-pay-total">DOP 0.00</span>)</button>
-            <p class="checkout-secure-notice">El resultado del pago debe confirmarse en el servidor antes de marcar el pedido como pagado.</p>
+            <div class="notice-azul">
+              <strong>Pago procesado de forma segura por Azul</strong>
+              <p>Al continuar, serás redirigido a la Página de Pago bancaria de Azul. Introduce los datos de tu tarjeta únicamente allí con cifrado protegido.</p>
+            </div>
+            <button type="submit" class="btn-gold-block btn-pay-now" id="btn-submit-pago">Continuar a Azul (<span id="btn-pay-total">$0.00 USD</span>)</button>
+            <p class="checkout-secure-notice">Transacción cifrada y protegida por la pasarela de Azul.</p>
           </form>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- SCRIPTS Y LOGICA DE TIENDA -->
   <script>
     const productos = [
-      {id:1,nombre:'Camiseta Imperial Golden Oversize',categoria:'Camisetas Exclusivas',precioDOP:2450,tallas:['S','M','L','XL'],fotos:['https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80','https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80','https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=800&q=80']},
-      {id:2,nombre:'Calzado Royal Shadow Leather',categoria:'Calzado de Alta Gama',precioDOP:5800,tallas:['40','41','42','43','44'],fotos:['https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80','https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=800&q=80','https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=800&q=80']},
-      {id:3,nombre:'Camiseta Minimalist Noir Gold Edition',categoria:'Camisetas Exclusivas',precioDOP:2150,tallas:['S','M','L'],fotos:['https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80','https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80']},
-      {id:4,nombre:'Sneakers Gold High Velvet',categoria:'Calzado de Alta Gama',precioDOP:6400,tallas:['39','40','41','42','43'],fotos:['https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=800&q=80','https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80']}
+      // Cinturones Versace ($200 - $300 USD)
+      {
+        id: 1,
+        nombre: 'Cinturón Versace Medusa Buckle Reversible Leather',
+        marca: 'Versace',
+        categoria: 'Cinturones & Accesorios',
+        genero: 'hombre',
+        precioUSD: 245,
+        tallas: ['85cm (32)', '90cm (34)', '95cm (36)', '100cm (38)'],
+        fotos: [
+          'https://images.unsplash.com/photo-1624222247344-550fb60583dc?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=800&q=80'
+        ]
+      },
+      {
+        id: 2,
+        nombre: 'Cinturón Versace Barocco Heritage Gold Leather',
+        marca: 'Versace',
+        categoria: 'Cinturones & Accesorios',
+        genero: 'hombre',
+        precioUSD: 285,
+        tallas: ['85cm (32)', '90cm (34)', '95cm (36)'],
+        fotos: [
+          'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1624222247344-550fb60583dc?auto=format&fit=crop&w=800&q=80'
+        ]
+      },
+      {
+        id: 3,
+        nombre: 'Cinturón Versace Classic Greca Smooth Calfskin',
+        marca: 'Versace',
+        categoria: 'Cinturones & Accesorios',
+        genero: 'hombre',
+        precioUSD: 220,
+        tallas: ['85cm (32)', '90cm (34)', '95cm (36)', '100cm (38)'],
+        fotos: [
+          'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=800&q=80'
+        ]
+      },
+
+      // Gucci
+      {
+        id: 4,
+        nombre: 'Gucci Camiseta GG Supreme Heritage Embroidered',
+        marca: 'Gucci',
+        categoria: 'Hombre',
+        genero: 'hombre',
+        precioUSD: 590,
+        tallas: ['S', 'M', 'L', 'XL'],
+        fotos: [
+          'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80'
+        ]
+      },
+      {
+        id: 5,
+        nombre: 'Gucci Vestido Seda Floral Primavera Edición Especial',
+        marca: 'Gucci',
+        categoria: 'Mujer',
+        genero: 'mujer',
+        precioUSD: 1450,
+        tallas: ['XS', 'S', 'M', 'L'],
+        fotos: [
+          'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80'
+        ]
+      },
+
+      // Prada
+      {
+        id: 6,
+        nombre: 'Prada Chaqueta Bomber Re-Nylon Minimalist',
+        marca: 'Prada',
+        categoria: 'Hombre',
+        genero: 'hombre',
+        precioUSD: 1850,
+        tallas: ['M', 'L', 'XL'],
+        fotos: [
+          'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80'
+        ]
+      },
+      {
+        id: 7,
+        nombre: 'Prada Top de Punto Fino & Falda Midi Plisada',
+        marca: 'Prada',
+        categoria: 'Mujer',
+        genero: 'mujer',
+        precioUSD: 1290,
+        tallas: ['XS', 'S', 'M'],
+        fotos: [
+          'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80'
+        ]
+      },
+
+      // Cartier
+      {
+        id: 8,
+        nombre: 'Cartier Reloj Santos de Cartier Automatic Steel',
+        marca: 'Cartier',
+        categoria: 'Joyería & Relojería',
+        genero: 'lujo',
+        precioUSD: 3950,
+        tallas: ['Medium 35mm', 'Large 40mm'],
+        fotos: [
+          'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80'
+        ]
+      },
+
+      // Sephora
+      {
+        id: 9,
+        nombre: 'Sephora Exclusive Eau de Parfum Haute Collection',
+        marca: 'Sephora',
+        categoria: 'Belleza & Fragancias',
+        genero: 'lujo',
+        precioUSD: 240,
+        tallas: ['50ml', '100ml'],
+        fotos: [
+          'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=800&q=80'
+        ]
+      },
+
+      // Dior
+      {
+        id: 10,
+        nombre: 'Dior Sneakers B23 High-Top Dior Oblique Canvas',
+        marca: 'Dior',
+        categoria: 'Hombre',
+        genero: 'hombre',
+        precioUSD: 1150,
+        tallas: ['40', '41', '42', '43', '44'],
+        fotos: [
+          'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=800&q=80'
+        ]
+      },
+      {
+        id: 11,
+        nombre: 'Dior Blusa Elegante Seda Pura & Botones Joya',
+        marca: 'Dior',
+        categoria: 'Mujer',
+        genero: 'mujer',
+        precioUSD: 1350,
+        tallas: ['S', 'M', 'L'],
+        fotos: [
+          'https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80'
+        ]
+      },
+
+      // Burberry
+      {
+        id: 12,
+        nombre: 'Burberry Camisa Popelín de Algodón Vintage Check',
+        marca: 'Burberry',
+        categoria: 'Hombre',
+        genero: 'hombre',
+        precioUSD: 490,
+        tallas: ['S', 'M', 'L', 'XL'],
+        fotos: [
+          'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=800&q=80'
+        ]
+      },
+      {
+        id: 13,
+        nombre: 'Burberry Trench Coat The Kensington Long Heritage',
+        marca: 'Burberry',
+        categoria: 'Mujer',
+        genero: 'mujer',
+        precioUSD: 2190,
+        tallas: ['XS', 'S', 'M', 'L'],
+        fotos: [
+          'https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=800&q=80'
+        ]
+      },
+
+      // Fendi
+      {
+        id: 14,
+        nombre: 'Fendi Suéter Monograma FF Jacquard Roma',
+        marca: 'Fendi',
+        categoria: 'Hombre',
+        genero: 'hombre',
+        precioUSD: 980,
+        tallas: ['S', 'M', 'L', 'XL'],
+        fotos: [
+          'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=800&q=80'
+        ]
+      },
+      {
+        id: 15,
+        nombre: 'Fendi Conjunto Top & Falda Baguette Monogram',
+        marca: 'Fendi',
+        categoria: 'Mujer',
+        genero: 'mujer',
+        precioUSD: 1650,
+        tallas: ['S', 'M', 'L'],
+        fotos: [
+          'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80'
+        ]
+      },
+
+      // Balenciaga
+      {
+        id: 16,
+        nombre: 'Balenciaga Sudadera Oversized Heavyweight Logo',
+        marca: 'Balenciaga',
+        categoria: 'Hombre',
+        genero: 'hombre',
+        precioUSD: 850,
+        tallas: ['XS', 'S', 'M', 'L'],
+        fotos: [
+          'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=800&q=80'
+        ]
+      },
+      {
+        id: 17,
+        nombre: 'Balenciaga Zapatillas Triple S Clear Sole Platform',
+        marca: 'Balenciaga',
+        categoria: 'Mujer',
+        genero: 'mujer',
+        precioUSD: 995,
+        tallas: ['36', '37', '38', '39', '40'],
+        fotos: [
+          'https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=800&q=80'
+        ]
+      },
+
+      // Louis Vuitton
+      {
+        id: 18,
+        nombre: 'Louis Vuitton Zapatillas LV Trainer Calf Leather',
+        marca: 'Louis Vuitton',
+        categoria: 'Hombre',
+        genero: 'hombre',
+        precioUSD: 1320,
+        tallas: ['40', '41', '42', '43', '44'],
+        fotos: [
+          'https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=800&q=80'
+        ]
+      },
+      {
+        id: 19,
+        nombre: 'Louis Vuitton Chaqueta Denim Monogram Jacquard',
+        marca: 'Louis Vuitton',
+        categoria: 'Mujer',
+        genero: 'mujer',
+        precioUSD: 2450,
+        tallas: ['XS', 'S', 'M'],
+        fotos: [
+          'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=800&q=80'
+        ]
+      },
+
+      // Versace (Ropa)
+      {
+        id: 20,
+        nombre: 'Versace Camisa de Seda Barocco Heritage Gold',
+        marca: 'Versace',
+        categoria: 'Hombre',
+        genero: 'hombre',
+        precioUSD: 1190,
+        tallas: ['M', 'L', 'XL'],
+        fotos: [
+          'https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80'
+        ]
+      },
+      {
+        id: 21,
+        nombre: 'Versace Vestido Corto Medusa Hardware Black',
+        marca: 'Versace',
+        categoria: 'Mujer',
+        genero: 'mujer',
+        precioUSD: 1450,
+        tallas: ['XS', 'S', 'M'],
+        fotos: [
+          'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=800&q=80'
+        ]
+      },
+
+      // Givenchy
+      {
+        id: 22,
+        nombre: 'Givenchy Hoodie Logo Paris Reverse Black',
+        marca: 'Givenchy',
+        categoria: 'Hombre',
+        genero: 'hombre',
+        precioUSD: 790,
+        tallas: ['S', 'M', 'L', 'XL'],
+        fotos: [
+          'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80'
+        ]
+      },
+      {
+        id: 23,
+        nombre: 'Givenchy Camiseta Slim Fit Logo Bordado Blanco',
+        marca: 'Givenchy',
+        categoria: 'Mujer',
+        genero: 'mujer',
+        precioUSD: 450,
+        tallas: ['XS', 'S', 'M'],
+        fotos: [
+          'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80'
+        ]
+      }
     ];
 
-    let monedaActual = 'DOP';
-    const tasasCambio = {DOP:1,USD:0.017,EUR:0.015};
-    const simbolosMoneda = {DOP:'DOP ',USD:'$',EUR:'€'};
     let carrito = [];
     const seleccionPrevia = {};
+    let generoSeleccionado = 'todos';
+    let busquedaTexto = '';
 
-    function formatearPrecio(montoDOP) {
-      const convertido = montoDOP * tasasCambio[monedaActual];
-      return `${simbolosMoneda[monedaActual]}${convertido.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}`;
+    function formatearPrecio(montoUSD) {
+      return `$${montoUSD.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} USD`;
     }
-    function cambiarMoneda(moneda) { monedaActual=moneda; renderizarProductos(); actualizarCarritoUI(); }
+
+    function initTema() {
+      const temaGuardado = localStorage.getItem('lcm_theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', temaGuardado);
+      actualizarIconoTema(temaGuardado);
+    }
+
+    function toggleTema() {
+      const actual = document.documentElement.getAttribute('data-theme') || 'dark';
+      const nuevo = actual === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', nuevo);
+      localStorage.setItem('lcm_theme', nuevo);
+      actualizarIconoTema(nuevo);
+    }
+
+    function actualizarIconoTema(tema) {
+      const icono = document.getElementById('theme-icon');
+      const texto = document.getElementById('theme-text');
+      if (icono) icono.textContent = tema === 'dark' ? '☀️' : '🌙';
+      if (texto) texto.textContent = tema === 'dark' ? 'Claro' : 'Oscuro';
+    }
+
+    function cambiarFiltroGenero(genero, btn) {
+      generoSeleccionado = genero;
+      document.querySelectorAll('.gender-tabs .tab-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      renderizarProductos();
+    }
+
+    function filtrarProductos() {
+      const input = document.getElementById('search-input');
+      busquedaTexto = (input ? input.value : '').toLowerCase().trim();
+      renderizarProductos();
+    }
+
+    function obtenerProductosFiltrados() {
+      return productos.filter(p => {
+        let coincideGenero = true;
+        if (generoSeleccionado === 'hombre') {
+          coincideGenero = (p.genero === 'hombre');
+        } else if (generoSeleccionado === 'mujer') {
+          coincideGenero = (p.genero === 'mujer');
+        } else if (generoSeleccionado === 'cinturones') {
+          coincideGenero = (p.categoria === 'Cinturones & Accesorios');
+        } else if (generoSeleccionado === 'lujo') {
+          coincideGenero = (p.genero === 'lujo' || p.categoria.includes('Joyería') || p.categoria.includes('Belleza'));
+        }
+
+        let coincideBusqueda = true;
+        if (busquedaTexto) {
+          const contenido = `${p.nombre} ${p.marca} ${p.categoria}`.toLowerCase();
+          coincideBusqueda = contenido.includes(busquedaTexto);
+        }
+
+        return coincideGenero && coincideBusqueda;
+      });
+    }
+
     function renderizarProductos() {
-      const grid=document.getElementById('grid-productos'); if(!grid)return; grid.innerHTML='';
-      productos.forEach(p=>{
-        if(!seleccionPrevia[p.id])seleccionPrevia[p.id]={fotoIndex:0,talla:p.tallas[0]};
-        const estado=seleccionPrevia[p.id];
-        const thumbs=p.fotos.map((f,i)=>`<button type="button" class="thumb-btn ${i===estado.fotoIndex?'active':''}" onclick="cambiarFoto(${p.id},${i})"><img src="${f}" alt="${p.nombre} miniatura ${i+1}" loading="lazy"></button>`).join('');
-        const tallas=p.tallas.map(t=>`<button type="button" class="size-chip ${t===estado.talla?'active':''}" onclick="seleccionarTalla(${p.id},'${t}')">${t}</button>`).join('');
-        const card=document.createElement('article'); card.className='product-card';
-        card.innerHTML=`<div class="product-media"><img id="p-img-${p.id}" src="${p.fotos[estado.fotoIndex]}" alt="${p.nombre}" class="product-main-img" loading="lazy"><div class="product-thumbs">${thumbs}</div></div><div class="product-info"><span class="product-cat">${p.categoria}</span><h3 class="product-title">${p.nombre}</h3><div class="product-price-row"><span class="product-price">${formatearPrecio(p.precioDOP)}</span><span class="product-base-note">(Base DOP ${p.precioDOP.toFixed(2)})</span></div><div class="sizes-wrap"><span class="sizes-label">Seleccionar Talla:</span><div class="sizes-list">${tallas}</div></div><button type="button" class="btn-gold-block" onclick="agregarAlCarrito(${p.id})">Añadir a la Bolsa</button></div>`;
+      const grid = document.getElementById('grid-productos');
+      const countLabel = document.getElementById('results-count');
+      if (!grid) return;
+
+      const items = obtenerProductosFiltrados();
+      if (countLabel) {
+        countLabel.textContent = `${items.length} ${items.length === 1 ? 'artículo disponible' : 'artículos disponibles'}`;
+      }
+
+      if (!items.length) {
+        grid.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: var(--text-muted);">
+            <p style="font-size: 1.1rem; margin-bottom: 8px;">No encontramos artículos que coincidan con tu búsqueda.</p>
+            <p style="font-size: 0.85rem;">Prueba buscando otra marca o limpia el buscador.</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = '';
+      items.forEach(p => {
+        if (!seleccionPrevia[p.id]) {
+          seleccionPrevia[p.id] = { fotoIndex: 0, talla: p.tallas[0] };
+        }
+        const estado = seleccionPrevia[p.id];
+
+        const thumbs = p.fotos.map((f, i) => `
+          <button type="button" class="thumb-btn ${i === estado.fotoIndex ? 'active' : ''}" onclick="cambiarFoto(${p.id}, ${i})">
+            <img src="${f}" alt="${p.nombre} miniatura ${i + 1}" loading="lazy">
+          </button>
+        `).join('');
+
+        const tallas = p.tallas.map(t => `
+          <button type="button" class="size-chip ${t === estado.talla ? 'active' : ''}" onclick="seleccionarTalla(${p.id}, '${t}')">
+            ${t}
+          </button>
+        `).join('');
+
+        const card = document.createElement('article');
+        card.className = 'product-card';
+        card.innerHTML = `
+          <div class="product-media">
+            <span class="product-badge-gender">${p.categoria}</span>
+            <img id="p-img-${p.id}" src="${p.fotos[estado.fotoIndex]}" alt="${p.nombre}" class="product-main-img" loading="lazy">
+            <div class="product-thumbs">${thumbs}</div>
+          </div>
+          <div class="product-info">
+            <span class="product-cat">${p.marca} · Original Certificado</span>
+            <h3 class="product-title">${p.nombre}</h3>
+            <div class="product-price-row">
+              <span class="product-price">${formatearPrecio(p.precioUSD)}</span>
+            </div>
+            <div class="sizes-wrap">
+              <span class="sizes-label">Seleccionar Talla / Medida:</span>
+              <div class="sizes-list">${tallas}</div>
+            </div>
+            <button type="button" class="btn-gold-block" onclick="agregarAlCarrito(${p.id})">
+              Añadir a la Bolsa
+            </button>
+          </div>
+        `;
         grid.appendChild(card);
       });
     }
-    function cambiarFoto(id,idx){seleccionPrevia[id].fotoIndex=idx;renderizarProductos();}
-    function seleccionarTalla(id,talla){seleccionPrevia[id].talla=talla;renderizarProductos();}
-    function agregarAlCarrito(id){
-      const p=productos.find(x=>x.id===id); if(!p)return;
-      const talla=seleccionPrevia[id].talla; const item=carrito.find(x=>x.id===id&&x.talla===talla);
-      if(item)item.cantidad++; else carrito.push({id:p.id,nombre:p.nombre,precioDOP:p.precioDOP,talla,foto:p.fotos[0],cantidad:1});
-      actualizarCarritoUI(); abrirModalCarrito();
-    }
-    function cambiarCantidad(i,delta){if(!carrito[i])return;carrito[i].cantidad+=delta;if(carrito[i].cantidad<=0)carrito.splice(i,1);actualizarCarritoUI();}
-    function eliminarDelCarrito(i){carrito.splice(i,1);actualizarCarritoUI();}
-    function actualizarCarritoUI(){
-      const n=carrito.reduce((a,x)=>a+x.cantidad,0), total=carrito.reduce((a,x)=>a+x.precioDOP*x.cantidad,0);
-      document.getElementById('cart-counter').textContent=n;
-      const box=document.getElementById('cart-items-container');
-      box.innerHTML=carrito.length?carrito.map((x,i)=>`<div class="cart-item-row"><img src="${x.foto}" alt="${x.nombre}" class="cart-item-thumb"><div class="cart-item-info"><h4>${x.nombre}</h4><span class="cart-item-meta">Talla: <strong>${x.talla}</strong> | ${formatearPrecio(x.precioDOP)} c/u</span><div class="qty-control"><button type="button" class="btn-qty" onclick="cambiarCantidad(${i},-1)">-</button><span class="qty-num">${x.cantidad}</span><button type="button" class="btn-qty" onclick="cambiarCantidad(${i},1)">+</button><button type="button" class="btn-remove" onclick="eliminarDelCarrito(${i})">Eliminar</button></div></div><div class="cart-item-price-col"><strong>${formatearPrecio(x.precioDOP*x.cantidad)}</strong></div></div>`).join(''):'<p class="cart-empty-msg">Tu bolsa de compras está vacía.</p>';
-      const precio=formatearPrecio(total);
-      document.getElementById('cart-subtotal').textContent=precio; document.getElementById('cart-total').textContent=precio; document.getElementById('btn-pay-total').textContent=precio;
-    }
-    function abrirModalCarrito(){document.getElementById('modal-carrito').classList.add('active');precargarDireccionEnCheckout();}
-    function cerrarModalCarrito(){document.getElementById('modal-carrito').classList.remove('active');}
-    function abrirModalCuenta(){document.getElementById('modal-cuenta').classList.add('active');precargarFormularioCuenta();}
-    function cerrarModalCuenta(){document.getElementById('modal-cuenta').classList.remove('active');}
-    function guardarCuenta(e){
-      e.preventDefault();
-      const c={nombre:document.getElementById('acc-nombre').value.trim(),email:document.getElementById('acc-email').value.trim(),telefono:document.getElementById('acc-telefono').value.trim(),direccion:document.getElementById('acc-direccion').value.trim(),estado:document.getElementById('acc-estado').value.trim(),pais:document.getElementById('acc-pais').value.trim()};
-      localStorage.setItem('la_central_cuenta_azul',JSON.stringify(c)); alert('Datos guardados en este navegador.'); actualizarBotonCuenta(); cerrarModalCuenta();
-    }
-    function precargarFormularioCuenta(){
-      try{const c=JSON.parse(localStorage.getItem('la_central_cuenta_azul')||'null');if(!c)return;
-        for(const [k,id] of Object.entries({nombre:'acc-nombre',email:'acc-email',telefono:'acc-telefono',direccion:'acc-direccion',estado:'acc-estado',pais:'acc-pais'})){const el=document.getElementById(id);if(el&&c[k])el.value=c[k];}
-      }catch{}
-    }
-    function precargarDireccionEnCheckout(){
-      try{const c=JSON.parse(localStorage.getItem('la_central_cuenta_azul')||'null');if(!c)return;
-        const n=document.getElementById('pay-nombre'),d=document.getElementById('pay-direccion'),s=document.getElementById('pay-estado');
-        if(n&&!n.value)n.value=c.nombre||'';if(d&&!d.value)d.value=c.direccion||'';if(s&&!s.value)s.value=c.estado||'';
-      }catch{}
-    }
-    function actualizarBotonCuenta(){
-      try{const c=JSON.parse(localStorage.getItem('la_central_cuenta_azul')||'null');document.getElementById('label-cuenta').textContent=c?.nombre?c.nombre.split(' ')[0]:'Mi Cuenta';}catch{}
-    }
-    function procesarSolicitudDevolucion(e){e.preventDefault();alert('La solicitud debe enviarse al servicio al cliente con el número de orden.');document.getElementById('form-devolucion').reset();cerrarModalCuenta();}
 
-    async function ejecutarCobroAzulAPI(e){
-      e.preventDefault();
-      if(!carrito.length){alert('La bolsa está vacía. Seleccione un artículo.');return;}
-      const boton=document.getElementById('btn-submit-pago'); const original=boton.innerHTML;
-      boton.disabled=true; boton.textContent='Preparando pago con Azul...';
-      const totalDOP=carrito.reduce((a,x)=>a+x.precioDOP*x.cantidad,0);
-      try{
-        const respuesta=await fetch('/api/pagar',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({amount:totalDOP,amountDOP:totalDOP,orderItems:carrito.map(x=>({id:x.id,name:x.nombre,size:x.talla,quantity:x.cantidad,unitPriceDOP:x.precioDOP})),customer:{name:document.getElementById('pay-nombre').value.trim(),address:document.getElementById('pay-direccion').value.trim(),state:document.getElementById('pay-estado').value.trim()}})});
-        const data=await respuesta.json().catch(()=>({}));
-        if(!respuesta.ok)throw new Error(data.error||data.message||`Error del servidor (${respuesta.status})`);
-        if(!data.url||!data.params||typeof data.params!=='object')throw new Error('La respuesta del servidor no contiene la URL y los datos de pago de Azul.');
-        const form=document.createElement('form');form.method='POST';form.action=data.url;form.style.display='none';
-        for(const [key,value] of Object.entries(data.params)){const input=document.createElement('input');input.type='hidden';input.name=key;input.value=String(value);form.appendChild(input);}
-        document.body.appendChild(form);form.submit();
-      }catch(error){alert('No se pudo iniciar el pago: '+error.message);boton.disabled=false;boton.innerHTML=original;}
+    function cambiarFoto(id, idx) {
+      if (!seleccionPrevia[id]) seleccionPrevia[id] = {};
+      seleccionPrevia[id].fotoIndex = idx;
+      const img = document.getElementById(`p-img-${id}`);
+      const prod = productos.find(x => x.id === id);
+      if (img && prod) img.src = prod.fotos[idx];
+      renderizarProductos();
     }
-    window.addEventListener('click',e=>{if(e.target.classList.contains('modal-backdrop'))e.target.classList.remove('active');});
-    window.addEventListener('keydown',e=>{if(e.key==='Escape'){cerrarModalCarrito();cerrarModalCuenta();}});
-    document.addEventListener('DOMContentLoaded',()=>{renderizarProductos();actualizarCarritoUI();actualizarBotonCuenta();});
+
+    function seleccionarTalla(id, talla) {
+      if (!seleccionPrevia[id]) seleccionPrevia[id] = {};
+      seleccionPrevia[id].talla = talla;
+      renderizarProductos();
+    }
+
+    function agregarAlCarrito(id) {
+      const p = productos.find(x => x.id === id);
+      if (!p) return;
+      const talla = seleccionPrevia[id]?.talla || p.tallas[0];
+      const item = carrito.find(x => x.id === id && x.talla === talla);
+      if (item) {
+        item.cantidad++;
+      } else {
+        carrito.push({
+          id: p.id,
+          nombre: p.nombre,
+          marca: p.marca,
+          precioUSD: p.precioUSD,
+          talla: talla,
+          foto: p.fotos[0],
+          cantidad: 1
+        });
+      }
+      actualizarCarritoUI();
+      abrirModalCarrito();
+    }
+
+    function cambiarCantidad(i, delta) {
+      if (!carrito[i]) return;
+      carrito[i].cantidad += delta;
+      if (carrito[i].cantidad <= 0) carrito.splice(i, 1);
+      actualizarCarritoUI();
+    }
+
+    function eliminarDelCarrito(i) {
+      carrito.splice(i, 1);
+      actualizarCarritoUI();
+    }
+
+    function actualizarCarritoUI() {
+      const n = carrito.reduce((a, x) => a + x.cantidad, 0);
+      const totalUSD = carrito.reduce((a, x) => a + (x.precioUSD * x.cantidad), 0);
+
+      document.getElementById('cart-counter').textContent = n;
+      const box = document.getElementById('cart-items-container');
+
+      if (!carrito.length) {
+        box.innerHTML = '<p class="cart-empty-msg">Tu bolsa de compras está vacía.</p>';
+      } else {
+        box.innerHTML = carrito.map((x, i) => `
+          <div class="cart-item-row">
+            <img src="${x.foto}" alt="${x.nombre}" class="cart-item-thumb">
+            <div class="cart-item-info">
+              <h4>${x.nombre}</h4>
+              <span class="cart-item-meta">Talla: <strong>${x.talla}</strong> | ${formatearPrecio(x.precioUSD)}</span>
+              <div class="qty-control">
+                <button type="button" class="btn-qty" onclick="cambiarCantidad(${i}, -1)">-</button>
+                <span style="font-size:0.8rem; font-weight:600; padding:0 4px;">${x.cantidad}</span>
+                <button type="button" class="btn-qty" onclick="cambiarCantidad(${i}, 1)">+</button>
+                <button type="button" class="btn-remove" onclick="eliminarDelCarrito(${i})">Eliminar</button>
+              </div>
+            </div>
+            <div class="cart-item-price-col">
+              <strong>${formatearPrecio(x.precioUSD * x.cantidad)}</strong>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      const totalFormateado = formatearPrecio(totalUSD);
+      document.getElementById('cart-subtotal').textContent = totalFormateado;
+      document.getElementById('cart-total').textContent = totalFormateado;
+      document.getElementById('btn-pay-total').textContent = totalFormateado;
+    }
+
+    function abrirModalCarrito() {
+      document.getElementById('modal-carrito').classList.add('active');
+      precargarDireccionEnCheckout();
+    }
+    function cerrarModalCarrito() {
+      document.getElementById('modal-carrito').classList.remove('active');
+    }
+    function abrirModalCuenta() {
+      document.getElementById('modal-cuenta').classList.add('active');
+      precargarFormularioCuenta();
+    }
+    function cerrarModalCuenta() {
+      document.getElementById('modal-cuenta').classList.remove('active');
+    }
+
+    function guardarCuenta(e) {
+      e.preventDefault();
+      const c = {
+        nombre: document.getElementById('acc-nombre').value.trim(),
+        email: document.getElementById('acc-email').value.trim(),
+        telefono: document.getElementById('acc-telefono').value.trim(),
+        direccion: document.getElementById('acc-direccion').value.trim(),
+        estado: document.getElementById('acc-estado').value.trim(),
+        pais: document.getElementById('acc-pais').value.trim()
+      };
+      localStorage.setItem('la_central_cuenta_azul', JSON.stringify(c));
+      alert('Tus datos han sido guardados con éxito.');
+      actualizarBotonCuenta();
+      cerrarModalCuenta();
+    }
+
+    function precargarFormularioCuenta() {
+      try {
+        const c = JSON.parse(localStorage.getItem('la_central_cuenta_azul') || 'null');
+        if (!c) return;
+        const ids = { nombre: 'acc-nombre', email: 'acc-email', telefono: 'acc-telefono', direccion: 'acc-direccion', estado: 'acc-estado', pais: 'acc-pais' };
+        for (const [k, id] of Object.entries(ids)) {
+          const el = document.getElementById(id);
+          if (el && c[k]) el.value = c[k];
+        }
+      } catch {}
+    }
+
+    function precargarDireccionEnCheckout() {
+      try {
+        const c = JSON.parse(localStorage.getItem('la_central_cuenta_azul') || 'null');
+        if (!c) return;
+        const n = document.getElementById('pay-nombre');
+        const d = document.getElementById('pay-direccion');
+        const s = document.getElementById('pay-estado');
+        if (n && !n.value) n.value = c.nombre || '';
+        if (d && !d.value) d.value = c.direccion || '';
+        if (s && !s.value) s.value = c.estado || '';
+      } catch {}
+    }
+
+    function actualizarBotonCuenta() {
+      try {
+        const c = JSON.parse(localStorage.getItem('la_central_cuenta_azul') || 'null');
+        if (c?.nombre) {
+          document.getElementById('label-cuenta').textContent = c.nombre.split(' ')[0];
+        }
+      } catch {}
+    }
+
+    function procesarSolicitudDevolucion(e) {
+      e.preventDefault();
+      alert('Tu solicitud ha sido registrada. Nuestro equipo de atención al cliente se pondrá en contacto contigo.');
+      document.getElementById('form-devolucion').reset();
+      cerrarModalCuenta();
+    }
+
+    async function ejecutarCobroAzulAPI(e) {
+      e.preventDefault();
+      if (!carrito.length) {
+        alert('Tu bolsa está vacía. Selecciona un artículo.');
+        return;
+      }
+
+      const boton = document.getElementById('btn-submit-pago');
+      const original = boton.innerHTML;
+      boton.disabled = true;
+      boton.textContent = 'Conectando con la pasarela segura de Azul...';
+
+      const totalUSD = carrito.reduce((a, x) => a + (x.precioUSD * x.cantidad), 0);
+
+      try {
+        const respuesta = await fetch('/api/pagar', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            amount: totalUSD,
+            currency: 'USD',
+            orderItems: carrito.map(x => ({
+              id: x.id,
+              name: x.nombre,
+              brand: x.marca,
+              size: x.talla,
+              quantity: x.cantidad,
+              unitPriceUSD: x.precioUSD
+            })),
+            customer: {
+              name: document.getElementById('pay-nombre').value.trim(),
+              address: document.getElementById('pay-direccion').value.trim(),
+              state: document.getElementById('pay-estado').value.trim()
+            }
+          })
+        });
+
+        const data = await respuesta.json().catch(() => ({}));
+
+        if (!respuesta.ok) {
+          throw new Error(data.error || data.message || `Error del servidor (${respuesta.status})`);
+        }
+
+        if (!data.url || !data.params || typeof data.params !== 'object') {
+          throw new Error('La respuesta del servidor no contiene la URL ni los parámetros requeridos de Azul.');
+        }
+
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = data.url;
+        form.style.display = 'none';
+
+        for (const [key, value] of Object.entries(data.params)) {
+          const input = document.createElement('input');
+          input.type = 'hidden';
+          input.name = key;
+          input.value = String(value);
+          form.appendChild(input);
+        }
+
+        document.body.appendChild(form);
+        form.submit();
+      } catch (error) {
+        alert('No se pudo iniciar el proceso de pago: ' + error.message);
+        boton.disabled = false;
+        boton.innerHTML = original;
+      }
+    }
+
+    window.addEventListener('click', e => {
+      if (e.target.classList.contains('modal-backdrop')) {
+        e.target.classList.remove('active');
+      }
+    });
+
+    window.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        cerrarModalCarrito();
+        cerrarModalCuenta();
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initTema();
+      renderizarProductos();
+      actualizarCarritoUI();
+      actualizarBotonCuenta();
+    });
   </script>
 </body>
 </html>
