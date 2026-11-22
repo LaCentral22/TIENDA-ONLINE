@@ -996,17 +996,339 @@ body {
 }
 
 /* Responsive */
-@media (max-width: 900px) {
-  .products-grid { grid-template-columns: repeat(2, 1fr); }
-  .policies-container { grid-template-columns: 1fr; }
-  .footer-container { grid-template-columns: 1fr; }
-  .modal-split { grid-template-columns: 1fr; }
-  .policy-grid-details { grid-template-columns: 1fr; }
-  .header-container { flex-wrap: wrap; }
-  .search-box { order: 3; max-width: 100%; min-width: 100%; }
+
+/* ========================================================
+   SISTEMA RESPONSIVE AVANZADO - DISPOSITIVOS MÓVILES & TABLETS
+   DISEÑO DE ALTA GAMA (2 COLUMNAS COMPACTAS EN SMARTPHONES)
+   ======================================================== */
+
+/* Contenedor de pestañas deslizable estilo App móvil */
+.gender-tabs-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 8px 12px 14px;
+  display: flex;
+  justify-content: center;
 }
+.gender-tabs-container::-webkit-scrollbar {
+  display: none;
+}
+.gender-tabs {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  padding: 4px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 30px;
+}
+.tab-btn {
+  white-space: nowrap;
+  padding: 9px 18px;
+  border-radius: 24px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+.tab-btn.active {
+  background: var(--gold-gradient);
+  color: #000000;
+  font-weight: 700;
+  box-shadow: 0 2px 10px var(--gold-glow);
+}
+
+/* Tablets (pantallas intermedias hasta 1024px) */
+@media (max-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .product-media {
+    height: 230px;
+  }
+  .hero-container {
+    padding: 35px 20px;
+  }
+}
+
+/* Tablets pequeñas y Móviles en horizontal (hasta 768px) */
+@media (max-width: 768px) {
+  .topbar-container {
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.72rem;
+    text-align: center;
+  }
+  .header-container {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+  .brand-block {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .search-box {
+    width: 100%;
+    min-width: 100%;
+    order: 2;
+  }
+  .nav-actions {
+    width: 100%;
+    justify-content: space-between;
+    order: 3;
+    gap: 6px;
+  }
+  .currency-badge-usd {
+    font-size: 0.7rem;
+    padding: 6px 8px;
+  }
+  .btn-theme-toggle,
+  .btn-ghost,
+  .btn-gold {
+    flex: 1;
+    justify-content: center;
+    padding: 8px 6px;
+    font-size: 0.75rem;
+  }
+
+  .gender-tabs-container {
+    justify-content: flex-start;
+  }
+  .tab-btn {
+    padding: 7px 14px;
+    font-size: 0.75rem;
+  }
+
+  /* Grid 2 columnas optimizadas */
+  .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .product-media {
+    height: 190px;
+  }
+  .product-thumbs {
+    display: none; /* En móvil dejamos la imagen limpia */
+  }
+  .product-info {
+    padding: 10px;
+  }
+  .product-title {
+    font-size: 0.8rem;
+    line-height: 1.25;
+    min-height: 2.5em;
+  }
+  .product-price {
+    font-size: 0.95rem;
+  }
+
+  .policies-container {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: center;
+  }
+  .modal-box {
+    width: 95%;
+    max-height: 92vh;
+    padding: 16px;
+  }
+}
+
+/* Teléfonos Móviles (Smartphones estándar y compactos hasta 480px) */
 @media (max-width: 480px) {
-  .products-grid { grid-template-columns: 1fr; }
-  .hero-title { font-size: 1.7rem; }
-  .gender-tabs { width: 100%; justify-content: center; }
+  /* Logo compacto */
+  .brand-logo-text {
+    font-size: 1.25rem;
+  }
+  .brand-subtext {
+    font-size: 0.58rem;
+    letter-spacing: 0.18em;
+  }
+  
+  /* Hero compacto y elegante */
+  .hero-section {
+    padding: 24px 14px;
+  }
+  .hero-tag {
+    font-size: 0.65rem;
+    padding: 4px 10px;
+    margin-bottom: 10px;
+  }
+  .hero-title {
+    font-size: 1.4rem;
+    line-height: 1.25;
+    margin-bottom: 10px;
+  }
+  .hero-desc {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin-bottom: 14px;
+  }
+
+  /* Barra de búsqueda móvil */
+  .search-box {
+    margin: 4px 0;
+  }
+  .search-input {
+    font-size: 0.82rem;
+    padding: 9px 12px 9px 36px;
+  }
+  .search-icon {
+    left: 11px;
+    width: 15px;
+    height: 15px;
+  }
+
+  /* Navegación y Filtros de Género */
+  .gender-tabs-container {
+    padding: 4px 6px 10px;
+  }
+  .gender-tabs {
+    gap: 6px;
+    padding: 3px;
+  }
+  .tab-btn {
+    padding: 6px 12px;
+    font-size: 0.72rem;
+  }
+
+  /* GRID 2 COLUMNAS: TAMAÑO PERFECTO Y PROPORCIONAL */
+  .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+  .product-card {
+    border-radius: var(--radius-sm);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }
+  .product-media {
+    height: 170px !important;
+  }
+  .product-main-img {
+    object-position: center;
+  }
+  .product-badge-gender {
+    top: 6px;
+    left: 6px;
+    font-size: 0.55rem;
+    padding: 2px 6px;
+    border-radius: 8px;
+    letter-spacing: 0.04em;
+  }
+  .product-thumbs {
+    display: none !important;
+  }
+
+  /* Contenido y textos de la tarjeta */
+  .product-info {
+    padding: 8px 8px 10px !important;
+  }
+  .product-cat {
+    font-size: 0.58rem;
+    letter-spacing: 0.04em;
+    margin-bottom: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .product-title {
+    font-size: 0.74rem;
+    line-height: 1.25;
+    margin-bottom: 5px;
+    min-height: 2.5em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .product-price-row {
+    margin-bottom: 6px;
+  }
+  .product-price {
+    font-size: 0.88rem !important;
+    font-weight: 700;
+  }
+  .product-base-note {
+    font-size: 0.58rem;
+  }
+  
+  /* Tallas en móvil */
+  .sizes-wrap {
+    margin-bottom: 8px;
+  }
+  .sizes-label {
+    font-size: 0.6rem;
+    margin-bottom: 3px;
+  }
+  .sizes-list {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 4px;
+    padding-bottom: 2px;
+  }
+  .sizes-list::-webkit-scrollbar {
+    display: none;
+  }
+  .size-chip {
+    font-size: 0.6rem;
+    padding: 3px 6px;
+    border-radius: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* Botón de añadir a la bolsa */
+  .btn-gold-block {
+    padding: 7px 6px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    border-radius: 4px;
+    letter-spacing: 0.02em;
+  }
+
+  /* Modales en teléfonos: diseño estilo cajón inferior */
+  .modal-backdrop {
+    padding: 0;
+    align-items: flex-end;
+  }
+  .modal-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 18px 18px 0 0 !important;
+    max-height: 92vh !important;
+    padding: 16px 14px 24px;
+    margin: 0;
+  }
+  .modal-split {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+  }
+  .cart-item {
+    padding: 8px 0;
+    gap: 10px;
+  }
+  .cart-item-img {
+    width: 50px;
+    height: 50px;
+  }
+  .cart-item-title {
+    font-size: 0.78rem;
+  }
+  .cart-item-price {
+    font-size: 0.82rem;
+  }
 }
