@@ -2,7 +2,7 @@
 <html lang="es" data-theme="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>LA CENTRAL MODA | Tienda Oficial de Lujo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -104,13 +104,13 @@
 
   <!-- BARRA DE PESTAÑAS / FILTRO DE CATALOGO -->
   <div class="filters-wrap">
-    <div class="gender-tabs">
+    <div class="gender-tabs-container"><div class="gender-tabs">
       <button type="button" class="tab-btn active" onclick="cambiarFiltroGenero('todos', this)">Todos los Artículos</button>
       <button type="button" class="tab-btn" onclick="cambiarFiltroGenero('hombre', this)">Ropa de Hombre</button>
       <button type="button" class="tab-btn" onclick="cambiarFiltroGenero('mujer', this)">Ropa de Mujer</button>
       <button type="button" class="tab-btn" onclick="cambiarFiltroGenero('cinturones', this)">Cinturones Versace ($200-$300)</button>
       <button type="button" class="tab-btn" onclick="cambiarFiltroGenero('lujo', this)">Joyería &amp; Perfumes</button>
-    </div>
+    </div></div>
     <div class="results-count" id="results-count">Mostrando artículos</div>
   </div>
 
@@ -268,7 +268,7 @@
             <div class="cart-summary-line"><span>Subtotal:</span><strong id="cart-subtotal">$0.00 USD</strong></div>
             <div class="cart-summary-line"><span>Envío Asegurado:</span><strong class="gold-text">GRATIS</strong></div>
             <div class="cart-summary-line total-line"><span>Total a Pagar:</span><strong class="gold-text" id="cart-total">$0.00 USD</strong></div>
-            <p class="currency-note-azul">* Todos los cobros se procesarán en Dólares Estadounidenses (USD $).</p>
+            <p class="currency-note-azul">* Precios oficiales fijados en USD ($). La pasarela segura de AZUL procesará la transacción según la divisa de tu contrato (USD nativo o liquidación oficial en RD$).</p>
           </div>
         </div>
         <div class="cart-checkout-column">
