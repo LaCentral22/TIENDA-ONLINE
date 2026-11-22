@@ -108,7 +108,7 @@
       <button type="button" class="tab-btn active" onclick="cambiarFiltroGenero('todos', this)">Todos los Artículos</button>
       <button type="button" class="tab-btn" onclick="cambiarFiltroGenero('hombre', this)">Ropa de Hombre</button>
       <button type="button" class="tab-btn" onclick="cambiarFiltroGenero('mujer', this)">Ropa de Mujer</button>
-      <button type="button" class="tab-btn" onclick="cambiarFiltroGenero('cinturones', this)">Cinturones Versace ($200-$300)</button>
+      <button type="button" class="tab-btn" onclick="cambiarFiltroGenero('cinturones', this)">Cinturones Versace (RD$)</button>
       <button type="button" class="tab-btn" onclick="cambiarFiltroGenero('lujo', this)">Joyería &amp; Perfumes</button>
     </div></div>
     <div class="results-count" id="results-count">Mostrando artículos</div>
@@ -186,7 +186,7 @@
         <h4 class="brand-title-small">LA CENTRAL<span class="gold-dot">.</span>MODA</h4>
         <p>Boutique de alta gama internacional con prendas originales para hombre y mujer.</p>
         <p class="store-address"><strong>Dirección física:</strong> Santo Domingo, Distrito Nacional, República Dominicana.</p>
-        <p><strong>Moneda Oficial:</strong> USD ($ Dólares Estadounidenses)</p>
+        <p><strong>Moneda Oficial:</strong> Pesos Dominicanos (RD$) · Tasa: RD$ 63.00 / USD</p>
       </div>
       <div class="footer-col">
         <h4>Atención al Cliente</h4>
@@ -2042,8 +2042,8 @@
     let generoSeleccionado = 'todos';
     let busquedaTexto = '';
 
-    function formatearPrecio(montoUSD) {
-      return `$${montoUSD.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} USD`;
+    function formatearPrecio(montoRD) {
+      return `RD$ ${Number(montoRD).toLocaleString('es-DO', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
     }
 
     function initTema() {
@@ -2157,6 +2157,7 @@
             <h3 class="product-title">${p.nombre}</h3>
             <div class="product-price-row">
               <span class="product-price">${formatearPrecio(p.precioRD)}</span>
+              <span class="product-base-note">~$${Math.round(p.precioRD / 63).toLocaleString('en-US')} USD (Tasa RD$ 63.00)</span>
             </div>
             <div class="sizes-wrap">
               <span class="sizes-label">Seleccionar Talla / Medida:</span>
