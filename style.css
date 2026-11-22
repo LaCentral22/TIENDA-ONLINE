@@ -1295,3 +1295,52 @@ body {
     padding: 16px;
   }
 }
+
+/* ========================================================
+   SELECTOR INTERACTIVO DE MONEDA (RD$ / USD)
+   ======================================================== */
+.currency-switch-box {
+  display: inline-flex;
+  align-items: center;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-gold);
+  border-radius: 20px;
+  padding: 3px 6px;
+  gap: 3px;
+  transition: var(--transition);
+}
+.curr-switch-divider {
+  color: var(--border-subtle);
+  font-size: 0.72rem;
+  user-select: none;
+}
+.btn-curr-switch {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 5px 10px;
+  border-radius: 14px;
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: var(--transition);
+}
+.btn-curr-switch:hover {
+  color: var(--gold-primary);
+}
+.btn-curr-switch.active {
+  background: var(--gold-gradient);
+  color: #000;
+  box-shadow: 0 2px 8px var(--gold-glow);
+}
+@media (max-width: 768px) {
+  .currency-switch-box {
+    padding: 2px 4px;
+  }
+  .btn-curr-switch {
+    padding: 4px 8px;
+    font-size: 0.72rem;
+  }
+}
