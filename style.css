@@ -31,7 +31,6 @@
   --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.4);
   --transition: all 0.25s ease;
 }
-
 /* ========================================================
    TEMA CLARO (LIGHT MODE)
    ======================================================== */
@@ -57,13 +56,11 @@
   --border-gold: rgba(179, 139, 24, 0.5);
   --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   background-color: var(--bg-main);
   color: var(--text-main);
@@ -72,11 +69,9 @@ body {
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-
 .gold-text { color: var(--gold-primary); }
 .gold-dot { color: var(--gold-primary); }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
-
 /* Barra superior */
 .topbar {
   background-color: var(--bg-surface);
@@ -102,7 +97,6 @@ body {
 .topbar-divider {
   color: var(--border-subtle);
 }
-
 /* ========================================================
    BANNER DE AUTENTICIDAD ORIGINAL GARANTIZADA
    ======================================================== */
@@ -128,7 +122,6 @@ body {
   align-items: center;
   color: var(--gold-primary);
 }
-
 /* Encabezado */
 .main-header {
   position: sticky;
@@ -172,7 +165,6 @@ body {
   color: var(--text-main);
   margin-bottom: 8px;
 }
-
 /* ========================================================
    BUSCADOR EN LA CABECERA
    ======================================================== */
@@ -205,14 +197,12 @@ body {
   border-color: var(--gold-primary);
   box-shadow: 0 0 0 3px var(--gold-glow);
 }
-
 /* Acciones navegación */
 .nav-actions {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-
 /* Indicador de moneda fija USD */
 .currency-badge-usd {
   background: var(--bg-surface-elevated);
@@ -227,7 +217,6 @@ body {
   align-items: center;
   gap: 4px;
 }
-
 /* Botón cambio modo claro / oscuro */
 .btn-theme-toggle {
   background: var(--bg-surface-elevated);
@@ -248,7 +237,6 @@ body {
   border-color: var(--gold-primary);
   color: var(--gold-primary);
 }
-
 /* Botones principales */
 .btn-gold {
   background: var(--gold-gradient);
@@ -318,7 +306,6 @@ body {
   border-color: var(--gold-primary);
   color: var(--gold-primary);
 }
-
 /* Portada / Hero */
 .hero-section {
   position: relative;
@@ -384,7 +371,6 @@ body {
   font-size: 0.76rem;
   font-weight: 600;
 }
-
 /* ========================================================
    PESTAÑAS DE FILTRO: HOMBRE, MUJER, CINTURONES, TODOS
    ======================================================== */
@@ -430,7 +416,6 @@ body {
   font-size: 0.82rem;
   color: var(--text-muted);
 }
-
 /* Catálogo */
 .catalog-section {
   max-width: 1200px;
@@ -600,7 +585,6 @@ body {
   color: #000;
   border-color: var(--gold-primary);
 }
-
 /* Políticas */
 .policies-section {
   background: var(--bg-surface);
@@ -636,7 +620,6 @@ body {
   color: var(--text-muted);
   line-height: 1.5;
 }
-
 /* Pie de página */
 .main-footer {
   background: var(--bg-surface);
@@ -709,7 +692,6 @@ body {
   color: var(--text-muted);
   font-size: 0.75rem;
 }
-
 /* Modales */
 .modal-backdrop {
   position: fixed;
@@ -775,7 +757,6 @@ body {
   grid-template-columns: 1fr 1.2fr;
   gap: 24px;
 }
-
 /* Carrito Items */
 .cart-items-list {
   max-height: 240px;
@@ -870,7 +851,6 @@ body {
   margin-top: 8px;
   line-height: 1.35;
 }
-
 /* Formularios */
 .form-section-title {
   display: block;
@@ -925,7 +905,6 @@ body {
   color: var(--text-muted);
   margin-bottom: 12px;
 }
-
 /* Aviso Azul */
 .notice-azul {
   background: var(--azul-bg);
@@ -945,7 +924,6 @@ body {
   color: var(--text-muted);
   line-height: 1.35;
 }
-
 /* Sección Política de Privacidad */
 .policy-card-full {
   grid-column: 1 / -1;
@@ -994,15 +972,7 @@ body {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
-
 /* Responsive */
-
-/* ========================================================
-   SISTEMA RESPONSIVE AVANZADO - DISPOSITIVOS MÓVILES & TABLETS
-   DISEÑO DE ALTA GAMA (2 COLUMNAS COMPACTAS EN SMARTPHONES)
-   ======================================================== */
-
-/* Contenedor de pestañas deslizable estilo App móvil */
 .gender-tabs-container {
   width: 100%;
   overflow-x: auto;
@@ -1042,8 +1012,6 @@ body {
   font-weight: 700;
   box-shadow: 0 2px 10px var(--gold-glow);
 }
-
-/* Tablets (pantallas intermedias hasta 1024px) */
 @media (max-width: 1024px) {
   .products-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -1052,12 +1020,7 @@ body {
   .product-media {
     height: 230px;
   }
-  .hero-container {
-    padding: 35px 20px;
-  }
 }
-
-/* Tablets pequeñas y Móviles en horizontal (hasta 768px) */
 @media (max-width: 768px) {
   .topbar-container {
     flex-direction: column;
@@ -1069,10 +1032,6 @@ body {
     flex-direction: column;
     gap: 12px;
     padding: 12px 16px;
-  }
-  .brand-block {
-    width: 100%;
-    justify-content: space-between;
   }
   .search-box {
     width: 100%;
@@ -1097,7 +1056,6 @@ body {
     padding: 8px 6px;
     font-size: 0.75rem;
   }
-
   .gender-tabs-container {
     justify-content: flex-start;
   }
@@ -1105,8 +1063,6 @@ body {
     padding: 7px 14px;
     font-size: 0.75rem;
   }
-
-  /* Grid 2 columnas optimizadas */
   .products-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
@@ -1115,7 +1071,7 @@ body {
     height: 190px;
   }
   .product-thumbs {
-    display: none; /* En móvil dejamos la imagen limpia */
+    display: none;
   }
   .product-info {
     padding: 10px;
@@ -1128,7 +1084,6 @@ body {
   .product-price {
     font-size: 0.95rem;
   }
-
   .policies-container {
     grid-template-columns: 1fr;
     gap: 14px;
@@ -1138,25 +1093,8 @@ body {
     gap: 20px;
     text-align: center;
   }
-  .modal-box {
-    width: 95%;
-    max-height: 92vh;
-    padding: 16px;
-  }
 }
-
-/* Teléfonos Móviles (Smartphones estándar y compactos hasta 480px) */
 @media (max-width: 480px) {
-  /* Logo compacto */
-  .brand-logo-text {
-    font-size: 1.25rem;
-  }
-  .brand-subtext {
-    font-size: 0.58rem;
-    letter-spacing: 0.18em;
-  }
-  
-  /* Hero compacto y elegante */
   .hero-section {
     padding: 24px 14px;
   }
@@ -1175,8 +1113,6 @@ body {
     line-height: 1.4;
     margin-bottom: 14px;
   }
-
-  /* Barra de búsqueda móvil */
   .search-box {
     margin: 4px 0;
   }
@@ -1189,8 +1125,6 @@ body {
     width: 15px;
     height: 15px;
   }
-
-  /* Navegación y Filtros de Género */
   .gender-tabs-container {
     padding: 4px 6px 10px;
   }
@@ -1202,8 +1136,6 @@ body {
     padding: 6px 12px;
     font-size: 0.72rem;
   }
-
-  /* GRID 2 COLUMNAS: TAMAÑO PERFECTO Y PROPORCIONAL */
   .products-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 10px !important;
@@ -1229,8 +1161,6 @@ body {
   .product-thumbs {
     display: none !important;
   }
-
-  /* Contenido y textos de la tarjeta */
   .product-info {
     padding: 8px 8px 10px !important;
   }
@@ -1262,8 +1192,6 @@ body {
   .product-base-note {
     font-size: 0.58rem;
   }
-  
-  /* Tallas en móvil */
   .sizes-wrap {
     margin-bottom: 8px;
   }
@@ -1290,8 +1218,6 @@ body {
     white-space: nowrap;
     flex-shrink: 0;
   }
-
-  /* Botón de añadir a la bolsa */
   .btn-gold-block {
     padding: 7px 6px;
     font-size: 0.68rem;
@@ -1299,8 +1225,6 @@ body {
     border-radius: 4px;
     letter-spacing: 0.02em;
   }
-
-  /* Modales en teléfonos: diseño estilo cajón inferior */
   .modal-backdrop {
     padding: 0;
     align-items: flex-end;
@@ -1317,18 +1241,61 @@ body {
     grid-template-columns: 1fr !important;
     gap: 16px;
   }
-  .cart-item {
+  .cart-item-row {
     padding: 8px 0;
     gap: 10px;
   }
-  .cart-item-img {
+  .cart-item-thumb {
     width: 50px;
     height: 50px;
   }
-  .cart-item-title {
+  .cart-item-info h4 {
     font-size: 0.78rem;
   }
-  .cart-item-price {
+  .cart-item-price-col {
     font-size: 0.82rem;
+  }
+}
+
+
+/* Checkout & Azul Payment Utilities */
+.checkout-secure-notice {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 10px;
+  line-height: 1.4;
+}
+
+.btn-pay-now {
+  font-size: 0.95rem;
+  padding: 14px 20px;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.cart-items-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-checkout-column {
+  background: var(--bg-surface-elevated);
+  padding: 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+@media (max-width: 768px) {
+  .modal-split {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  .cart-checkout-column {
+    padding: 16px;
   }
 }
