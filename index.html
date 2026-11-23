@@ -48,14 +48,14 @@
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
-        <input type="text" id="search-input" class="search-input" placeholder="Buscar por marca (Gucci, Versace, Dior...), prenda..." oninput="filtrarProductos()">
+        <input type="text" id="search-input" class="search-input" placeholder="Buscar por marca (Gucci, Balenciaga...), abrigos, relojes..." oninput="filtrarProductos()">
       </div>
 
       <!-- ACCIONES DE NAVEGACION -->
       <nav class="nav-actions">
         <!-- INDICADOR DE MONEDA UNICA USD -->
         <div class="currency-badge-usd" title="Moneda oficial de la tienda">
-          <span>USD ($)</span>
+          <span>EUR (€)</span>
         </div>
 
         <!-- BOTÓN CAMBIO DE MODO CLARO / OSCURO -->
@@ -92,11 +92,11 @@
     <div class="hero-content">
       <span class="hero-tag">COLECCIÓN ALTA COSTURA &amp; DISEÑO</span>
       <h1 class="hero-title">ELEGANCIA URBANA &amp; ALTA DISTINCIÓN</h1>
-      <p class="hero-desc">Prendas y calzado exclusivo de Gucci, Prada, Dior, Versace, Louis Vuitton y más. Pagos procesados en dólares (USD) de forma segura por Azul.</p>
+      <p class="hero-desc">Colección oficial de alta gama Balenciaga y Gucci: sastrería italiana, alta relojería y calzado exclusivo con precios reales en Euros (€) y pasarela de pago seguro con Azul.</p>
       <div class="hero-badges">
         <span class="badge-gold">✓ 100% Prendas Originales</span>
-        <span class="badge-gold">✓ Colección Hombre &amp; Mujer</span>
-        <span class="badge-gold">✓ Precios en RD$ (Tasa RD$ 63.00)</span>
+        <span class="badge-gold">✓ Balenciaga &amp; Gucci Oficial</span>
+        <span class="badge-gold">✓ Precios Reales en Euros (€)</span>
         <span class="badge-gold">✓ Pasarela Segura Azul</span>
       </div>
     </div>
@@ -105,11 +105,12 @@
   <!-- BARRA DE PESTAÑAS / FILTRO DE CATALOGO -->
   <div class="filters-wrap">
     <div class="gender-tabs-container"><div class="gender-tabs">
-      <button type="button" class="tab-btn active" onclick="cambiarFiltroGenero('todos', this)">Todos los Artículos</button>
-      <button type="button" class="tab-btn" onclick="cambiarFiltroGenero('hombre', this)">Ropa de Hombre</button>
-      <button type="button" class="tab-btn" onclick="cambiarFiltroGenero('mujer', this)">Ropa de Mujer</button>
-      <button type="button" class="tab-btn" onclick="cambiarFiltroGenero('cinturones', this)">Cinturones Versace (RD$)</button>
-      <button type="button" class="tab-btn" onclick="cambiarFiltroGenero('lujo', this)">Joyería &amp; Perfumes</button>
+      <button type="button" class="tab-btn active" onclick="cambiarFiltroGenero('todos', this)">Todos los Artículos (10)</button>
+      <button type="button" class="tab-btn" onclick="cambiarFiltroGenero('gucci', this)">Gucci (9)</button>
+      <button type="button" class="tab-btn" onclick="cambiarFiltroGenero('balenciaga', this)">Balenciaga (1)</button>
+      <button type="button" class="tab-btn" onclick="cambiarFiltroGenero('ropa', this)">Sastrería &amp; Abrigos</button>
+      <button type="button" class="tab-btn" onclick="cambiarFiltroGenero('relojes', this)">Alta Relojería</button>
+      <button type="button" class="tab-btn" onclick="cambiarFiltroGenero('calzado', this)">Calzado</button>
     </div></div>
     <div class="results-count" id="results-count">Mostrando artículos</div>
   </div>
@@ -186,7 +187,7 @@
         <h4 class="brand-title-small">LA CENTRAL<span class="gold-dot">.</span>MODA</h4>
         <p>Boutique de alta gama internacional con prendas originales para hombre y mujer.</p>
         <p class="store-address"><strong>Dirección física:</strong> Santo Domingo, Distrito Nacional, República Dominicana.</p>
-        <p><strong>Moneda Oficial:</strong> Pesos Dominicanos (RD$) · Tasa: RD$ 63.00 / USD</p>
+        <p><strong>Moneda Oficial:</strong> USD ($ Dólares Estadounidenses)</p>
       </div>
       <div class="footer-col">
         <h4>Atención al Cliente</h4>
@@ -297,1742 +298,184 @@
     const productos = [
   {
     "id": 1,
-    "nombre": "Versace Jeans Couture Cinturón Baroque Buckle Leather",
-    "marca": "Versace",
-    "categoria": "Cinturones & Accesorios",
-    "genero": "hombre",
-    "precioRD": 15435,
+    "nombre": "Bota Alta Venom Para Mujer En Negro",
+    "marca": "Balenciaga",
+    "categoria": "Calzado",
+    "genero": "mujer",
+    "precioEUR": 1990,
+    "descripcion": "Balenciaga · Bota alta de lujo Venom para mujer confeccionada en piel suave negra de acabado mate. Diseño estructurado con correas de ajuste regulables, hebillas industriales metálicas grabadas, placa Balenciaga en el talón y suela track dentada de alta durabilidad.",
     "tallas": [
-      "85cm (32)",
-      "90cm (34)",
-      "95cm (36)",
-      "100cm (38)"
+      "36 EU",
+      "37 EU",
+      "38 EU",
+      "39 EU",
+      "40 EU",
+      "41 EU"
     ],
     "fotos": [
-      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&auto=format&fit=crop&q=80"
+      "img/producto-1.jpg",
+      "img/producto-1-balenciaga-bota-venom.jpg"
     ]
   },
   {
     "id": 2,
-    "nombre": "Versace Jeans Couture Cinturón Reversible Western Gold",
-    "marca": "Versace",
-    "categoria": "Cinturones & Accesorios",
+    "nombre": "Reloj G-Timeless, 40mm",
+    "marca": "Gucci",
+    "categoria": "Relojes & Joyería",
     "genero": "hombre",
-    "precioRD": 17955,
+    "precioEUR": 2450,
+    "descripcion": "Gucci · Reloj automático suizo G-Timeless de 40 mm con caja de acero inoxidable pulido, bisel acanalado en oro rosa, esfera negra texturizada con motivo diamantissima y detalles dorados, subesfera segundera a las 6 y brazalete sutil de eslabones.",
     "tallas": [
-      "85cm (32)",
-      "90cm (34)",
-      "95cm (36)",
-      "100cm (38)"
+      "Ajuste Único (40 mm)"
     ],
     "fotos": [
-      "https://images.unsplash.com/photo-1467043237213-65f2da53396f?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&auto=format&fit=crop&q=80"
+      "img/producto-2.jpg",
+      "img/producto-2-gucci-gtimeless-40mm.jpg"
     ]
   },
   {
     "id": 3,
-    "nombre": "Versace Jeans Couture Cinturón Classic Lettering Smooth",
-    "marca": "Versace",
-    "categoria": "Cinturones & Accesorios",
-    "genero": "hombre",
-    "precioRD": 13860,
+    "nombre": "Reloj Gucci Interlocking de 41 mm",
+    "marca": "Gucci",
+    "categoria": "Relojes & Joyería",
+    "genero": "unisex",
+    "precioEUR": 2600,
+    "descripcion": "Gucci · Reloj de manufactura suiza Gucci Interlocking con caja facetada de 41 mm en acero satinado azul noche, esfera circular azul con acabado cepillado solar, subesfera central con doble G entrelazada en rojo y azul, movimiento automático y correa deportiva ergonómica.",
     "tallas": [
-      "85cm (32)",
-      "90cm (34)",
-      "95cm (36)",
-      "100cm (38)"
+      "Ajuste Único (41 mm)"
     ],
     "fotos": [
-      "https://images.unsplash.com/photo-1475180098004-ca77a66827be?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1479064555552-3ef4979f8908?w=800&auto=format&fit=crop&q=80"
+      "img/producto-3.jpg",
+      "img/producto-3-gucci-interlocking-41mm.jpg"
     ]
   },
   {
     "id": 4,
-    "nombre": "Versace Camisa de Seda Barocco Heritage Print",
-    "marca": "Versace",
-    "categoria": "Hombre",
+    "nombre": "Abrigo de lana con botonadura sencilla",
+    "marca": "Gucci",
+    "categoria": "Abrigos & Chaquetas",
     "genero": "hombre",
-    "precioRD": 89775,
+    "precioEUR": 2900,
+    "descripcion": "Gucci · Abrigo largo sastre confeccionado en Italia en pura lana negra de textura densa y tacto suave. Presenta solapa de muesca clásica, cierre frontal de botonadura sencilla, bolsillos de ojal laterales y forro interior completo en cupro de lujo.",
     "tallas": [
-      "39 (S)",
-      "40 (M)",
-      "41 (L)",
-      "42 (XL)"
+      "46 IT (S)",
+      "48 IT (M)",
+      "50 IT (L)",
+      "52 IT (XL)",
+      "54 IT (XXL)"
     ],
     "fotos": [
-      "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1484081064812-86e90e107fa8?w=800&auto=format&fit=crop&q=80"
+      "img/producto-4.jpg",
+      "img/producto-4-gucci-abrigo-lana.jpg"
     ]
   },
   {
     "id": 5,
-    "nombre": "Versace Sudadera con Bordado Medusa Head Crest",
-    "marca": "Versace",
-    "categoria": "Hombre",
+    "nombre": "Chaqueta de faya ligera con doble botonadura y GG",
+    "marca": "Gucci",
+    "categoria": "Chaquetas & Sastrería",
     "genero": "hombre",
-    "precioRD": 56385,
+    "precioEUR": 3200,
+    "descripcion": "Gucci · Chaqueta sastre cruzada de gala confeccionada en faya de seda ligera negra con monograma GG jacquard integral en contraste mate y brillo. Solapas de pico marcadas, botonadura doble con botones forrados y hombreras estructuradas de corte italiano.",
     "tallas": [
-      "S",
-      "M",
-      "L",
-      "XL"
+      "46 IT (S)",
+      "48 IT (M)",
+      "50 IT (L)",
+      "52 IT (XL)"
     ],
     "fotos": [
-      "https://images.unsplash.com/photo-1485125639709-a60c3a500bf1?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?w=800&auto=format&fit=crop&q=80"
+      "img/producto-5.jpg",
+      "img/producto-5-gucci-chaqueta-faya-gg.jpg"
     ]
   },
   {
     "id": 6,
-    "nombre": "Gucci Camiseta con Logo GG Blade Estampado",
+    "nombre": "Chaqueta de mezcla de lana Príncipe de Gales recubierta",
     "marca": "Gucci",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 37170,
+    "categoria": "Chaquetas & Sastrería",
+    "genero": "unisex",
+    "precioEUR": 3500,
+    "descripcion": "Gucci · Chaqueta sastre cruzada de vanguardia confeccionada en tejido de lana con patrón clásico Príncipe de Gales y tratamiento superficial resinado brillante en tonalidades camel y bronce. Solapa ancha de muesca, corte envolvente y forro de satén.",
     "tallas": [
-      "S",
-      "M",
-      "L",
-      "XL"
+      "46 IT (S)",
+      "48 IT (M)",
+      "50 IT (L)",
+      "52 IT (XL)"
     ],
     "fotos": [
-      "https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=800&auto=format&fit=crop&q=80"
+      "img/producto-6.jpg",
+      "img/producto-6-gucci-chaqueta-principe-gales.jpg"
     ]
   },
   {
     "id": 7,
-    "nombre": "Gucci Cazadora Bomber en Jacquard GG Supreme",
+    "nombre": "Reloj Gucci 25H, 40 mm",
     "marca": "Gucci",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 154350,
+    "categoria": "Relojes & Joyería",
+    "genero": "unisex",
+    "precioEUR": 3900,
+    "descripcion": "Gucci · Reloj automático de silueta ultradelgada Gucci 25H de 40 mm con caja multieslabón en acero cepillado, esfera gris antracita con ranuras horizontales guilloché, segundero en contraste amarillo deportivo, fechador a las 6 y correa de caucho grabado antideslizante.",
     "tallas": [
-      "46 IT (S)",
-      "48 IT (M)",
-      "50 IT (L)",
-      "52 IT (XL)"
+      "Ajuste Único (40 mm)"
     ],
     "fotos": [
-      "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=800&auto=format&fit=crop&q=80"
+      "img/producto-7.jpg",
+      "img/producto-7-gucci-reloj-25h-40mm.jpg"
     ]
   },
   {
     "id": 8,
-    "nombre": "Gucci Zapatillas Ace Sneakers con Tribanda Web",
+    "nombre": "Chaqueta de seda y lana merino",
     "marca": "Gucci",
-    "categoria": "Hombre",
+    "categoria": "Chaquetas & Sastrería",
     "genero": "hombre",
-    "precioRD": 51660,
+    "precioEUR": 4200,
+    "descripcion": "Gucci · Chaqueta sastre doble botonadura confeccionada en Florencia en una suntuosa mezcla de seda virgen y lana merino en color antracita tornasolado. Solapa de lanza prominente, confección semiartesanal y caída fluida con botones tono sobre tono.",
     "tallas": [
-      "40 EU",
-      "41 EU",
-      "42 EU",
-      "43 EU",
-      "44 EU"
+      "48 IT (M)",
+      "50 IT (L)",
+      "52 IT (XL)",
+      "54 IT (XXL)"
     ],
     "fotos": [
-      "https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&auto=format&fit=crop&q=80"
+      "img/producto-8.jpg",
+      "img/producto-8-gucci-chaqueta-seda-merino.jpg"
     ]
   },
   {
     "id": 9,
-    "nombre": "Gucci Mocasines Clásicos Jordaan en Piel Horsebit",
+    "nombre": "Abrigo de lana doble con botonadura sencilla",
     "marca": "Gucci",
-    "categoria": "Hombre",
+    "categoria": "Abrigos & Chaquetas",
     "genero": "hombre",
-    "precioRD": 62370,
-    "tallas": [
-      "40 EU",
-      "41 EU",
-      "42 EU",
-      "43 EU",
-      "44 EU"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1490725263030-1f0521cec8ec?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1496217590455-aa63a8350eea?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 10,
-    "nombre": "Gucci Pantalón Sartorial Recto con Raya Lateral Web",
-    "marca": "Gucci",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 72450,
-    "tallas": [
-      "46 IT (30)",
-      "48 IT (32)",
-      "50 IT (34)",
-      "52 IT (36)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 11,
-    "nombre": "Prada Camisa Bowling Re-Nylon con Logo Esmaltado",
-    "marca": "Prada",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 85050,
-    "tallas": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1499971856191-1a420a42b498?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 12,
-    "nombre": "Prada Chaqueta Técnica Re-Nylon con Cremallera Frontal",
-    "marca": "Prada",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 132300,
-    "tallas": [
-      "46 IT",
-      "48 IT",
-      "50 IT",
-      "52 IT"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 13,
-    "nombre": "Prada Mocasines Monolith en Piel Cepillada Spazzolato",
-    "marca": "Prada",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 78750,
-    "tallas": [
-      "40 EU",
-      "41 EU",
-      "42 EU",
-      "43 EU",
-      "44 EU"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1504198458649-3128b932f49e?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1504593811423-6dd665756598?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 14,
-    "nombre": "Prada Suéter de Punto Fino en Lana Virgen y Cachemira",
-    "marca": "Prada",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 74340,
+    "precioEUR": 4500,
+    "descripcion": "Gucci · Abrigo largo de alta sastrería confeccionado en paño doble de lana pura en elegante tono camel tostado. Botonadura frontal sencilla de tres botones de cuerno natural, solapas de corte impecable, bolsillos con solapa y forro interior jacquard con monograma Gucci.",
     "tallas": [
       "46 IT (S)",
       "48 IT (M)",
       "50 IT (L)",
-      "52 IT (XL)"
+      "52 IT (XL)",
+      "54 IT (XXL)"
     ],
     "fotos": [
-      "https://images.unsplash.com/photo-1505022610485-0249ba5b3675?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1506152983158-b4a74a01c721?w=800&auto=format&fit=crop&q=80"
+      "img/producto-9.jpg",
+      "img/producto-9-gucci-abrigo-lana-doble.jpg"
     ]
   },
   {
-    "id": 15,
-    "nombre": "Prada Pantalón Jogger Técnico en Gabardina Re-Nylon",
-    "marca": "Prada",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 81270,
-    "tallas": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 16,
-    "nombre": "Louis Vuitton Camisa Manga Corta Hawaiian Monogram Eclipse",
-    "marca": "Louis Vuitton",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 80640,
-    "tallas": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1507680434567-5739c80be1ac?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 17,
-    "nombre": "Louis Vuitton Chaqueta Harrington en Jacquard Monogram",
-    "marca": "Louis Vuitton",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 201600,
-    "tallas": [
-      "48 IT (M)",
-      "50 IT (L)",
-      "52 IT (XL)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1508296695146-257a814070b4?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1508427953056-b00b8d78ebf5?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 18,
-    "nombre": "Louis Vuitton Zapatillas Deportivas LV Trainer Bicolor",
-    "marca": "Louis Vuitton",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 87570,
-    "tallas": [
-      "40 EU",
-      "41 EU",
-      "42 EU",
-      "43 EU",
-      "44 EU"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1508746829417-e6f548d8d6ed?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 19,
-    "nombre": "Louis Vuitton Sudadera con Capucha Logo LV Monogram Flocked",
-    "marca": "Louis Vuitton",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 91350,
-    "tallas": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 20,
-    "nombre": "Louis Vuitton Bolso de Viaje Keepall Bandoulière 50 Monogram",
-    "marca": "Louis Vuitton",
-    "categoria": "Cinturones & Accesorios",
-    "genero": "hombre",
-    "precioRD": 166950,
-    "tallas": [
-      "50cm (Talla Única)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 21,
-    "nombre": "Dior Sobrecamisa Dior Oblique Jacquard de Algodón",
-    "marca": "Dior",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 122850,
-    "tallas": [
-      "39 (S)",
-      "40 (M)",
-      "41 (L)",
-      "42 (XL)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1511556532299-8f662fc26c06?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 22,
-    "nombre": "Dior Zapatillas B23 High-Top en Lona Oblique Translúcida",
-    "marca": "Dior",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 75600,
-    "tallas": [
-      "40 EU",
-      "41 EU",
-      "42 EU",
-      "43 EU",
-      "44 EU"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1513094735237-8f2714d57c13?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 23,
-    "nombre": "Dior Americana Sastre de Lana Virgen con Abotonadura Cruzada",
-    "marca": "Dior",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 195300,
-    "tallas": [
-      "48 IT",
-      "50 IT",
-      "52 IT"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1514316454349-750a7fd3da3a?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 24,
-    "nombre": "Dior Polo Clásico de Piqué con Bordado Abeja CD",
-    "marca": "Dior",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 47250,
-    "tallas": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1515347619252-60a4bf4fff4f?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 25,
-    "nombre": "Dior Sauvage Elixir Parfum Concentré Edición Colección",
-    "marca": "Dior",
-    "categoria": "Belleza & Fragancias",
-    "genero": "hombre",
-    "precioRD": 16380,
-    "tallas": [
-      "60 ml",
-      "100 ml"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 26,
-    "nombre": "Balenciaga Sudadera con Capucha Oversize Logo Médium Fit",
-    "marca": "Balenciaga",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 62685,
-    "tallas": [
-      "XS (Oversize)",
-      "S",
-      "M",
-      "L"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1516257984-b1b4d707412e?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 27,
-    "nombre": "Balenciaga Zapatillas Triple S Clear Sole Bicolor",
-    "marca": "Balenciaga",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 72450,
-    "tallas": [
-      "40 EU",
-      "41 EU",
-      "42 EU",
-      "43 EU",
-      "44 EU"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1516826957135-700dedea698c?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 28,
-    "nombre": "Balenciaga Cazadora Denim Oversize con Estampado Logo Back",
-    "marca": "Balenciaga",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 103950,
-    "tallas": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1517445312882-bc9910d016b7?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 29,
-    "nombre": "Balenciaga Camiseta Vintage Jersey con Efecto Desgastado",
-    "marca": "Balenciaga",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 43470,
-    "tallas": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1518049362265-d5b2a6467637?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 30,
-    "nombre": "Balenciaga Pantalón Deportivo Wide-Leg Baggy en Felpa",
-    "marca": "Balenciaga",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 59850,
-    "tallas": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1520006403909-838d6b92c22e?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 31,
-    "nombre": "Burberry Gabardina Kensington Heritage en Gabardina de Algodón",
-    "marca": "Burberry",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 163170,
-    "tallas": [
-      "48 IT (M)",
-      "50 IT (L)",
-      "52 IT (XL)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 32,
-    "nombre": "Burberry Camisa Manga Larga en Popelín Vintage Check",
-    "marca": "Burberry",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 39060,
-    "tallas": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 33,
-    "nombre": "Burberry Polo Monogram TB Bordado en Algodón Piqué",
-    "marca": "Burberry",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 34650,
-    "tallas": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1523381294911-8d3cead13475?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 34,
-    "nombre": "Burberry Bufanda Clásica de Cachemira en Cuadros Vintage Check",
-    "marca": "Burberry",
-    "categoria": "Cinturones & Accesorios",
-    "genero": "hombre",
-    "precioRD": 37170,
-    "tallas": [
-      "168 x 30 cm (Talla Única)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1525450824786-227cbef70703?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 35,
-    "nombre": "Burberry Chaqueta Acolchada Reversible Diamond Quilt",
-    "marca": "Burberry",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 93870,
-    "tallas": [
-      "M",
-      "L",
-      "XL"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 36,
-    "nombre": "Fendi Chaqueta Cortavientos Reversible con Motivo FF",
-    "marca": "Fendi",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 124740,
-    "tallas": [
-      "48 IT (M)",
-      "50 IT (L)",
-      "52 IT (XL)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 37,
-    "nombre": "Fendi Jersey de Cuello Redondo en Punto Jacquard FF",
-    "marca": "Fendi",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 78750,
-    "tallas": [
-      "48 IT",
-      "50 IT",
-      "52 IT"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1529720317453-c8da503f2051?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 38,
-    "nombre": "Fendi Polo de Punto de Algodón con Cuello a Rayas FF",
-    "marca": "Fendi",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 49770,
-    "tallas": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1533139502658-0198f920d8e8?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 39,
-    "nombre": "Fendi Zapatillas Fendi Flow con Suela Gráfica",
-    "marca": "Fendi",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 66150,
-    "tallas": [
-      "40 EU",
-      "41 EU",
-      "42 EU",
-      "43 EU",
-      "44 EU"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1534126511673-b6899657816a?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 40,
-    "nombre": "Fendi Pantalón Sartorial Regular Fit con Raya Planchada",
-    "marca": "Fendi",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 61740,
-    "tallas": [
-      "48 IT (32)",
-      "50 IT (34)",
-      "52 IT (36)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1535043934128-cf0b28d52f95?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 41,
-    "nombre": "Givenchy Sudadera con Capucha Logo 4G Bordado Tonal",
-    "marca": "Givenchy",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 62370,
-    "tallas": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 42,
-    "nombre": "Givenchy Camisa Formal de Popelín con Cuello Invertido",
-    "marca": "Givenchy",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 43470,
-    "tallas": [
-      "39 (S)",
-      "40 (M)",
-      "41 (L)",
-      "42 (XL)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1537832816519-689ad163238b?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 43,
-    "nombre": "Givenchy Mochila Essential U en Nylon Técnico y Piel",
-    "marca": "Givenchy",
-    "categoria": "Cinturones & Accesorios",
-    "genero": "hombre",
-    "precioRD": 91350,
-    "tallas": [
-      "Talla Única"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1539185441755-769473a23570?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 44,
-    "nombre": "Givenchy Cazadora Bomber en Nylon con Detalles Metálicos 4G",
-    "marca": "Givenchy",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 119070,
-    "tallas": [
-      "48 IT",
-      "50 IT",
-      "52 IT"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 45,
-    "nombre": "Givenchy Zapatillas City Sport en Cuero Liso Blanco",
-    "marca": "Givenchy",
-    "categoria": "Hombre",
-    "genero": "hombre",
-    "precioRD": 47250,
-    "tallas": [
-      "40 EU",
-      "41 EU",
-      "42 EU",
-      "43 EU",
-      "44 EU"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1541643600914-78b084683601?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 46,
-    "nombre": "Cartier Reloj Santos de Cartier Automático Acero y Oro",
-    "marca": "Cartier",
-    "categoria": "Joyería & Relojería",
-    "genero": "hombre",
-    "precioRD": 481950,
-    "tallas": [
-      "Modelo Grande (39.8mm)",
-      "Modelo Mediano (35.1mm)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 47,
-    "nombre": "Cartier Pulsera Juste un Clou en Oro Amarillo de 18K",
-    "marca": "Cartier",
-    "categoria": "Joyería & Relojería",
-    "genero": "hombre",
-    "precioRD": 500850,
-    "tallas": [
-      "17 cm",
-      "18 cm",
-      "19 cm",
-      "20 cm"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1543508282-6319a3e2621f?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1544441893-675973e31985?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 48,
-    "nombre": "Cartier Anillo Love Clásico para Hombre en Oro Blanco 18K",
-    "marca": "Cartier",
-    "categoria": "Joyería & Relojería",
-    "genero": "hombre",
-    "precioRD": 135450,
-    "tallas": [
-      "58 (8.5 US)",
-      "60 (9.5 US)",
-      "62 (10 US)",
-      "64 (11 US)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1544816155-12df9643f363?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1547887537-6158d64c35b3?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 49,
-    "nombre": "Sephora Edición Lujo: Set Cuidado Facial Hombre Tom Ford Research",
-    "marca": "Sephora",
-    "categoria": "Belleza & Fragancias",
-    "genero": "hombre",
-    "precioRD": 28350,
-    "tallas": [
-      "Cofre Exclusivo 3 Piezas"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1547949003-9792a18a2601?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 50,
-    "nombre": "Sephora Edición Lujo: Colección Fragancias Privadas Creed Aventus & Oud",
-    "marca": "Sephora",
-    "categoria": "Belleza & Fragancias",
-    "genero": "hombre",
-    "precioRD": 32760,
-    "tallas": [
-      "Dúo 100ml Millésime"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1548883354-7622d03aca27?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 51,
-    "nombre": "Versace Jeans Couture Cinturón Baroque Medusa Buckle Mujer",
-    "marca": "Versace",
-    "categoria": "Cinturones & Accesorios",
-    "genero": "mujer",
-    "precioRD": 16380,
-    "tallas": [
-      "75cm (28)",
-      "80cm (30)",
-      "85cm (32)",
-      "90cm (34)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1550614000-4895a10e1bfd?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 52,
-    "nombre": "Versace Camisa de Seda Barocco Goddess Print",
-    "marca": "Versace",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 94185,
-    "tallas": [
-      "38 IT (XS)",
-      "40 IT (S)",
-      "42 IT (M)",
-      "44 IT (L)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1551232864-3f0890e580d9?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 53,
-    "nombre": "Versace Vestido Corto Ceñido con Hebilla Medusa Hardware",
-    "marca": "Versace",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 116550,
-    "tallas": [
-      "38 IT",
-      "40 IT",
-      "42 IT",
-      "44 IT"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1552346154-21d32810aba3?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 54,
-    "nombre": "Versace Blazer Entallado con Botones Dorados Medusa",
-    "marca": "Versace",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 169470,
-    "tallas": [
-      "38 IT (XS)",
-      "40 IT (S)",
-      "42 IT (M)",
-      "44 IT (L)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 55,
-    "nombre": "Versace Zapatos de Salón Aevitas Pointy con Plataforma",
-    "marca": "Versace",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 81270,
-    "tallas": [
-      "36 EU",
-      "37 EU",
-      "38 EU",
-      "39 EU",
-      "40 EU"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1554412933-514a83d2f3c8?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 56,
-    "nombre": "Gucci Bolso de Hombro Dionysus en Lona GG Supreme",
+    "id": 10,
+    "nombre": "Reloj GUCCI 25H de 30mm con Diamantes",
     "marca": "Gucci",
-    "categoria": "Mujer",
+    "categoria": "Relojes & Joyería",
     "genero": "mujer",
-    "precioRD": 187740,
+    "precioEUR": 4900,
+    "descripcion": "Gucci · Exclusiva pieza de alta relojería joya Gucci 25H de 30 mm con bisel octogonal en oro rosa engastado con pavé de 68 diamantes talla brillante. Esfera blanca satinada con números romanos a las 12, ventana de calendario a las 3 y brazalete integrado de cinco filas de eslabones de acero.",
     "tallas": [
-      "Pequeño (28 x 17 cm)"
+      "Ajuste Único (30 mm)"
     ],
     "fotos": [
-      "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 57,
-    "nombre": "Gucci Vestido Midi en Seda Estampada Flora Jacquard",
-    "marca": "Gucci",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 170100,
-    "tallas": [
-      "38 IT",
-      "40 IT",
-      "42 IT",
-      "44 IT"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1560243563-062bfc001d68?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 58,
-    "nombre": "Gucci Chaqueta de Tweed Estilo Bouclé con Detalle Web",
-    "marca": "Gucci",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 214200,
-    "tallas": [
-      "38 IT (XS)",
-      "40 IT (S)",
-      "42 IT (M)",
-      "44 IT (L)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1562157873-818bc0726f68?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1562273138-f46be4ebdf33?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 59,
-    "nombre": "Gucci Mocasines Brixton en Piel Suave con Bocado Horsebit",
-    "marca": "Gucci",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 57960,
-    "tallas": [
-      "36 EU",
-      "37 EU",
-      "38 EU",
-      "39 EU",
-      "40 EU"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1563178406-4cdc2923acbc?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1563903530908-afdd155d057a?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 60,
-    "nombre": "Gucci Gafas de Sol Oversize Cuadradas con Logo Interlocking G",
-    "marca": "Gucci",
-    "categoria": "Cinturones & Accesorios",
-    "genero": "mujer",
-    "precioRD": 30870,
-    "tallas": [
-      "Talla Única (Calibre 54mm)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1564859228273-274232fdb516?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1565084888279-aca607ecce0c?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 61,
-    "nombre": "Prada Bolso de Hombro Cleo en Piel Cepillada Spazzolato",
-    "marca": "Prada",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 185850,
-    "tallas": [
-      "Mediano (22 x 17 cm)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 62,
-    "nombre": "Prada Minivestido en Tejido Técnico Re-Nylon con Triángulo",
-    "marca": "Prada",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 122850,
-    "tallas": [
-      "38 IT",
-      "40 IT",
-      "42 IT",
-      "44 IT"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 63,
-    "nombre": "Prada Falda Midi Plisada en Popelín de Algodón con Cinturón",
-    "marca": "Prada",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 103950,
-    "tallas": [
-      "38 IT (XS)",
-      "40 IT (S)",
-      "42 IT (M)",
-      "44 IT (L)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1571513722275-4b41940f54b8?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 64,
-    "nombre": "Prada Camisa Oversize en Popelín Clásico con Logo de Esmalte",
-    "marca": "Prada",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 72450,
-    "tallas": [
-      "38 IT",
-      "40 IT",
-      "42 IT",
-      "44 IT"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 65,
-    "nombre": "Prada Zapatos Destalonados Slingback con Logo Triangular",
-    "marca": "Prada",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 75600,
-    "tallas": [
-      "36 EU",
-      "37 EU",
-      "38 EU",
-      "39 EU",
-      "40 EU"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1574015974293-817f0ebebb74?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1575032617751-6ddec2089882?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 66,
-    "nombre": "Louis Vuitton Bolso Neverfull MM en Lona Monogram y Piel",
-    "marca": "Louis Vuitton",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 127890,
-    "tallas": [
-      "MM (31 x 28 x 14 cm)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 67,
-    "nombre": "Louis Vuitton Blusa Fluida de Seda Estampado Monogram Flower",
-    "marca": "Louis Vuitton",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 112140,
-    "tallas": [
-      "36 FR (S)",
-      "38 FR (M)",
-      "40 FR (L)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1577733966973-d680bffd2e80?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 68,
-    "nombre": "Louis Vuitton Abrigo Envolvente en Lana y Cachemira con Cinturón",
-    "marca": "Louis Vuitton",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 308700,
-    "tallas": [
-      "36 FR",
-      "38 FR",
-      "40 FR",
-      "42 FR"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1577803645773-f96470509666?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1578587018452-892bacefd3f2?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 69,
-    "nombre": "Louis Vuitton Bolso Pochette Métis en Monogram Empreinte",
-    "marca": "Louis Vuitton",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 175770,
-    "tallas": [
-      "Talla Única (25 x 19 cm)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1579338559194-a162d19bf842?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 70,
-    "nombre": "Louis Vuitton Zapatillas Time Out en Cuero con Detalles Dorados",
-    "marca": "Louis Vuitton",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 76860,
-    "tallas": [
-      "36 EU",
-      "37 EU",
-      "38 EU",
-      "39 EU",
-      "40 EU"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 71,
-    "nombre": "Dior Bolso Lady Dior Mediano en Piel de Cordero Cannage",
-    "marca": "Dior",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 384300,
-    "tallas": [
-      "Mediano (24 x 20 x 11 cm)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1582588678413-dbf45f4823e9?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 72,
-    "nombre": "Dior Chaqueta Bar Icono en Mezcla de Lana y Seda Negra",
-    "marca": "Dior",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 308700,
-    "tallas": [
-      "36 FR (S)",
-      "38 FR (M)",
-      "40 FR (L)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1583623733237-4d5764a9dc82?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 73,
-    "nombre": "Dior Zapatos Salón J'Adior Slingback en Cinta Bordada",
-    "marca": "Dior",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 72450,
-    "tallas": [
-      "36 EU",
-      "37 EU",
-      "38 EU",
-      "39 EU",
-      "40 EU"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1583744946564-b52ac1c389c8?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 74,
-    "nombre": "Dior Falda Midi Acampanada en Tul Plisado Negro",
-    "marca": "Dior",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 201600,
-    "tallas": [
-      "36 FR",
-      "38 FR",
-      "40 FR"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1584030373081-f37b7bb4fa8e?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 75,
-    "nombre": "Dior Miss Dior Parfum Extrait Prestige Edition 100ml",
-    "marca": "Dior",
-    "categoria": "Belleza & Fragancias",
-    "genero": "mujer",
-    "precioRD": 17325,
-    "tallas": [
-      "50 ml",
-      "100 ml"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1584370848010-d7fe6bc767ec?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 76,
-    "nombre": "Balenciaga Bolso Hourglass XS en Piel de Becerro Box",
-    "marca": "Balenciaga",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 160650,
-    "tallas": [
-      "XS (19 x 13 x 8 cm)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1585232351009-aa87416fca90?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 77,
-    "nombre": "Balenciaga Botines Knife en Tejido Elástico Spandex con Punta Afilada",
-    "marca": "Balenciaga",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 87570,
-    "tallas": [
-      "36 EU",
-      "37 EU",
-      "38 EU",
-      "39 EU",
-      "40 EU"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 78,
-    "nombre": "Balenciaga Blazer Escultural Hourglass con Hombros Marcados",
-    "marca": "Balenciaga",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 198450,
-    "tallas": [
-      "36 FR (S)",
-      "38 FR (M)",
-      "40 FR (L)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1588117305388-c2631a279f82?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 79,
-    "nombre": "Balenciaga Vestido Midi Asimétrico Drapeado en Seda Crepé",
-    "marca": "Balenciaga",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 154350,
-    "tallas": [
-      "36 FR",
-      "38 FR",
-      "40 FR"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 80,
-    "nombre": "Balenciaga Zapatillas Speed 2.0 Recycled Knit Sock Sneakers",
-    "marca": "Balenciaga",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 62685,
-    "tallas": [
-      "36 EU",
-      "37 EU",
-      "38 EU",
-      "39 EU",
-      "40 EU"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1591561954557-26941169b49e?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 81,
-    "nombre": "Burberry Gabardina Kensington Heritage para Mujer Miel",
-    "marca": "Burberry",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 163170,
-    "tallas": [
-      "06 UK (XS)",
-      "08 UK (S)",
-      "10 UK (M)",
-      "12 UK (L)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1594035910387-fea47794261f?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 82,
-    "nombre": "Burberry Bolso Lola Pequeño en Piel Acolchada Monogram TB",
-    "marca": "Burberry",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 137970,
-    "tallas": [
-      "Pequeño (23 x 13 x 6 cm)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1594223274512-ad4803739b7c?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 83,
-    "nombre": "Burberry Falda Plisada en Mezcla de Lana Cuadros Vintage Check",
-    "marca": "Burberry",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 78750,
-    "tallas": [
-      "06 UK",
-      "08 UK",
-      "10 UK",
-      "12 UK"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1594633313593-bab3825d0caf?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 84,
-    "nombre": "Burberry Camisa de Seda Twill Estampado Archive Check",
-    "marca": "Burberry",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 72450,
-    "tallas": [
-      "06 UK (XS)",
-      "08 UK (S)",
-      "10 UK (M)",
-      "12 UK (L)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1595341888016-a392ef81b7de?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 85,
-    "nombre": "Burberry Bufanda de Cachemira Reversible Check Rosa Ceniza",
-    "marca": "Burberry",
-    "categoria": "Cinturones & Accesorios",
-    "genero": "mujer",
-    "precioRD": 37170,
-    "tallas": [
-      "168 x 30 cm (Talla Única)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1596704017254-9b121068fb31?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 86,
-    "nombre": "Fendi Bolso Baguette Mediano en Piel Suave con Hebilla FF",
-    "marca": "Fendi",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 219870,
-    "tallas": [
-      "Mediano (27 x 15 x 6 cm)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 87,
-    "nombre": "Fendi Vestido de Punto de Cuello Alto con Motivo Jacquard FF",
-    "marca": "Fendi",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 124740,
-    "tallas": [
-      "38 IT",
-      "40 IT",
-      "42 IT",
-      "44 IT"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1598532163257-ae3c6b2524b6?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 88,
-    "nombre": "Fendi Zapatos Destalonados Colibrì Lite en Malla Técnica",
-    "marca": "Fendi",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 72450,
-    "tallas": [
-      "36 EU",
-      "37 EU",
-      "38 EU",
-      "39 EU",
-      "40 EU"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1598554747436-c9293d6a588f?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1598560917505-59a3ad559071?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 89,
-    "nombre": "Fendi Camisa en Georgette de Seda con Cuello Lavallière",
-    "marca": "Fendi",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 97650,
-    "tallas": [
-      "38 IT (XS)",
-      "40 IT (S)",
-      "42 IT (M)",
-      "44 IT (L)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1598808503746-f34c53b9323e?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 90,
-    "nombre": "Fendi Abrigo de Doble Faz en Lana y Cachemira con Cinturón",
-    "marca": "Fendi",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 302400,
-    "tallas": [
-      "38 IT",
-      "40 IT",
-      "42 IT",
-      "44 IT"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1600857062241-98e5dba7f214?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 91,
-    "nombre": "Givenchy Bolso Antigona Pequeño en Piel Box Negra Pulida",
-    "marca": "Givenchy",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 156870,
-    "tallas": [
-      "Pequeño (28 x 25 x 15 cm)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 92,
-    "nombre": "Givenchy Blazer Sastre con Cierre Metálico Candado U-Lock",
-    "marca": "Givenchy",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 182070,
-    "tallas": [
-      "36 FR (S)",
-      "38 FR (M)",
-      "40 FR (L)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1603252109303-2751441dd157?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 93,
-    "nombre": "Givenchy Botas Shark Lock en Piel Suave con Candado 4G",
-    "marca": "Givenchy",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 150885,
-    "tallas": [
-      "36 EU",
-      "37 EU",
-      "38 EU",
-      "39 EU",
-      "40 EU"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1603561596112-0a132b757442?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1603808033192-082d6919d3e1?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 94,
-    "nombre": "Givenchy Vestido Midi Asimétrico en Crepé de Seda con Abertura",
-    "marca": "Givenchy",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 141750,
-    "tallas": [
-      "36 FR",
-      "38 FR",
-      "40 FR"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1604014237800-1c9102c219da?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 95,
-    "nombre": "Givenchy Camisa de Popelín con Cuello Bordado Logo 4G",
-    "marca": "Givenchy",
-    "categoria": "Mujer",
-    "genero": "mujer",
-    "precioRD": 56070,
-    "tallas": [
-      "36 FR (S)",
-      "38 FR (M)",
-      "40 FR (L)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1605763240000-7e93b172d754?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 96,
-    "nombre": "Cartier Reloj Panthère de Cartier en Oro Amarillo y Acero",
-    "marca": "Cartier",
-    "categoria": "Joyería & Relojería",
-    "genero": "mujer",
-    "precioRD": 526050,
-    "tallas": [
-      "Modelo Pequeño (22 x 30 mm)",
-      "Modelo Mediano (27 x 37 mm)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 97,
-    "nombre": "Cartier Pulsera Love Clásica en Oro Amarillo de 18K",
-    "marca": "Cartier",
-    "categoria": "Joyería & Relojería",
-    "genero": "mujer",
-    "precioRD": 463050,
-    "tallas": [
-      "15 cm",
-      "16 cm",
-      "17 cm",
-      "18 cm"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1614786269829-d24616faf56d?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1615397349754-cfa2066a298e?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 98,
-    "nombre": "Cartier Anillo Trinity Clásico Tres Oros 18K",
-    "marca": "Cartier",
-    "categoria": "Joyería & Relojería",
-    "genero": "mujer",
-    "precioRD": 123480,
-    "tallas": [
-      "48 (4.5 US)",
-      "50 (5.5 US)",
-      "52 (6 US)",
-      "54 (7 US)",
-      "56 (7.5 US)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1616406432452-07bc5938759d?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 99,
-    "nombre": "Sephora Edición Lujo: Set Regenerador Crème de la Mer The Miracle Broth",
-    "marca": "Sephora",
-    "categoria": "Belleza & Fragancias",
-    "genero": "mujer",
-    "precioRD": 36540,
-    "tallas": [
-      "Cofre Edición Limitada (Crema 60ml + Suero 30ml)"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?w=800&auto=format&fit=crop&q=80"
-    ]
-  },
-  {
-    "id": 100,
-    "nombre": "Sephora Edición Lujo: Cofre Extrait Baccarat Rouge 540 Maison Francis Kurkdjian",
-    "marca": "Sephora",
-    "categoria": "Belleza & Fragancias",
-    "genero": "mujer",
-    "precioRD": 31185,
-    "tallas": [
-      "Extrait de Parfum 70ml + Travel Spray"
-    ],
-    "fotos": [
-      "https://images.unsplash.com/photo-1618244972963-dbee1a7edc95?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&auto=format&fit=crop&q=80"
+      "img/producto-10.jpg",
+      "img/producto-10-gucci-reloj-25h-30mm-diamantes.jpg"
     ]
   }
 ];
@@ -2042,47 +485,19 @@
     let generoSeleccionado = 'todos';
     let busquedaTexto = '';
 
-    let monedaActual = localStorage.getItem('lcm_moneda') || 'RD';
-    const TASA_DOLAR = 63.00;
+    const TASA_RD = 63.00;
 
-    function formatearPrecio(montoRD) {
-      if (monedaActual === 'USD') {
-        const usd = montoRD / TASA_DOLAR;
-        return `$${usd.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} USD`;
-      } else {
-        return `RD$ ${Number(montoRD).toLocaleString('es-DO', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-      }
+    function formatearPrecioEUR(montoEUR) {
+      return `€ ${montoEUR.toLocaleString('de-DE')} EUR`;
     }
 
-    function obtenerNotaSecundaria(montoRD) {
-      if (monedaActual === 'USD') {
-        return `~RD$ ${Number(montoRD).toLocaleString('es-DO', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`;
-      } else {
-        const usd = Math.round(montoRD / TASA_DOLAR);
-        return `~$${usd.toLocaleString('en-US')} USD (Tasa RD$ 63.00)`;
-      }
+    function formatearPrecioRD(montoEUR) {
+      const montoRD = Math.round(montoEUR * TASA_RD);
+      return `RD$ ${montoRD.toLocaleString('en-US')}`;
     }
 
-    function cambiarMoneda(nuevaMoneda) {
-      monedaActual = nuevaMoneda;
-      localStorage.setItem('lcm_moneda', nuevaMoneda);
-      actualizarBotonesMoneda();
-      renderizarProductos();
-      actualizarCarritoUI();
-    }
-
-    function actualizarBotonesMoneda() {
-      const btnRD = document.getElementById('btnCurrRD');
-      const btnUSD = document.getElementById('btnCurrUSD');
-      if (btnRD && btnUSD) {
-        if (monedaActual === 'USD') {
-          btnUSD.classList.add('active');
-          btnRD.classList.remove('active');
-        } else {
-          btnRD.classList.add('active');
-          btnUSD.classList.remove('active');
-        }
-      }
+    function formatearPrecio(montoEUR) {
+      return formatearPrecioEUR(montoEUR);
     }
 
     function initTema() {
@@ -2121,25 +536,31 @@
 
     function obtenerProductosFiltrados() {
       return productos.filter(p => {
-        let coincideGenero = true;
-        if (generoSeleccionado === 'hombre') {
-          coincideGenero = (p.genero === 'hombre');
+        let coincideFiltro = true;
+        if (generoSeleccionado === 'gucci') {
+          coincideFiltro = (p.marca.toLowerCase() === 'gucci');
+        } else if (generoSeleccionado === 'balenciaga') {
+          coincideFiltro = (p.marca.toLowerCase() === 'balenciaga');
+        } else if (generoSeleccionado === 'ropa') {
+          coincideFiltro = (p.categoria.includes('Abrigos') || p.categoria.includes('Chaquetas') || p.categoria.includes('Sastrería'));
+        } else if (generoSeleccionado === 'relojes') {
+          coincideFiltro = (p.categoria.includes('Relojes'));
+        } else if (generoSeleccionado === 'calzado') {
+          coincideFiltro = (p.categoria.includes('Calzado'));
+        } else if (generoSeleccionado === 'hombre') {
+          coincideFiltro = (p.genero === 'hombre' || p.genero === 'unisex');
         } else if (generoSeleccionado === 'mujer') {
-          coincideGenero = (p.genero === 'mujer');
-        } else if (generoSeleccionado === 'cinturones') {
-          coincideGenero = (p.categoria === 'Cinturones & Accesorios' || (p.marca === 'Versace' && p.nombre.toLowerCase().includes('cinturón')));
-        } else if (generoSeleccionado === 'lujo') {
-          coincideGenero = (p.categoria.includes('Joyería') || p.categoria.includes('Belleza') || p.categoria.includes('Perfumería') || p.marca === 'Cartier' || p.marca === 'Sephora');
+          coincideFiltro = (p.genero === 'mujer' || p.genero === 'unisex');
         }
 
         let coincideBusqueda = true;
         if (busquedaTexto) {
           const texto = busquedaTexto.toLowerCase().trim();
-          const contenido = `${p.nombre} ${p.marca} ${p.categoria} ${p.genero}`.toLowerCase();
+          const contenido = `${p.nombre} ${p.marca} ${p.categoria} ${p.genero} ${p.descripcion}`.toLowerCase();
           coincideBusqueda = contenido.includes(texto);
         }
 
-        return coincideGenero && coincideBusqueda;
+        return coincideFiltro && coincideBusqueda;
       });
     }
 
@@ -2192,11 +613,12 @@
             <div class="product-thumbs">${thumbs}</div>
           </div>
           <div class="product-info">
-            <span class="product-cat">${p.marca} · Original Certificado</span>
+            <span class="product-brand-tag">${p.marca}</span>
             <h3 class="product-title">${p.nombre}</h3>
+            <p class="product-desc">${p.descripcion}</p>
             <div class="product-price-row">
-              <span class="product-price">${formatearPrecio(p.precioRD)}</span>
-              <span class="product-base-note">${obtenerNotaSecundaria(p.precioRD)}</span>
+              <span class="product-price">${formatearPrecioEUR(p.precioEUR)}</span>
+              <span class="product-base-note">Equivalente aprox. ${formatearPrecioRD(p.precioEUR)} (RD$ 63.00)</span>
             </div>
             <div class="sizes-wrap">
               <span class="sizes-label">Seleccionar Talla / Medida:</span>
@@ -2285,7 +707,7 @@
             <img src="${x.foto}" alt="${x.nombre}" class="cart-item-thumb">
             <div class="cart-item-info">
               <h4>${x.nombre}</h4>
-              <span class="cart-item-meta">Talla: <strong>${x.talla}</strong> | ${formatearPrecio(x.precioRD)}</span>
+              <span class="cart-item-meta">Talla: <strong>${x.talla}</strong> | ${formatearPrecioEUR(x.precioEUR)}</span>
               <div class="qty-control">
                 <button type="button" class="btn-qty" onclick="cambiarCantidad(${i}, -1)">-</button>
                 <span style="font-size:0.8rem; font-weight:600; padding:0 4px;">${x.cantidad}</span>
@@ -2294,15 +716,16 @@
               </div>
             </div>
             <div class="cart-item-price-col">
-              <strong>${formatearPrecio(x.precioRD * x.cantidad)}</strong>
+              <strong>${formatearPrecioEUR(x.precioEUR * x.cantidad)}<br><small style='font-size:0.75rem; color:var(--text-muted);'>${formatearPrecioRD(x.precioEUR * x.cantidad)}</small></strong>
             </div>
           </div>
         `).join('');
       }
 
-      const totalFormateado = formatearPrecio(totalRD);
-      document.getElementById('cart-subtotal').textContent = totalFormateado;
-      document.getElementById('cart-total').textContent = totalFormateado;
+      const totalEURFormateado = formatearPrecioEUR(totalEUR);
+      const totalRDFormateado = `RD$ ${totalRD.toLocaleString('en-US')}`;
+      document.getElementById('cart-subtotal').innerHTML = `<strong>${totalEURFormateado}</strong> <span style="font-size:0.8rem; color:var(--text-muted); display:block;">(${totalRDFormateado})</span>`;
+      document.getElementById('cart-total').innerHTML = `<strong>${totalEURFormateado}</strong> <span style="font-size:0.85rem; color:var(--gold-primary); display:block;">(${totalRDFormateado})</span>`;
       document.getElementById('btn-pay-total').textContent = totalFormateado;
     }
 
@@ -2419,7 +842,7 @@
               brand: x.marca,
               size: x.talla,
               quantity: x.cantidad,
-              unitPriceRD: x.precioRD
+              unitPriceEUR: x.precioEUR, unitPriceRD: Math.round(x.precioEUR * TASA_RD)
             })),
             customer: customerPayload
           })
