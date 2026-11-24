@@ -22,6 +22,7 @@
   --text-main: #FFFFFF;
   --text-muted: #9E9EA8;
   --border-subtle: #242430;
+  --border-color: #242430;
   --border-gold: rgba(212, 175, 55, 0.4);
   --font-brand: 'Cinzel', serif;
   --font-body: 'Montserrat', sans-serif;
@@ -34,7 +35,7 @@
 /* ========================================================
    TEMA CLARO (LIGHT MODE)
    ======================================================== */
-[data-theme="light"] {
+[data-theme=light] {
   --bg-main: #f5f6fa;
   --bg-surface: #ffffff;
   --bg-surface-elevated: #f0f2f7;
@@ -53,6 +54,7 @@
   --text-main: #12151c;
   --text-muted: #626978;
   --border-subtle: #dbe0eb;
+  --border-color: #dbe0eb;
   --border-gold: rgba(179, 139, 24, 0.5);
   --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
@@ -112,7 +114,7 @@ body {
   justify-content: center;
   gap: 10px;
 }
-[data-theme="light"] .auth-banner {
+[data-theme=light] .auth-banner {
   background: linear-gradient(90deg, #fdf9ed 0%, #f7eccb 50%, #fdf9ed 100%);
   border-bottom: 1px solid var(--gold-primary);
   color: #5c440a;
@@ -204,18 +206,26 @@ body {
   gap: 10px;
 }
 /* Indicador de moneda fija USD */
-.currency-badge-usd {
+.currency-badge-usd,
+.btn-currency-toggle {
   background: var(--bg-surface-elevated);
   border: 1px solid var(--border-subtle);
   color: var(--gold-primary);
   padding: 7px 12px;
   border-radius: var(--radius-sm);
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.05em;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: var(--transition);
+}
+.btn-currency-toggle:hover {
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 0 2px var(--gold-glow);
 }
 /* Botón cambio modo claro / oscuro */
 .btn-theme-toggle {
@@ -325,7 +335,7 @@ body {
   background: linear-gradient(180deg, rgba(10,10,12,0.85) 0%, rgba(10,10,12,0.95) 100%);
   transition: var(--transition);
 }
-[data-theme="light"] .hero-overlay {
+[data-theme=light] .hero-overlay {
   background: linear-gradient(180deg, rgba(245,246,250,0.88) 0%, rgba(245,246,250,0.96) 100%);
 }
 .hero-content {
@@ -1048,6 +1058,7 @@ body {
     font-size: 0.7rem;
     padding: 6px 8px;
   }
+  .btn-currency-toggle,
   .btn-theme-toggle,
   .btn-ghost,
   .btn-gold {
@@ -1256,8 +1267,6 @@ body {
     font-size: 0.82rem;
   }
 }
-
-
 /* Checkout & Azul Payment Utilities */
 .checkout-secure-notice {
   font-size: 0.78rem;
@@ -1266,7 +1275,6 @@ body {
   margin-top: 10px;
   line-height: 1.4;
 }
-
 .btn-pay-now {
   font-size: 0.95rem;
   padding: 14px 20px;
@@ -1277,19 +1285,16 @@ body {
   justify-content: center;
   width: 100%;
 }
-
 .cart-items-column {
   display: flex;
   flex-direction: column;
 }
-
 .cart-checkout-column {
   background: var(--bg-surface-elevated);
   padding: 20px;
   border-radius: var(--radius-md);
   border: 1px solid var(--border-color);
 }
-
 @media (max-width: 768px) {
   .modal-split {
     grid-template-columns: 1fr !important;
@@ -1299,8 +1304,6 @@ body {
     padding: 16px;
   }
 }
-
-
 /* TAG DE MARCA Y DESCRIPCIÓN ELEGANTE */
 .product-brand-tag {
   display: inline-block;
@@ -1316,7 +1319,6 @@ body {
   margin-bottom: 8px;
   width: fit-content;
 }
-
 .product-desc {
   font-size: 0.82rem;
   line-height: 1.5;
@@ -1328,17 +1330,14 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 .product-media {
   background: var(--bg-surface) !important;
 }
-
 .product-main-img {
   object-fit: cover;
   object-position: center;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
 .product-card:hover .product-main-img {
   transform: scale(1.05);
 }
